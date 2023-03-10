@@ -1,3 +1,4 @@
 port: 1339
 sources:
-- dir: "."
+- dir: "test"
+- dir: dist

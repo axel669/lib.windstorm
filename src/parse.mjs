@@ -1,7 +1,6 @@
 const funcs = /(?<key>(?<mod>\w+:)?(?<name>[\w\-]+)\[(?<args>.*?)\])/g
 const factor = { "(": 1, ")": -1 }
 const parseWind = (name) =>
-    // [...name.replace(/(,| )\s+/g, "$1").matchAll(funcs)]
     [...name.matchAll(funcs)]
     .map(
         (match) => {
