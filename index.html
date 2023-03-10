@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Doric</title>
+    </head>
+    <body theme="dark">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style>
+            body[theme="dark"] {
+                background-color: #222;
+                --primary: teal;
+
+                --size: 4px;
+                --sizehalf: calc(
+                    var(--size) / 2
+                );
+                --sizex2: calc(
+                    var(--size) * 2
+                );
+                --sizex3: calc(
+                    var(--size) * 3
+                );
+                --sizex4: calc(
+                    var(--size) * 4
+                );
+            }
+            [bg="primary"] {
+                background-color: var(--primary);
+            }
+            [gap] {
+                gap: var(--size);
+            }
+            [pad] {
+                padding: var(--size);
+            }
+            [padx2] {
+                padding: var(--size-2x);
+            }
+            doric[s-dir="column"] {
+                flex-direction: column;
+            }
+            doric[s-pad="4px"] {
+                padding: 4px;
+            }
+            doric[s-hover-text-color\(red\)]:hover {
+                color: red;
+            }
+
+            [input] > input:checked {
+                background-color: cyan;
+            }
+            .text\.2 {
+                font-size: 18px;
+            }
+            .test-\[0\] {
+                border-left: 1px solid teal;
+            }
+            [padding]::before {
+                content: attr(padding);
+                padding: attr(padding);
+            }
+        </style>
+        <div wind-storm="
+        grid[]
+        grid-areas[a a b, . . b, c c b]
+        pad[4px]
+        gap[8px]
+        width[320px]
+        ">
+            <div wind-storm="border[1px solid teal] grid-area[c]">0</div>
+            <div wind-storm="border[1px solid teal] grid-area[a]">1</div>
+            <div wind-storm="border[1px solid teal]">2</div>
+            <div wind-storm="border[1px solid teal] grid-area[b]">3</div>
+            <div wind-storm="border[1px solid teal]">4</div>
+        </div>
+        <doric flex class="flex-dir(column) pad(4px) gap(4px) width(240px)">
+            <doric text>
+                First
+            </doric>
+            <doric text class="round(6px) bg(--primary) hover:bg(cyan) pad(4px)">
+                First
+            </doric>
+            <doric text>
+                First
+            </doric>
+            <doric input>
+                <label>
+                    <div>ok but what if</div>
+                    <input type="checkbox" />
+                </label>
+            </doric>
+        </doric>
+        <script type="module" src="main.mjs"></script>
+        <script type="module">
+            import {
+                createSignal,
+                onCleanup,
+            } from "https://cdn.skypack.dev/solid-js"
+            import { render } from "https://cdn.skypack.dev/solid-js/web"
+            import html from "https://cdn.skypack.dev/solid-js/html"
+
+            const App = () => {
+                const [count, setCount] = createSignal(0)
+                // const timer = setInterval(() => setCount(count() + 1), 1000)
+                const inc = () => setCount(count() + 1)
+                onCleanup(() => clearInterval(timer))
+                const arr = Array.from(
+                    { length: 100 },
+                    (_, i) => {
+                        const cls = `pad-left(${100 - i}px)`
+                        return html`<div class="border(1px__solid__white)">${i}</div>`
+                    }
+                )
+                return html`
+                    <doric button class="border-size(1px) color(--primary)" onClick=${inc}>
+                        Button?
+                    </doric>
+                    <button class="doric border-size(1px) color(--primary)" onClick=${inc}>
+                        Button?
+                    </button>
+                    <div class="round-left(4px) bg(seagreen) pad(6px) font(monospace)">
+                        ${count}
+                    </div>
+                    ${arr}
+                `
+            }
+            render(App, document.body)
+        </script>
+    </body>
+</html>
