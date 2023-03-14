@@ -1,8 +1,8 @@
 const funcs = /(?<key>(?<mod>\w+:)?(?<name>[\w\-]+)\[(?<args>.*?)\])/g
 const factor = { "(": 1, ")": -1 }
-const parseWind = (name) =>
-    [...name.matchAll(funcs)]
-    .map(
+const parseWind = (name) => {
+    const matches = [...name.matchAll(funcs)]
+    return matches.map(
         (match) => {
             const { groups } = match
             const argSource = groups.args
@@ -28,5 +28,6 @@ const parseWind = (name) =>
             }
         }
     )
+}
 
 export default parseWind
