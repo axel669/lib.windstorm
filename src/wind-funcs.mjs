@@ -18,25 +18,14 @@ const iconColSize = {
     "left": `min-content auto`,
     "right": `auto min-content`,
 }
-export default {
-    "bg": simple("background-color"),
-    "round": simple("border-radius"),
-    "round-right": multi(
-        "border-top-right-radius",
-        "border-bottom-right-radius"
-    ),
-    "round-left": multi(
-        "border-top-left-radius",
-        "border-bottom-left-radius"
-    ),
-    "round-top": multi(
-        "border-top-right-radius",
-        "border-top-left-radius"
-    ),
-    "round-bottom": multi(
-        "border-bottom-right-radius",
-        "border-bottom-left-radius"
-    ),
+
+const source = {
+    "bg": "background-color",
+    "round": "border-radius",
+    "round-right": ["border-top-right-radius", "border-bottom-right-radius"],
+    "round-left": ["border-top-left-radius", "border-bottom-left-radius"],
+    "round-top": ["border-top-right-radius", "border-top-left-radius"],
+    "round-bottom": ["border-bottom-right-radius", "border-bottom-left-radius"],
     "flex": (direction = "column") => [
         cssprop("display", "flex"),
         cssprop("flex-direction", direction)
@@ -45,15 +34,15 @@ export default {
         cssprop("display", "grid"),
         cssprop("grid-direction", direction)
     ],
-    "flex-dir": simple("flex-direction"),
-    "cols": simple("grid-template-columns"),
-    "pad": simple("padding"),
-    "pad-left": simple("padding-left"),
-    "pad-right": simple("padding-right"),
-    "pad-top": simple("padding-top"),
-    "pad-bottom": simple("padding-bottom"),
-    "gap": simple("gap"),
-    "text-color": simple("color"),
+    "flex-dir": "flex-direction",
+    "cols": "grid-template-columns",
+    "pad": "padding",
+    "pad-left": "padding-left",
+    "pad-right": "padding-right",
+    "pad-top": "padding-top",
+    "pad-bottom": "padding-bottom",
+    "gap": "gap",
+    "text-color": "color",
     "color": (name) => [
         cssprop("--color", `--${name}`),
         cssprop("--ripple-color", `--${name}-ripple`)
@@ -69,23 +58,43 @@ export default {
         cssprop("background", "--color"),
         cssprop("color", "--text-color-fill")
     ],
-    "text-size": simple("font-size"),
-    "font": simple("font-family"),
-    "border-size": simple("border-width"),
-    "border-color": simple("border-color"),
-    "border-style": simple("border-style"),
-    "border": simple("border"),
-    "width": simple("width"),
+    "text-size": "font-size",
+    "font": "font-family",
+    "border-size": "border-width",
+    "border-color": "border-color",
+    "border-style": "border-style",
+    "border": "border",
+    "width": "width",
     "grid-areas": (...args) => cssprop(
         "grid-template-areas",
         args.map(
             row => JSON.stringify(row)
         ).join(" ")
     ),
-    "grid-area": simple("grid-area"),
-    "grid-cols": simple("grid-template-columns"),
+    "grid-area": "grid-area",
+    "grid-cols": "grid-template-columns",
+    "grid-col": "grid-column",
     "toggle": (direction) => [
         cssprop("grid-template-areas", iconPlacement[direction]),
         cssprop("grid-template-columns", iconColSize[direction])
     ]
 }
+
+export { cssprop, simple, multi }
+export default Object.fromEntries(
+    Object.entries(source).map(
+        ([key, value]) => {
+            const type = typeof value
+            if (type === "function") {
+                return [key, value]
+            }
+            if (type === "string") {
+                return [key, simple(value)]
+            }
+            if (Array.isArray(value) === true) {
+                return [key, multi(...value)]
+            }
+            return null
+        }
+    )
+)
