@@ -1,0 +1,39 @@
+[wind-theme="light"] {
+    --font: Roboto;
+
+    --text-light: white;
+    --text-dark: black;
+    --text-color-normal: var(--text-dark);
+    --text-color-secondary: #505050;
+    --text-color-invert: var(--text-light);
+    --text-color-fill: var(--text-dark);
+    --text-size-normal: 14px;
+    --text-size-title: 18px;
+    --text-size-header: 16px;
+    --text-size-info: 13px;
+    --text-size-subtitle: 12px;
+
+    --background: #e9e9e9;
+    --background-layer: #ffffff;
+
+    --layer-border-width: 1px;
+    --layer-border-color: #aaaaaa;
+
+    --default: var(--text-color-normal);
+    --default-ripple: var(--ripple-normal);
+    --primary: #1d62d5;
+    --primary-ripple: #1d62d560;
+    --secondary: #128f12;
+    --secondary-ripple: #128f1260;
+    --danger: #F44336;
+    --danger-ripple: #F4433660;
+    --warning: #fab41e;
+    --warning-ripple: #fab41e60;
+
+    --button-filled-text-color: var(--text-color-invert);
+
+    --ripple-dark: #00000060;
+    --ripple-light: #FFFFFF60;
+    --ripple-normal: var(--ripple-dark);
+    --ripple-invert: var(--ripple-light);
+}

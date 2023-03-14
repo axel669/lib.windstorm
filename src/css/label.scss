@@ -1,0 +1,54 @@
+label[wind-storm] {
+    --color: var(--text-color-normal);
+    --ripple-color: var(--ripple-normal);
+
+    border: 0px solid var(--color);
+    color: var(--color);
+
+    position: relative;
+    display: grid;
+    cursor: pointer;
+    user-select: none;
+    padding: 4px;
+    gap: 2px;
+    border-radius: 4px;
+    overflow: hidden;
+
+    @import "$clickable";
+}
+
+label[wind-storm]>input {
+    position: relative;
+    grid-area: icon;
+    width: 18px;
+    height: 18px;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+label[wind-storm]>input::after {
+    content: "";
+    position: absolute;
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    display: flex;
+    border: 1px solid var(--color);
+    border-radius: 4px;
+    align-items: center;
+    justify-content: center;
+}
+
+label[wind-storm]>input:checked::after {
+    background-color: var(--color);
+    color: var(--text-color-invert);
+    content: "\f00c";
+}
+
+[wind-storm~="label-content"] {
+    display: flex;
+    align-items: center;
+}

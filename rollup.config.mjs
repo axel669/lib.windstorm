@@ -1,4 +1,5 @@
-import css from "rollup-plugin-import-css"
+import sass from "rollup-plugin-sass"
+import { minify } from "csso"
 
 export default {
     input: "src/main.mjs",
@@ -6,5 +7,10 @@ export default {
         file: "dist/windstorm.mjs",
         format: "esm"
     },
-    plugins: [css()]
+    plugins: [
+        sass({
+            output: false,
+            // processor: css => minify(css).css
+        })
+    ]
 }
