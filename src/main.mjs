@@ -1,6 +1,6 @@
 import parseWind from "./parse.mjs"
-import windFuncs from "./wind-funcs.mjs"
-import baseCSS from "./default.css"
+import windFuncs, * as css from "./wind-funcs.mjs"
+import baseCSS from "./default.scss"
 
 const style = document.createElement("style")
 document.head.appendChild(style)
@@ -18,7 +18,6 @@ const checkClass = (info) => {
     if (process === false) {
         return
     }
-
     const func = windFuncs[info.name]
     const mod = (info.mod !== undefined) ? `:${info.mod.slice(0, -1)}` : ""
     const rules = func(...info.args)
@@ -45,7 +44,7 @@ const mut = {
             return
         }
         for (const node of evt.addedNodes) {
-            processNodes(node.querySelectorAll("*"))
+            processNodes([node, ...node.querySelectorAll("*")])
         }
     },
     attributes(evt) {
@@ -71,3 +70,5 @@ observer.observe(
 processNodes(
     document.querySelectorAll("*")
 )
+
+export default css
