@@ -1,0 +1,11 @@
+&::after
+    content: ""
+    position: absolute
+    top: 0px
+    left: 0px
+    bottom: 0px
+    right: 0px
+    transition: background-color 150ms linear
+&:active::after
+    transition: none
+    background-color: var(--ripple-color)
