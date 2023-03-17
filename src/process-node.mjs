@@ -1,33 +1,7 @@
 import componentList from "$$components"
 import parseWind from "./parse.mjs"
 import windFuncs from "./wind-funcs.mjs"
-
-const style = document.createElement("style")
-const head = document.head
-
-head.appendChild(style)
-style.innerHTML = `
-@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap");
-
-@import url("https://ka-f.fontawesome.com/releases/v6.0.0/css/free.min.css?token=0011e611c6");
-
-* {
-    box-sizing: border-box;
-}
-body[wind-theme], html {
-    padding: 0px;
-    margin: 0px;
-    width: 100%;
-    height: 100%;
-}
-
-[wind-theme] {
-    background-color: var(--background);
-    color: var(--text-color-normal);
-    font-family: var(--font);
-    font-size: var(--text-size-normal);
-}
-`
+import { head, style } from "./baseline.mjs"
 
 const sheet = style.sheet
 const styles = {}
