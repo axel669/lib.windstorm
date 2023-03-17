@@ -10,18 +10,6 @@ const componentList = {
         }
         return id
     },
-    load(id) {
-        if (id !== "$$components") {
-            return
-        }
-        const components = fs.list("src/css/comp")
-        const list = JSON.stringify(
-            components.map(
-                name => name.slice(0, -5)
-            )
-        )
-        return `export default ${list}`
-    },
     buildEnd() {
         const files = fs.find(
             "src",
