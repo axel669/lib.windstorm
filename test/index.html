@@ -1,72 +1,50 @@
 <!doctype html>
 <html>
     <head>
-        <title>Doric</title>
+        <title>Windstorm</title>
     </head>
     <body wind-theme="tron">
         <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-        <div wind-storm="
-        grid[]
-        grid-areas[a a b, . . b, c c b]
-        pad[4px]
-        gap[8px]
-        width[320px]
-        ">
-            <div wind-storm="border[1px solid var(--primary)] grid-area[c]">0</div>
-            <div wind-storm="border[1px solid var(--primary)] grid-area[a]">1</div>
-            <div wind-storm="border[1px solid var(--primary)]">2</div>
-            <div wind-storm="border[1px solid var(--primary)] grid-area[b]">3</div>
-            <div wind-storm="border[1px solid var(--primary)]">4</div>
-        </div>
-
-        <button wind-storm="outline[default]">
-            <img src="https://upload.wikimedia.org/wikipedia/en/5/5f/Original_Doge_meme.jpg" />
-        </button>
-
         <span class="fa-solid fa-check"></span>
-
-        <div wind-storm="flex[column] pad[4px] gap[4px] width[240px]">
-            <div>
-                First
-            </div>
-            <div wind-storm="round[6px] bg[--primary] hover:bg[cyan] pad[4px]">
-                First
-            </div>
-            <div text>
-                First
-            </div>
-        </div>
-        <script type="module" src="windstorm.mjs"></script>
+        <!-- <script type="module" src="windstorm.mjs"></script> -->
         <script type="module">
+            import "./windstorm.mjs"
             import {
                 createSignal,
                 onCleanup,
+                lazy,
             } from "https://cdn.skypack.dev/solid-js"
             import { render } from "https://cdn.skypack.dev/solid-js/web"
             import html from "https://cdn.skypack.dev/solid-js/html"
 
             window.html = html
+            window.createSignal = createSignal
 
-            const component = location.hash.slice(1).trim()
-            const loadComponent = async () => {
+            const initial = location.hash.slice(1).trim()
+            const first = await (async () => {
                 try {
-                    const module = await import(`./comp/${component}.mjs`)
-                    return module.default
+                    return await import(`./comp/${initial}.mjs`)
                 }
                 catch (err) {
                     return null
                 }
-            }
-
-            const example = await loadComponent()
+            })()
             const App = () => {
-                if (example === null) {
-                    return html`
-                        <div>Failed to load ${component}</div>
-                    `
-                }
+                const [example, setExample] = createSignal(first.default)
 
-                return html`<${example} />`
+                return html`
+                    <div wind-storm="grid[] grid-cols[1fr 1fr] width[640px]">
+                        <div wind-theme="tron">
+                            <${example} />
+                        </div>
+                        <div wind-theme="dark">
+                            <${example} />
+                        </div>
+                        <div wind-theme="light">
+                            <${example} />
+                        </div>
+                    </div>
+                `
             }
             render(App, document.body)
         </script>
