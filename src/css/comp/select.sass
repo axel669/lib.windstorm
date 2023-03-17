@@ -1,2 +1,42 @@
-select[wind-storm]
-    border: 1px solid white
+label[wind-storm]:has(select)
+    @import "../$control"
+    &::before
+        content: "\f0d7"
+        position: absolute
+        bottom: 0px
+        right: 0px
+        font-family: "Font Awesome 6 Free"
+        font-weight: 900
+        width: 24px
+        height: 32px
+        display: flex
+        align-items: center
+        justify-content: center
+
+    @import "../$clickable"
+
+label[wind-storm] > select
+    --color: var(--text-color-normal)
+
+    border: 0px solid var(--color)
+    padding: 8px
+    padding-right: 24px
+    background-color: transparent
+    color: var(--color)
+    font: var(--font)
+    font-size: var(--text-size-normal)
+    cursor: pointer
+    appearance: none
+    grid-area: label / 1 / select / 1
+    display: flex
+    align-items: flex-end
+
+    &:focus
+        outline: none
+
+label[wind-storm] option
+    background-color: var(--background-layer)
+    color: var(--text-color-normal)
+    font-size: var(--text-size-normal)
+
+@import "../$control-label"
