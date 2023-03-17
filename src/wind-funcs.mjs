@@ -10,15 +10,6 @@ const multi = (...names) =>
         (name) => cssprop(name, value)
     )
 
-const iconPlacement = {
-    "left": `"icon ."`,
-    "right": `". icon"`,
-}
-const iconColSize = {
-    "left": `min-content auto`,
-    "right": `auto min-content`,
-}
-
 const source = {
     "bg": "background-color",
     "border": "border",
@@ -27,25 +18,31 @@ const source = {
     "border-style": "border-style",
     "color": (name) => [
         cssprop("--color", `--${name}`),
-        cssprop("--ripple-color", `--${name}-ripple`)
+        cssprop("--ripple-color", `--${name}-ripple`),
     ],
     "cols": "grid-template-columns",
     "fill": (name) => [
         cssprop("--color", `--${name}`),
         cssprop("--ripple-color", `--ripple-dark`),
         cssprop("background", "--color"),
-        cssprop("color", "--text-color-fill")
+        cssprop("color", "--text-color-fill"),
+    ],
+    "flat": (name) => [
+        cssprop("--color", `--${name}`),
+        cssprop("--ripple-color", `--${name}-ripple`),
+        cssprop("--border-size", "0px"),
+        cssprop("border-color", "transparent"),
     ],
     "flex": (direction = "column") => [
         cssprop("display", "flex"),
-        cssprop("flex-direction", direction)
+        cssprop("flex-direction", direction),
     ],
     "flex-dir": "flex-direction",
     "font": "font-family",
     "gap": "gap",
     "grid": (direction = "row") => [
         cssprop("display", "grid"),
-        cssprop("grid-direction", direction)
+        cssprop("grid-direction", direction),
     ],
     "grid-area": "grid-area",
     "grid-areas": (...args) => cssprop(
@@ -56,10 +53,20 @@ const source = {
     ),
     "grid-col": "grid-column",
     "grid-cols": "grid-template-columns",
+    "grid-rows": (rows, auto) => {
+        console.log(rows, auto)
+        if (rows === "auto") {
+            console.log(
+                cssprop("grid-auto-rows", auto)
+            )
+            return cssprop("grid-auto-rows", auto)
+        }
+        return cssprop("grid-rows", rows)
+    },
     "outline": (name) => [
         cssprop("--color", `--${name}`),
         cssprop("--ripple-color", `--${name}-ripple`),
-        cssprop("border", "1px solid var(--color)")
+        cssprop("border", "1px solid var(--color)"),
     ],
     "pad": "padding",
     "pad-left": "padding-left",
@@ -73,10 +80,6 @@ const source = {
     "round-top": ["border-top-right-radius", "border-top-left-radius"],
     "text-color": "color",
     "text-size": "font-size",
-    "toggle": (iconPos = "left") => [
-        cssprop("grid-template-areas", iconPlacement[iconPos]),
-        cssprop("grid-template-columns", iconColSize[iconPos])
-    ],
     "width": "width",
 }
 
