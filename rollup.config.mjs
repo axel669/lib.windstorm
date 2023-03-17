@@ -1,4 +1,3 @@
-import sass from "rollup-plugin-sass"
 import { minify } from "csso"
 import fs from "fs-jetpack"
 import del from "rollup-plugin-delete"
@@ -47,9 +46,5 @@ export default {
     plugins: [
         del({ targets: "dist/*" }),
         componentList,
-        sass({
-            output: false,
-            // processor: css => minify(css).css
-        })
     ]
 }
