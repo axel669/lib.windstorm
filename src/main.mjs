@@ -7,7 +7,11 @@ const mut = {
             return
         }
         for (const node of evt.addedNodes) {
-            [node, ...node.querySelectorAll("*")].forEach(processNode)
+            const nodes =
+                (node.tagName === undefined)
+                ? []
+                : [node, ...node.querySelectorAll("*")]
+            nodes.forEach(processNode)
         }
     },
     attributes(evt) {
