@@ -1,0 +1,77 @@
+label[w\$~="@t-ctrl"]
+    --color: var(--default)
+    --ripple-color: var(--default-ripple)
+
+    cursor: pointer
+    display: inline-flex
+    align-items: center
+    justify-content: space-between
+    padding: 4px
+    border-radius: 4px
+    @import "../$clickable"
+
+    &:focus-within
+        outline: 2px solid var(--primary)
+
+    & > input
+        position: relative
+        min-width: 20px
+        min-height: 20px
+        -webkit-appearance: none
+        appearance: none
+        margin: 0px
+
+        &:focus
+            outline: none
+
+        &:checked
+            color: var(--text-color-invert)
+            &::after
+                background-color: var(--color)
+
+        &::after
+            content: ""
+            position: absolute
+            font-family: "Font Awesome 6 Free"
+            font-weight: 900
+            top: 50%
+            left: 50%
+            width: 20px
+            height: 20px
+            transform: translate(-50%, -50%)
+            display: flex
+            border: 1px solid var(--color)
+            border-radius: 4px
+            align-items: center
+            justify-content: center
+            overflow: hidden
+
+        &[type="radio"]
+            &::after
+                border-radius: 50%
+            &:checked::after
+                content: "\f111"
+        &[type="checkbox"]
+            &:checked::after
+                content: "\f00c"
+            &[w\$~="$toggle"]
+                position: relative
+                border: 1px solid var(--color)
+                height: 24px
+                width: 44px
+                border-radius: 12px
+                &::after
+                    content: ""
+                    background-color: var(--default)
+                    position: absolute
+                    width: 18px
+                    height: 18px
+                    border-radius: 10px
+                    top: 2px
+                    left: 2px
+                    transform: none
+                    border-width: 0px
+                    transition: left 100ms linear, color 100ms linear
+                &:checked::after
+                    background-color: var(--color)
+                    left: 22px
