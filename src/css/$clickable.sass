@@ -1,12 +1,16 @@
-&::after
-    content: ""
-    position: absolute
-    top: 0px
-    left: 0px
-    bottom: 0px
-    right: 0px
-    transition: background-color 150ms linear
-    pointer-events: none
-&:active::after
-    transition: none
-    background-color: var(--ripple-color)
+&
+    overflow: hidden
+    position: relative
+    user-select: none
+    &::after
+        content: ""
+        position: absolute
+        top: 0px
+        left: 0px
+        bottom: 0px
+        right: 0px
+        transition: background-color 150ms linear
+        pointer-events: none
+    &:active::after
+        transition: none
+        background-color: var(--ripple-color)
