@@ -4,68 +4,73 @@
         <title>Windstorm</title>
         <meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width">
     </head>
-    <body w$-theme="tron">
+    <body ws-theme="tron">
         <!-- <script src="https://cdn.tailwindcss.com"></script> -->
         <span class="fa-solid fa-check"></span>
 
-        <div w$="iflex gap[4px] p[4px] w[120px]">
-            <div w$="bd-w[1px] bd-c[&primary] p[4px] r[4px]">
+        <div ws-x="iflex gap[4px] p[4px] w[120px]">
+            <div ws-x="bd-w[1px] bd-c[&primary] p[4px] r[4px]">
                 Wat
             </div>
-            <div w$="bd-w[1px] bd-c[&primary] p[4px] r[4px]">
+            <div ws-x="bd-w[1px] bd-c[&primary] p[4px] r[4px]">
                 Wat
             </div>
-            <div w$="bd-w[1px] bd-c[&primary] p[4px] r[4px]">
+            <div ws-x="bd-w[1px] bd-c[&primary] p[4px] r[4px]">
                 Wat
             </div>
         </div>
 
-        <button w$="@flat $color[primary]">
+        <button ws-x="@flat $color[primary]">
             Clicky
         </button>
-        <div w$="grid w[360px] gap[4px]">
-            <label w$="@ctrl $color[secondary]">
-                <div w$="$lbl-text">Select</div>
+        <div ws-x="grid w[360px] gap[4px] bd[1px_solid_teal]">
+            <label ws-x="@ctrl $color[secondary]">
+                <div ws-x="$lbl-text">Select</div>
                 <select>
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
                 </select>
             </label>
-            <label w$="@ctrl @flat $color[danger]">
-                <div w$="$lbl-text">Input</div>
+            <label ws-x="@ctrl @flat $color[danger]">
+                <div ws-x="$lbl-text">Input</div>
                 <input type="text" />
-                <span w$="adorn[start] p[2px]">$</span>
+                <span ws-x="adorn[start] p[2px]">$</span>
             </label>
-            <label w$="@ctrl $color[primary]">
-                <div w$="$lbl-text">Text Area</div>
-                <textarea w$="h[64px]"></textarea>
+            <label ws-x="@ctrl $color[primary]">
+                <div ws-x="$lbl-text">Text Area</div>
+                <textarea ws-x="h[64px]"></textarea>
             </label>
-            <label w$="@ctrl">
-                <div w$="$lbl-text">File Input</div>
+            <label ws-x="@ctrl">
+                <div ws-x="$lbl-text">File Input</div>
                 <input type="file" />
             </label>
-            <label w$="@ctrl $color[secondary]">
-                <div w$="$lbl-text">File Input</div>
+            <label ws-x="@ctrl $color[secondary]">
+                <div ws-x="$lbl-text">File Input</div>
                 <input type="file" />
             </label>
-            <label w$="@t-ctrl @outline">
-                <div w$="$lbl-text">Checkbox</div>
+            <label ws-x="@t-ctrl @outline">
+                <div ws-x="$lbl-text">Checkbox</div>
                 <input type="checkbox" />
             </label>
-            <label w$="@t-ctrl @outline $color[warning]">
-                <div w$="$lbl-text">Checkbox</div>
+            <label ws-x="@t-ctrl @outline $color[warning]">
+                <div ws-x="$lbl-text">Checkbox</div>
                 <input type="checkbox" />
             </label>
-            <label w$="@t-ctrl $color[primary]">
-                <input type="checkbox" w$="$toggle" />
-                <div w$="$lbl-text">Toggle</div>
+            <label ws-x="@t-ctrl $color[primary]">
+                <input type="checkbox" ws-x="$toggle" />
+                <div ws-x="$lbl-text">Toggle</div>
             </label>
         </div>
 
-        <w$-notification w$="">
+        <ws-notification ws-x="">
             Content
-        </w$-notification>
+        </ws-notification>
+        <ws-paper>
+            <div ws-x="flex">
+                Some Content
+            </div>
+        </ws-paper>
 
         <script type="module">
             import "./windstorm.mjs"
@@ -93,14 +98,14 @@
                 const [example, setExample] = createSignal(first.default)
 
                 return html`
-                    <div w$="grid[] gr-col[1fr 1fr] w[640px]">
-                        <div w$-theme="tron">
+                    <div ws-x="grid[] gr-col[1fr_1fr] w[640px]">
+                        <div ws-theme="tron">
                             <${example} />
                         </div>
-                        <div w$-theme="dark">
+                        <div ws-theme="dark">
                             <${example} />
                         </div>
-                        <div w$-theme="light">
+                        <div ws-theme="light">
                             <${example} />
                         </div>
                     </div>
