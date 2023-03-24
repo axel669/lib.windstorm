@@ -1,0 +1,77 @@
+label[w\$~="@ctrl"]
+    --color: var(--default)
+    --ripple-color: var(--default-ripple)
+
+    position: relative
+    display: inline-grid
+    grid-template-areas: "label label label" " start control end" "extra extra extra"
+    grid-template-rows: minmax(0px, min-content) auto minmax(0px, min-content)
+    grid-template-columns: minmax(0px, min-content) auto minmax(0px, min-content)
+    border: 1px solid var(--color)
+    border-radius: 4px
+    user-select: none
+    overflow: hidden
+
+    &:focus-within
+        outline: 2px solid var(--primary)
+
+    & > select
+        --color: var(--text-color-normal)
+
+        border: 0px solid var(--color)
+        padding: 8px
+        height: 32px
+        background-color: transparent
+        color: var(--color)
+        font: var(--font)
+        font-size: var(--text-size-normal)
+        cursor: pointer
+        background-color: var(--background-layer)
+        grid-area: control
+
+        &:focus
+            outline: none
+
+    & > select > option
+        background-color: var(--background-layer)
+        border-color: var(--background-layer)
+        color: var(--text-color-normal)
+        font-size: var(--text-size-normal)
+        font-family: Arial
+
+    & > input, & > textarea
+        border-width: 0px
+        background: transparent
+        color: var(--text-normal-color)
+        font-family: var(--font)
+        min-width: 24px
+        height: 32px
+        width: 100%
+        grid-area: control
+        padding: 4px
+        background-color: var(--background-layer)
+
+        &:focus
+            outline: none
+
+    & > input[type="file"]
+        position: relative
+        padding: 0px
+        &::file-selector-button
+            font-family: var(--font)
+            height: 100%
+            margin: 0px
+            margin-right: 4px
+            padding: 4px
+            color: var(--text-normal-color)
+            background-color: var(--background-layer)
+            border-width: 0px
+            border-right: 1px solid var(--color)
+
+    & > [w\$~="$lbl-text"]
+        grid-area: label
+        padding: 4px
+        display: flex
+        align-items: center
+        border-bottom: var(--border-size, 1px) solid var(--color)
+        color: var(--color)
