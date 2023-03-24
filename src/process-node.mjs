@@ -29,7 +29,7 @@ const checkClass = (info) => {
     const mod = (info.mod !== undefined) ? `:${info.mod.slice(0, -1)}` : ""
     const rules = func(...info.args)
     sheet.insertRule(
-        `[w\\$][w\\$*="${info.key}"]${mod} {\n${rules.join(";\n")};\n}`,
+        `[ws-x][ws-x~="${info.key}"]${mod} {\n${rules.join(";\n")};\n}`,
         sheet.cssRules.length
     )
     styles[info.key] = sheet.cssRules[sheet.cssRules.length - 1]
@@ -50,7 +50,7 @@ const attachStyle = (name) => {
     console.log(componentStyle)
 }
 const checkTheme = (node) => {
-    const theme = node.getAttribute("w$-theme")
+    const theme = node.getAttribute("ws-theme")
     if (theme === null) {
         return
     }
@@ -59,7 +59,7 @@ const checkTheme = (node) => {
 }
 const checkComponent = (node) => {
     const tag = node.tagName.toLowerCase()
-    if (tag.startsWith("w$-") === false) {
+    if (tag.startsWith("ws-") === false) {
         return
     }
 
@@ -68,7 +68,7 @@ const checkComponent = (node) => {
 const processNode = (node) => {
     checkTheme(node)
     checkComponent(node)
-    const storm = node.getAttribute("w$")
+    const storm = node.getAttribute("ws-x")
     if (storm === null) {
         return
     }

@@ -21,7 +21,7 @@ sheet.insertRule(
     2
 )
 sheet.insertRule(
-    `[w\\$] {
+    `[ws-x] {
         border-style: solid;
         border-width: 0px;
         border-color: var(--text-color-normal);
@@ -38,7 +38,7 @@ sheet.insertRule(
     4
 )
 sheet.insertRule(
-    `[w\\$-theme] {
+    `[ws-theme] {
         background-color: var(--background);
         color: var(--text-color-normal);
         font-family: var(--font);

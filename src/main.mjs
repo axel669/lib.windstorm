@@ -29,7 +29,7 @@ observer.observe(
         subtree: true,
         attributes: true,
         childList: true,
-        attributeFilter: ["w$"]
+        attributeFilter: ["ws-x"]
     }
 )
 
