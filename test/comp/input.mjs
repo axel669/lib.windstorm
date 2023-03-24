@@ -99,6 +99,16 @@ export default () => {
                     </div>
                 </label>
             </form>
+
+            <label wind-storm>
+                <div wind-storm="label-content">
+                    Some Text
+                </div>
+                <input />
+                <div wind-storm="adorn[start] flex-center[] pad[2px]">
+                    $
+                </div>
+            </label>
         </div>
     `
 }

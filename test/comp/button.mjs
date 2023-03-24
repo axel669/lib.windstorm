@@ -2,31 +2,26 @@ export default () => {
     const [count, setCount] = createSignal(0)
     const inc = () => setCount(count() + 1)
     return html`
-        <div wind-storm="
-        grid[]
-        grid-cols[repeat(3, 1fr)]
-        pad[4px]
-        gap[4px]
-        width[480px]
-        "
+        <div
+        w$="grid gr-col[repeat(3, 1fr)] p[4px] gap[4px] w[480px]"
         onClick=${inc}>
-            <button wind-storm="color[primary] round[12px]">Primary</button>
-            <button wind-storm="outline[primary] round[12px]">Primary</button>
-            <button wind-storm="fill[primary]">Primary</button>
+            <button w$="@flat $color[primary] r[12px]">Primary</button>
+            <button w$="@outline $color[primary] r[12px]">Primary</button>
+            <button w$="@fill $color[primary]">Primary</button>
 
-            <button wind-storm="color[secondary]">Secondary</button>
-            <button wind-storm="outline[secondary]">Secondary</button>
-            <button wind-storm="fill[secondary]">Secondary</button>
+            <button w$="@flat $color[secondary]">Secondary</button>
+            <button w$="@outline $color[secondary]">Secondary</button>
+            <button w$="@fill $color[secondary]">Secondary</button>
 
-            <button wind-storm="color[danger]">Danger</button>
-            <button wind-storm="outline[danger]">Danger</button>
-            <button wind-storm="fill[danger]">Danger</button>
+            <button w$="@flat $color[danger]">Danger</button>
+            <button w$="@outline $color[danger]">Danger</button>
+            <button w$="@fill $color[danger]">Danger</button>
 
-            <button wind-storm="color[warning]">Warning</button>
-            <button wind-storm="outline[warning]">Warning</button>
-            <button wind-storm="fill[warning]">Warning</button>
+            <button w$="@flat $color[warning]">Warning</button>
+            <button w$="@outline $color[warning]">Warning</button>
+            <button w$="@fill $color[warning]">Warning</button>
 
-            <div wind-storm="grid-col[span 3] border[1px solid] pad[4px]">
+            <div w$="col[span 3] bd[1px solid] p[4px]">
                 Click Count: ${count}
             </div>
         </div>
