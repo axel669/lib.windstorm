@@ -1,7 +1,10 @@
 const funcs = /(?<key>(?<mod>\w+:)?(?<name>[\$\@\w\-]+)(\[(?<args>.*?)\])?)/g
 const factor = { "(": 1, ")": -1 }
 const parseArgs = (argSource) => {
-    const source = argSource.trim()
+    const source = argSource.trim().replace(
+        /__|_/g,
+        (m) => (m === "__") ? "_" : " "
+    )
     if (source === "") {
         return []
     }
