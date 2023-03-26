@@ -448,8 +448,8 @@ const windFuncs = {
     borders. Technically can be used on other things but that's untested
     */
     "@fill": () => [
-        cssprop("--ripple-color", `&ripple-dark`),
-        cssprop("background", "&color"),
+        cssprop("--ripple-color", `var(--ripple-dark) !important`),
+        cssprop("background-color", "&color"),
         cssprop("color", "&text-color-fill"),
     ],
 }
