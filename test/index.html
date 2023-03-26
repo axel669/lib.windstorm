@@ -6,71 +6,40 @@
     </head>
     <body ws-theme="tron">
         <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+        <ws-grid ws-x="w[300px] gr-col[1fr_1fr_1fr]">
+            <button ws-x="@fill $color[warning]">Light</button>
+            <button ws-x="@fill $color[primary]">Dark</button>
+            <button ws-x="@fill $color[secondary]">Tron</button>
+        </ws-grid>
+        <script>
+            for (const button of document.querySelectorAll("button")) {
+                button.addEventListener(
+                    "click",
+                    (evt) => document.body.setAttribute(
+                        "ws-theme",
+                        evt.currentTarget.innerText.toLowerCase()
+                    )
+                )
+            }
+        </script>
+
         <span class="fa-solid fa-check"></span>
 
-        <div ws-x="iflex gap[4px] p[4px] w[120px]">
-            <div ws-x="bd-w[1px] bd-c[&primary] p[4px] r[4px]">
-                Wat
-            </div>
-            <div ws-x="bd-w[1px] bd-c[&primary] p[4px] r[4px]">
-                Wat
-            </div>
-            <div ws-x="bd-w[1px] bd-c[&primary] p[4px] r[4px]">
-                Wat
-            </div>
-        </div>
-
-        <button ws-x="@flat $color[primary]">
-            Clicky
-        </button>
-        <div ws-x="grid w[360px] gap[4px] bd[1px_solid_teal]">
-            <label ws-x="@ctrl $color[secondary]">
-                <div ws-x="$lbl-text">Select</div>
-                <select>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                </select>
+        <ws-flex ws-x="w[300px]">
+            <label ws-x="@progress @outline $color[primary]">
+                <div ws-x="$lbl-text">Progress</div>
+                <!-- <progress value="0.1" ws-x="$color[primary]"></progress> -->
+                <progress value="0.1"></progress>
             </label>
-            <label ws-x="@ctrl @flat $color[danger]">
-                <div ws-x="$lbl-text">Input</div>
-                <input type="text" />
-                <span ws-x="adorn[start] p[2px]">$</span>
+            <label ws-x="@progress $row $color[secondary]">
+                <div ws-x="$lbl-text">Progress</div>
+                <progress value="0.3"></progress>
             </label>
-            <label ws-x="@ctrl $color[primary]">
-                <div ws-x="$lbl-text">Text Area</div>
-                <textarea ws-x="h[64px]"></textarea>
+            <label ws-x="@progress $color[warning]">
+                <div ws-x="$lbl-text">Progress</div>
+                <progress value="0.2"></progress>
             </label>
-            <label ws-x="@ctrl">
-                <div ws-x="$lbl-text">File Input</div>
-                <input type="file" />
-            </label>
-            <label ws-x="@ctrl $color[secondary]">
-                <div ws-x="$lbl-text">File Input</div>
-                <input type="file" />
-            </label>
-            <label ws-x="@t-ctrl @outline">
-                <div ws-x="$lbl-text">Checkbox</div>
-                <input type="checkbox" />
-            </label>
-            <label ws-x="@t-ctrl @outline $color[warning]">
-                <div ws-x="$lbl-text">Checkbox</div>
-                <input type="checkbox" />
-            </label>
-            <label ws-x="@t-ctrl $color[primary]">
-                <input type="checkbox" ws-x="$toggle" />
-                <div ws-x="$lbl-text">Toggle</div>
-            </label>
-        </div>
-
-        <ws-notification ws-x="">
-            Content
-        </ws-notification>
-        <ws-paper>
-            <div ws-x="flex">
-                Some Content
-            </div>
-        </ws-paper>
+        </ws-flex>
 
         <script type="module">
             import "./windstorm.mjs"
