@@ -6,12 +6,17 @@ console.log("wat", import.meta.url)
 
 const sheet = style.sheet
 const styles = {}
+const labelMods = [
+    "@ctrl",
+    "@t-ctrl",
+    "@progress"
+]
 const checkComponentFunc = (info) => {
     if (info.name.startsWith("@") === false) {
         return
     }
     const tag = info.node.tagName.toLowerCase()
-    if (tag === "label" && (info.name === "@ctrl" || info.name === "@t-ctrl")) {
+    if (tag === "label" && labelMods.includes(info.name) === true) {
         attachStyle(`comp/${info.name.slice(1)}`)
         return
     }
