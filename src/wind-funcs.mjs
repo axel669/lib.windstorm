@@ -76,6 +76,11 @@ const windFuncs = {
 	*/
 	"col": simple("grid-column"),
     /*md
+	## cur[cursor]
+	Shorthand for `cursor`
+	*/
+	"cur": simple("cursor"),
+    /*md
     ## flex[direction = "column"]
     Sets `display: flex` and sets the `flex-direction`. Default direction is
     `"column"`
@@ -84,6 +89,31 @@ const windFuncs = {
         cssprop("display", "flex"),
         cssprop("flex-direction", direction)
     ],
+    /*md
+    ## fl-center[align]
+    Shorthand for `align-items: center` and `justify-content: center`
+    */
+    "fl-center": () => [
+        cssprop("align-items", "center"),
+        cssprop("justify-content", "center"),
+    ],
+    /*md
+    ## fl-cr-a[align]
+    Shorthand for `align-items`\\
+    Aligns flex items along the cross axis
+    */
+    "fl-cr-a": simple("align-items"),
+    /*md
+    ## fl-dir[direction]
+    Shorthand for `flex-direction`
+    */
+    "fl-dir": simple("flex-direction"),
+    /*md
+    ## fl-m-a[align]
+    Shorthand for `justify-content`\\
+    Aligns flex items along the main axis
+    */
+    "fl-m-a": simple("justify-content"),
     /*md
 	## font[family]
 	Shorthand for `font-family`
@@ -333,6 +363,11 @@ const windFuncs = {
 	Shorthand for `box-shadow`
 	*/
 	"shdw": simple("box-shadow"),
+    /*md
+	## t-a[style]
+	Shorthand for `word-break`
+	*/
+	"t-a": simple("text-align"),
     /*md
 	## t-br[style]
 	Shorthand for `word-break`
