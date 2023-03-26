@@ -1,9 +1,14 @@
-const style = document.createElement("style")
 const head = document.head
+const baselineStyle = document.createElement("style")
+const style = document.createElement("style")
 
+head.appendChild(baselineStyle)
 head.appendChild(style)
 
-const sheet = style.sheet
+baselineStyle.setAttribute("ws-baseline", "")
+style.setAttribute("ws-calculated", "")
+
+const sheet = baselineStyle.sheet
 
 sheet.insertRule(
     `@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap");`,
