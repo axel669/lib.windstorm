@@ -2,7 +2,10 @@ const cssvalue = (value) =>
     (value.startsWith("&") === true)
         ? `var(--${value.slice(1)})`
         : value
-const cssprop = (name, value) => `${name}: ${cssvalue(value)}`
+const cssprop = (name, value) =>
+    (value === undefined)
+    ? ""
+    : `${name}: ${cssvalue(value)}`
 const simple = (name) =>
     (value) => [cssprop(name, value)]
 const multi = (...names) =>
@@ -384,6 +387,11 @@ const windFuncs = {
 	*/
 	"t-deco": simple("text-decoration"),
     /*md
+	## t-lh[height]
+	Shorthand for `line-height`
+	*/
+    "t-lh": simple("line-height"),
+    /*md
 	## t-over[style]
 	Shorthand for `text-overflow`
 	*/
@@ -398,6 +406,11 @@ const windFuncs = {
 	Shorthand for `text-transform`
 	*/
 	"t-tr": simple("text-transform"),
+    /*md
+	## t-wght[weight]
+	Shorthand for `white-space`
+	*/
+	"t-wght": simple("font-weight"),
     /*md
 	## t-ws[style]
 	Shorthand for `white-space`
@@ -484,9 +497,13 @@ const windFuncs = {
     */
     "@fill": () => [
         cssprop("--ripple-color", `var(--ripple-dark) !important`),
+        cssprop("--text-color", "&text-color-fill"),
         cssprop("background-color", "&color"),
         cssprop("color", "&text-color-fill"),
     ],
+    "@left": (width) => [cssprop("--screen-width", width)],
+    "@center": (width) => [cssprop("--screen-width", width)],
+    "@stack": (stack) => [cssprop("--stack", stack)],
 }
 
 export { cssprop, simple, multi }
