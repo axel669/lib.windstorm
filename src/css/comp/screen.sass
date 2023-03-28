@@ -1,0 +1,28 @@
+ws-screen
+    --stack: 0
+    --screen-width: min(720px, 100%)
+
+    display: grid
+    width: calc(100% - var(--sub-pixel-offset))
+    height: calc(100% - 1px)
+    overflow: hidden
+    position: absolute
+    background-color: rgba(0, 0, 0, 0.5)
+    grid-template-columns: auto calc(var(--screen-width) - calc(16px * var(--stack))) auto
+
+    grid-template-rows: min-content auto min-content
+    grid-template-areas: ". title ." ". content ." ". footer ."
+
+    padding-top: calc(8px * var(--stack))
+
+    &[ws-x^="@left"]
+        grid-template-columns: calc(8px * var(--stack)) calc(var(--screen-width) - calc(16px * var(--stack))) auto
+
+    & > [ws-x~="$content"]
+        grid-area: content
+        height: 100%
+        overflow: hidden
+    & > [ws-x~="$title"]
+        grid-area: title
+    & > [ws-x~="$footer"]
+        grid-area: footer
