@@ -1,0 +1,22 @@
+ws-badge
+    --color: var(--primary)
+
+    position: relative
+    display: inline-grid
+    overflow: visible
+
+    &::after
+        position: absolute
+        content: attr(ws-text)
+        left: 100%
+        top: 0px
+        transform: translate(-50%, -50%)
+        background-color: var(--color)
+        pointer-events: none
+        border-radius: 20px
+        padding: 4px
+        min-width: 20px
+        min-height: 20px
+        box-sizing: border-box
+        text-align: center
+        font-size: var(--text-size-subtitle)
