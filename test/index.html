@@ -1,12 +1,14 @@
 <!doctype html>
-<html>
+<html lang="en-us">
     <head>
+        <meta charset="utf8" />
         <title>Windstorm</title>
-        <meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width">
+        <meta name="viewport" content="initial-scale=1,maximum-scale=5,minimum-scale=1,width=device-width">
     </head>
-    <body ws-theme="tron">
+    <body ws-theme="tron" ws-x="@app">
+        <script src="windstorm.js"></script>
         <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-        <ws-grid ws-x="w[300px] gr-col[1fr_1fr_1fr]">
+        <!-- <ws-grid ws-x="w[300px] gr-col[1fr_1fr_1fr]">
             <button ws-x="@fill $color[warning]">Light</button>
             <button ws-x="@fill $color[primary]">Dark</button>
             <button ws-x="@fill $color[secondary]">Tron</button>
@@ -21,14 +23,23 @@
                     )
                 )
             }
-        </script>
+        </script> -->
 
-        <span class="fa-solid fa-check"></span>
+        <!-- <span class="fa-solid fa-check"></span>
 
-        <ws-flex ws-x="w[300px]">
+        <ws-avatar>
+            <img src="https://i.pinimg.com/736x/cb/3c/07/cb3c07708ff2958350bfb6e22aec44f4.jpg" />
+        </ws-avatar>
+
+        <ws-flex ws-x="w[300px] over[visible]">
+            <ws-tooltip ws-text="blep">
+                <ws-badge ws-text="+5">
+                    Content?
+                </ws-badge>
+            </ws-tooltip>
+
             <label ws-x="@progress @outline $color[primary]">
                 <div ws-x="$lbl-text">Progress</div>
-                <!-- <progress value="0.1" ws-x="$color[primary]"></progress> -->
                 <progress value="0.1"></progress>
             </label>
             <label ws-x="@progress $row $color[secondary]">
@@ -41,46 +52,78 @@
             </label>
         </ws-flex>
 
+        <div data-name="demo"></div> -->
+
         <script type="module">
-            import "./windstorm.mjs"
-            import {
-                createSignal,
-                onCleanup,
-                lazy,
-            } from "https://cdn.skypack.dev/solid-js"
-            import { render } from "https://cdn.skypack.dev/solid-js/web"
-            import html from "https://cdn.skypack.dev/solid-js/html"
+            import { html, render, useState } from "https://esm.sh/htm/preact/standalone"
+
+            const root = document.querySelector("div[data-name='demo']")
 
             window.html = html
-            window.createSignal = createSignal
+            window.useState = useState
 
             const initial = location.hash.slice(1).trim()
-            const first = await (async () => {
-                try {
-                    return await import(`./comp/${initial}.mjs`)
-                }
-                catch (err) {
-                    return null
-                }
-            })()
+            const component = await import(`./comp/${initial}.mjs`)
+            const example = component.default
             const App = () => {
-                const [example, setExample] = createSignal(first.default)
-
                 return html`
-                    <div ws-x="grid[] gr-col[1fr_1fr] w[640px]">
-                        <div ws-theme="tron">
-                            <${example} />
-                        </div>
-                        <div ws-theme="dark">
-                            <${example} />
-                        </div>
-                        <div ws-theme="light">
-                            <${example} />
-                        </div>
-                    </div>
+                    <ws-screen ws-x="@left">
+                        <ws-titlebar ws-x="@fill $title $color[primary]">
+                            <button ws-x="@flat $menu">
+                                <ws-icon class="fa-hamburger" />
+                            </button>
+                            <ws-flex ws-x="$title fl-m-a[center] p[8px]">
+                                <div ws-x="$title-text">Title</div>
+                                <div ws-x="$subtitle">Nope</div>
+                            </ws-flex>
+                        </ws-titlebar>
+                        <ws-paper ws-x="$content">
+                            <ws-flex ws-x="over[auto]">
+                                <div ws-theme="tron">
+                                    <${example} />
+                                </div>
+                                <div ws-theme="dark">
+                                    <${example} />
+                                </div>
+                                <div ws-theme="light">
+                                    <${example} />
+                                </div>
+
+                                <ws-avatar>
+                                    <img src="https://i.pinimg.com/736x/cb/3c/07/cb3c07708ff2958350bfb6e22aec44f4.jpg" />
+                                </ws-avatar>
+
+                                <ws-flex ws-x="w[300px] over[visible]">
+                                    <ws-tooltip ws-text="blep">
+                                        <ws-badge ws-text="+5">
+                                            Content?
+                                        </ws-badge>
+                                    </ws-tooltip>
+
+                                    <label ws-x="@progress @outline $color[primary]">
+                                        <div ws-x="$lbl-text">Progress</div>
+                                        <progress value="0.1"></progress>
+                                    </label>
+                                    <label ws-x="@progress $row $color[secondary]">
+                                        <div ws-x="$lbl-text">Progress</div>
+                                        <progress value="0.3"></progress>
+                                    </label>
+                                    <label ws-x="@progress $color[warning]">
+                                        <div ws-x="$lbl-text">Progress</div>
+                                        <progress value="0.2"></progress>
+                                    </label>
+                                    <label ws-x="@ctrl $color[warning]">
+                                        <div ws-x="$lbl-text">Please Work</div>
+                                        <input type="text" />
+                                    </label>
+                                </ws-flex>
+                            </ws-flex>
+                        </ws-paper>
+                    </ws-screen>
                 `
             }
-            render(App, document.body)
+
+            render(html`<${App} />`, document.body)
         </script>
     </body>
 </html>

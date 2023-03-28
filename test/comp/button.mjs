@@ -1,10 +1,8 @@
 export default () => {
-    const [count, setCount] = createSignal(0)
-    const inc = () => setCount(count() + 1)
+    const [count, set] = useState(0)
+    const inc = () => set(count + 1)
     return html`
-        <div
-        ws-x="grid gr-col[repeat(3,1fr)] p[4px] gap[4px] w[480px]"
-        onClick=${inc}>
+        <ws-grid ws-x="gr-col[repeat(3,1fr)] p[4px] gap[4px]">
             <button ws-x="@flat $color[primary] r[12px]">Primary</button>
             <button ws-x="@outline $color[primary] r[12px]">Primary</button>
             <button ws-x="@fill $color[primary]">Primary</button>
@@ -21,9 +19,15 @@ export default () => {
             <button ws-x="@outline $color[warning]">Warning</button>
             <button ws-x="@fill $color[warning]">Warning</button>
 
-            <div ws-x="col[span 3] bd[1px solid] p[4px]">
-                Click Count: ${count}
-            </div>
-        </div>
+            <button ws-x="@flat $color[accent]">Warning</button>
+            <button ws-x="@outline $color[accent]">Warning</button>
+            <button ws-x="@fill $color[accent]">Warning</button>
+
+            <ws-badge ws-text="${count}" ws-x="$color[secondary]">
+                <button ws-x="@fill $color[primary]" onClick=${inc}>
+                    Blep
+                </button>
+            </ws-badge>
+        </ws-grid>
     `
 }
