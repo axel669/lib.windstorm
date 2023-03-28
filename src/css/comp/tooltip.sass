@@ -1,10 +1,11 @@
 ws-tooltip
     position: relative
     display: inline-grid
+    overflow: visible
 
     &::after
         position: absolute
-        content: attr(ws-tip)
+        content: attr(ws-text)
         left: 50%
         bottom: calc(100% + 2px)
         transform: translateX(-50%)
@@ -16,6 +17,11 @@ ws-tooltip
         border-radius: 4px
         border: 1px solid var(--text-color-secondary)
         padding: 2px 8px
+        font-size: var(--text-size-subtitle)
 
     &:hover::after
         opacity: 1
+
+    &[ws-x~="$bottom"]
+        bottom: unset
+        top: calc(100% + 2px)
