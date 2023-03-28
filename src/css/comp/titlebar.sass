@@ -1,0 +1,21 @@
+ws-titlebar
+    --text-color: var(--text-color-normal)
+
+    display: grid
+    height: 48px
+    grid-template-columns: min-content auto min-content
+    grid-template-areas: "menu title action"
+
+    & > [ws-x~="$title"]
+        grid-area: title
+        & > [ws-x~="$title-text"]
+            font-size: var(--text-size-title)
+            font-weight: 700
+        & > [ws-x~="$subtitle"]
+            font-size: var(--text-size-subtitle)
+    & > [ws-x~="$menu"]
+        grid-area: menu
+        --text-color-normal: var(--text-color)
+    & > [ws-x~="$action"]
+        grid-area: action
+        --text-color-normal: var(--text-color)
