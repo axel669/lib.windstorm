@@ -7,15 +7,22 @@ ws-paper
     overflow: hidden
     grid-template-columns: 1fr
     grid-template-rows: min-content auto min-content
-    grid-template-areas: "title" "content" "footer"
+    grid-template-areas: "header" "content" "footer"
     background-color: var(--background-layer)
+
+    &::before
+        content: ""
+        grid-area: header
+    &::after
+        content: ""
+        grid-area: footer
 
     &[ws-x]
         border-color: var(--color)
 
     & > [ws-x~="$content"]
         grid-area: content
-    & > [ws-x~="$title"]
-        grid-area: title
+    & > [ws-x~="$header"]
+        grid-area: header
     & > [ws-x~="$footer"]
         grid-area: footer
