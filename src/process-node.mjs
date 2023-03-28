@@ -1,32 +1,30 @@
 import parseWind from "./parse.mjs"
 import windFuncs from "./wind-funcs.mjs"
-import { head, style } from "./baseline.mjs"
-
-console.log("wat", import.meta.url)
+import { style } from "./baseline.mjs"
 
 const sheet = style.sheet
 const styles = {}
-const labelMods = [
-    "@ctrl",
-    "@t-ctrl",
-    "@progress"
-]
-const checkComponentFunc = (info) => {
-    if (info.name.startsWith("@") === false) {
-        return
-    }
-    const tag = info.node.tagName.toLowerCase()
-    if (tag === "label" && labelMods.includes(info.name) === true) {
-        attachStyle(`comp/${info.name.slice(1)}`)
-        return
-    }
-    attachStyle("comp/button")
-}
+// const labelMods = [
+//     "@ctrl",
+//     "@t-ctrl",
+//     "@progress"
+// ]
+// const checkComponentFunc = (info) => {
+//     if (info.name.startsWith("@") === false) {
+//         return
+//     }
+//     const tag = info.node.tagName.toLowerCase()
+//     if (tag === "label" && labelMods.includes(info.name) === true) {
+//         attachStyle(`comp/${info.name.slice(1)}`)
+//         return
+//     }
+//     attachStyle("comp/button")
+// }
 const checkClass = (info) => {
     if (info === null) {
         return
     }
-    checkComponentFunc(info)
+    // checkComponentFunc(info)
     if (styles[info.key] !== undefined || windFuncs[info.name] === undefined) {
         return
     }
@@ -40,39 +38,38 @@ const checkClass = (info) => {
     styles[info.key] = sheet.cssRules[sheet.cssRules.length - 1]
 }
 
-const componentStyle = {}
-const link = document.createElement("link")
-const attachStyle = (name) => {
-    if (componentStyle[name] !== undefined) {
-        return
-    }
+// const componentStyle = {}
+// const link = document.createElement("link")
+// const attachStyle = (name) => {
+//     if (componentStyle[name] !== undefined) {
+//         return
+//     }
 
-    const newStyle = link.cloneNode()
-    newStyle.href = `${name}.css`
-    newStyle.rel = "stylesheet"
-    componentStyle[name] = newStyle
-    head.insertBefore(newStyle, style)
-    console.log(componentStyle)
-}
-const checkTheme = (node) => {
-    const theme = node.getAttribute("ws-theme")
-    if (theme === null) {
-        return
-    }
+//     const newStyle = link.cloneNode()
+//     newStyle.href = `${name}.css`
+//     newStyle.rel = "stylesheet"
+//     componentStyle[name] = newStyle
+//     head.insertBefore(newStyle, style)
+// }
+// const checkTheme = (node) => {
+//     const theme = node.getAttribute("ws-theme")
+//     if (theme === null) {
+//         return
+//     }
 
-    attachStyle(`theme/${theme}`)
-}
-const checkComponent = (node) => {
-    const tag = node.tagName.toLowerCase()
-    if (tag.startsWith("ws-") === false) {
-        return
-    }
+//     attachStyle(`theme/${theme}`)
+// }
+// const checkComponent = (node) => {
+//     const tag = node.tagName.toLowerCase()
+//     if (tag.startsWith("ws-") === false) {
+//         return
+//     }
 
-    attachStyle(`comp/${tag.slice(3)}`)
-}
+//     attachStyle(`comp/${tag.slice(3)}`)
+// }
 const processNode = (node) => {
-    checkTheme(node)
-    checkComponent(node)
+    // checkTheme(node)
+    // checkComponent(node)
     const storm = node.getAttribute("ws-x")
     if (storm === null) {
         return
