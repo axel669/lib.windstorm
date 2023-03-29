@@ -1,0 +1,19 @@
+ws-chip
+    --text-color-normal: var(--text-color-fill)
+
+    position: relative
+    display: inline-grid
+    grid-template-columns: min-content auto
+    grid-template-areas: "action label"
+    overflow: hidden
+    background-color: var(--color)
+    color: var(--text-color-fill)
+    border-radius: 100px
+    padding-right: 8px
+    user-select: none
+    height: 24px
+
+    & > [ws-x~="$label"]
+        grid-area: label
+    & > [ws-x~="$action"]
+        grid-area: action
