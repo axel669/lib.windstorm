@@ -1,5 +1,5 @@
 ws-paper
-    --color: var(--text-normal-color)
+    --color: var(--layer-border-color)
 
     display: grid
     border-radius: 4px
@@ -17,8 +17,8 @@ ws-paper
         content: ""
         grid-area: footer
 
-    &[ws-x]
-        border-color: var(--color)
+    // &[ws-x]
+    //     border-color: var(--color)
 
     & > [ws-x~="$content"]
         grid-area: content
