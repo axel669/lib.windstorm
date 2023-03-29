@@ -474,6 +474,7 @@ const windFuncs = {
         cssprop("justify-content", "center"),
         cssprop("align-items", "center"),
     ],
+    "$compact": () => [cssprop("padding", "0px 8px")],
     /*md
     ## @flat
     Component style that removes borders
