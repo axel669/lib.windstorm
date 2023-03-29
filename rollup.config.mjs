@@ -12,9 +12,6 @@ const componentList = {
         return id
     },
     load(id) {
-        // if (id.endsWith(".sass") === false) {
-        //     return
-        // }
         if (id !== "$$css") {
             return
         }
@@ -28,30 +25,10 @@ const componentList = {
             styles.push(
                 minify(sassc.compile(file).css).css
             )
-            // this.emitFile({
-            //     type: "asset",
-            //     fileName: `${file.slice(8, -4)}css`,
-            //     // source: sassc.compile(file).css
-            //     source: minify(sassc.compile(file).css).css
-            // })
         }
 
         return `export default ${JSON.stringify(styles)}`
     },
-    // buildEnd() {
-    //     const files = fs.find(
-    //         "src",
-    //         { matching: ["**/*.sass", "!**/$*"] }
-    //     )
-    //     for (const file of files) {
-    //         this.emitFile({
-    //             type: "asset",
-    //             fileName: `${file.slice(8, -4)}css`,
-    //             // source: sassc.compile(file).css
-    //             source: minify(sassc.compile(file).css).css
-    //         })
-    //     }
-    // }
 }
 
 export default {
