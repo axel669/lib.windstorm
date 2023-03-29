@@ -1,6 +1,7 @@
-button[ws-x*="@flat"],
-button[ws-x*="@fill"],
-button[ws-x*="@outline"]
+button[ws-x~="@flat"],
+button[ws-x~="@fill"],
+button[ws-x~="@outline"],
+label[ws-x~="@button"]
     --color: var(--text-color-normal)
     --ripple-color: var(--ripple-normal)
 
@@ -13,8 +14,11 @@ button[ws-x*="@outline"]
     background-color: transparent
     border-radius: 4px
     cursor: pointer
-    padding: 8px
+    padding: 8px 16px
     overflow: hidden
     user-select: none
+    display: inline-flex
+    align-items: center
+    justify-content: center
 
     @import "../$clickable"
