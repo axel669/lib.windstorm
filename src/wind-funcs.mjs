@@ -174,12 +174,12 @@ const windFuncs = {
     ## hide
     Hides the element by setting `display: none`
     */
-    "hide": () => cssprop("display", "none"),
+    "hide": () => [cssprop("display", "none")],
     /*md
     ## block
     Sets `display: inline-block`
     */
-    "iblock": () => cssprop("display", "inline-block"),
+    "iblock": () => [cssprop("display", "inline-block")],
     /*md
     ## iflex[direction = "column"]
     Sets `display: inline-flex` and sets the `flex-direction`. Default direction
