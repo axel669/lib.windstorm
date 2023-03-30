@@ -1,3 +1,5 @@
+import path from "node:path"
+
 import { minify } from "csso"
 import fs from "fs-jetpack"
 import del from "rollup-plugin-delete"
@@ -22,9 +24,11 @@ const componentList = {
         )
         const styles = []
         for (const file of files) {
-            styles.push(
-                minify(sassc.compile(file).css).css
-            )
+            styles.push({
+                name: path.basename(file, path.extname(file)),
+                // style: minify(sassc.compile(file).css).css,
+                style: sassc.compile(file).css,
+            })
         }
 
         return `export default ${JSON.stringify(styles)}`
