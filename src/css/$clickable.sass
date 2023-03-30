@@ -2,7 +2,7 @@
     overflow: hidden
     position: relative
     user-select: none
-    &::after
+    &:where(:not([disabled]))::after
         content: ""
         position: absolute
         top: 0px
@@ -11,6 +11,6 @@
         right: 0px
         transition: background-color 150ms linear
         pointer-events: none
-    &:active::after
+    &:where(:not([disabled])):active::after
         transition: none
         background-color: var(--ripple-color)
