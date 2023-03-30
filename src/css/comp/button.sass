@@ -1,7 +1,5 @@
-button[ws-x~="@flat"],
-button[ws-x~="@fill"],
-button[ws-x~="@outline"],
-label[ws-x~="@button"]
+button:where([ws-x~="@flat"], [ws-x~="@fill"], [ws-x~="@outline"]),
+label:where([ws-x~="@button"])
     --color: var(--text-color-normal)
     --ripple-color: var(--ripple-normal)
 
@@ -22,3 +20,7 @@ label[ws-x~="@button"]
     justify-content: center
 
     @import "../$clickable"
+
+    &:where([disabled])
+        opacity: 0.6
+        background-color: rgba(200, 200, 200, 0.4)
