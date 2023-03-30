@@ -447,6 +447,16 @@ const windFuncs = {
 	*/
 	"y": simple("top"),
     /*md
+	## -x[distance]
+	Shorthand for `right`
+	*/
+	"-x": simple("right"),
+    /*md
+	## -y[distance]
+	Shorthand for `bottom`
+	*/
+	"-y": simple("bottom"),
+    /*md
 	## z[index]
 	Shorthand for `z-index`
 	*/
