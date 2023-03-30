@@ -517,5 +517,20 @@ const windFuncs = {
     "@stack": (stack) => [cssprop("--stack", stack)],
 }
 
-export { cssprop, simple, multi }
+const wsx = (obj) =>
+    Object.entries(obj)
+    .reduce(
+        (list, [key, value]) => {
+            if (value === null || value === undefined || value === false) {
+                return list
+            }
+            const part = (value === true) ? key : `${key}[${value}]`
+            list.push(part)
+            return list
+        },
+        []
+    )
+    .join(" ")
+
+export { cssprop, simple, multi, wsx }
 export default windFuncs
