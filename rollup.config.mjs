@@ -39,12 +39,12 @@ export default {
     input: "src/main.mjs",
     output: [
         {
-            file: "dist/windstorm.js",
+            file: "dist/browser.js",
             format: "iife",
             name: "windstorm"
         },
         {
-            file: "dist/windstorm.mjs",
+            file: "dist/module.mjs",
             format: "esm",
         },
     ],
