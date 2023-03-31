@@ -1,3 +1,29 @@
+/*md
+    [@] Components/Button
+    # Button
+
+    Basic clickable component for handling user interaction.
+
+    There are two ways to display buttons:
+    - using the `ws-x` attribute on a `button` element
+    - adding the `@button` wind function to a `label` element
+
+    ## Wind Functions
+    - ### @flat/@outline/@fill `required`
+        Sets the style for the button.
+        - flat has no border or fill color
+        - outline has a border but no fill
+        - fill uses the $color given to fill the button and inverts the text
+            color
+    - ### $color[colorName]
+        Sets the button color
+
+    ## Preview
+    [^] index.html#button
+
+    ## Code Example
+    [$] button.html
+
 button:where([ws-x~="@flat"], [ws-x~="@fill"], [ws-x~="@outline"]),
 label:where([ws-x~="@button"])
     --color: var(--text-color-normal)
