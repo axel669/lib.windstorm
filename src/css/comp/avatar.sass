@@ -1,3 +1,22 @@
+/*md
+    [@] Components/Avatar
+    # Avatar
+
+    Displays an image or text in a circular container
+
+    ## Example
+    ```html
+    <ws-avatar>
+        <img src="image.png" />
+    </ws-avatar>
+    ```
+
+    ## Preview
+    [^] index.html#avatar
+
+    ## Code Example
+    [$] avatar.html
+
 ws-avatar
     --color: transparent
     --size: 36px
@@ -10,7 +29,8 @@ ws-avatar
     width: var(--size)
     height: var(--size)
     background-color: var(--color)
-    color: var(--text-color-normal)
+    color: var(--text-color-fill)
+    vertical-align: text-bottom
 
     & > img
         width: 100%
