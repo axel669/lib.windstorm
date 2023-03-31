@@ -5,17 +5,25 @@ ws-titlebar
     height: 48px
     grid-template-columns: min-content auto min-content
     grid-template-areas: "menu title action"
+    user-select: none
 
-    & > [ws-x~="$title"]
+    &:where(:not([ws-x~="@fill"]))
+        border-bottom: 2px solid var(--color, var(--text-color-normal))
+
+    & > :where([ws-x~="$title"])
         grid-area: title
-        & > [ws-x~="$title-text"]
+        display: flex
+        flex-direction: column
+        justify-content: center
+        padding: 4px
+        & > [ws-x~="$title-text"], &[ws-x~="$title-text"]
             font-size: var(--text-size-title)
             font-weight: 700
-        & > [ws-x~="$subtitle"]
+        & > [ws-x~="$subtitle"], &[ws-x~="$subtitle"]
             font-size: var(--text-size-subtitle)
-    & > [ws-x~="$menu"]
+    & > :where([ws-x~="$menu"])
         grid-area: menu
         --text-color-normal: var(--text-color)
-    & > [ws-x~="$action"]
+    & > :where([ws-x~="$action"])
         grid-area: action
         --text-color-normal: var(--text-color)
