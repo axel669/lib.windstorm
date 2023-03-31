@@ -1,24 +1,14 @@
-const cssvalue = (value) =>
-    (value.startsWith("&") === true)
-        ? `var(--${value.slice(1)})`
-        : value
-const cssprop = (name, value) =>
-    (value === undefined)
-    ? ""
-    : `${name}: ${cssvalue(value)}`
-const simple = (name) =>
-    (value) => [cssprop(name, value)]
-const multi = (...names) =>
-    (value) => names.map(
-        (name) => cssprop(name, value)
-    )
+import { cssprop, simple, multi } from "./css-funcs.mjs"
+
 /*md
+[@] CSS Shorthands
+
 # Wind Shorthands
 Windstorm provides a number of shorthands for common css. The arguments allow
 css as is (no special formatting required) ex: `w[min(100px, 50%)]`. It also
 allows a shorthand for arguments that are just variables:
-> `h[&height]` -> `h[var(--height)]`
-> `bd[1px solid &border]` will not become `bd[1px solid var(--border)]`
+> `h[&height]` -> `h[var(--height)]`\\
+> `bd[1px solid &border]` will not become `bd[1px solid var(--border)]`\\
 > (might be able to allow the second on in the future)
 */
 
@@ -467,7 +457,7 @@ const windFuncs = {
     component.\\
     The function only accepts color names and uses that name to fill
     in the corresponding color variable and ripple color variable.
-    > works: `$color[primary]`
+    > works: `$color[primary]`\\
     > doesn't work: `$color[&primary]`
     */
     "$color": (color) => [
@@ -517,20 +507,4 @@ const windFuncs = {
     "@stack": (stack) => [cssprop("--stack", stack)],
 }
 
-const wsx = (obj) =>
-    Object.entries(obj)
-    .reduce(
-        (list, [key, value]) => {
-            if (value === null || value === undefined || value === false) {
-                return list
-            }
-            const part = (value === true) ? key : `${key}[${value}]`
-            list.push(part)
-            return list
-        },
-        []
-    )
-    .join(" ")
-
-export { cssprop, simple, multi, wsx }
 export default windFuncs
