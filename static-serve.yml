@@ -1,4 +1,6 @@
 port: 1339
 sources:
-- dir: "test"
 - dir: dist
+- dir: "test"
+- route: /docs
+  dir: site
