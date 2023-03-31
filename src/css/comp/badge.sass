@@ -1,3 +1,27 @@
+/*md
+    [@] Components/Badge
+    # Badge
+
+    Adds a small badge in the upper-right corner of some content.\\
+    Reads the text from the `ws-text` attribute.
+
+    ## Wind Functions
+    - ### $color
+        Fills the badge with the given color
+
+    ## Example
+    ```html
+    <ws-badge ws-text="hi">
+        Some content
+    </ws-badge>
+    ```
+
+    ## Preview
+    [^] index.html#badge
+
+    ## Code Example
+    [$] badge.html
+
 ws-badge
     --color: var(--primary)
 
@@ -8,16 +32,18 @@ ws-badge
     &::after
         position: absolute
         content: attr(ws-text)
-        left: 100%
+        right: -10px
         top: 0px
-        transform: translate(-50%, -50%)
+        transform: translateY(-50%)
         background-color: var(--color)
         pointer-events: none
         border-radius: 20px
         padding: 4px
         min-width: 20px
-        min-height: 20px
+        height: 20px
         box-sizing: border-box
         text-align: center
         font-size: var(--text-size-subtitle)
         color: var(--text-color-fill)
+        line-height: 14px
+        z-index: 5
