@@ -102,6 +102,11 @@ const windFuncs = {
     */
     "fl-dir": simple("flex-direction"),
     /*md
+    ## fl-wr[wrapType]
+    Shorthand for `flex-wrap`
+    */
+    "fl-wr": simple("flex-wrap"),
+    /*md
     ## fl-m-a[align]
     Shorthand for `justify-content`\\
     Aligns flex items along the main axis
@@ -473,6 +478,7 @@ const windFuncs = {
         cssprop("display", "flex"),
         cssprop("justify-content", "center"),
         cssprop("align-items", "center"),
+        cssprop("padding", "2px"),
     ],
     "$compact": () => [cssprop("padding", "0px 8px")],
     /*md
