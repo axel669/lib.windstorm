@@ -64,6 +64,11 @@ const windFuncs = {
     */
     "block": () => cssprop("display", "block"),
     /*md
+	## c[color]
+	Shorthand for `color`
+	*/
+	"c": simple("color"),
+    /*md
 	## col[column]
 	Shorthand for `grid-column`
 	*/
@@ -150,6 +155,11 @@ const windFuncs = {
 	Shorthand for `grid-auto-row`
 	*/
 	"gr-arow": simple("grid-auto-row"),
+    /*md
+	## gr-flow[flow]
+	Shorthand for `grid-auto-flow`
+	*/
+	"gr-flow": simple("grid-auto-flow"),
     /*md
 	## h[size]
 	Shorthand for `height`
