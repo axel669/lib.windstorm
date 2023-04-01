@@ -15,8 +15,11 @@
 ws-icon
     display: inline-block
 
+    &:where(:not(:empty))::before
+        margin-right: 2px
+
     &::before
-        font-size: 16px
+        font-size: 18px
         font-family: tabler-icons!important
         speak: none
         font-style: normal
