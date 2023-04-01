@@ -6,37 +6,25 @@
     info and optionally allows interaction.
 
     ## Wind Functions
-    - ### $color
-        Fills the chip with the given color
+    - one of @outline/@fill `required`
+    - $color `required`
+    - $click
 
-    ## Example
-    ```html
-    <ws-chip>
-        <button ws-x="$action">
-            Remove
-        </button>
-        <div ws-x="$label">
-            Search Filter i dunno
-        </div>
-    </ws-chip>
-    ```
+    ## Preview
+    [^] index.html#chip
+
+    ## Code Example
+    [$] chip.html
 
 ws-chip
-    --text-color-normal: var(--text-color-fill)
-
-    position: relative
-    display: inline-grid
-    grid-template-columns: min-content auto
-    grid-template-areas: "action label"
-    overflow: hidden
-    background-color: var(--color)
-    color: var(--text-color-fill)
+    display: inline-flex
+    align-items: center
+    justify-content: center
     border-radius: 100px
-    padding-right: 8px
+    padding: 4px 12px
     user-select: none
-    height: 24px
+    vertical-align: text-bottom
 
-    & > [ws-x~="$label"]
-        grid-area: label
-    & > [ws-x~="$action"]
-        grid-area: action
+    &:where([ws-x~="$click"])
+        cursor: pointer
+        @import "../$clickable"
