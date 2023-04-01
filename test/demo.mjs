@@ -37,8 +37,7 @@ const App = () => {
                 <ws-tabs onClick=${changeTheme} ws-x="$header">
                     ${tabs}
                 </ws-tabs>
-                <ws-flex ws-x="$content over[auto]">
-                    <div ws-x="p[4px]" innerHTML=${example}></div>
+                <ws-flex ws-x="$content over-x[auto]" innerHTML=${example}>
                 </ws-flex>
             </ws-paper>
 
