@@ -1,14 +1,14 @@
 {
   "name": "lib.windstorm",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/module.mjs",
   "scripts": {
     "build": "rollup -c"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@axel669/ipsen": "^0.3.0",
     "@rollup/plugin-terser": "^0.4.0",
@@ -18,5 +18,8 @@
     "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-sass": "^1.12.19",
     "sass": "^1.59.3"
-  }
+  },
+  "files": [
+    "dist"
+  ]
 }
