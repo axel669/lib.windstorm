@@ -9,6 +9,8 @@ Windstorm is a library that allows element customization without needing to
 use css directly and without predefining hundreds or thousands of css classes
 with minor differences between a set of 20.
 
+[Docs Here](https://axel669.github.io/lib.windstorm/)
+
 ## Installation
 
 ### CDN Link (global variable)
@@ -18,6 +20,9 @@ with minor differences between a set of 20.
 
 ### CDN Link (module)
 ```js
+// Only scanning, no functions
+import "https://esm.run/npm/@axel669/windstorm/dist/module.js"
+// Import functions + scanning
 import { wsx } from "https://esm.run/npm/@axel669/windstorm/dist/module.js"
 ```
 
