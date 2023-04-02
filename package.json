@@ -1,5 +1,5 @@
 {
-  "name": "lib.windstorm",
+  "name": "@axel669/windstorm",
   "version": "0.1.0",
   "description": "",
   "main": "dist/module.mjs",
