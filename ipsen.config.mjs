@@ -16,7 +16,7 @@ export default {
     dest: {
         clear: true,
         dir: "site",
-        readme: ".",
+        readme: "..",
     },
     site: {
         index: "main.mjs",
