@@ -26,8 +26,8 @@ const componentList = {
         for (const file of files) {
             styles.push({
                 name: path.basename(file, path.extname(file)),
-                // style: minify(sassc.compile(file).css).css,
-                style: sassc.compile(file).css,
+                style: minify(sassc.compile(file).css).css,
+                // style: sassc.compile(file).css,
             })
         }
 
@@ -51,6 +51,6 @@ export default {
     plugins: [
         del({ targets: "dist/*" }),
         componentList,
-        // terser()
+        terser(),
     ]
 }
