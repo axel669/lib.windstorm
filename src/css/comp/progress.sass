@@ -1,3 +1,27 @@
+/*md
+    [@] Components/Progress Bar
+
+    # Progress Bar
+
+    The progress bar is a modified label element that changes how the label and
+    `progress` html element look.
+
+    To mark a label as a Progress Bar, add the `@progress` wind function.
+
+    ## Wind Functions
+    - @outline
+    - $color
+    - $row
+
+    ## Areas
+    - $text
+
+    ## Preview
+    [^] index.html#progress
+
+    ## Code Example
+    [$] progress.html
+
 label[ws-x~="@progress"]
     --color: var(--text-color-normal)
     --border-size: 0px
@@ -13,7 +37,7 @@ label[ws-x~="@progress"]
         grid-template-columns: min-content auto
         grid-template-rows: 1fr
 
-    & > [ws-x~="$lbl-text"]
+    & > [ws-x~="$text"]
         padding: 4px
         display: flex
         border-bottom: var(--border-size, 1px) solid var(--color)
