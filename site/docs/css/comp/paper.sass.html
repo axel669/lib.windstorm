@@ -1,0 +1,45 @@
+<h1 id="paper">Paper</h1>
+<p>Generic container component for making areas visually distinct from each
+other on the page.</p>
+<h2 id="wind-functions">Wind Functions</h2>
+<ul>
+<li>@outline</li>
+<li>$color</li>
+</ul>
+<h3 id="areas">Areas</h3>
+<ul>
+<li>$content <code>required</code></li>
+<li>$header</li>
+<li>$footer</li>
+</ul>
+<h2 id="preview">Preview</h2>
+<iframe src="./frames/index.html#paper"></iframe>
+<h2 id="code-example">Code Example</h2>
+<pre><code class="language-html">&lt;ws-paper&gt;
+    &lt;ws-flex ws-x=&quot;$content&quot;&gt;
+        Just some paper
+    &lt;/ws-flex&gt;
+&lt;/ws-paper&gt;
+
+&lt;ws-paper&gt;
+    &lt;ws-titlebar ws-x=&quot;$header&quot;&gt;
+        &lt;span ws-x=&quot;$title&quot;&gt;This one has a header&lt;/span&gt;
+    &lt;/ws-titlebar&gt;
+    &lt;ws-flex ws-x=&quot;$content&quot;&gt;
+        With some content \o/
+    &lt;/ws-flex&gt;
+&lt;/ws-paper&gt;
+
+&lt;ws-paper ws-x=&quot;@outline $color[secondary]&quot;&gt;
+    &lt;ws-titlebar ws-x=&quot;$header&quot;&gt;
+        &lt;span ws-x=&quot;$title&quot;&gt;Give them some color&lt;/span&gt;
+    &lt;/ws-titlebar&gt;
+    &lt;ws-flex ws-x=&quot;$content&quot;&gt;
+        And a border + some controls in the footer
+    &lt;/ws-flex&gt;
+    &lt;ws-grid ws-x=&quot;$footer gr-col[1fr_1fr]&quot;&gt;
+        &lt;button ws-x=&quot;@flat $color[danger]&quot;&gt;Cancel&lt;/button&gt;
+        &lt;button ws-x=&quot;@flat $color[secondary]&quot;&gt;Use Windstorm&lt;/button&gt;
+    &lt;/ws-grid&gt;
+&lt;/ws-paper&gt;
+</code></pre>

@@ -1,0 +1,42 @@
+<h1 id="titlebar">Titlebar</h1>
+<p>Displays a titlebar inside a screen or card (or anywhere really, but it
+looks pretty cool with those). Allows customization of the text and side
+controls.</p>
+<h2 id="wind-functions">Wind Functions</h2>
+<ul>
+<li>@fill</li>
+<li>$color</li>
+</ul>
+<h2 id="preview">Preview</h2>
+<iframe src="./frames/index.html#titlebar"></iframe>
+<h2 id="code-example">Code Example</h2>
+<pre><code class="language-html">&lt;ws-titlebar&gt;
+    &lt;span ws-x=&quot;$title&quot;&gt;
+        &lt;div ws-x=&quot;$title-text&quot;&gt;Basic Titlebar&lt;/div&gt;
+        &lt;div ws-x=&quot;$subtitle&quot;&gt;Subtitle&lt;/div&gt;
+    &lt;/span&gt;
+&lt;/ws-titlebar&gt;
+
+&lt;ws-titlebar ws-x=&quot;$color[primary]&quot;&gt;
+    &lt;span ws-x=&quot;$title $title-text&quot;&gt;Color Titlebar&lt;/span&gt;
+&lt;/ws-titlebar&gt;
+
+&lt;ws-titlebar ws-x=&quot;$color[danger]&quot;&gt;
+    &lt;span ws-x=&quot;$title $title-text&quot;&gt;Titlebar + controls&lt;/span&gt;
+
+    &lt;button ws-x=&quot;@flat $menu&quot;&gt;
+        &lt;ws-icon class=&quot;ti-menu-2&quot;&gt;&lt;/ws-icon&gt;
+    &lt;/button&gt;
+&lt;/ws-titlebar&gt;
+
+&lt;ws-titlebar ws-x=&quot;@fill $color[primary]&quot;&gt;
+    &lt;span ws-x=&quot;$title $title-text&quot;&gt;Filled Color Titlebar&lt;/span&gt;
+&lt;/ws-titlebar&gt;
+
+&lt;ws-titlebar ws-x=&quot;@fill $color[secondary]&quot;&gt;
+    &lt;span ws-x=&quot;$title $title-text&quot;&gt;Filled Titlebar + controls&lt;/span&gt;
+    &lt;button ws-x=&quot;@flat $action&quot;&gt;
+        &lt;ws-icon class=&quot;ti-logout&quot;&gt;&lt;/ws-icon&gt;
+    &lt;/button&gt;
+&lt;/ws-titlebar&gt;
+</code></pre>

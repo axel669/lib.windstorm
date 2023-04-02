@@ -1,0 +1,50 @@
+<h1 id="labled-control">Labled Control</h1>
+<p>The labeled control is a label that contains a text-style input (input that
+isn&#39;t checkbox or radio, textarea) or a select element and the text that
+make up the label.</p>
+<p>To mark a label as a labeled control, add the <code>@control</code> wind function.</p>
+<h2 id="wind-functions">Wind Functions</h2>
+<ul>
+<li>@flat</li>
+<li>$color</li>
+</ul>
+<h3 id="children-wind-functions">Children Wind Functions</h3>
+<ul>
+<li>$text<br>  sets the element with the text for the label</li>
+<li>$adorn<br>  adds an adornment to the input area, probably only looks good with
+  input elements that are typed text.</li>
+</ul>
+<h2 id="preview">Preview</h2>
+<iframe src="./frames/index.html#control"></iframe>
+<h2 id="code-example">Code Example</h2>
+<pre><code class="language-html">&lt;ws-grid ws-x=&quot;gr-col[1fr_1fr]&quot;&gt;
+    &lt;label ws-x=&quot;@control $color[primary]&quot;&gt;
+        &lt;span ws-x=&quot;$text&quot;&gt;OOP Language&lt;/span&gt;
+        &lt;input /&gt;
+    &lt;/label&gt;
+    &lt;label ws-x=&quot;@control&quot;&gt;
+        &lt;span ws-x=&quot;$text&quot;&gt;Cheese Picture&lt;/span&gt;
+        &lt;input type=&quot;file&quot; /&gt;
+    &lt;/label&gt;
+    &lt;label ws-x=&quot;@control $color[secondary]&quot;&gt;
+        &lt;span ws-x=&quot;$text&quot;&gt;Coolness Factor&lt;/span&gt;
+        &lt;input /&gt;
+        &lt;div ws-x=&quot;$adorn[start]&quot;&gt;
+            $
+        &lt;/div&gt;
+    &lt;/label&gt;
+    &lt;label ws-x=&quot;@control @flat $color[warning]&quot;&gt;
+        &lt;span ws-x=&quot;$text&quot;&gt;Mistakes in CS&lt;/span&gt;
+        &lt;select&gt;
+            &lt;option&gt;TypeScript&lt;/option&gt;
+            &lt;option&gt;Java&lt;/option&gt;
+            &lt;option&gt;Not teaching debugging&lt;/option&gt;
+        &lt;/select&gt;
+    &lt;/label&gt;
+
+    &lt;label ws-x=&quot;@control col[span_2] $color[danger]&quot;&gt;
+        &lt;div ws-x=&quot;$text&quot;&gt;TextArea&lt;/div&gt;
+        &lt;textarea ws-x=&quot;h[100px]&quot;&gt;&lt;/textarea&gt;
+    &lt;/label&gt;
+&lt;/ws-grid&gt;
+</code></pre>

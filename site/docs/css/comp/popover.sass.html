@@ -1,0 +1,30 @@
+<p>It&#39;s a popup thing that isn&#39;t a modal and is tied to some content for
+positioning. Position relative to the element is done using the normal
+position values (x, y, -x, -y, inset-x, inset-y).</p>
+<h2 id="wind-functions">Wind Functions</h2>
+<ul>
+<li>$show</li>
+</ul>
+<h2 id="areas">Areas</h2>
+<ul>
+<li>$content</li>
+</ul>
+<h2 id="preview">Preview</h2>
+<iframe src="./frames/index.html#popover"></iframe>
+<h2 id="code-example">Code Example</h2>
+<pre><code class="language-html">&lt;ws-popover&gt;
+    &lt;div ws-x=&quot;bd-w[1px] p[6px]&quot;&gt;
+        This is some stuff
+        &lt;label ws-x=&quot;@button @outline&quot; for=&quot;pop&quot;&gt;
+            Show Popover
+        &lt;/label&gt;
+    &lt;/div&gt;
+    &lt;input type=&quot;checkbox&quot; ws-x=&quot;hide&quot; id=&quot;pop&quot; /&gt;
+    &lt;div ws-x=&quot;$content inset-x[0px] y[0px] bg[teal] h[150%]&quot;&gt;
+        Popover Content
+        &lt;label ws-x=&quot;@button @outline&quot; for=&quot;pop&quot;&gt;
+            Close
+        &lt;/label&gt;
+    &lt;/div&gt;
+&lt;/ws-popover&gt;
+</code></pre>

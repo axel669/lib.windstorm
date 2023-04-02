@@ -1,0 +1,90 @@
+<h1 id="toaster">Toaster</h1>
+<p>The toaster element is for displaying short-lived popup notifications or
+information on the edges of the screen. It does not have any specific child
+elements that it formats, it instead allows for any kind of styled element
+to be used to display the messages (exmamples use the Notification component
+to show the locations).</p>
+<h2 id="wind-functions">Wind Functions</h2>
+<ul>
+<li>$tl - Top Left</li>
+<li>$tc - Top Center</li>
+<li>$tr - Top Right</li>
+<li>$ml - Middle Left</li>
+<li>$mr - Middle Right</li>
+<li>$bl - Bottom Left</li>
+<li>$bc - Bottom Center</li>
+<li>$br - Bottom Right</li>
+</ul>
+<h2 id="preview">Preview</h2>
+<iframe src="./frames/index.html#toaster"></iframe>
+<h2 id="code-example">Code Example</h2>
+<pre><code class="language-html">&lt;ws-toaster ws-x=&quot;$tm&quot;&gt;
+    &lt;ws-notification ws-x=&quot;$color[secondary]&quot;&gt;
+        &lt;ws-icon class=&quot;ti-trophy&quot;&gt;
+            Success!
+        &lt;/ws-icon&gt;
+    &lt;/ws-notification&gt;
+&lt;/ws-toaster&gt;
+&lt;ws-toaster ws-x=&quot;$tr&quot;&gt;
+    &lt;ws-notification ws-x=&quot;$color[secondary]&quot;&gt;
+        &lt;ws-icon class=&quot;ti-trophy&quot;&gt;
+            Success!
+        &lt;/ws-icon&gt;
+    &lt;/ws-notification&gt;
+&lt;/ws-toaster&gt;
+
+&lt;ws-toaster ws-x=&quot;$bl&quot;&gt;
+    &lt;ws-notification ws-x=&quot;$color[warning]&quot;&gt;
+        &lt;ws-icon class=&quot;ti-trophy&quot;&gt;
+            Almost Success!
+        &lt;/ws-icon&gt;
+    &lt;/ws-notification&gt;
+
+    &lt;ws-notification ws-x=&quot;$color[accent]&quot;&gt;
+        &lt;ws-icon class=&quot;ti-trophy&quot;&gt;
+            Information?
+        &lt;/ws-icon&gt;
+    &lt;/ws-notification&gt;
+&lt;/ws-toaster&gt;
+&lt;ws-toaster ws-x=&quot;$bm&quot;&gt;
+    &lt;ws-notification ws-x=&quot;$color[warning]&quot;&gt;
+        &lt;ws-icon class=&quot;ti-trophy&quot;&gt;
+            Almost Success!
+        &lt;/ws-icon&gt;
+    &lt;/ws-notification&gt;
+
+    &lt;ws-notification ws-x=&quot;$color[accent]&quot;&gt;
+        &lt;ws-icon class=&quot;ti-trophy&quot;&gt;
+            Information?
+        &lt;/ws-icon&gt;
+    &lt;/ws-notification&gt;
+&lt;/ws-toaster&gt;
+&lt;ws-toaster ws-x=&quot;$br&quot;&gt;
+    &lt;ws-notification ws-x=&quot;$color[warning]&quot;&gt;
+        &lt;ws-icon class=&quot;ti-trophy&quot;&gt;
+            Almost Success!
+        &lt;/ws-icon&gt;
+    &lt;/ws-notification&gt;
+
+    &lt;ws-notification ws-x=&quot;$color[accent]&quot;&gt;
+        &lt;ws-icon class=&quot;ti-trophy&quot;&gt;
+            Information?
+        &lt;/ws-icon&gt;
+    &lt;/ws-notification&gt;
+&lt;/ws-toaster&gt;
+
+&lt;ws-toaster ws-x=&quot;$ml&quot;&gt;
+    &lt;ws-notification ws-x=&quot;$color[accent]&quot;&gt;
+        &lt;ws-icon class=&quot;ti-trophy&quot;&gt;
+            Information?
+        &lt;/ws-icon&gt;
+    &lt;/ws-notification&gt;
+&lt;/ws-toaster&gt;
+&lt;ws-toaster ws-x=&quot;$mr&quot;&gt;
+    &lt;ws-notification ws-x=&quot;$color[accent]&quot;&gt;
+        &lt;ws-icon class=&quot;ti-trophy&quot;&gt;
+            Information?
+        &lt;/ws-icon&gt;
+    &lt;/ws-notification&gt;
+&lt;/ws-toaster&gt;
+</code></pre>

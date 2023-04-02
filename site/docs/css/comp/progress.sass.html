@@ -1,0 +1,39 @@
+<h1 id="progress-bar">Progress Bar</h1>
+<p>The progress bar is a modified label element that changes how the label and
+<code>progress</code> html element look.</p>
+<p>To mark a label as a Progress Bar, add the <code>@progress</code> wind function.</p>
+<h2 id="wind-functions">Wind Functions</h2>
+<ul>
+<li>@outline</li>
+<li>$color</li>
+<li>$row</li>
+</ul>
+<h2 id="areas">Areas</h2>
+<ul>
+<li>$text</li>
+</ul>
+<h2 id="preview">Preview</h2>
+<iframe src="./frames/index.html#progress"></iframe>
+<h2 id="code-example">Code Example</h2>
+<pre><code class="language-html">&lt;label ws-x=&quot;@progress @outline&quot;&gt;
+    &lt;span ws-x=&quot;$text&quot;&gt;Some progress&lt;/span&gt;
+    &lt;progress value=&quot;0.3&quot;&gt;&lt;/progress&gt;
+&lt;/label&gt;
+&lt;label ws-x=&quot;@progress&quot;&gt;
+    &lt;span ws-x=&quot;$text&quot;&gt;Some progress (flat)&lt;/span&gt;
+    &lt;progress value=&quot;0.2&quot;&gt;&lt;/progress&gt;
+&lt;/label&gt;
+&lt;label ws-x=&quot;@progress @outline $color[secondary]&quot;&gt;
+    &lt;span ws-x=&quot;$text&quot;&gt;Some color progress&lt;/span&gt;
+    &lt;progress value=&quot;0.6&quot;&gt;&lt;/progress&gt;
+&lt;/label&gt;
+&lt;label ws-x=&quot;@progress @outline $row $color[accent]&quot;&gt;
+    &lt;span ws-x=&quot;$text t-ws[nowrap]&quot;&gt;Row Layout&lt;/span&gt;
+    &lt;progress value=&quot;0.8&quot;&gt;&lt;/progress&gt;
+&lt;/label&gt;
+
+No Text Label
+&lt;label ws-x=&quot;@progress @outline $color[primary]&quot;&gt;
+    &lt;progress value=&quot;0.9&quot;&gt;&lt;/progress&gt;
+&lt;/label&gt;
+</code></pre>

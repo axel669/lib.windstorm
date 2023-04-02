@@ -1,0 +1,43 @@
+<h1 id="badge">Badge</h1>
+<p>Shows a small piece of information that is separate from the surrounding
+info and optionally allows interaction.</p>
+<h2 id="wind-functions">Wind Functions</h2>
+<ul>
+<li>one of @outline/@fill <code>required</code></li>
+<li>$color <code>required</code></li>
+<li>$click</li>
+</ul>
+<h2 id="preview">Preview</h2>
+<iframe src="./frames/index.html#chip"></iframe>
+<h2 id="code-example">Code Example</h2>
+<pre><code class="language-html">Normal
+&lt;ws-flex ws-x=&quot;fl-dir[row]&quot;&gt;
+    &lt;ws-chip ws-x=&quot;@outline $color[primary]&quot;&gt;
+        Filter 1
+    &lt;/ws-chip&gt;
+    &lt;ws-chip ws-x=&quot;@fill $color[secondary]&quot;&gt;
+        Filter 2
+    &lt;/ws-chip&gt;
+    &lt;ws-chip ws-x=&quot;@outline $color[warning]&quot;&gt;
+        Filter 3
+    &lt;/ws-chip&gt;
+&lt;/ws-flex&gt;
+Clickable
+&lt;ws-flex ws-x=&quot;fl-dir[row]&quot;&gt;
+    &lt;ws-chip ws-x=&quot;@outline $color[primary] $click&quot;&gt;
+        &lt;ws-icon class=&quot;fa-close&quot;&gt;
+            Remove 1
+        &lt;/ws-icon&gt;
+    &lt;/ws-chip&gt;
+    &lt;ws-chip ws-x=&quot;@outline $color[secondary] $click&quot;&gt;
+        &lt;ws-icon class=&quot;fa-close&quot;&gt;
+            Remove 2
+        &lt;/ws-icon&gt;
+    &lt;/ws-chip&gt;
+    &lt;ws-chip ws-x=&quot;@fill $color[warning] $click&quot;&gt;
+        &lt;ws-icon class=&quot;fa-close&quot;&gt;
+            Remove 3
+        &lt;/ws-icon&gt;
+    &lt;/ws-chip&gt;
+&lt;/ws-flex&gt;
+</code></pre>

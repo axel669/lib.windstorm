@@ -1,0 +1,47 @@
+<h1 id="tabs">Tabs</h1>
+<p>Displays a list of tabs with some default styling. Tabs do not respond to
+inputs without JavaScript.</p>
+<p>Use the <code>tab-selected</code> attribute to show which tab is active.</p>
+<h2 id="wind-functions">Wind Functions</h2>
+<ul>
+<li>@solid</li>
+<li>$color</li>
+</ul>
+<h2 id="preview">Preview</h2>
+<iframe src="./frames/index.html#tabs"></iframe>
+<h2 id="code-example">Code Example</h2>
+<pre><code class="language-html">&lt;ws-paper ws-x=&quot;@outline&quot;&gt;
+    &lt;ws-titlebar ws-x=&quot;$header&quot;&gt;
+        &lt;span ws-x=&quot;$title&quot;&gt;Horizontal&lt;/span&gt;
+    &lt;/ws-titlebar&gt;
+    &lt;div ws-x=&quot;$content&quot;&gt;
+        &lt;ws-tabs ws-x=&quot;$color[secondary] w[50%]&quot;&gt;
+            &lt;ws-tab&gt;Light&lt;/ws-tab&gt;
+            &lt;ws-tab&gt;Dark&lt;/ws-tab&gt;
+            &lt;ws-tab tab-selected&gt;Tron&lt;/ws-tab&gt;
+        &lt;/ws-tabs&gt;
+        &lt;ws-tabs ws-x=&quot;@solid $color[secondary] w[50%]&quot;&gt;
+            &lt;ws-tab&gt;Light&lt;/ws-tab&gt;
+            &lt;ws-tab&gt;Dark&lt;/ws-tab&gt;
+            &lt;ws-tab tab-selected&gt;Tron&lt;/ws-tab&gt;
+        &lt;/ws-tabs&gt;
+    &lt;/div&gt;
+&lt;/ws-paper&gt;
+&lt;ws-paper ws-x=&quot;@outline&quot;&gt;
+    &lt;ws-titlebar ws-x=&quot;$header&quot;&gt;
+        &lt;span ws-x=&quot;$title&quot;&gt;Vertical&lt;/span&gt;
+    &lt;/ws-titlebar&gt;
+    &lt;div ws-x=&quot;$content&quot;&gt;
+        &lt;ws-tabs ws-x=&quot;$vert w[30%] p[8px]&quot;&gt;
+            &lt;ws-tab&gt;Light&lt;/ws-tab&gt;
+            &lt;ws-tab tab-selected&gt;Dark&lt;/ws-tab&gt;
+            &lt;ws-tab&gt;Tron&lt;/ws-tab&gt;
+        &lt;/ws-tabs&gt;
+        &lt;ws-tabs ws-x=&quot;@solid $vert w[30%] p[8px]&quot;&gt;
+            &lt;ws-tab&gt;Light&lt;/ws-tab&gt;
+            &lt;ws-tab tab-selected&gt;Dark&lt;/ws-tab&gt;
+            &lt;ws-tab&gt;Tron&lt;/ws-tab&gt;
+        &lt;/ws-tabs&gt;
+    &lt;/div&gt;
+&lt;/ws-paper&gt;
+</code></pre>

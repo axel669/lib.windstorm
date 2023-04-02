@@ -1,0 +1,37 @@
+<h1 id="button">Button</h1>
+<p>Basic clickable component for handling user interaction.</p>
+<p>There are two ways to display buttons:</p>
+<ul>
+<li>using the <code>ws-x</code> attribute on a <code>button</code> element</li>
+<li>adding the <code>@button</code> wind function to a <code>label</code> element</li>
+</ul>
+<h2 id="wind-functions">Wind Functions</h2>
+<ul>
+<li>one of @flat/@outline/@fill <code>required</code></li>
+<li>$color</li>
+</ul>
+<h2 id="preview">Preview</h2>
+<iframe src="./frames/index.html#button"></iframe>
+<h2 id="code-example">Code Example</h2>
+<pre><code class="language-html">&lt;ws-grid ws-x=&quot;$content gr-col[repeat(3,1fr)]&quot;&gt;
+    &lt;button ws-x=&quot;@flat $color[primary]&quot;&gt;Primary&lt;/button&gt;
+    &lt;button ws-x=&quot;@outline $color[primary]&quot;&gt;Primary&lt;/button&gt;
+    &lt;button ws-x=&quot;@fill $color[primary]&quot;&gt;Primary&lt;/button&gt;
+
+    &lt;button ws-x=&quot;@flat $color[secondary]&quot;&gt;Secondary&lt;/button&gt;
+    &lt;button ws-x=&quot;@outline $color[secondary]&quot;&gt;Secondary&lt;/button&gt;
+    &lt;button ws-x=&quot;@fill $color[secondary]&quot; disabled&gt;Secondary&lt;/button&gt;
+
+    &lt;button ws-x=&quot;@flat $color[danger]&quot;&gt;Danger&lt;/button&gt;
+    &lt;button ws-x=&quot;@outline $color[danger]&quot; disabled&gt;Danger&lt;/button&gt;
+    &lt;button ws-x=&quot;@fill $color[danger]&quot;&gt;Danger&lt;/button&gt;
+
+    &lt;button ws-x=&quot;@flat $color[warning]&quot; disabled&gt;Warning&lt;/button&gt;
+    &lt;button ws-x=&quot;@outline $color[warning]&quot;&gt;Warning&lt;/button&gt;
+    &lt;button ws-x=&quot;@fill $color[warning]&quot;&gt;Warning&lt;/button&gt;
+
+    &lt;button ws-x=&quot;@flat $color[accent]&quot;&gt;Accent&lt;/button&gt;
+    &lt;button ws-x=&quot;@outline $color[accent]&quot;&gt;Accent&lt;/button&gt;
+    &lt;button ws-x=&quot;@fill $color[accent]&quot;&gt;Accent&lt;/button&gt;
+&lt;/ws-grid&gt;
+</code></pre>

@@ -1,0 +1,28 @@
+<h1 id="notification">Notification</h1>
+<p>Displays some text in an area intended to draw attention towards it either
+inline or in conjuction with the toaster component.</p>
+<h2 id="wind-functions">Wind Functions</h2>
+<ul>
+<li>$color</li>
+</ul>
+<h2 id="preview">Preview</h2>
+<iframe src="./frames/index.html#notification"></iframe>
+<h2 id="code-example">Code Example</h2>
+<pre><code class="language-html">&lt;ws-notification&gt;
+    &lt;ws-icon class=&quot;ti-info-hexagon&quot;&gt;Pretend has useful info&lt;/ws-icon&gt;
+&lt;/ws-notification&gt;
+&lt;ws-notification ws-x=&quot;$color[primary]&quot;&gt;
+    &lt;ws-icon class=&quot;ti-info-hexagon&quot;&gt;This info has color&lt;/ws-icon&gt;
+&lt;/ws-notification&gt;
+&lt;ws-notification ws-x=&quot;$color[warning]&quot;&gt;
+    &lt;ws-icon class=&quot;ti-help-hexagon&quot;&gt;You can add controls&lt;/ws-icon&gt;
+    &lt;button ws-x=&quot;@fill $color[warning]&quot;&gt;Click!&lt;/button&gt;
+&lt;/ws-notification&gt;
+&lt;ws-notification ws-x=&quot;$color[danger]&quot;&gt;
+    &lt;button ws-x=&quot;@fill $color[danger]&quot;&gt;Click!&lt;/button&gt;
+    &lt;div&gt;
+        And reverse the order
+        &lt;ws-icon class=&quot;ti-alert-hexagon&quot;&gt;&lt;/ws-icon&gt;
+    &lt;/div&gt;
+&lt;/ws-notification&gt;
+</code></pre>

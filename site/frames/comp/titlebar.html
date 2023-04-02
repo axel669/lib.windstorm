@@ -1,0 +1,29 @@
+<ws-titlebar>
+    <span ws-x="$title">
+        <div ws-x="$title-text">Basic Titlebar</div>
+        <div ws-x="$subtitle">Subtitle</div>
+    </span>
+</ws-titlebar>
+
+<ws-titlebar ws-x="$color[primary]">
+    <span ws-x="$title $title-text">Color Titlebar</span>
+</ws-titlebar>
+
+<ws-titlebar ws-x="$color[danger]">
+    <span ws-x="$title $title-text">Titlebar + controls</span>
+
+    <button ws-x="@flat $menu">
+        <ws-icon class="ti-menu-2"></ws-icon>
+    </button>
+</ws-titlebar>
+
+<ws-titlebar ws-x="@fill $color[primary]">
+    <span ws-x="$title $title-text">Filled Color Titlebar</span>
+</ws-titlebar>
+
+<ws-titlebar ws-x="@fill $color[secondary]">
+    <span ws-x="$title $title-text">Filled Titlebar + controls</span>
+    <button ws-x="@flat $action">
+        <ws-icon class="ti-logout"></ws-icon>
+    </button>
+</ws-titlebar>

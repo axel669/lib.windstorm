@@ -1,0 +1,104 @@
+<h1 id="modal">Modal</h1>
+<p>Puts a modal on screen with visibility toggling through either a hidden
+checkbox input next to the modal or using the $show wind function.</p>
+<p>Differnt types of modals are just positions applied to whatever container
+the modal content is put inside.</p>
+<h2 id="wind-functions">Wind Functions</h2>
+<ul>
+<li>@dialog<blockquote>
+<p>Positions in the center of the screen</p>
+</blockquote>
+</li>
+<li>@select<blockquote>
+<p>Position at the top, centered horizontally</p>
+</blockquote>
+</li>
+<li>@menu<blockquote>
+<p>Menu drawer that sits on the left side of the screen</p>
+</blockquote>
+</li>
+<li>@action<blockquote>
+<p>Actions drawer that sits on the right side of the screen</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="preview">Preview</h2>
+<iframe src="./frames/index.html#modal"></iframe>
+<h2 id="code-example">Code Example</h2>
+<pre><code class="language-html">&lt;ws-grid ws-x=&quot;gr-col[repeat(4,1fr)]&quot;&gt;
+    &lt;label ws-x=&quot;@button @outline $color[secondary]&quot; for=&quot;menu&quot;&gt;
+        Menu
+    &lt;/label&gt;
+    &lt;label ws-x=&quot;@button @outline $color[secondary]&quot; for=&quot;action&quot;&gt;
+        Action
+    &lt;/label&gt;
+    &lt;label ws-x=&quot;@button @outline $color[secondary]&quot; for=&quot;select&quot;&gt;
+        Select
+    &lt;/label&gt;
+    &lt;label ws-x=&quot;@button @outline $color[secondary]&quot; for=&quot;dialog&quot;&gt;
+        Dialog
+    &lt;/label&gt;
+&lt;/ws-grid&gt;
+
+&lt;input type=&quot;checkbox&quot; ws-x=&quot;hide&quot; id=&quot;menu&quot; /&gt;
+&lt;ws-modal&gt;
+    &lt;ws-paper ws-x=&quot;r[0px] @menu&quot;&gt;
+        &lt;ws-flex ws-x=&quot;$content&quot;&gt;
+            &lt;label ws-x=&quot;@button @outline $color[accent]&quot; for=&quot;menu&quot;&gt;
+                Close
+            &lt;/label&gt;
+            &lt;span&gt;
+                This uses a paper for the content of the menu drawer
+            &lt;/span&gt;
+        &lt;/ws-flex&gt;
+    &lt;/ws-paper&gt;
+&lt;/ws-modal&gt;
+
+&lt;input type=&quot;checkbox&quot; ws-x=&quot;hide&quot; id=&quot;action&quot; /&gt;
+&lt;ws-modal&gt;
+    &lt;ws-paper ws-x=&quot;r[0px] @action&quot;&gt;
+        &lt;ws-flex ws-x=&quot;$content&quot;&gt;
+            &lt;label ws-x=&quot;@button @outline $color[accent]&quot; for=&quot;action&quot;&gt;
+                Close
+            &lt;/label&gt;
+            &lt;span&gt;
+                Actiond drawer + paper container
+            &lt;/span&gt;
+        &lt;/ws-flex&gt;
+    &lt;/ws-paper&gt;
+&lt;/ws-modal&gt;
+
+&lt;input type=&quot;checkbox&quot; ws-x=&quot;hide&quot; id=&quot;select&quot; /&gt;
+&lt;ws-modal&gt;
+    &lt;label for=&quot;select&quot;&gt;&lt;/label&gt;
+    &lt;div ws-x=&quot;@select r[8px] bd[1px_solid_var(--primary)] c[teal] bg-c[black]&quot;&gt;
+        &lt;ws-flex&gt;
+            &lt;label ws-x=&quot;@button @outline $color[accent]&quot; for=&quot;select&quot;&gt;
+                Close
+            &lt;/label&gt;
+            &lt;span ws-x=&quot;$content&quot;&gt;
+                This just uses a div for the content with a bit of styling
+                &lt;br /&gt;
+                And you can close it by clicking the empty space around it
+            &lt;/span&gt;
+        &lt;/ws-flex&gt;
+    &lt;/div&gt;
+&lt;/ws-modal&gt;
+
+&lt;input type=&quot;checkbox&quot; ws-x=&quot;hide&quot; id=&quot;dialog&quot; /&gt;
+&lt;ws-modal&gt;
+    &lt;ws-paper ws-x=&quot;@dialog&quot;&gt;
+        &lt;ws-titlebar ws-x=&quot;$header&quot;&gt;
+            &lt;span ws-x=&quot;$title&quot;&gt;Dialog Example&lt;/span&gt;
+        &lt;/ws-titlebar&gt;
+        &lt;ws-flex ws-x=&quot;$content&quot;&gt;
+            &lt;span&gt;
+                Standard dialog stuff \o/
+            &lt;/span&gt;
+        &lt;/ws-flex&gt;
+        &lt;label ws-x=&quot;@button @flat $color[accent] $footer&quot; for=&quot;dialog&quot;&gt;
+            Close
+        &lt;/label&gt;
+    &lt;/ws-paper&gt;
+&lt;/ws-modal&gt;
+</code></pre>

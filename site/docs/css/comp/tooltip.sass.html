@@ -1,0 +1,22 @@
+<h1 id="tooltip">Tooltip</h1>
+<p>Used to show a tooltip above or below some content when it&#39;s hovered over.
+Uses the <code>ws-text</code> attribute to determine what text to show.</p>
+<h2 id="preview">Preview</h2>
+<iframe src="./frames/index.html#tooltip"></iframe>
+<h2 id="code-example">Code Example</h2>
+<pre><code class="language-html">&lt;div ws-x=&quot;p-t[30px]&quot;&gt;
+    &lt;ws-tooltip ws-x=&quot;bd-w[1px] r[4px] p[8px]&quot; ws-text=&quot;Tooltip!&quot;&gt;
+        Tooltip over
+    &lt;/ws-tooltip&gt;
+
+    &lt;ws-tooltip ws-x=&quot;$bottom bd-w[1px] r[4px] p[8px]&quot; ws-text=&quot;Tooltip!&quot;&gt;
+        Tooltip underneath
+    &lt;/ws-tooltip&gt;
+
+    &lt;ws-tooltip ws-text=&quot;Submit the form&quot;&gt;
+        &lt;button ws-x=&quot;@fill $color[secondary] w[200px]&quot;&gt;
+            Submit
+        &lt;/button&gt;
+    &lt;/ws-tooltip&gt;
+&lt;/div&gt;
+</code></pre>

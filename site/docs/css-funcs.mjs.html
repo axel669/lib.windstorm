@@ -1,0 +1,20 @@
+<h1 id="wind-css-functions">Wind CSS Functions</h1>
+<p>Windstorm provides a function for toggling the ws-x values, and will eventually
+have an api to add custom functions to it (but I&#39;m lazy for this version).</p>
+<h2 id="wsxobject">wsx(object)</h2>
+<p>The wsx function takes an object where each key is a wind shorthand and each
+value determines if it is used and what the argument is.</p>
+<ul>
+<li>Keys where the value is <code>null</code>, <code>undefined</code>, or <code>false</code> are ignored.</li>
+<li>Keys where the value is <code>true</code> are included without the argument syntax</li>
+<li>Keys with any other value are added as key[value]</li>
+</ul>
+<pre><code class="language-js">import { wsx } from &quot;where-windstorm-is&quot;
+
+let colorVariable = &quot;primary&quot;
+const wsxAttr = wsx({
+    &quot;@flat&quot;: true,
+    &quot;$color&quot;: colorVariable
+})
+// &quot;@flat $color[primary]&quot;
+</code></pre>
