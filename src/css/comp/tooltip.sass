@@ -1,3 +1,17 @@
+/*md
+    [@] Components/Tooltip
+
+    # Tooltip
+
+    Used to show a tooltip above or below some content when it's hovered over.
+    Uses the `ws-text` attribute to determine what text to show.
+
+    ## Preview
+    [^] index.html#tooltip
+
+    ## Code Example
+    [$] tooltip.html
+
 ws-tooltip
     position: relative
     display: inline-grid
@@ -18,10 +32,15 @@ ws-tooltip
         border: 1px solid var(--text-color-secondary)
         padding: 2px 8px
         font-size: var(--text-size-subtitle)
+        width: 60%
+        display: flex
+        align-items: center
+        justify-content: center
+        z-index: 50
 
     &:hover::after
         opacity: 1
 
-    &[ws-x~="$bottom"]
+    &[ws-x~="$bottom"]::after
         bottom: unset
         top: calc(100% + 2px)
