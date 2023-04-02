@@ -1,27 +1,51 @@
-<label ws-x="@toggle">
-    <span ws-x="$text">I'm running out of label ideas</span>
-    <input type="checkbox" />
-</label>
-<label ws-x="@toggle $color[accent]">
-    <span ws-x="$text">Why is documentation so tedious</span>
-    <input type="checkbox" ws-x="$switch" />
-</label>
-<label ws-x="@toggle @outline $color[primary]">
-    <input type="checkbox" ws-x="$switch" />
-    <span ws-x="$text">Reverse reverse</span>
-</label>
+<ws-paper ws-x="@outline">
+    <ws-titlebar ws-x="$header">
+        <span ws-x="$title">Checkbox</span>
+    </ws-titlebar>
+    <ws-flex ws-x="$content">
+        <label ws-x="@toggle">
+            <span ws-x="$text">I'm running out of label ideas</span>
+            <input type="checkbox" />
+        </label>
+        <label ws-x="@toggle $color[danger]">
+            <span ws-x="$text">What do I even put here</span>
+            <input type="checkbox" />
+        </label>
+    </ws-flex>
+</ws-paper>
 
-<form ws-x="flex gap[4px]">
-    <label ws-x="@toggle $color[primary]">
-        <span>No Build System</span>
-        <input type="radio" name="radia" />
-    </label>
-    <label ws-x="@toggle $color[secondary]">
-        <span>Basic Build System</span>
-        <input type="radio" name="radia" />
-    </label>
-    <label ws-x="@toggle $color[warning]">
-        <span>Even my css needs a build system</span>
-        <input type="radio" name="radia" />
-    </label>
-</form>
+<ws-paper ws-x="@outline">
+    <ws-titlebar ws-x="$header">
+        <span ws-x="$title">Switch</span>
+    </ws-titlebar>
+    <ws-flex ws-x="$content">
+        <label ws-x="@toggle $color[accent]">
+            <span ws-x="$text">Why is documentation so tedious</span>
+            <input type="checkbox" ws-x="$switch" />
+        </label>
+        <label ws-x="@toggle @outline $color[primary]">
+            <input type="checkbox" ws-x="$switch" />
+            <span ws-x="$text">Reverse reverse</span>
+        </label>
+    </ws-flex>
+</ws-paper>
+
+<ws-paper ws-x="@outline">
+    <ws-titlebar ws-x="$header">
+        <span ws-x="$title"> Radio</span>
+    </ws-titlebar>
+    <form ws-x="$content flex gap[4px]">
+        <label ws-x="@toggle $color[primary]">
+            <span>No Build System</span>
+            <input type="radio" name="radia" />
+        </label>
+        <label ws-x="@toggle $color[secondary]">
+            <span>Simple Build System</span>
+            <input type="radio" name="radia" />
+        </label>
+        <label ws-x="@toggle $color[warning]">
+            <span>Even my css needs a build system</span>
+            <input type="radio" name="radia" />
+        </label>
+    </form>
+</ws-paper>
