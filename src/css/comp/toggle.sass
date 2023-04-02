@@ -1,4 +1,28 @@
-label[ws-x~="@t-ctrl"]
+/*md
+    [@] Components/Labeled Toggle
+
+    # Labled Control
+    The labeled toggle is a label that contains a toggle-style input
+    (type "checkbox"/"radio"). A checkbox input can also have the `$switch`
+    wind function added to visual change it into a switch toggle.
+
+    To mark a label as a labeled toggle, add the `@toggle` wind function.
+
+    ## Wind Functions
+    - @outline
+    - $color
+
+    ### Children Wind Functions
+    - $switch\\
+        Turns a checkbox into a different visual style of input
+
+    ## Preview
+    [^] index.html#toggle
+
+    ## Code Example
+    [$] toggle.html
+
+label[ws-x~="@toggle"]
     --color: var(--default)
     --ripple-color: var(--default-ripple)
 
@@ -32,8 +56,13 @@ label[ws-x~="@t-ctrl"]
         &::after
             content: ""
             position: absolute
-            font-family: "Font Awesome 6 Free"
-            font-weight: 900
+            font-size: 18px
+            font-family: tabler-icons!important
+            speak: none
+            font-style: normal
+            font-weight: 400
+            font-variant: normal
+            text-transform: none
             top: 50%
             left: 50%
             width: 20px
@@ -50,11 +79,11 @@ label[ws-x~="@t-ctrl"]
             &::after
                 border-radius: 50%
             &:checked::after
-                content: "\f111"
+                content: "\f671"
         &[type="checkbox"]
             &:checked::after
-                content: "\f00c"
-            &[ws-x~="$toggle"]
+                content: "\ea5e"
+            &[ws-x~="$switch"]
                 position: relative
                 border: 1px solid var(--color)
                 height: 24px
