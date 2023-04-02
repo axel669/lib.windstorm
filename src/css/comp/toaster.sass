@@ -1,3 +1,30 @@
+/*md
+    [@] Components/Toaster
+
+    # Toaster
+
+    The toaster element is for displaying short-lived popup notifications or
+    information on the edges of the screen. It does not have any specific child
+    elements that it formats, it instead allows for any kind of styled element
+    to be used to display the messages (exmamples use the Notification component
+    to show the locations).
+
+    ## Wind Functions
+    - $tl - Top Left
+    - $tc - Top Center
+    - $tr - Top Right
+    - $ml - Middle Left
+    - $mr - Middle Right
+    - $bl - Bottom Left
+    - $bc - Bottom Center
+    - $br - Bottom Right
+
+    ## Preview
+    [^] index.html#toaster
+
+    ## Code Example
+    [$] toaster.html
+
 ws-toaster
     position: fixed
     z-index: +50
@@ -6,15 +33,16 @@ ws-toaster
     padding: 4px
     gap: 4px
 
-    &[ws-x~="$tm"]
+    &[ws-x~="$tl"]
+        top: 0px
+        left: 0px
+    &[ws-x~="$tc"]
         top: 0px
         left: 50%
         transform: translateX(-50%)
-    &[ws-x~="$bm"]
-        bottom: 0px
-        left: 50%
-        transform: translateX(-50%)
-        flex-direction: column-reverse
+    &[ws-x~="$tr"]
+        top: 0px
+        right: 0px
     &[ws-x~="$ml"]
         top: 50%
         left: 0px
@@ -23,17 +51,13 @@ ws-toaster
         top: 50%
         right: 0px
         transform: translateY(-50%)
-    &[ws-x~="$tl"]
-        top: 0px
-        left: 0px
-    &[ws-x~="$tr"]
-        top: 0px
-        right: 0px
     &[ws-x~="$bl"]
         bottom: 0px
         left: 0px
-        flex-direction: column-reverse
+    &[ws-x~="$bc"]
+        bottom: 0px
+        left: 50%
+        transform: translateX(-50%)
     &[ws-x~="$br"]
         bottom: 0px
         right: 0px
-        flex-direction: column-reverse
