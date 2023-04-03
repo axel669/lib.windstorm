@@ -7,36 +7,41 @@ controls.</p>
 <li>@fill</li>
 <li>$color</li>
 </ul>
-<h2 id="preview">Preview</h2>
-<iframe src="./frames/index.html#titlebar"></iframe>
-<h2 id="code-example">Code Example</h2>
-<pre><code class="language-html">&lt;ws-titlebar&gt;
-    &lt;span ws-x=&quot;$title&quot;&gt;
-        &lt;div ws-x=&quot;$title-text&quot;&gt;Basic Titlebar&lt;/div&gt;
-        &lt;div ws-x=&quot;$subtitle&quot;&gt;Subtitle&lt;/div&gt;
+
+                            <div class="toggle-view">
+                                <input type="checkbox" id="0.5325eaa2d8d9f" />
+                                <label for="0.5325eaa2d8d9f">&nbsp;Code</label>
+                                <iframe style="height: 400px;" src="./frames/index.html#titlebar"></iframe>
+
+                                <pre><code class="language-html">&lt;ws-titlebar&gt;
+    &lt;span ws-x="$title"&gt;
+        &lt;div ws-x="$title-text"&gt;Basic Titlebar&lt;/div&gt;
+        &lt;div ws-x="$subtitle"&gt;Subtitle&lt;/div&gt;
     &lt;/span&gt;
 &lt;/ws-titlebar&gt;
 
-&lt;ws-titlebar ws-x=&quot;$color[primary]&quot;&gt;
-    &lt;span ws-x=&quot;$title $title-text&quot;&gt;Color Titlebar&lt;/span&gt;
+&lt;ws-titlebar ws-x="$color[primary]"&gt;
+    &lt;span ws-x="$title $title-text"&gt;Color Titlebar&lt;/span&gt;
 &lt;/ws-titlebar&gt;
 
-&lt;ws-titlebar ws-x=&quot;$color[danger]&quot;&gt;
-    &lt;span ws-x=&quot;$title $title-text&quot;&gt;Titlebar + controls&lt;/span&gt;
+&lt;ws-titlebar ws-x="$color[danger]"&gt;
+    &lt;span ws-x="$title $title-text"&gt;Titlebar + controls&lt;/span&gt;
 
-    &lt;button ws-x=&quot;@flat $menu&quot;&gt;
-        &lt;ws-icon class=&quot;ti-menu-2&quot;&gt;&lt;/ws-icon&gt;
+    &lt;button ws-x="@flat $menu"&gt;
+        &lt;ws-icon class="ti-menu-2"&gt;&lt;/ws-icon&gt;
     &lt;/button&gt;
 &lt;/ws-titlebar&gt;
 
-&lt;ws-titlebar ws-x=&quot;@fill $color[primary]&quot;&gt;
-    &lt;span ws-x=&quot;$title $title-text&quot;&gt;Filled Color Titlebar&lt;/span&gt;
+&lt;ws-titlebar ws-x="@fill $color[primary]"&gt;
+    &lt;span ws-x="$title $title-text"&gt;Filled Color Titlebar&lt;/span&gt;
 &lt;/ws-titlebar&gt;
 
-&lt;ws-titlebar ws-x=&quot;@fill $color[secondary]&quot;&gt;
-    &lt;span ws-x=&quot;$title $title-text&quot;&gt;Filled Titlebar + controls&lt;/span&gt;
-    &lt;button ws-x=&quot;@flat $action&quot;&gt;
-        &lt;ws-icon class=&quot;ti-logout&quot;&gt;&lt;/ws-icon&gt;
+&lt;ws-titlebar ws-x="@fill $color[secondary]"&gt;
+    &lt;span ws-x="$title $title-text"&gt;Filled Titlebar + controls&lt;/span&gt;
+    &lt;button ws-x="@flat $action"&gt;
+        &lt;ws-icon class="ti-logout"&gt;&lt;/ws-icon&gt;
     &lt;/button&gt;
 &lt;/ws-titlebar&gt;
 </code></pre>
+                            </div>
+                        

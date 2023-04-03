@@ -12,28 +12,33 @@
 <ul>
 <li>$text</li>
 </ul>
-<h2 id="preview">Preview</h2>
-<iframe src="./frames/index.html#progress"></iframe>
-<h2 id="code-example">Code Example</h2>
-<pre><code class="language-html">&lt;label ws-x=&quot;@progress @outline&quot;&gt;
-    &lt;span ws-x=&quot;$text&quot;&gt;Some progress&lt;/span&gt;
-    &lt;progress value=&quot;0.3&quot;&gt;&lt;/progress&gt;
+
+                            <div class="toggle-view">
+                                <input type="checkbox" id="0.4a119d670ddf3" />
+                                <label for="0.4a119d670ddf3">&nbsp;Code</label>
+                                <iframe style="height: 400px;" src="./frames/index.html#progress"></iframe>
+
+                                <pre><code class="language-html">&lt;label ws-x="@progress @outline"&gt;
+    &lt;span ws-x="$text"&gt;Some progress&lt;/span&gt;
+    &lt;progress value="0.3"&gt;&lt;/progress&gt;
 &lt;/label&gt;
-&lt;label ws-x=&quot;@progress&quot;&gt;
-    &lt;span ws-x=&quot;$text&quot;&gt;Some progress (flat)&lt;/span&gt;
-    &lt;progress value=&quot;0.2&quot;&gt;&lt;/progress&gt;
+&lt;label ws-x="@progress"&gt;
+    &lt;span ws-x="$text"&gt;Some progress (flat)&lt;/span&gt;
+    &lt;progress value="0.2"&gt;&lt;/progress&gt;
 &lt;/label&gt;
-&lt;label ws-x=&quot;@progress @outline $color[secondary]&quot;&gt;
-    &lt;span ws-x=&quot;$text&quot;&gt;Some color progress&lt;/span&gt;
-    &lt;progress value=&quot;0.6&quot;&gt;&lt;/progress&gt;
+&lt;label ws-x="@progress @outline $color[secondary]"&gt;
+    &lt;span ws-x="$text"&gt;Some color progress&lt;/span&gt;
+    &lt;progress value="0.6"&gt;&lt;/progress&gt;
 &lt;/label&gt;
-&lt;label ws-x=&quot;@progress @outline $row $color[accent]&quot;&gt;
-    &lt;span ws-x=&quot;$text t-ws[nowrap]&quot;&gt;Row Layout&lt;/span&gt;
-    &lt;progress value=&quot;0.8&quot;&gt;&lt;/progress&gt;
+&lt;label ws-x="@progress @outline $row $color[accent]"&gt;
+    &lt;span ws-x="$text t-ws[nowrap]"&gt;Row Layout&lt;/span&gt;
+    &lt;progress value="0.8"&gt;&lt;/progress&gt;
 &lt;/label&gt;
 
 No Text Label
-&lt;label ws-x=&quot;@progress @outline $color[primary]&quot;&gt;
-    &lt;progress value=&quot;0.9&quot;&gt;&lt;/progress&gt;
+&lt;label ws-x="@progress @outline $color[primary]"&gt;
+    &lt;progress value="0.9"&gt;&lt;/progress&gt;
 &lt;/label&gt;
 </code></pre>
+                            </div>
+                        

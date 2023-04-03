@@ -10,28 +10,33 @@
 <li>one of @flat/@outline/@fill <code>required</code></li>
 <li>$color</li>
 </ul>
-<h2 id="preview">Preview</h2>
-<iframe src="./frames/index.html#button"></iframe>
-<h2 id="code-example">Code Example</h2>
-<pre><code class="language-html">&lt;ws-grid ws-x=&quot;$content gr-col[repeat(3,1fr)]&quot;&gt;
-    &lt;button ws-x=&quot;@flat $color[primary]&quot;&gt;Primary&lt;/button&gt;
-    &lt;button ws-x=&quot;@outline $color[primary]&quot;&gt;Primary&lt;/button&gt;
-    &lt;button ws-x=&quot;@fill $color[primary]&quot;&gt;Primary&lt;/button&gt;
 
-    &lt;button ws-x=&quot;@flat $color[secondary]&quot;&gt;Secondary&lt;/button&gt;
-    &lt;button ws-x=&quot;@outline $color[secondary]&quot;&gt;Secondary&lt;/button&gt;
-    &lt;button ws-x=&quot;@fill $color[secondary]&quot; disabled&gt;Secondary&lt;/button&gt;
+                            <div class="toggle-view">
+                                <input type="checkbox" id="0.e2836d0827b86" />
+                                <label for="0.e2836d0827b86">&nbsp;Code</label>
+                                <iframe style="height: 400px;" src="./frames/index.html#button"></iframe>
 
-    &lt;button ws-x=&quot;@flat $color[danger]&quot;&gt;Danger&lt;/button&gt;
-    &lt;button ws-x=&quot;@outline $color[danger]&quot; disabled&gt;Danger&lt;/button&gt;
-    &lt;button ws-x=&quot;@fill $color[danger]&quot;&gt;Danger&lt;/button&gt;
+                                <pre><code class="language-html">&lt;ws-grid ws-x="$content gr-col[repeat(3,1fr)]"&gt;
+    &lt;button ws-x="@flat $color[primary]"&gt;Primary&lt;/button&gt;
+    &lt;button ws-x="@outline $color[primary]"&gt;Primary&lt;/button&gt;
+    &lt;button ws-x="@fill $color[primary]"&gt;Primary&lt;/button&gt;
 
-    &lt;button ws-x=&quot;@flat $color[warning]&quot; disabled&gt;Warning&lt;/button&gt;
-    &lt;button ws-x=&quot;@outline $color[warning]&quot;&gt;Warning&lt;/button&gt;
-    &lt;button ws-x=&quot;@fill $color[warning]&quot;&gt;Warning&lt;/button&gt;
+    &lt;button ws-x="@flat $color[secondary]"&gt;Secondary&lt;/button&gt;
+    &lt;button ws-x="@outline $color[secondary]"&gt;Secondary&lt;/button&gt;
+    &lt;button ws-x="@fill $color[secondary]" disabled&gt;Secondary&lt;/button&gt;
 
-    &lt;button ws-x=&quot;@flat $color[accent]&quot;&gt;Accent&lt;/button&gt;
-    &lt;button ws-x=&quot;@outline $color[accent]&quot;&gt;Accent&lt;/button&gt;
-    &lt;button ws-x=&quot;@fill $color[accent]&quot;&gt;Accent&lt;/button&gt;
+    &lt;button ws-x="@flat $color[danger]"&gt;Danger&lt;/button&gt;
+    &lt;button ws-x="@outline $color[danger]" disabled&gt;Danger&lt;/button&gt;
+    &lt;button ws-x="@fill $color[danger]"&gt;Danger&lt;/button&gt;
+
+    &lt;button ws-x="@flat $color[warning]" disabled&gt;Warning&lt;/button&gt;
+    &lt;button ws-x="@outline $color[warning]"&gt;Warning&lt;/button&gt;
+    &lt;button ws-x="@fill $color[warning]"&gt;Warning&lt;/button&gt;
+
+    &lt;button ws-x="@flat $color[accent]"&gt;Accent&lt;/button&gt;
+    &lt;button ws-x="@outline $color[accent]"&gt;Accent&lt;/button&gt;
+    &lt;button ws-x="@fill $color[accent]"&gt;Accent&lt;/button&gt;
 &lt;/ws-grid&gt;
 </code></pre>
+                            </div>
+                        

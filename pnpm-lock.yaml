@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@axel669/ipsen': ^0.3.0
+  '@axel669/ipsen': ^0.3.1
   '@rollup/plugin-terser': ^0.4.0
   csso: ^5.0.5
   fs-jetpack: ^5.1.0
@@ -11,7 +11,7 @@ specifiers:
   sass: ^1.59.3
 
 devDependencies:
-  '@axel669/ipsen': 0.3.0
+  '@axel669/ipsen': 0.3.1
   '@rollup/plugin-terser': 0.4.0_rollup@3.19.0
   csso: 5.0.5
   fs-jetpack: 5.1.0
@@ -26,14 +26,15 @@ packages:
     resolution: {integrity: sha512-7fucLTKIqkQWLv+op5FDa8MXRDtpRTTAnFU2dG+/1imJHJI2pAyUbpXCIU9SO5so+SKg5Yn2mtuQhTnx/pf2qg==}
     dev: true
 
-  /@axel669/ipsen/0.3.0:
-    resolution: {integrity: sha512-9wcRV5CA09TKdLD5QiFzr2MEjmNwI6TuAGmEOEn7/Iqn9/4mPEyUVwsDnVKfST4LofPtBQQcEV5+P09oiG1MUg==}
+  /@axel669/ipsen/0.3.1:
+    resolution: {integrity: sha512-YXKE5gv/HWUIdNcb4Rd2zpziKXQy7FtN8A2cY7wzlnXQfl+g5qrLWlzVlYy4EMK5D6jYNB+8lNUVqsF3vYXkJQ==}
     hasBin: true
     dependencies:
       '@axel669/array-sort': 0.1.0
       fast-glob: 3.2.12
       fs-jetpack: 5.1.0
       marked: 4.3.0
+      yaml: 2.2.1
     dev: true
 
   /@jridgewell/gen-mapping/0.3.2:
@@ -639,4 +640,9 @@ packages:
 
   /wrappy/1.0.2:
     resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
+    dev: true
+
+  /yaml/2.2.1:
+    resolution: {integrity: sha512-e0WHiYql7+9wr4cWMx3TVQrNwejKaEe7/rHNmQmqRjazfOP5W8PB6Jpebb5o6fIapbz9o9+2ipcaTM2ZwDI6lw==}
+    engines: {node: '>= 14'}
     dev: true

@@ -12,58 +12,63 @@ wind function added to visual change it into a switch toggle.</p>
 <ul>
 <li>$switch<br>  Turns a checkbox into a different visual style of input</li>
 </ul>
-<h2 id="preview">Preview</h2>
-<iframe src="./frames/index.html#toggle"></iframe>
-<h2 id="code-example">Code Example</h2>
-<pre><code class="language-html">&lt;ws-paper ws-x=&quot;@outline&quot;&gt;
-    &lt;ws-titlebar ws-x=&quot;$header&quot;&gt;
-        &lt;span ws-x=&quot;$title&quot;&gt;Checkbox&lt;/span&gt;
+
+                            <div class="toggle-view">
+                                <input type="checkbox" id="0.a6123acb9d71d" />
+                                <label for="0.a6123acb9d71d">&nbsp;Code</label>
+                                <iframe style="height: 400px;" src="./frames/index.html#toggle"></iframe>
+
+                                <pre><code class="language-html">&lt;ws-paper ws-x="@outline"&gt;
+    &lt;ws-titlebar ws-x="$header"&gt;
+        &lt;span ws-x="$title"&gt;Checkbox&lt;/span&gt;
     &lt;/ws-titlebar&gt;
-    &lt;ws-flex ws-x=&quot;$content&quot;&gt;
-        &lt;label ws-x=&quot;@toggle&quot;&gt;
-            &lt;span ws-x=&quot;$text&quot;&gt;I&#39;m running out of label ideas&lt;/span&gt;
-            &lt;input type=&quot;checkbox&quot; /&gt;
+    &lt;ws-flex ws-x="$content"&gt;
+        &lt;label ws-x="@toggle"&gt;
+            &lt;span ws-x="$text"&gt;I'm running out of label ideas&lt;/span&gt;
+            &lt;input type="checkbox" /&gt;
         &lt;/label&gt;
-        &lt;label ws-x=&quot;@toggle $color[danger]&quot;&gt;
-            &lt;span ws-x=&quot;$text&quot;&gt;What do I even put here&lt;/span&gt;
-            &lt;input type=&quot;checkbox&quot; /&gt;
+        &lt;label ws-x="@toggle $color[danger]"&gt;
+            &lt;span ws-x="$text"&gt;What do I even put here&lt;/span&gt;
+            &lt;input type="checkbox" /&gt;
         &lt;/label&gt;
     &lt;/ws-flex&gt;
 &lt;/ws-paper&gt;
 
-&lt;ws-paper ws-x=&quot;@outline&quot;&gt;
-    &lt;ws-titlebar ws-x=&quot;$header&quot;&gt;
-        &lt;span ws-x=&quot;$title&quot;&gt;Switch&lt;/span&gt;
+&lt;ws-paper ws-x="@outline"&gt;
+    &lt;ws-titlebar ws-x="$header"&gt;
+        &lt;span ws-x="$title"&gt;Switch&lt;/span&gt;
     &lt;/ws-titlebar&gt;
-    &lt;ws-flex ws-x=&quot;$content&quot;&gt;
-        &lt;label ws-x=&quot;@toggle $color[accent]&quot;&gt;
-            &lt;span ws-x=&quot;$text&quot;&gt;Why is documentation so tedious&lt;/span&gt;
-            &lt;input type=&quot;checkbox&quot; ws-x=&quot;$switch&quot; /&gt;
+    &lt;ws-flex ws-x="$content"&gt;
+        &lt;label ws-x="@toggle $color[accent]"&gt;
+            &lt;span ws-x="$text"&gt;Why is documentation so tedious&lt;/span&gt;
+            &lt;input type="checkbox" ws-x="$switch" /&gt;
         &lt;/label&gt;
-        &lt;label ws-x=&quot;@toggle @outline $color[primary]&quot;&gt;
-            &lt;input type=&quot;checkbox&quot; ws-x=&quot;$switch&quot; /&gt;
-            &lt;span ws-x=&quot;$text&quot;&gt;Reverse reverse&lt;/span&gt;
+        &lt;label ws-x="@toggle @outline $color[primary]"&gt;
+            &lt;input type="checkbox" ws-x="$switch" /&gt;
+            &lt;span ws-x="$text"&gt;Reverse reverse&lt;/span&gt;
         &lt;/label&gt;
     &lt;/ws-flex&gt;
 &lt;/ws-paper&gt;
 
-&lt;ws-paper ws-x=&quot;@outline&quot;&gt;
-    &lt;ws-titlebar ws-x=&quot;$header&quot;&gt;
-        &lt;span ws-x=&quot;$title&quot;&gt; Radio&lt;/span&gt;
+&lt;ws-paper ws-x="@outline"&gt;
+    &lt;ws-titlebar ws-x="$header"&gt;
+        &lt;span ws-x="$title"&gt; Radio&lt;/span&gt;
     &lt;/ws-titlebar&gt;
-    &lt;form ws-x=&quot;$content flex gap[4px]&quot;&gt;
-        &lt;label ws-x=&quot;@toggle $color[primary]&quot;&gt;
+    &lt;form ws-x="$content flex gap[4px]"&gt;
+        &lt;label ws-x="@toggle $color[primary]"&gt;
             &lt;span&gt;No Build System&lt;/span&gt;
-            &lt;input type=&quot;radio&quot; name=&quot;radia&quot; /&gt;
+            &lt;input type="radio" name="radia" /&gt;
         &lt;/label&gt;
-        &lt;label ws-x=&quot;@toggle $color[secondary]&quot;&gt;
+        &lt;label ws-x="@toggle $color[secondary]"&gt;
             &lt;span&gt;Simple Build System&lt;/span&gt;
-            &lt;input type=&quot;radio&quot; name=&quot;radia&quot; /&gt;
+            &lt;input type="radio" name="radia" /&gt;
         &lt;/label&gt;
-        &lt;label ws-x=&quot;@toggle $color[warning]&quot;&gt;
+        &lt;label ws-x="@toggle $color[warning]"&gt;
             &lt;span&gt;Even my css needs a build system&lt;/span&gt;
-            &lt;input type=&quot;radio&quot; name=&quot;radia&quot; /&gt;
+            &lt;input type="radio" name="radia" /&gt;
         &lt;/label&gt;
     &lt;/form&gt;
 &lt;/ws-paper&gt;
 </code></pre>
+                            </div>
+                        

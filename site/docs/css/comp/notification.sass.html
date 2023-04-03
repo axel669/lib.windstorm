@@ -5,24 +5,29 @@ inline or in conjuction with the toaster component.</p>
 <ul>
 <li>$color</li>
 </ul>
-<h2 id="preview">Preview</h2>
-<iframe src="./frames/index.html#notification"></iframe>
-<h2 id="code-example">Code Example</h2>
-<pre><code class="language-html">&lt;ws-notification&gt;
-    &lt;ws-icon class=&quot;ti-info-hexagon&quot;&gt;Pretend has useful info&lt;/ws-icon&gt;
+
+                            <div class="toggle-view">
+                                <input type="checkbox" id="0.b8d20d0d9c2a4" />
+                                <label for="0.b8d20d0d9c2a4">&nbsp;Code</label>
+                                <iframe style="height: 400px;" src="./frames/index.html#notification"></iframe>
+
+                                <pre><code class="language-html">&lt;ws-notification&gt;
+    &lt;ws-icon class="ti-info-hexagon"&gt;Pretend has useful info&lt;/ws-icon&gt;
 &lt;/ws-notification&gt;
-&lt;ws-notification ws-x=&quot;$color[primary]&quot;&gt;
-    &lt;ws-icon class=&quot;ti-info-hexagon&quot;&gt;This info has color&lt;/ws-icon&gt;
+&lt;ws-notification ws-x="$color[primary]"&gt;
+    &lt;ws-icon class="ti-info-hexagon"&gt;This info has color&lt;/ws-icon&gt;
 &lt;/ws-notification&gt;
-&lt;ws-notification ws-x=&quot;$color[warning]&quot;&gt;
-    &lt;ws-icon class=&quot;ti-help-hexagon&quot;&gt;You can add controls&lt;/ws-icon&gt;
-    &lt;button ws-x=&quot;@fill $color[warning]&quot;&gt;Click!&lt;/button&gt;
+&lt;ws-notification ws-x="$color[warning]"&gt;
+    &lt;ws-icon class="ti-help-hexagon"&gt;You can add controls&lt;/ws-icon&gt;
+    &lt;button ws-x="@fill $color[warning]"&gt;Click!&lt;/button&gt;
 &lt;/ws-notification&gt;
-&lt;ws-notification ws-x=&quot;$color[danger]&quot;&gt;
-    &lt;button ws-x=&quot;@fill $color[danger]&quot;&gt;Click!&lt;/button&gt;
+&lt;ws-notification ws-x="$color[danger]"&gt;
+    &lt;button ws-x="@fill $color[danger]"&gt;Click!&lt;/button&gt;
     &lt;div&gt;
         And reverse the order
-        &lt;ws-icon class=&quot;ti-alert-hexagon&quot;&gt;&lt;/ws-icon&gt;
+        &lt;ws-icon class="ti-alert-hexagon"&gt;&lt;/ws-icon&gt;
     &lt;/div&gt;
 &lt;/ws-notification&gt;
 </code></pre>
+                            </div>
+                        

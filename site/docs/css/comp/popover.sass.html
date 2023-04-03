@@ -9,22 +9,27 @@ position values (x, y, -x, -y, inset-x, inset-y).</p>
 <ul>
 <li>$content</li>
 </ul>
-<h2 id="preview">Preview</h2>
-<iframe src="./frames/index.html#popover"></iframe>
-<h2 id="code-example">Code Example</h2>
-<pre><code class="language-html">&lt;ws-popover&gt;
-    &lt;div ws-x=&quot;bd-w[1px] p[6px]&quot;&gt;
+
+                            <div class="toggle-view">
+                                <input type="checkbox" id="0.d56b16828a922" />
+                                <label for="0.d56b16828a922">&nbsp;Code</label>
+                                <iframe style="height: 400px;" src="./frames/index.html#popover"></iframe>
+
+                                <pre><code class="language-html">&lt;ws-popover&gt;
+    &lt;div ws-x="bd-w[1px] p[6px]"&gt;
         This is some stuff
-        &lt;label ws-x=&quot;@button @outline&quot; for=&quot;pop&quot;&gt;
+        &lt;label ws-x="@button @outline" for="pop"&gt;
             Show Popover
         &lt;/label&gt;
     &lt;/div&gt;
-    &lt;input type=&quot;checkbox&quot; ws-x=&quot;hide&quot; id=&quot;pop&quot; /&gt;
-    &lt;div ws-x=&quot;$content inset-x[0px] y[0px] bg[teal] h[150%]&quot;&gt;
+    &lt;input type="checkbox" ws-x="hide" id="pop" /&gt;
+    &lt;div ws-x="$content inset-x[0px] y[0px] bg[teal] h[150%]"&gt;
         Popover Content
-        &lt;label ws-x=&quot;@button @outline&quot; for=&quot;pop&quot;&gt;
+        &lt;label ws-x="@button @outline" for="pop"&gt;
             Close
         &lt;/label&gt;
     &lt;/div&gt;
 &lt;/ws-popover&gt;
 </code></pre>
+                            </div>
+                        

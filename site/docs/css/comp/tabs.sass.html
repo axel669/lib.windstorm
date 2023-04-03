@@ -7,37 +7,40 @@ inputs without JavaScript.</p>
 <li>@solid</li>
 <li>$color</li>
 </ul>
-<h2 id="preview">Preview</h2>
-<iframe src="./frames/index.html#tabs"></iframe>
-<h2 id="code-example">Code Example</h2>
-<pre><code class="language-html">&lt;ws-paper ws-x=&quot;@outline&quot;&gt;
-    &lt;ws-titlebar ws-x=&quot;$header&quot;&gt;
-        &lt;span ws-x=&quot;$title&quot;&gt;Horizontal&lt;/span&gt;
+
+                            <div class="toggle-view">
+                                <input type="checkbox" id="0.66638490b01a" />
+                                <label for="0.66638490b01a">&nbsp;Code</label>
+                                <iframe style="height: 400px;" src="./frames/index.html#tabs"></iframe>
+
+                                <pre><code class="language-html">&lt;ws-paper ws-x="@outline"&gt;
+    &lt;ws-titlebar ws-x="$header"&gt;
+        &lt;span ws-x="$title"&gt;Horizontal&lt;/span&gt;
     &lt;/ws-titlebar&gt;
-    &lt;div ws-x=&quot;$content&quot;&gt;
-        &lt;ws-tabs ws-x=&quot;$color[secondary] w[50%]&quot;&gt;
+    &lt;div ws-x="$content"&gt;
+        &lt;ws-tabs ws-x="$color[secondary] w[50%]"&gt;
             &lt;ws-tab&gt;Light&lt;/ws-tab&gt;
             &lt;ws-tab&gt;Dark&lt;/ws-tab&gt;
             &lt;ws-tab tab-selected&gt;Tron&lt;/ws-tab&gt;
         &lt;/ws-tabs&gt;
-        &lt;ws-tabs ws-x=&quot;@solid $color[secondary] w[50%]&quot;&gt;
+        &lt;ws-tabs ws-x="@solid $color[secondary] w[50%]"&gt;
             &lt;ws-tab&gt;Light&lt;/ws-tab&gt;
             &lt;ws-tab&gt;Dark&lt;/ws-tab&gt;
             &lt;ws-tab tab-selected&gt;Tron&lt;/ws-tab&gt;
         &lt;/ws-tabs&gt;
     &lt;/div&gt;
 &lt;/ws-paper&gt;
-&lt;ws-paper ws-x=&quot;@outline&quot;&gt;
-    &lt;ws-titlebar ws-x=&quot;$header&quot;&gt;
-        &lt;span ws-x=&quot;$title&quot;&gt;Vertical&lt;/span&gt;
+&lt;ws-paper ws-x="@outline"&gt;
+    &lt;ws-titlebar ws-x="$header"&gt;
+        &lt;span ws-x="$title"&gt;Vertical&lt;/span&gt;
     &lt;/ws-titlebar&gt;
-    &lt;div ws-x=&quot;$content&quot;&gt;
-        &lt;ws-tabs ws-x=&quot;$vert w[30%] p[8px]&quot;&gt;
+    &lt;div ws-x="$content"&gt;
+        &lt;ws-tabs ws-x="$vert w[30%] p[8px]"&gt;
             &lt;ws-tab&gt;Light&lt;/ws-tab&gt;
             &lt;ws-tab tab-selected&gt;Dark&lt;/ws-tab&gt;
             &lt;ws-tab&gt;Tron&lt;/ws-tab&gt;
         &lt;/ws-tabs&gt;
-        &lt;ws-tabs ws-x=&quot;@solid $vert w[30%] p[8px]&quot;&gt;
+        &lt;ws-tabs ws-x="@solid $vert w[30%] p[8px]"&gt;
             &lt;ws-tab&gt;Light&lt;/ws-tab&gt;
             &lt;ws-tab tab-selected&gt;Dark&lt;/ws-tab&gt;
             &lt;ws-tab&gt;Tron&lt;/ws-tab&gt;
@@ -45,3 +48,5 @@ inputs without JavaScript.</p>
     &lt;/div&gt;
 &lt;/ws-paper&gt;
 </code></pre>
+                            </div>
+                        

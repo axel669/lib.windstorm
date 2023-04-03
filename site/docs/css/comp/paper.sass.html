@@ -12,34 +12,39 @@ other on the page.</p>
 <li>$header</li>
 <li>$footer</li>
 </ul>
-<h2 id="preview">Preview</h2>
-<iframe src="./frames/index.html#paper"></iframe>
-<h2 id="code-example">Code Example</h2>
-<pre><code class="language-html">&lt;ws-paper&gt;
-    &lt;ws-flex ws-x=&quot;$content&quot;&gt;
+
+                            <div class="toggle-view">
+                                <input type="checkbox" id="0.2cfc188424f49" />
+                                <label for="0.2cfc188424f49">&nbsp;Code</label>
+                                <iframe style="height: 400px;" src="./frames/index.html#paper"></iframe>
+
+                                <pre><code class="language-html">&lt;ws-paper&gt;
+    &lt;ws-flex ws-x="$content"&gt;
         Just some paper
     &lt;/ws-flex&gt;
 &lt;/ws-paper&gt;
 
 &lt;ws-paper&gt;
-    &lt;ws-titlebar ws-x=&quot;$header&quot;&gt;
-        &lt;span ws-x=&quot;$title&quot;&gt;This one has a header&lt;/span&gt;
+    &lt;ws-titlebar ws-x="$header"&gt;
+        &lt;span ws-x="$title"&gt;This one has a header&lt;/span&gt;
     &lt;/ws-titlebar&gt;
-    &lt;ws-flex ws-x=&quot;$content&quot;&gt;
+    &lt;ws-flex ws-x="$content"&gt;
         With some content \o/
     &lt;/ws-flex&gt;
 &lt;/ws-paper&gt;
 
-&lt;ws-paper ws-x=&quot;@outline $color[secondary]&quot;&gt;
-    &lt;ws-titlebar ws-x=&quot;$header&quot;&gt;
-        &lt;span ws-x=&quot;$title&quot;&gt;Give them some color&lt;/span&gt;
+&lt;ws-paper ws-x="@outline $color[secondary]"&gt;
+    &lt;ws-titlebar ws-x="$header"&gt;
+        &lt;span ws-x="$title"&gt;Give them some color&lt;/span&gt;
     &lt;/ws-titlebar&gt;
-    &lt;ws-flex ws-x=&quot;$content&quot;&gt;
+    &lt;ws-flex ws-x="$content"&gt;
         And a border + some controls in the footer
     &lt;/ws-flex&gt;
-    &lt;ws-grid ws-x=&quot;$footer gr-col[1fr_1fr]&quot;&gt;
-        &lt;button ws-x=&quot;@flat $color[danger]&quot;&gt;Cancel&lt;/button&gt;
-        &lt;button ws-x=&quot;@flat $color[secondary]&quot;&gt;Use Windstorm&lt;/button&gt;
+    &lt;ws-grid ws-x="$footer gr-col[1fr_1fr]"&gt;
+        &lt;button ws-x="@flat $color[danger]"&gt;Cancel&lt;/button&gt;
+        &lt;button ws-x="@flat $color[secondary]"&gt;Use Windstorm&lt;/button&gt;
     &lt;/ws-grid&gt;
 &lt;/ws-paper&gt;
 </code></pre>
+                            </div>
+                        

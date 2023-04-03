@@ -7,37 +7,42 @@ info and optionally allows interaction.</p>
 <li>$color <code>required</code></li>
 <li>$click</li>
 </ul>
-<h2 id="preview">Preview</h2>
-<iframe src="./frames/index.html#chip"></iframe>
-<h2 id="code-example">Code Example</h2>
-<pre><code class="language-html">Normal
-&lt;ws-flex ws-x=&quot;fl-dir[row]&quot;&gt;
-    &lt;ws-chip ws-x=&quot;@outline $color[primary]&quot;&gt;
+
+                            <div class="toggle-view">
+                                <input type="checkbox" id="0.2f96a1119bed6" />
+                                <label for="0.2f96a1119bed6">&nbsp;Code</label>
+                                <iframe style="height: 400px;" src="./frames/index.html#chip"></iframe>
+
+                                <pre><code class="language-html">Normal
+&lt;ws-flex ws-x="fl-dir[row]"&gt;
+    &lt;ws-chip ws-x="@outline $color[primary]"&gt;
         Filter 1
     &lt;/ws-chip&gt;
-    &lt;ws-chip ws-x=&quot;@fill $color[secondary]&quot;&gt;
+    &lt;ws-chip ws-x="@fill $color[secondary]"&gt;
         Filter 2
     &lt;/ws-chip&gt;
-    &lt;ws-chip ws-x=&quot;@outline $color[warning]&quot;&gt;
+    &lt;ws-chip ws-x="@outline $color[warning]"&gt;
         Filter 3
     &lt;/ws-chip&gt;
 &lt;/ws-flex&gt;
 Clickable
-&lt;ws-flex ws-x=&quot;fl-dir[row]&quot;&gt;
-    &lt;ws-chip ws-x=&quot;@outline $color[primary] $click&quot;&gt;
-        &lt;ws-icon class=&quot;fa-close&quot;&gt;
+&lt;ws-flex ws-x="fl-dir[row]"&gt;
+    &lt;ws-chip ws-x="@outline $color[primary] $click"&gt;
+        &lt;ws-icon class="fa-close"&gt;
             Remove 1
         &lt;/ws-icon&gt;
     &lt;/ws-chip&gt;
-    &lt;ws-chip ws-x=&quot;@outline $color[secondary] $click&quot;&gt;
-        &lt;ws-icon class=&quot;fa-close&quot;&gt;
+    &lt;ws-chip ws-x="@outline $color[secondary] $click"&gt;
+        &lt;ws-icon class="fa-close"&gt;
             Remove 2
         &lt;/ws-icon&gt;
     &lt;/ws-chip&gt;
-    &lt;ws-chip ws-x=&quot;@fill $color[warning] $click&quot;&gt;
-        &lt;ws-icon class=&quot;fa-close&quot;&gt;
+    &lt;ws-chip ws-x="@fill $color[warning] $click"&gt;
+        &lt;ws-icon class="fa-close"&gt;
             Remove 3
         &lt;/ws-icon&gt;
     &lt;/ws-chip&gt;
 &lt;/ws-flex&gt;
 </code></pre>
+                            </div>
+                        

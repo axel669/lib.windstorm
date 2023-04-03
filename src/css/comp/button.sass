@@ -12,11 +12,10 @@
     - one of @flat/@outline/@fill `required`
     - $color
 
-    ## Preview
-    [^] index.html#button
-
-    ## Code Example
-    [$] button.html
+    {yaml}
+    frame:  index.html#button
+    code:  button.html
+    height: 400px
 
 button:where([ws-x~="@flat"], [ws-x~="@fill"], [ws-x~="@outline"]),
 label:where([ws-x~="@button"])
