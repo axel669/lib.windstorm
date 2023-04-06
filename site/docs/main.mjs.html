@@ -9,9 +9,11 @@ with minor differences between a set of 20.</p>
 </code></pre>
 <h3 id="cdn-link-module">CDN Link (module)</h3>
 <pre><code class="language-js">// Only scanning, no functions
-import &quot;https://esm.run/npm/@axel669/windstorm/dist/module.js&quot;
+import &quot;https://cdn.jsdelivr.net/npm/@axel669/windstorm/dist/module.mjs&quot;
 // Import functions + scanning
-import { wsx } from &quot;https://esm.run/npm/@axel669/windstorm/dist/module.js&quot;
+import wind from &quot;https://cdn.jsdelivr.net/npm/@axel669/windstorm/dist/module.mjs&quot;
+
+wind.wsx({stuff})
 </code></pre>
 <h3 id="node-modules">Node Modules</h3>
 <pre><code class="language-bash">pnpm add @axel669/windstorm

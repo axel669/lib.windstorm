@@ -8,39 +8,39 @@ other on the page.</p>
 </ul>
 <h3 id="areas">Areas</h3>
 <ul>
-<li>$content <code>required</code></li>
-<li>$header</li>
-<li>$footer</li>
+<li>slot[content] <code>required</code></li>
+<li>slot[header]</li>
+<li>slot[footer]</li>
 </ul>
 
                             <div class="toggle-view">
-                                <input type="checkbox" id="0.2cfc188424f49" />
-                                <label for="0.2cfc188424f49">&nbsp;Code</label>
+                                <input type="checkbox" id="0.80a10a409a7f3" />
+                                <label for="0.80a10a409a7f3">&nbsp;Code</label>
                                 <iframe style="height: 400px;" src="./frames/index.html#paper"></iframe>
 
                                 <pre><code class="language-html">&lt;ws-paper&gt;
-    &lt;ws-flex ws-x="$content"&gt;
+    &lt;ws-flex ws-x="slot[content]"&gt;
         Just some paper
     &lt;/ws-flex&gt;
 &lt;/ws-paper&gt;
 
 &lt;ws-paper&gt;
-    &lt;ws-titlebar ws-x="$header"&gt;
-        &lt;span ws-x="$title"&gt;This one has a header&lt;/span&gt;
+    &lt;ws-titlebar ws-x="slot[header]"&gt;
+        &lt;span ws-x="slot[title]"&gt;This one has a header&lt;/span&gt;
     &lt;/ws-titlebar&gt;
-    &lt;ws-flex ws-x="$content"&gt;
+    &lt;ws-flex ws-x="slot[content]"&gt;
         With some content \o/
     &lt;/ws-flex&gt;
 &lt;/ws-paper&gt;
 
 &lt;ws-paper ws-x="@outline $color[secondary]"&gt;
-    &lt;ws-titlebar ws-x="$header"&gt;
-        &lt;span ws-x="$title"&gt;Give them some color&lt;/span&gt;
+    &lt;ws-titlebar ws-x="slot[header]"&gt;
+        &lt;span ws-x="slot[title]"&gt;Give them some color&lt;/span&gt;
     &lt;/ws-titlebar&gt;
-    &lt;ws-flex ws-x="$content"&gt;
+    &lt;ws-flex ws-x="slot[content]"&gt;
         And a border + some controls in the footer
     &lt;/ws-flex&gt;
-    &lt;ws-grid ws-x="$footer gr-col[1fr_1fr]"&gt;
+    &lt;ws-grid ws-x="slot[footer] gr-col[1fr_1fr]"&gt;
         &lt;button ws-x="@flat $color[danger]"&gt;Cancel&lt;/button&gt;
         &lt;button ws-x="@flat $color[secondary]"&gt;Use Windstorm&lt;/button&gt;
     &lt;/ws-grid&gt;

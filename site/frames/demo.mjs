@@ -28,16 +28,16 @@ const App = () => {
 
     return html`
         <ws-screen ws-x="@left" ws-theme="${theme}">
-            <ws-titlebar ws-x="@fill $title $color[primary]">
-                <ws-text ws-x="$title $title-text">
+            <ws-titlebar ws-x="@fill slot[title] $color[primary]">
+                <ws-icon class="ti-clipboard" ws-x="slot[title] $title-text">
                     ${name} Examples
-                </ws-text>
+                </ws-icon>
             </ws-titlebar>
-            <ws-paper ws-x="$content">
-                <ws-tabs onClick=${changeTheme} ws-x="@solid $header">
+            <ws-paper ws-x="slot[content] r[0]">
+                <ws-tabs onClick=${changeTheme} ws-x="@solid slot[header] p[0]">
                     ${tabs}
                 </ws-tabs>
-                <ws-flex ws-x="$content over[auto]" innerHTML=${example}>
+                <ws-flex ws-x="slot[content] over[auto]" innerHTML=${example}>
                 </ws-flex>
             </ws-paper>
         </ws-screen>
