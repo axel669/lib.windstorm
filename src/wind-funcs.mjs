@@ -147,14 +147,14 @@ const windFuncs = {
 	"gr-row": simple("grid-template-rows"),
     /*md
 	## gr-acol[autoCol]
-	Shorthand for `grid-auto-column`
+	Shorthand for `grid-auto-columns`
 	*/
-	"gr-acol": simple("grid-auto-column"),
+	"gr-acol": simple("grid-auto-columns"),
     /*md
 	## gr-arow[autoRow]
-	Shorthand for `grid-auto-row`
+	Shorthand for `grid-auto-rows`
 	*/
-	"gr-arow": simple("grid-auto-row"),
+	"gr-arow": simple("grid-auto-rows"),
     /*md
 	## gr-flow[flow]
 	Shorthand for `grid-auto-flow`
