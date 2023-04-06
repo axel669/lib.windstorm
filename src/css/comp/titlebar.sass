@@ -28,7 +28,7 @@ ws-titlebar
     &:where(:not([ws-x~="@fill"]))
         border-bottom: 1px solid var(--color, var(--text-color-normal))
 
-    & > :where([ws-x~="$title"])
+    & > :where([ws-x~="slot[title]"])
         grid-area: title
         display: flex
         flex-direction: column
@@ -39,9 +39,9 @@ ws-titlebar
             font-weight: 700
         & > [ws-x~="$subtitle"], &[ws-x~="$subtitle"]
             font-size: var(--text-size-subtitle)
-    & > :where([ws-x~="$menu"])
+    & > :where([ws-x~="slot[menu]"])
         grid-area: menu
         --text-color-normal: var(--text-color)
-    & > :where([ws-x~="$action"])
+    & > :where([ws-x~="slot[action]"])
         grid-area: action
         --text-color-normal: var(--text-color)

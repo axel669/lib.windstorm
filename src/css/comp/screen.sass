@@ -32,11 +32,11 @@ ws-screen
     &[ws-x^="@left"]
         grid-template-columns: calc(8px * var(--stack)) calc(var(--screen-width) - calc(16px * var(--stack))) auto
 
-    & > [ws-x~="$content"]
+    & > [ws-x~="slot[content]"]
         grid-area: content
         height: 100%
         overflow: hidden
-    & > [ws-x~="$title"]
+    & > [ws-x~="slot[title]"]
         grid-area: title
-    & > [ws-x~="$footer"]
+    & > [ws-x~="slot[footer]"]
         grid-area: footer

@@ -11,9 +11,9 @@
     - $color
 
     ### Areas
-    - $content `required`
-    - $header
-    - $footer
+    - slot[content] `required`
+    - slot[header]
+    - slot[footer]
 
     {yaml}
     frame:  index.html#paper
@@ -39,10 +39,10 @@ ws-paper
         content: ""
         grid-area: footer
 
-    & > [ws-x~="$content"]
+    & > [ws-x~="slot[content]"]
         grid-area: content
-    & > [ws-x~="$header"]
+    & > [ws-x~="slot[header]"]
         grid-area: header
         font-size: var(--text-size-header)
-    & > [ws-x~="$footer"]
+    & > [ws-x~="slot[footer]"]
         grid-area: footer
