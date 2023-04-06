@@ -39,10 +39,10 @@ ws-paper
         content: ""
         grid-area: footer
 
-    & > [ws-x~="slot[content]"]
+    & > :where([ws-x~="slot[content]"], [slot="content"])
         grid-area: content
-    & > [ws-x~="slot[header]"]
+    & > :where([ws-x~="slot[header]"], [slot="header"])
         grid-area: header
         font-size: var(--text-size-header)
-    & > [ws-x~="slot[footer]"]
+    & > :where([ws-x~="slot[footer]"], [slot="footer"])
         grid-area: footer
