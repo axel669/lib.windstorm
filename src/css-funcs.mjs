@@ -24,22 +24,27 @@ const multi = (...names) =>
 /*md
 ## wsx(object)
 The wsx function takes an object where each key is a wind shorthand and each
-value determines if it is used and what the argument is.
+value determines if it is used and what the argument is. The function will also
+convert underscores and spaces into the format expected in the attribute.
 - Keys where the value is `null`, `undefined`, or `false` are ignored.
 - Keys where the value is `true` are included without the argument syntax
 - Keys with any other value are added as key[value]
 
 ```js
-import { wsx } from "where-windstorm-is"
+import wind from "where-windstorm-is"
 
 let colorVariable = "primary"
-const wsxAttr = wsx({
+const wsxAttr = wind.wsx({
     "@flat": true,
     "$color": colorVariable
 })
 // "@flat $color[primary]"
 ```
 */
+const format = (value) => value.replace(
+    /( )|(_)/g,
+    (_, sp) => sp ? "_" : "__"
+)
 const wsx = (obj) =>
     Object.entries(obj)
         .reduce(
@@ -47,7 +52,7 @@ const wsx = (obj) =>
                 if (value === null || value === undefined || value === false) {
                     return list
                 }
-                const part = (value === true) ? key : `${key}[${value}]`
+                const part = (value === true) ? key : `${key}[${format(value)}]`
                 list.push(part)
                 return list
             },

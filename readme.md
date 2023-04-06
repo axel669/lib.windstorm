@@ -17,9 +17,11 @@ with minor differences between a set of 20.
 ### CDN Link (module)
 ```js
 // Only scanning, no functions
-import "https://esm.run/npm/@axel669/windstorm/dist/module.js"
+import "https://cdn.jsdelivr.net/npm/@axel669/windstorm/dist/module.mjs"
 // Import functions + scanning
-import { wsx } from "https://esm.run/npm/@axel669/windstorm/dist/module.js"
+import wind from "https://cdn.jsdelivr.net/npm/@axel669/windstorm/dist/module.mjs"
+
+wind.wsx({stuff})
 ```
 
 ### Node Modules
