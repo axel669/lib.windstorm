@@ -27,7 +27,7 @@ const App = () => {
     )
 
     return html`
-        <ws-screen ws-x="@left" ws-theme="${theme}">
+        <ws-screen ws-x="@left theme[${theme}]">
             <ws-titlebar ws-x="@fill $color[primary]" slot="title">
                 <ws-icon class="ti-clipboard" ws-x="slot[title] $title-text">
                     ${name} Examples

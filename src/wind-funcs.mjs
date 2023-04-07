@@ -422,6 +422,17 @@ const windFuncs = {
 	*/
 	"t-ws": simple("white-space"),
     /*md
+    ## theme[name]
+    Sets the baseline styles for a theme but doesn't apply anything related to
+    the name in the wind function itself.
+    */
+    "theme": () => [
+        cssprop("background", "var(--background)"),
+        cssprop("color", "var(--text-color-normal)"),
+        cssprop("font-family", "var(--font)"),
+        cssprop("font-size", "var(--text-size-normal)"),
+    ],
+    /*md
 	## tr[transform]
 	Shorthand for `transform`
 	*/
