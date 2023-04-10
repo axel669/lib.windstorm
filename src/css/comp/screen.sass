@@ -20,7 +20,10 @@ ws-screen
     width: calc(100% - var(--sub-pixel-offset))
     height: calc(100% - 1px)
     overflow: hidden
-    position: absolute
+    position: fixed
+    top: 0px
+    left: 0px
+    z-index: 200
     background-color: rgba(0, 0, 0, 0.5)
     grid-template-columns: auto calc(var(--screen-width) - calc(16px * var(--stack))) auto
 
