@@ -9,8 +9,13 @@ const loadHTML = async (url) => {
 }
 
 const initial = location.hash.slice(1).trim()
-const example = await loadHTML(`./comp/${initial}.html`)
-// const example = component.default
+const example =
+    (initial !== "")
+    ? await loadHTML(`./comp/${initial}.html`)
+    : Array.from(
+        { length: 100 },
+        () => `<div>${Math.random()}</div>`
+    ).join("\n")
 
 const name = `${initial.slice(0, 1).toUpperCase()}${initial.slice(1)}`
 
