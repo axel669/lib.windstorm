@@ -427,7 +427,6 @@ const windFuncs = {
     the name in the wind function itself.
     */
     "theme": () => [
-        cssprop("background", "var(--background)"),
         cssprop("color", "var(--text-color-normal)"),
         cssprop("font-family", "var(--font)"),
         cssprop("font-size", "var(--text-size-normal)"),
