@@ -1,20 +1,20 @@
 <ws-grid ws-x="gr-col[1fr_1fr]">
     <label ws-x="@control $color[primary]">
-        <span ws-x="$text">OOP Language</span>
+        <span ws-x="$text" ws-hint="wat">OOP Language</span>
         <input />
     </label>
-    <label ws-x="@control">
+    <label ws-x="@control" ws-error="blep">
         <span ws-x="$text">Cheese Picture</span>
         <input type="file" />
     </label>
-    <label ws-x="@control $color[secondary]">
+    <label ws-x="@control @flat $color[secondary]" ws-error="test">
         <span ws-x="$text">Coolness Factor</span>
         <input />
         <div ws-x="$adorn[start]">
             $
         </div>
     </label>
-    <label ws-x="@control @flat $color[warning]">
+    <label ws-x="@control $color[warning]">
         <span ws-x="$text">Mistakes in CS</span>
         <select>
             <option>TypeScript</option>

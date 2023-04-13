@@ -8,35 +8,46 @@ make up the label.</p>
 <li>@flat</li>
 <li>$color</li>
 </ul>
+<h2 id="attributes">Attributes</h2>
+<ul>
+<li>ws-error<br>  Adding the ws-error attribute to the lable will make error text display
+  below the component.</li>
+</ul>
 <h3 id="children-wind-functions">Children Wind Functions</h3>
 <ul>
-<li>$text<br>  sets the element with the text for the label</li>
+<li>$text<br>  sets the element with the text for the label<ul>
+<li>attr: ws-hint
+  The ws-hint attribute can be applied to the element marked as the
+  label and will have the content of the attribute added as a hint
+  underneath the label for the element.</li>
+</ul>
+</li>
 <li>slot[start / end]<br>  adds an adornment to the input area, probably only looks good with
   input elements that are typed text.</li>
 </ul>
 
                             <div class="toggle-view">
-                                <input type="checkbox" id="0.374a911c081cb" />
-                                <label for="0.374a911c081cb">&nbsp;Code</label>
+                                <input type="checkbox" id="0.abcf925f5d37c" />
+                                <label for="0.abcf925f5d37c">&nbsp;Code</label>
                                 <iframe style="height: 400px;" src="./frames/index.html#control"></iframe>
 
                                 <pre><code class="language-html">&lt;ws-grid ws-x="gr-col[1fr_1fr]"&gt;
     &lt;label ws-x="@control $color[primary]"&gt;
-        &lt;span ws-x="$text"&gt;OOP Language&lt;/span&gt;
+        &lt;span ws-x="$text" ws-hint="wat"&gt;OOP Language&lt;/span&gt;
         &lt;input /&gt;
     &lt;/label&gt;
-    &lt;label ws-x="@control"&gt;
+    &lt;label ws-x="@control" ws-error="blep"&gt;
         &lt;span ws-x="$text"&gt;Cheese Picture&lt;/span&gt;
         &lt;input type="file" /&gt;
     &lt;/label&gt;
-    &lt;label ws-x="@control $color[secondary]"&gt;
+    &lt;label ws-x="@control @flat $color[secondary]" ws-error="test"&gt;
         &lt;span ws-x="$text"&gt;Coolness Factor&lt;/span&gt;
         &lt;input /&gt;
         &lt;div ws-x="$adorn[start]"&gt;
             $
         &lt;/div&gt;
     &lt;/label&gt;
-    &lt;label ws-x="@control @flat $color[warning]"&gt;
+    &lt;label ws-x="@control $color[warning]"&gt;
         &lt;span ws-x="$text"&gt;Mistakes in CS&lt;/span&gt;
         &lt;select&gt;
             &lt;option&gt;TypeScript&lt;/option&gt;
