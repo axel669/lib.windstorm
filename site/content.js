@@ -46,6 +46,10 @@ window.siteConfig = {
                     "items": "components-labeled-toggle"
                 },
                 {
+                    "label": "Link",
+                    "items": "components-link"
+                },
+                {
                     "label": "Modal",
                     "items": "components-modal"
                 },
@@ -113,6 +117,7 @@ window.siteConfig = {
         "components-flex": "css/comp/flex.sass.html",
         "components-grid": "css/comp/grid.sass.html",
         "components-icon": "css/comp/icon.sass.html",
+        "components-link": "css/comp/link.sass.html",
         "components-modal": "css/comp/modal.sass.html",
         "components-notification": "css/comp/notification.sass.html",
         "components-paper": "css/comp/paper.sass.html",
