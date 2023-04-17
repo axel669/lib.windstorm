@@ -75,12 +75,13 @@ label:where([ws-x~="@control"])
         &:focus
             outline: none
 
-    & > select > option
-        background-color: var(--background-layer)
-        border-color: var(--background-layer)
-        color: var(--text-color-normal)
-        font-size: var(--text-size-normal)
-        font-family: Arial
+    & > select
+        option, optgroup
+            background-color: var(--background-layer)
+            border-color: var(--background-layer)
+            color: var(--text-color-normal)
+            font-size: var(--text-size-normal)
+            font-family: Arial
 
     & > input, & > textarea
         border-width: 0px
