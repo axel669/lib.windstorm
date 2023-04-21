@@ -17,8 +17,9 @@ body, html
     height: 100%
     -webkit-tap-highlight-color: transparent
 
-body[ws-x~="@app"]
+body[ws-x*="theme["]
     background-color: var(--background)
+body[ws-x~="@app"]
     overflow: hidden
     position: fixed
     touch-action: pan-x pan-y

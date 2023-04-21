@@ -1,0 +1,25 @@
+<h1 id="themes">Themes</h1>
+<p>Windstorm comes packaged with 3 themes by default: Light, Dark, and Tron.</p>
+<p>In order for windstorm styling to take effect a theme must be applied to the</p>
+<body> tag.
+
+<p>The light theme is a standard light theme for regular humans, dark theme is
+also intended for regular people, but is nice and dark, and the tron theme is a
+high contrast theme for people who really like high contrast dark themes.</p>
+<p>To use a theme add <code>theme[name]</code> into the ws-x attribute, and it will apply to
+the element and all its descendants. Themes do not apply upward in the DOM tree
+but multiple themes can be applied in different parts of the tree freely.</p>
+<h2 id="usage">Usage</h2>
+<pre><code class="language-html">&lt;body ws-x=&quot;theme[dark]&quot;&gt;
+    &lt;ws-paper&gt;
+        &lt;div slot=&quot;contet&quot;&gt;
+            This content is readable
+        &lt;/div&gt;
+    &lt;/ws-paper&gt;
+    &lt;ws-paper ws-x=&quot;theme[light]&quot;&gt;
+        &lt;div slot=&quot;contet&quot;&gt;
+            This content hurts my eyes (light theme)
+        &lt;/div&gt;
+    &lt;/ws-paper&gt;
+&lt;/body&gt;
+</code></pre>

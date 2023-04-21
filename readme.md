@@ -37,25 +37,41 @@ elements are also detected and generated.
 Component css is automatically added to the head as well, so no work needs to be
 done to use any of the components.
 
+Many of the windstorm components expect some css variables defined by the theme
+to be present, so a theme should always be applied to the body.
+
+### @app and ws-screen
+The ws-screen component is designed to work well across browsers and devices
+and makes scrolling sections of content easier with the other built in
+components, but in order for it to work as intended `@app` needs to be added to
+the body ws-x attribute value. Without `@app` the browser will use its normal
+scrolling behavior rules which can be something of a pain for more complex
+screens.
+
 > Any html elements that do not have the `ws-x` attribute are left alone,
 > allowing windstorm to play nice with any other css lib (that I tried).
 
 ```html
-<div ws-x="w[100px] h[200px] bg-c[teal]"></div>
-<ws-paper ws-x="@outline">
-    <ws-flex>
-        <button ws-x="@fill $color[primary] r[8px]">
-            Click Me!
-        </button>
-    </ws-flex>
-</ws-paper>
+<body ws-x="theme[tron] @app">
+    <ws-screen>
+        <ws-paper ws-x="@outline">
+            <ws-flex>
+                <button ws-x="@fill $color[primary] r[8px]">
+                    Click Me!
+                </button>
+                <div ws-x="w[100px] h[200px] bg-c[teal]"></div>
+            </ws-flex>
+        </ws-paper>
+    </ws-screen>
+</body>
 ```
 
 ### Custom Functions
-Windstorm has 3 different kinds of custom function:
+Windstorm has different kinds of custom function:
 - normal functions that are just text and hyphens
 - component props that are prefixed with `$`
 - component styles that are prefixed with `@`
+- css custom properties (varaibles) that are prefixed with `&`
 
 Internally, there is no difference in how these are detected and processed, the
 prefixes are for programmers to be able to easily see which functions are for

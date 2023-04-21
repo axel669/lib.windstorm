@@ -5,10 +5,19 @@ import { cssprop, simple, multi } from "./css-funcs.mjs"
 
 # Wind Shorthands
 Windstorm provides a number of shorthands for common css. The arguments allow
-css as is (no special formatting required) ex: `w[min(100px, 50%)]`. It also
-allows a shorthand for arguments that are just variables:
-> `h[&height]` -> `h[var(--height)]`\\
-> `bd[1px solid &border]` will not become `bd[1px solid var(--border)]`\\
+css format, but all spaces inside arguments need be single underscores, and if
+an underscore is needed in the value, use 2 undescores\\
+> Invalid: `w[min(100px, 50%)]`\\
+> should be `w[min(100px,_50%)]` or `w[min(100px,50%)]`
+
+CSS custom properties (variables) can also be set using windstorm syntax:
+> `&var[teal]` -> `--var: teal`
+> `&thing[&other-thing]` -> `--thing: var(--other-thing)`
+> `&border[1px_solid_var(--primary)]` -> `--border: 1px solid var(--primary)`
+
+It also allows a shorthand for arguments that are just variables:
+> `h[&height]` -> `height: var(--height)`\\
+> `bd[1px_solid_&border]` will not become `border: 1px solid var(--border)`\\
 > (might be able to allow the second on in the future)
 */
 
@@ -19,25 +28,105 @@ const windFuncs = {
 	*/
 	"area": simple("grid-area"),
     /*md
-	## bd[borderStyle]
-	Shorthand for `border`
-	*/
-	"bd": simple("border"),
+    ## b[borderStyle]
+    Shorthand for `border`
+    */
+    "b": simple("border"),
     /*md
-	## bd-c[color]
-	Shorthand for `border-color`
-	*/
-	"bd-c": simple("border-color"),
+    ## b-c[color]
+    Shorthand for `border-color`
+    */
+    "b-c": simple("border-color"),
     /*md
-	## bd-s[style]
-	Shorthand for `border-style`
-	*/
-	"bd-s": simple("border-style"),
+    ## b-s[style]
+    Shorthand for `border-style`
+    */
+    "b-s": simple("border-style"),
     /*md
-	## bd-w[width]
-	Shorthand for `border-width`
-	*/
-	"bd-w": simple("border-width"),
+    ## b-w[width]
+    Shorthand for `border-width`
+    */
+    "b-w": simple("border-width"),
+    /*md
+    ## b[borderStyle]
+    Shorthand for `border-top`
+    */
+    "b-t": simple("border-top"),
+    /*md
+    ## b-c[color]
+    Shorthand for `border-top-color`
+    */
+    "b-t-c": simple("border-top-color"),
+    /*md
+    ## b-s[style]
+    Shorthand for `border-top-style`
+    */
+    "b-t-s": simple("border-top-style"),
+    /*md
+    ## b-w[width]
+    Shorthand for `border-top-width`
+    */
+    "b-t-w": simple("border-top-width"),
+    /*md
+    ## b-b[borderStyle]
+    Shorthand for `border-bottom`
+    */
+    "b-b": simple("border-bottom"),
+    /*md
+    ## b-b-c[color]
+    Shorthand for `border-bottom-color`
+    */
+    "b-b-c": simple("border-bottom-color"),
+    /*md
+    ## b-b-s[style]
+    Shorthand for `border-bottom-style`
+    */
+    "b-b-s": simple("border-bottom-style"),
+    /*md
+    ## b-b-w[width]
+    Shorthand for `border-bottom-width`
+    */
+    "b-b-w": simple("border-bottom-width"),
+    /*md
+    ## b-l[borderStyle]
+    Shorthand for `border-left`
+    */
+    "b-l": simple("border-left"),
+    /*md
+    ## b-l-c[color]
+    Shorthand for `border-left-color`
+    */
+    "b-l-c": simple("border-left-color"),
+    /*md
+    ## b-l-s[style]
+    Shorthand for `border-left-style`
+    */
+    "b-l-s": simple("border-left-style"),
+    /*md
+    ## b-l-w[width]
+    Shorthand for `border-left-width`
+    */
+    "b-l-w": simple("border-left-width"),
+    /*md
+    ## b-r[borderStyle]
+    Shorthand for `border-right`
+    */
+    "b-r": simple("border-right"),
+    /*md
+    ## b-r-c[color]
+    Shorthand for `border-right-color`
+    */
+    "b-r-c": simple("border-right-color"),
+    /*md
+    ## b-r-s[style]
+    Shorthand for `border-right-style`
+    */
+    "b-r-s": simple("border-right-style"),
+    /*md
+    ## b-r-w[width]
+    Shorthand for `border-right-width`
+    */
+    "b-r-w": simple("border-right-width"),
     /*md
 	## bg[backgroundStyle]
 	Shorthand for `background`
@@ -83,7 +172,7 @@ const windFuncs = {
     Sets `display: flex` and sets the `flex-direction`. Default direction is
     `"column"`
     */
-    "flex": (direction = "column") => [
+    "flex": (_, direction = "column") => [
         cssprop("display", "flex"),
         cssprop("flex-direction", direction)
     ],
@@ -131,7 +220,7 @@ const windFuncs = {
     ## grid[flow = "row"]
     Sets `display: grid` and sets the `grid-auto-flow`. Default flow is `"row"`
     */
-    "grid": (flow = "row") => [
+    "grid": (_, flow = "row") => [
         cssprop("display", "grid"),
         cssprop("grid-auto-flow", flow)
     ],
@@ -190,7 +279,7 @@ const windFuncs = {
     Sets `display: inline-flex` and sets the `flex-direction`. Default direction
     is `"column"`
     */
-    "iflex": (direction = "column") => [
+    "iflex": (_, direction = "column") => [
         cssprop("display", "inline-flex"),
         cssprop("flex-direction", direction)
     ],
@@ -199,7 +288,7 @@ const windFuncs = {
     Sets `display: inline-grid` and sets the `grid-auto-flow`.
     Default flow is `"row"`
     */
-    "igrid": (flow = "row") => [
+    "igrid": (_, flow = "row") => [
         cssprop("display", "inline-grid"),
         cssprop("grid-auto-flow", flow)
     ],
@@ -367,6 +456,11 @@ const windFuncs = {
 	*/
 	"row": simple("grid-row"),
     /*md
+    ## sel[type]
+	Shorthand for `user-select`
+    */
+   "sel": simple("user-select"),
+    /*md
 	## shdw[style]
 	Shorthand for `box-shadow`
 	*/
@@ -381,11 +475,6 @@ const windFuncs = {
 	Shorthand for `word-break`
 	*/
 	"t-br": simple("word-break"),
-    /*md
-	## t-c[color]
-	Shorthand for `color`
-	*/
-	"t-c": simple("color"),
     /*md
 	## t-deco[decoration]
 	Shorthand for `text-decoration`
@@ -485,7 +574,7 @@ const windFuncs = {
     > works: `$color[primary]`\\
     > doesn't work: `$color[&primary]`
     */
-    "$color": (color) => [
+    "$color": (_, color) => [
         cssprop("--color", `&${color}`),
         cssprop("--ripple-color", `&${color}-ripple`),
     ],
@@ -493,14 +582,20 @@ const windFuncs = {
     ## $adorn[area]
     Used inside components to add adornments next to the input element
     */
-    "$adorn": (area) => [
-        cssprop("grid-area", area),
+    "$adorn": () => [
         cssprop("display", "flex"),
         cssprop("justify-content", "center"),
         cssprop("align-items", "center"),
         cssprop("padding", "2px"),
     ],
     "$compact": () => [cssprop("padding", "0px 8px")],
+    "$title": () => [
+        cssprop("font-size", "&text-size-title"),
+        cssprop("font-weight", "700")
+    ],
+    "$subtitle": () => [
+        cssprop("font-size", "&text-size-subtitle"),
+    ],
     /*md
     ## @flat
     Component style that removes borders
@@ -528,9 +623,6 @@ const windFuncs = {
         cssprop("background-color", "&color"),
         cssprop("color", "&text-color-fill"),
     ],
-    "@left": (width) => [cssprop("--screen-width", width)],
-    "@center": (width) => [cssprop("--screen-width", width)],
-    "@stack": (stack) => [cssprop("--stack", stack)],
 }
 
 export default windFuncs

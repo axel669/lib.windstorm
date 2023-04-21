@@ -1,6 +1,6 @@
 <ws-paper ws-x="@outline">
-    <ws-titlebar ws-x="$header">
-        <span ws-x="$title">Horizontal</span>
+    <ws-titlebar slot="header">
+        <span ws-x="slot[title] $title">Horizontal</span>
     </ws-titlebar>
     <div ws-x="$content">
         <ws-tabs ws-x="$color[secondary] w[50%]">
@@ -16,8 +16,8 @@
     </div>
 </ws-paper>
 <ws-paper ws-x="@outline">
-    <ws-titlebar ws-x="$header">
-        <span ws-x="$title">Vertical</span>
+    <ws-titlebar slot="header">
+        <span ws-x="slot[title] $title">Vertical</span>
     </ws-titlebar>
     <div ws-x="$content">
         <ws-tabs ws-x="$vert w[30%] p[8px]">

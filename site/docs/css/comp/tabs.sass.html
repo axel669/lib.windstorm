@@ -9,13 +9,13 @@ inputs without JavaScript.</p>
 </ul>
 
                             <div class="toggle-view">
-                                <input type="checkbox" id="0.24a9f086c30ea" />
-                                <label for="0.24a9f086c30ea">&nbsp;Code</label>
+                                <input type="checkbox" id="0.3714c9838a984" />
+                                <label for="0.3714c9838a984">&nbsp;Code</label>
                                 <iframe style="height: 400px;" src="./frames/index.html#tabs"></iframe>
 
                                 <pre><code class="language-html">&lt;ws-paper ws-x="@outline"&gt;
-    &lt;ws-titlebar ws-x="$header"&gt;
-        &lt;span ws-x="$title"&gt;Horizontal&lt;/span&gt;
+    &lt;ws-titlebar slot="header"&gt;
+        &lt;span ws-x="slot[title] $title"&gt;Horizontal&lt;/span&gt;
     &lt;/ws-titlebar&gt;
     &lt;div ws-x="$content"&gt;
         &lt;ws-tabs ws-x="$color[secondary] w[50%]"&gt;
@@ -31,8 +31,8 @@ inputs without JavaScript.</p>
     &lt;/div&gt;
 &lt;/ws-paper&gt;
 &lt;ws-paper ws-x="@outline"&gt;
-    &lt;ws-titlebar ws-x="$header"&gt;
-        &lt;span ws-x="$title"&gt;Vertical&lt;/span&gt;
+    &lt;ws-titlebar slot="header"&gt;
+        &lt;span ws-x="slot[title] $title"&gt;Vertical&lt;/span&gt;
     &lt;/ws-titlebar&gt;
     &lt;div ws-x="$content"&gt;
         &lt;ws-tabs ws-x="$vert w[30%] p[8px]"&gt;

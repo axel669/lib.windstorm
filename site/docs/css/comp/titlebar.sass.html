@@ -9,36 +9,36 @@ controls.</p>
 </ul>
 
                             <div class="toggle-view">
-                                <input type="checkbox" id="0.8462feba2f6a" />
-                                <label for="0.8462feba2f6a">&nbsp;Code</label>
+                                <input type="checkbox" id="0.e5d6d5b7d91d9" />
+                                <label for="0.e5d6d5b7d91d9">&nbsp;Code</label>
                                 <iframe style="height: 400px;" src="./frames/index.html#titlebar"></iframe>
 
                                 <pre><code class="language-html">&lt;ws-titlebar&gt;
-    &lt;span ws-x="$title"&gt;
-        &lt;div ws-x="$title-text"&gt;Basic Titlebar&lt;/div&gt;
+    &lt;span ws-x="slot[title]"&gt;
+        &lt;div ws-x="$title"&gt;Basic Titlebar&lt;/div&gt;
         &lt;div ws-x="$subtitle"&gt;Subtitle&lt;/div&gt;
     &lt;/span&gt;
 &lt;/ws-titlebar&gt;
 
 &lt;ws-titlebar ws-x="$color[primary]"&gt;
-    &lt;span ws-x="$title $title-text"&gt;Color Titlebar&lt;/span&gt;
+    &lt;span ws-x="slot[title] $title"&gt;Color Titlebar&lt;/span&gt;
 &lt;/ws-titlebar&gt;
 
 &lt;ws-titlebar ws-x="$color[danger]"&gt;
-    &lt;span ws-x="$title $title-text"&gt;Titlebar + controls&lt;/span&gt;
+    &lt;span ws-x="slot[title] $title"&gt;Titlebar + controls&lt;/span&gt;
 
-    &lt;button ws-x="@flat $menu"&gt;
+    &lt;button ws-x="@flat slot[menu]"&gt;
         &lt;ws-icon class="ti-menu-2"&gt;&lt;/ws-icon&gt;
     &lt;/button&gt;
 &lt;/ws-titlebar&gt;
 
 &lt;ws-titlebar ws-x="@fill $color[primary]"&gt;
-    &lt;span ws-x="$title $title-text"&gt;Filled Color Titlebar&lt;/span&gt;
+    &lt;span ws-x="slot[title] $title"&gt;Filled Color Titlebar&lt;/span&gt;
 &lt;/ws-titlebar&gt;
 
 &lt;ws-titlebar ws-x="@fill $color[secondary]"&gt;
-    &lt;span ws-x="$title $title-text"&gt;Filled Titlebar + controls&lt;/span&gt;
-    &lt;button ws-x="@flat $action"&gt;
+    &lt;span ws-x="slot[title] $title"&gt;Filled Titlebar + controls&lt;/span&gt;
+    &lt;button ws-x="@flat slot[action]"&gt;
         &lt;ws-icon class="ti-logout"&gt;&lt;/ws-icon&gt;
     &lt;/button&gt;
 &lt;/ws-titlebar&gt;

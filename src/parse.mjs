@@ -1,4 +1,4 @@
-const funcs = /(?<key>(?<mod>\w+:)?(?<name>[\$\@\w\-]+)(\[(?<args>.*?)\])?)/g
+const funcs = /(?<key>(?<mod>\w+:)?(?<name>[\$\@\&\w\-]+)(\[(?<args>.*?)\])?)/g
 const factor = { "(": 1, ")": -1 }
 const parseArgs = (argSource) => {
     const source = argSource.trim().replace(

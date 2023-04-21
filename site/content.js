@@ -102,10 +102,15 @@ window.siteConfig = {
         {
             "label": "Home",
             "items": "home"
+        },
+        {
+            "label": "Themes",
+            "items": "themes"
         }
     ],
     "sidebarMap": {
         "index": "main.mjs.html",
+        "themes": "baseline.mjs.html",
         "api": "css-funcs.mjs.html",
         "home": "main.mjs.html",
         "css-shorthands": "wind-funcs.mjs.html",

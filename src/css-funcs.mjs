@@ -15,9 +15,9 @@ const cssprop = (name, value) =>
         ? ""
         : `${name}: ${cssvalue(value)}`
 const simple = (name) =>
-    (value) => [cssprop(name, value)]
+    (_, value) => [cssprop(name, value)]
 const multi = (...names) =>
-    (value) => names.map(
+    (_, value) => names.map(
         (name) => cssprop(name, value)
     )
 

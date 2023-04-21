@@ -14,7 +14,7 @@ const example =
     ? await loadHTML(`./comp/${initial}.html`)
     : Array.from(
         { length: 100 },
-        () => `<div>${Math.random()}</div>`
+        () => `<div ws-x="&test[teal] b-r[1px_solid_var(--test)]">${Math.random()}</div>`
     ).join("\n")
 
 const name = `${initial.slice(0, 1).toUpperCase()}${initial.slice(1)}`
@@ -35,7 +35,7 @@ const App = () => {
         <ws-screen ws-x="@left theme[${theme}]">
             <ws-paper ws-x="r[0]">
                 <ws-titlebar ws-x="@fill $color[primary]" slot="header">
-                    <ws-icon class="ti-clipboard" ws-x="slot[title] $title-text">
+                    <ws-icon class="ti-clipboard" ws-x="slot[title] $title">
                         ${name} Examples
                     </ws-icon>
                 </ws-titlebar>

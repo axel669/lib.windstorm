@@ -24,25 +24,39 @@ wind.wsx({stuff})
 elements are also detected and generated.</p>
 <p>Component css is automatically added to the head as well, so no work needs to be
 done to use any of the components.</p>
+<p>Many of the windstorm components expect some css variables defined by the theme
+to be present, so a theme should always be applied to the body.</p>
+<h3 id="app-and-ws-screen">@app and ws-screen</h3>
+<p>The ws-screen component is designed to work well across browsers and devices
+and makes scrolling sections of content easier with the other built in
+components, but in order for it to work as intended <code>@app</code> needs to be added to
+the body ws-x attribute value. Without <code>@app</code> the browser will use its normal
+scrolling behavior rules which can be something of a pain for more complex
+screens.</p>
 <blockquote>
 <p>Any html elements that do not have the <code>ws-x</code> attribute are left alone,
 allowing windstorm to play nice with any other css lib (that I tried).</p>
 </blockquote>
-<pre><code class="language-html">&lt;div ws-x=&quot;w[100px] h[200px] bg-c[teal]&quot;&gt;&lt;/div&gt;
-&lt;ws-paper ws-x=&quot;@outline&quot;&gt;
-    &lt;ws-flex&gt;
-        &lt;button ws-x=&quot;@fill $color[primary] r[8px]&quot;&gt;
-            Click Me!
-        &lt;/button&gt;
-    &lt;/ws-flex&gt;
-&lt;/ws-paper&gt;
+<pre><code class="language-html">&lt;body ws-x=&quot;theme[tron] @app&quot;&gt;
+    &lt;ws-screen&gt;
+        &lt;ws-paper ws-x=&quot;@outline&quot;&gt;
+            &lt;ws-flex&gt;
+                &lt;button ws-x=&quot;@fill $color[primary] r[8px]&quot;&gt;
+                    Click Me!
+                &lt;/button&gt;
+                &lt;div ws-x=&quot;w[100px] h[200px] bg-c[teal]&quot;&gt;&lt;/div&gt;
+            &lt;/ws-flex&gt;
+        &lt;/ws-paper&gt;
+    &lt;/ws-screen&gt;
+&lt;/body&gt;
 </code></pre>
 <h3 id="custom-functions">Custom Functions</h3>
-<p>Windstorm has 3 different kinds of custom function:</p>
+<p>Windstorm has different kinds of custom function:</p>
 <ul>
 <li>normal functions that are just text and hyphens</li>
 <li>component props that are prefixed with <code>$</code></li>
 <li>component styles that are prefixed with <code>@</code></li>
+<li>css custom properties (varaibles) that are prefixed with <code>&amp;</code></li>
 </ul>
 <p>Internally, there is no difference in how these are detected and processed, the
 prefixes are for programmers to be able to easily see which functions are for

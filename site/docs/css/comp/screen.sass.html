@@ -1,15 +1,24 @@
 <h1 id="screen">Screen</h1>
-<p>The screen component is primarily made for app pages rather than general
-purpose pages like the other components. It can be used to wrap the main
-content of a regular page as well, but the visual stacking properties
-will only really be seen by using code to add additional screen elements
-on top of each other at runtime.</p>
+<p>The screen acts as a wrapper for a paper (or other container) to sit in
+and only provides the sizing/centering with the stacking visual effect.
+The top level of a page will likely be a screen but it doesnt have to be.</p>
+<h2 id="wind-functions">Wind Functions</h2>
+<ul>
+<li>@left<br>  Left aligns the container in the screen</li>
+</ul>
+<h2 id="variables">Variables</h2>
+<ul>
+<li>screen-width<br>  Defines how wide the screen&#39;s contents will be.<br>  default: min(720px, 100%)</li>
+<li>stack<br>  Increasing the stack number increases the space surrounding a screen,
+  creating a stacking effect when multiple screens are overlayed with
+  incrementing stack values.</li>
+</ul>
 <p>There will be examples and more docs when I feel like it, I don&#39;t know
 where I&#39;d begin documenting this.</p>
 
                             <div class="toggle-view">
-                                <input type="checkbox" id="0.9a149383d4952" />
-                                <label for="0.9a149383d4952">&nbsp;Code</label>
+                                <input type="checkbox" id="0.ffff7325c4629" />
+                                <label for="0.ffff7325c4629">&nbsp;Code</label>
                                 <iframe style="height: 400px;" src="./frames/index.html#screen"></iframe>
 
                                 <pre><code class="language-html">&lt;ws-badge ws-text="test" ws-x="$color[warning]"&gt;
@@ -18,7 +27,7 @@ where I&#39;d begin documenting this.</p>
     &lt;/button&gt;
 &lt;/ws-badge&gt;
 
-&lt;ws-screen ws-x="@left theme[tron]" style="--stack: 1"&gt;
+&lt;ws-screen ws-x="@left theme[tron] &stack[2]"&gt;
     &lt;ws-paper ws-x="r[0px]"&gt;
         &lt;ws-titlebar ws-x="slot[header] @fill $color[secondary]"&gt;
             &lt;span ws-x="slot[title] $title"&gt;Sub Screen&lt;/span&gt;

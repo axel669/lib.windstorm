@@ -1,20 +1,62 @@
 <h1 id="wind-shorthands">Wind Shorthands</h1>
 <p>Windstorm provides a number of shorthands for common css. The arguments allow
-css as is (no special formatting required) ex: <code>w[min(100px, 50%)]</code>. It also
-allows a shorthand for arguments that are just variables:</p>
+css format, but all spaces inside arguments need be single underscores, and if
+an underscore is needed in the value, use 2 undescores  </p>
 <blockquote>
-<p><code>h[&amp;height]</code> -&gt; <code>h[var(--height)]</code><br><code>bd[1px solid &amp;border]</code> will not become <code>bd[1px solid var(--border)]</code><br>(might be able to allow the second on in the future)</p>
+<p>Invalid: <code>w[min(100px, 50%)]</code><br>should be <code>w[min(100px,_50%)]</code> or <code>w[min(100px,50%)]</code></p>
+</blockquote>
+<p>CSS custom properties (variables) can also be set using windstorm syntax:</p>
+<blockquote>
+<p><code>&amp;var[teal]</code> -&gt; <code>--var: teal</code>
+<code>&amp;thing[&amp;other-thing]</code> -&gt; <code>--thing: var(--other-thing)</code>
+<code>&amp;border[1px_solid_var(--primary)]</code> -&gt; <code>--border: 1px solid var(--primary)</code></p>
+</blockquote>
+<p>It also allows a shorthand for arguments that are just variables:</p>
+<blockquote>
+<p><code>h[&amp;height]</code> -&gt; <code>height: var(--height)</code><br><code>bd[1px_solid_&amp;border]</code> will not become <code>border: 1px solid var(--border)</code><br>(might be able to allow the second on in the future)</p>
 </blockquote>
 <h2 id="areaname">area[name]</h2>
 <p>Shorthand for <code>grid-area</code></p>
-<h2 id="bdborderstyle">bd[borderStyle]</h2>
+<h2 id="bborderstyle">b[borderStyle]</h2>
 <p>Shorthand for <code>border</code></p>
-<h2 id="bd-ccolor">bd-c[color]</h2>
+<h2 id="b-ccolor">b-c[color]</h2>
 <p>Shorthand for <code>border-color</code></p>
-<h2 id="bd-sstyle">bd-s[style]</h2>
+<h2 id="b-sstyle">b-s[style]</h2>
 <p>Shorthand for <code>border-style</code></p>
-<h2 id="bd-wwidth">bd-w[width]</h2>
+<h2 id="b-wwidth">b-w[width]</h2>
 <p>Shorthand for <code>border-width</code></p>
+<h2 id="bborderstyle-1">b[borderStyle]</h2>
+<p>Shorthand for <code>border-top</code></p>
+<h2 id="b-ccolor-1">b-c[color]</h2>
+<p>Shorthand for <code>border-top-color</code></p>
+<h2 id="b-sstyle-1">b-s[style]</h2>
+<p>Shorthand for <code>border-top-style</code></p>
+<h2 id="b-wwidth-1">b-w[width]</h2>
+<p>Shorthand for <code>border-top-width</code></p>
+<h2 id="b-bborderstyle">b-b[borderStyle]</h2>
+<p>Shorthand for <code>border-bottom</code></p>
+<h2 id="b-b-ccolor">b-b-c[color]</h2>
+<p>Shorthand for <code>border-bottom-color</code></p>
+<h2 id="b-b-sstyle">b-b-s[style]</h2>
+<p>Shorthand for <code>border-bottom-style</code></p>
+<h2 id="b-b-wwidth">b-b-w[width]</h2>
+<p>Shorthand for <code>border-bottom-width</code></p>
+<h2 id="b-lborderstyle">b-l[borderStyle]</h2>
+<p>Shorthand for <code>border-left</code></p>
+<h2 id="b-l-ccolor">b-l-c[color]</h2>
+<p>Shorthand for <code>border-left-color</code></p>
+<h2 id="b-l-sstyle">b-l-s[style]</h2>
+<p>Shorthand for <code>border-left-style</code></p>
+<h2 id="b-l-wwidth">b-l-w[width]</h2>
+<p>Shorthand for <code>border-left-width</code></p>
+<h2 id="b-rborderstyle">b-r[borderStyle]</h2>
+<p>Shorthand for <code>border-right</code></p>
+<h2 id="b-r-ccolor">b-r-c[color]</h2>
+<p>Shorthand for <code>border-right-color</code></p>
+<h2 id="b-r-sstyle">b-r-s[style]</h2>
+<p>Shorthand for <code>border-right-style</code></p>
+<h2 id="b-r-wwidth">b-r-w[width]</h2>
+<p>Shorthand for <code>border-right-width</code></p>
 <h2 id="bgbackgroundstyle">bg[backgroundStyle]</h2>
 <p>Shorthand for <code>background</code></p>
 <h2 id="bg-aattachment">bg-a[attachment]</h2>
@@ -134,14 +176,15 @@ Default flow is <code>&quot;row&quot;</code></p>
 <p>Shorthand for <code>border-bottom-right-radius</code> and <code>border-bottom-left-radius</code></p>
 <h2 id="rowrowstyle">row[rowStyle]</h2>
 <p>Shorthand for <code>grid-row</code></p>
+<h2 id="seltype">sel[type]</h2>
+<pre><code>Shorthand for `user-select`
+</code></pre>
 <h2 id="shdwstyle">shdw[style]</h2>
 <p>Shorthand for <code>box-shadow</code></p>
 <h2 id="t-astyle">t-a[style]</h2>
 <p>Shorthand for <code>word-break</code></p>
 <h2 id="t-brstyle">t-br[style]</h2>
 <p>Shorthand for <code>word-break</code></p>
-<h2 id="t-ccolor">t-c[color]</h2>
-<p>Shorthand for <code>color</code></p>
 <h2 id="t-decodecoration">t-deco[decoration]</h2>
 <p>Shorthand for <code>text-decoration</code></p>
 <h2 id="t-lhheight">t-lh[height]</h2>
