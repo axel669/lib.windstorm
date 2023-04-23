@@ -1,13 +1,13 @@
 <ws-paper ws-x="@outline">
-    <ws-titlebar ws-x="$header">
-        <span ws-x="$title">Checkbox</span>
+    <ws-titlebar ws-x="slot[header]">
+        <span ws-x="$title slot[title]">Checkbox</span>
     </ws-titlebar>
     <ws-flex ws-x="$content">
-        <label ws-x="@toggle">
+        <label ws-x="@toggle @flat">
             <span ws-x="$text">I'm running out of label ideas</span>
             <input type="checkbox" />
         </label>
-        <label ws-x="@toggle $color[danger]">
+        <label ws-x="@toggle @flat $color[danger]">
             <span ws-x="$text">What do I even put here</span>
             <input type="checkbox" />
         </label>
@@ -15,15 +15,15 @@
 </ws-paper>
 
 <ws-paper ws-x="@outline">
-    <ws-titlebar ws-x="$header">
-        <span ws-x="$title">Switch</span>
+    <ws-titlebar ws-x="slot[header]">
+        <span ws-x="$title slot[title]">Switch</span>
     </ws-titlebar>
     <ws-flex ws-x="$content">
-        <label ws-x="@toggle $color[accent]">
+        <label ws-x="@toggle @flat $color[accent]">
             <span ws-x="$text">Why is documentation so tedious</span>
             <input type="checkbox" ws-x="$switch" />
         </label>
-        <label ws-x="@toggle @outline $color[primary]">
+        <label ws-x="@toggle $color[primary]">
             <input type="checkbox" ws-x="$switch" />
             <span ws-x="$text">Reverse reverse</span>
         </label>
@@ -31,19 +31,19 @@
 </ws-paper>
 
 <ws-paper ws-x="@outline">
-    <ws-titlebar ws-x="$header">
-        <span ws-x="$title"> Radio</span>
+    <ws-titlebar ws-x="slot[header]">
+        <span ws-x="$title slot[title]">Radio</span>
     </ws-titlebar>
     <form ws-x="$content flex gap[4px]">
-        <label ws-x="@toggle $color[primary]">
+        <label ws-x="@toggle @flat $color[primary]">
             <span>No Build System</span>
             <input type="radio" name="radia" />
         </label>
-        <label ws-x="@toggle $color[secondary]">
+        <label ws-x="@toggle @flat $color[secondary]">
             <span>Simple Build System</span>
             <input type="radio" name="radia" />
         </label>
-        <label ws-x="@toggle $color[warning]">
+        <label ws-x="@toggle @flat $color[warning]">
             <span>Even my css needs a build system</span>
             <input type="radio" name="radia" />
         </label>

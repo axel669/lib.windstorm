@@ -18,6 +18,7 @@ const example =
     ).join("\n")
 
 const name = `${initial.slice(0, 1).toUpperCase()}${initial.slice(1)}`
+console.log("demo")
 
 const App = () => {
     const [theme, set] = useState("dark")
