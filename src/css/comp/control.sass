@@ -59,6 +59,7 @@ label:where([ws-x~="@control"])
         --border-color: var(--color)
 
     & > select
+    & > :where(select)
         --color: var(--text-color-normal)
 
         border-width: 0px
@@ -83,7 +84,7 @@ label:where([ws-x~="@control"])
             font-size: var(--text-size-normal)
             font-family: Arial
 
-    & > input, & > textarea
+    & > :where(input, textarea)
         border-width: 0px
         background: transparent
         color: var(--text-normal-color)
