@@ -48,7 +48,7 @@ Once added to the page, windstorm will scan all current elements, and any
 elements added later for the `ws-x` attribute, and generate the necessary css
 immediately. Component css is automatically added to the head as well, so no
 extra work is needed to use any of the components. Components that transform
-standard tags will only work of the tag has the `ws-x` on it (although the value
+standard tags will only work if the tag has the `ws-x` on it (although the value
 can be empty).
 
 Many of the windstorm components expect some css variables defined by the theme
