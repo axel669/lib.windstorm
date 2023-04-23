@@ -18,7 +18,6 @@ const checkClass = (info) => {
         windFuncs[info.name] === undefined
         && info.name.startsWith("&") === false
     )
-    unsupported && console.log(info.name)
     if (defined === true || unsupported === true) {
         return
     }
