@@ -51,8 +51,8 @@ extra work is needed to use any of the components. Components that transform
 standard tags will only work if the tag has the `ws-x` on it (although the value
 can be empty).
 
-Many of the windstorm components expect some css variables defined by the theme
-to be present, so a theme should always be applied to the body.
+> Many of the windstorm components expect some css variables defined by the
+> theme to be present, so a theme should always be applied to the body.
 
 ```html
 <body ws-x="theme[tron]">
@@ -65,12 +65,18 @@ to be present, so a theme should always be applied to the body.
 > allowing windstorm to play nice with any other css lib (that I tried).
 
 ### @app and ws-screen
-The ws-screen component is designed to work well across browsers and devices
-and makes scrolling sections of content easier with the other built in
-components, but in order for it to work as intended `@app` needs to be added to
-the body ws-x attribute value. Without `@app` the browser will use its normal
-scrolling behavior rules which can be something of a pain for more complex
-screens.
+The ws-screen component is designed to be a top level container for content that
+has consistent scrolling behavior for child elements across browsers and
+devices without the page resizing in weird ways from the various browser bars
+hiding and unhiding themselves from scrolling on mobile.
+
+As such, the use of ws-screen is entirely optional as all components will work
+without it being used, and if the regular browser scrolling behavior is not an
+issue, then ws-screen can be skipped entirely.
+
+If ws-screen is used, the body tag must have the `@app` wind function added to
+the `ws-x` attribute. This will setup the css properties needed for ws-screen
+to control the scrolling behavior more effectively.
 
 ```html
 <body ws-x="theme[tron] @app">
