@@ -24,6 +24,7 @@
 label[ws-x~="@toggle"]
     --color: var(--default)
     --ripple-color: var(--default-ripple)
+    --border-color: var(--default)
 
     cursor: pointer
     display: inline-flex
@@ -31,10 +32,15 @@ label[ws-x~="@toggle"]
     justify-content: space-between
     padding: 4px
     border-radius: 4px
+    border: 1px solid var(--border-color)
     @import "../$clickable"
 
     &:focus-within
-        outline: 2px solid var(--primary)
+        --border-color: var(--color)
+
+        &:where([ws-x~="@flat"])
+            outline: 2px solid var(--ripple-color)
+            outline-offset: -2px
 
     & > input
         position: relative

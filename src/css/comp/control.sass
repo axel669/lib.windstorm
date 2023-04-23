@@ -58,7 +58,10 @@ label:where([ws-x~="@control"])
     &:focus-within
         --border-color: var(--color)
 
-    & > select
+        &:where([ws-x~="@flat"]) > :is(input, select)
+            outline: 2px solid var(--ripple-color)
+            outline-offset: -2px
+
     & > :where(select)
         --color: var(--text-color-normal)
 
@@ -76,7 +79,6 @@ label:where([ws-x~="@control"])
         &:focus
             outline: none
 
-    & > select
         option, optgroup
             background-color: var(--background-layer)
             border-color: var(--background-layer)
