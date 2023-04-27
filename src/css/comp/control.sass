@@ -62,6 +62,9 @@ label:where([ws-x~="@control"])
             outline: 2px solid var(--ripple-color)
             outline-offset: -2px
 
+    & :is(input, select, textarea):disabled
+        background-color: var(--disabled-background)
+
     & > :where(select)
         --color: var(--text-color-normal)
 

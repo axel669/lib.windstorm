@@ -53,6 +53,9 @@ label[ws-x~="@toggle"]
         &:focus
             outline: none
 
+        &:disabled
+            --color: var(--disabled-background)
+
         &:checked
             color: var(--text-color-invert)
             &::after
@@ -83,9 +86,13 @@ label[ws-x~="@toggle"]
         &[type="radio"]
             &::after
                 border-radius: 50%
+            &:disabled::after
+                background-color: var(--disabled-background)
             &:checked::after
                 content: "\f671"
         &[type="checkbox"]
+            &:disabled
+                background-color: var(--disabled-background)
             &:checked::after
                 content: "\ea5e"
             &[ws-x~="$switch"]
