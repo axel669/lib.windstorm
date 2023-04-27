@@ -109,6 +109,9 @@ what purpose in the html.
 import processNode from "./process-node.mjs"
 import * as css from "./css-funcs.mjs"
 
+import "./js-comp/ws-circle-spinner.mjs"
+import "./js-comp/ws-hexagon-spinner.mjs"
+
 const mut = {
     childList(evt) {
         if (evt.addedNodes.length === 0) {
