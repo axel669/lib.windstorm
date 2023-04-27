@@ -14,8 +14,8 @@ wind function added to visual change it into a switch toggle.</p>
 </ul>
 
                             <div class="toggle-view">
-                                <input type="checkbox" id="0.5eef74d750ab" />
-                                <label for="0.5eef74d750ab">&nbsp;Code</label>
+                                <input type="checkbox" id="0.da00f2468642a" />
+                                <label for="0.da00f2468642a">&nbsp;Code</label>
                                 <iframe style="height: 400px;" src="./frames/index.html#toggle"></iframe>
 
                                 <pre><code class="language-html">&lt;ws-paper ws-x="@outline"&gt;
@@ -62,6 +62,58 @@ wind function added to visual change it into a switch toggle.</p>
         &lt;label ws-x="@toggle @flat $color[secondary]"&gt;
             &lt;span&gt;Simple Build System&lt;/span&gt;
             &lt;input type="radio" name="radia" /&gt;
+        &lt;/label&gt;
+        &lt;label ws-x="@toggle @flat $color[warning]"&gt;
+            &lt;span&gt;Even my css needs a build system&lt;/span&gt;
+            &lt;input type="radio" name="radia" /&gt;
+        &lt;/label&gt;
+    &lt;/form&gt;
+&lt;/ws-paper&gt;
+
+&lt;ws-paper ws-x="@outline"&gt;
+    &lt;ws-titlebar ws-x="slot[header]"&gt;
+        &lt;span ws-x="$title slot[title]"&gt;Checkbox&lt;/span&gt;
+    &lt;/ws-titlebar&gt;
+    &lt;ws-flex ws-x="$content"&gt;
+        &lt;label ws-x="@toggle @flat"&gt;
+            &lt;span ws-x="$text"&gt;I'm running out of label ideas&lt;/span&gt;
+            &lt;input type="checkbox" disabled /&gt;
+        &lt;/label&gt;
+        &lt;label ws-x="@toggle @flat $color[danger]"&gt;
+            &lt;span ws-x="$text"&gt;What do I even put here&lt;/span&gt;
+            &lt;input type="checkbox" disabled /&gt;
+        &lt;/label&gt;
+    &lt;/ws-flex&gt;
+&lt;/ws-paper&gt;
+
+&lt;ws-paper ws-x="@outline"&gt;
+    &lt;ws-titlebar ws-x="slot[header]"&gt;
+        &lt;span ws-x="$title slot[title]"&gt;Switch&lt;/span&gt;
+    &lt;/ws-titlebar&gt;
+    &lt;ws-flex ws-x="$content"&gt;
+        &lt;label ws-x="@toggle @flat $color[accent]"&gt;
+            &lt;span ws-x="$text"&gt;Why is documentation so tedious&lt;/span&gt;
+            &lt;input type="checkbox" ws-x="$switch" disabled /&gt;
+        &lt;/label&gt;
+        &lt;label ws-x="@toggle $color[primary]"&gt;
+            &lt;input type="checkbox" ws-x="$switch" disabled /&gt;
+            &lt;span ws-x="$text"&gt;Reverse reverse&lt;/span&gt;
+        &lt;/label&gt;
+    &lt;/ws-flex&gt;
+&lt;/ws-paper&gt;
+
+&lt;ws-paper ws-x="@outline"&gt;
+    &lt;ws-titlebar ws-x="slot[header]"&gt;
+        &lt;span ws-x="$title slot[title]"&gt;Radio&lt;/span&gt;
+    &lt;/ws-titlebar&gt;
+    &lt;form ws-x="$content flex gap[4px]"&gt;
+        &lt;label ws-x="@toggle @flat $color[primary]"&gt;
+            &lt;span&gt;No Build System&lt;/span&gt;
+            &lt;input type="radio" name="radia" disabled /&gt;
+        &lt;/label&gt;
+        &lt;label ws-x="@toggle @flat $color[secondary]"&gt;
+            &lt;span&gt;Simple Build System&lt;/span&gt;
+            &lt;input type="radio" name="radia" disabled /&gt;
         &lt;/label&gt;
         &lt;label ws-x="@toggle @flat $color[warning]"&gt;
             &lt;span&gt;Even my css needs a build system&lt;/span&gt;

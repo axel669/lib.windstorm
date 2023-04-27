@@ -26,12 +26,20 @@ window.siteConfig = {
                     "items": "components-chip"
                 },
                 {
+                    "label": "Circle Spinner",
+                    "items": "components-circle-spinner"
+                },
+                {
                     "label": "Flex",
                     "items": "components-flex"
                 },
                 {
                     "label": "Grid",
                     "items": "components-grid"
+                },
+                {
+                    "label": "Hexagon Spinner",
+                    "items": "components-hexagon-spinner"
                 },
                 {
                     "label": "Icon",
@@ -114,6 +122,8 @@ window.siteConfig = {
         "api": "css-funcs.mjs.html",
         "home": "main.mjs.html",
         "css-shorthands": "wind-funcs.mjs.html",
+        "components-circle-spinner": "js-comp/ws-circle-spinner.mjs.html",
+        "components-hexagon-spinner": "js-comp/ws-hexagon-spinner.mjs.html",
         "components-avatar": "css/comp/avatar.sass.html",
         "components-badge": "css/comp/badge.sass.html",
         "components-button": "css/comp/button.sass.html",
