@@ -144,6 +144,7 @@ observer.observe(
         attributeFilter: ["ws-x"]
     }
 )
+processNode(document.body)
 for (const node of document.body.querySelectorAll("*")) {
     processNode(node)
 }
