@@ -151,7 +151,7 @@ const windFuncs = {
     ## block
     Sets `display: block`
     */
-    "block": () => cssprop("display", "block"),
+    "block": () => [cssprop("display", "block")],
     /*md
 	## c[color]
 	Shorthand for `color`
