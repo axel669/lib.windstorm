@@ -270,7 +270,7 @@ const windFuncs = {
     */
     "hide": () => [cssprop("display", "none")],
     /*md
-    ## block
+    ## iblock
     Sets `display: inline-block`
     */
     "iblock": () => [cssprop("display", "inline-block")],
