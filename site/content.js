@@ -30,6 +30,10 @@ window.siteConfig = {
                     "items": "components-circle-spinner"
                 },
                 {
+                    "label": "Details",
+                    "items": "components-details"
+                },
+                {
                     "label": "Flex",
                     "items": "components-flex"
                 },
@@ -129,6 +133,7 @@ window.siteConfig = {
         "components-button": "css/comp/button.sass.html",
         "components-chip": "css/comp/chip.sass.html",
         "components-labeled-control": "css/comp/control.sass.html",
+        "components-details": "css/comp/details.sass.html",
         "components-flex": "css/comp/flex.sass.html",
         "components-grid": "css/comp/grid.sass.html",
         "components-icon": "css/comp/icon.sass.html",
