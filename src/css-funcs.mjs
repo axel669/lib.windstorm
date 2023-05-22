@@ -10,15 +10,15 @@ const cssvalue = (value) =>
     (value.startsWith("&") === true)
         ? `var(--${value.slice(1)})`
         : value
-const cssprop = (name, value) =>
+const prop = (name, value) =>
     (value === undefined)
         ? ""
         : `${name}: ${cssvalue(value)}`
 const simple = (name) =>
-    (_, value) => [cssprop(name, value)]
+    (_, value) => [prop(name, value)]
 const multi = (...names) =>
     (_, value) => names.map(
-        (name) => cssprop(name, value)
+        (name) => prop(name, value)
     )
 
 /*md
@@ -60,4 +60,4 @@ const wsx = (obj) =>
         )
         .join(" ")
 
-export { cssprop, simple, multi, wsx }
+export { prop, simple, multi, wsx }

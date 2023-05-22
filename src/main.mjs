@@ -108,6 +108,7 @@ what purpose in the html.
 */
 import processNode from "./process-node.mjs"
 import * as css from "./css-funcs.mjs"
+import functions from "./wind-funcs.mjs"
 
 import "./js-comp/ws-circle-spinner.mjs"
 import "./js-comp/ws-hexagon-spinner.mjs"
@@ -135,18 +136,43 @@ const observer = new MutationObserver(
     )
 )
 
-observer.observe(
-    document.body,
-    {
-        subtree: true,
-        attributes: true,
-        childList: true,
-        attributeFilter: ["ws-x"]
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+        observer.observe(
+            document.body,
+            {
+                subtree: true,
+                attributes: true,
+                childList: true,
+                attributeFilter: ["ws-x"]
+            }
+        )
+        processNode(document.body)
+        for (const node of document.body.querySelectorAll("*")) {
+            processNode(node)
+        }
     }
 )
-processNode(document.body)
-for (const node of document.body.querySelectorAll("*")) {
-    processNode(node)
-}
 
-export default css
+/*md
+#### Adding Custom Functions
+Windstorm supports adding custom functions with the `custom(name, generate)`
+function exported by windstorm (or on the object in the browser).
+
+The name will be what is used in the ws-x property, and the generate function
+will be given the parsing info and a variadic list of the arguments supplied
+when used, and it should return an array of key-value pairs with the resulting
+css that should be applied.
+*/
+
+export default {
+    ...css,
+    custom(name, generate) {
+        if (functions[name] !== undefined) {
+            console.warn(`Custom function "${name}" already defined`)
+            return
+        }
+        functions[name] = generate
+    }
+}

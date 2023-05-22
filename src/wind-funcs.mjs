@@ -1,4 +1,4 @@
-import { cssprop, simple, multi } from "./css-funcs.mjs"
+import { prop, simple, multi } from "./css-funcs.mjs"
 
 /*md
 [@] CSS Shorthands
@@ -151,7 +151,7 @@ const windFuncs = {
     ## block
     Sets `display: block`
     */
-    "block": () => [cssprop("display", "block")],
+    "block": () => [prop("display", "block")],
     /*md
 	## c[color]
 	Shorthand for `color`
@@ -173,16 +173,16 @@ const windFuncs = {
     `"column"`
     */
     "flex": (_, direction = "column") => [
-        cssprop("display", "flex"),
-        cssprop("flex-direction", direction)
+        prop("display", "flex"),
+        prop("flex-direction", direction)
     ],
     /*md
     ## fl-center[align]
     Shorthand for `align-items: center` and `justify-content: center`
     */
     "fl-center": () => [
-        cssprop("align-items", "center"),
-        cssprop("justify-content", "center"),
+        prop("align-items", "center"),
+        prop("justify-content", "center"),
     ],
     /*md
     ## fl-cr-a[align]
@@ -221,8 +221,8 @@ const windFuncs = {
     Sets `display: grid` and sets the `grid-auto-flow`. Default flow is `"row"`
     */
     "grid": (_, flow = "row") => [
-        cssprop("display", "grid"),
-        cssprop("grid-auto-flow", flow)
+        prop("display", "grid"),
+        prop("grid-auto-flow", flow)
     ],
     /*md
 	## gr-col[colTemplate]
@@ -268,20 +268,20 @@ const windFuncs = {
     ## hide
     Hides the element by setting `display: none`
     */
-    "hide": () => [cssprop("display", "none")],
+    "hide": () => [prop("display", "none")],
     /*md
     ## iblock
     Sets `display: inline-block`
     */
-    "iblock": () => [cssprop("display", "inline-block")],
+    "iblock": () => [prop("display", "inline-block")],
     /*md
     ## iflex[direction = "column"]
     Sets `display: inline-flex` and sets the `flex-direction`. Default direction
     is `"column"`
     */
     "iflex": (_, direction = "column") => [
-        cssprop("display", "inline-flex"),
-        cssprop("flex-direction", direction)
+        prop("display", "inline-flex"),
+        prop("flex-direction", direction)
     ],
     /*md
     ## igrid[flow = "row"]
@@ -289,8 +289,8 @@ const windFuncs = {
     Default flow is `"row"`
     */
     "igrid": (_, flow = "row") => [
-        cssprop("display", "inline-grid"),
-        cssprop("grid-auto-flow", flow)
+        prop("display", "inline-grid"),
+        prop("grid-auto-flow", flow)
     ],
     /*md
     ## inset[distance]
@@ -516,9 +516,9 @@ const windFuncs = {
     the name in the wind function itself.
     */
     "theme": () => [
-        cssprop("color", "var(--text-color-normal)"),
-        cssprop("font-family", "var(--font)"),
-        cssprop("font-size", "var(--text-size-normal)"),
+        prop("color", "var(--text-color-normal)"),
+        prop("font-family", "var(--font)"),
+        prop("font-size", "var(--text-size-normal)"),
     ],
     /*md
 	## tr[transform]
@@ -575,42 +575,42 @@ const windFuncs = {
     > doesn't work: `$color[&primary]`
     */
     "$color": (_, color) => [
-        cssprop("--color", `&${color}`),
-        cssprop("--ripple-color", `&${color}-ripple`),
+        prop("--color", `&${color}`),
+        prop("--ripple-color", `&${color}-ripple`),
     ],
     /*md
     ## $adorn[area]
     Used inside components to add adornments next to the input element
     */
     "$adorn": () => [
-        cssprop("display", "flex"),
-        cssprop("justify-content", "center"),
-        cssprop("align-items", "center"),
-        cssprop("padding", "2px"),
+        prop("display", "flex"),
+        prop("justify-content", "center"),
+        prop("align-items", "center"),
+        prop("padding", "2px"),
     ],
-    "$compact": () => [cssprop("padding", "0px 8px")],
+    "$compact": () => [prop("padding", "0px 8px")],
     "$title": () => [
-        cssprop("font-size", "&text-size-title"),
-        cssprop("font-weight", "700")
+        prop("font-size", "&text-size-title"),
+        prop("font-weight", "700")
     ],
     "$subtitle": () => [
-        cssprop("font-size", "&text-size-subtitle"),
+        prop("font-size", "&text-size-subtitle"),
     ],
     /*md
     ## @flat
     Component style that removes borders
     */
     "@flat": () => [
-        cssprop("border-width", "0px"),
-        cssprop("--border-size", "0px"),
+        prop("border-width", "0px"),
+        prop("--border-size", "0px"),
     ],
     /*md
     ## @outline
     Component style that provides thin borders inside and around the component
     */
     "@outline": () => [
-        cssprop("border-width", "1px"),
-        cssprop("border-color", "&color"),
+        prop("border-width", "1px"),
+        prop("border-color", "&color"),
     ],
     /*md
     ## @fill
@@ -618,10 +618,10 @@ const windFuncs = {
     borders. Technically can be used on other things but that's untested
     */
     "@fill": () => [
-        cssprop("--ripple-color", `var(--ripple-dark) !important`),
-        cssprop("--text-color", "&text-color-fill"),
-        cssprop("background-color", "&color"),
-        cssprop("color", "&text-color-fill"),
+        prop("--ripple-color", `var(--ripple-dark) !important`),
+        prop("--text-color", "&text-color-fill"),
+        prop("background-color", "&color"),
+        prop("color", "&text-color-fill"),
     ],
 }
 

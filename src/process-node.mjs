@@ -1,11 +1,11 @@
 import parseWind from "./parse.mjs"
 import windFuncs from "./wind-funcs.mjs"
 import { style } from "./baseline.mjs"
-import { cssprop } from "./css-funcs.mjs"
+import { prop } from "./css-funcs.mjs"
 
 const sheet = style.sheet
 const styles = {}
-const varFunc = (info, value) => [cssprop(
+const varFunc = (info, value) => [prop(
     `--${info.name.slice(1)}`,
     value
 )]
