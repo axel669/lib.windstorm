@@ -591,10 +591,18 @@ const windFuncs = {
     "$compact": () => [prop("padding", "0px 8px")],
     "$title": () => [
         prop("font-size", "&text-size-title"),
-        prop("font-weight", "700")
+        prop("font-weight", "700"),
+        prop("display", "flex"),
+        prop("flex-direction", "column"),
+        prop("justify-content", "center"),
+        prop("padding", "4px"),
     ],
     "$subtitle": () => [
         prop("font-size", "&text-size-subtitle"),
+        prop("display", "flex"),
+        prop("flex-direction", "column"),
+        prop("justify-content", "center"),
+        prop("padding", "0px 4px"),
     ],
     /*md
     ## @flat
