@@ -17,15 +17,15 @@ with minor differences between a set of 20.
 
 ### CDN Link (global variable)
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.1.15/dist/browser.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.1.16/dist/browser.js"></script>
 ```
 
 ### CDN Link (module)
 ```js
 // Only scanning, no functions
-import "https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.1.15/dist/module.mjs"
+import "https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.1.16/dist/module.mjs"
 // Import functions + scanning
-import wind from "https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.1.15/dist/module.mjs"
+import wind from "https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.1.16/dist/module.mjs"
 
 wind.wsx({stuff})
 ```

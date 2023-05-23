@@ -16,15 +16,15 @@ with minor differences between a set of 20.
 
 ### CDN Link (global variable)
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.1.15/dist/browser.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.1.16/dist/browser.js"></script>
 ```
 
 ### CDN Link (module)
 ```js
 // Only scanning, no functions
-import "https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.1.15/dist/module.mjs"
+import "https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.1.16/dist/module.mjs"
 // Import functions + scanning
-import wind from "https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.1.15/dist/module.mjs"
+import wind from "https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.1.16/dist/module.mjs"
 
 wind.wsx({stuff})
 ```
@@ -104,3 +104,12 @@ Windstorm has different kinds of custom function:
 Internally, there is no difference in how these are detected and processed, the
 prefixes are for programmers to be able to easily see which functions are for
 what purpose in the html.
+
+#### Adding Custom Functions
+Windstorm supports adding custom functions with the `custom(name, generate)`
+function exported by windstorm (or on the object in the browser).
+
+The name will be what is used in the ws-x property, and the generate function
+will be given the parsing info and a variadic list of the arguments supplied
+when used, and it should return an array of key-value pairs with the resulting
+css that should be applied.

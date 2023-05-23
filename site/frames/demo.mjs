@@ -19,7 +19,14 @@ const example =
 
 const name = `${initial.slice(0, 1).toUpperCase()}${initial.slice(1)}`
 
-const { wsx } = windstorm
+const { wsx, custom, prop } = windstorm
+
+custom(
+    "blep",
+    (_, color) => [
+        prop("background", `linear-gradient(teal, ${color})`)
+    ]
+)
 const App = () => {
     const [theme, set] = useState("dark")
 
