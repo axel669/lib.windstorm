@@ -17,8 +17,6 @@
 details:where([ws-x])
     --color: var(--default)
 
-    user-select: none
-    cursor: pointer
     border: 0px solid var(--color)
     padding: 4px
     padding-left: calc(1em + 4px)
@@ -29,6 +27,8 @@ details:where([ws-x])
         position: relative
         padding-left: 1em
         margin-left: -1em
+        cursor: pointer
+        user-select: none
 
         &::before
             position: absolute
