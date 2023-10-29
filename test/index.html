@@ -5,8 +5,37 @@
         <title>Windstorm</title>
         <meta name="viewport" content="initial-scale=1,maximum-scale=5,minimum-scale=1,width=device-width">
     </head>
-    <body ws-x="@app theme[tron]">
-        <script src="browser.js"></script>
-        <script type="module" src="./demo.mjs"></script>
+    <body ws:theme="tron">
+        <script src="./browser.js"></script>
+        <!-- <script type="module">
+            import ws from "./module.mjs"
+        </script> -->
+
+        <div ws:&test="teal" ws:b="4px solid blue" ws:p="8px" ws:r.t="8px">
+            <div ws:bg="&test" ws:&value="no way">Stuff</div>
+            <div ws:b:hover="1px solid &test">Stuff 2</div>
+        </div>
+        <label ws:@button ws:@fill ws:$color="primary" for="test">
+            Testing
+        </label>
+        <input type="checkbox" ws:hide id="test" />
+        <ws-modal ws:&anim-time="100ms">
+            <label for="test"></label>
+            <ws-paper ws:@menu ws:@outline ws:r.l="0px">
+                <ws-titlebar slot="header">
+                    <span ws:$title slot="title">
+                        Some Title
+                    </span>
+                </ws-titlebar>
+                <ws-flex>
+                    <div>Item</div>
+                    <div>Item</div>
+                    <div>Item</div>
+                    <div>Item</div>
+                    <div>Item</div>
+                    <div>Item</div>
+                </ws-flex>
+            </ws-paper>
+        </ws-modal>
     </body>
 </html>
