@@ -40,10 +40,10 @@ ws-paper
         grid-area: footer
         pointer-events: none
 
-    & > :where([ws-x~="slot[content]"], [slot="content"])
+    & > :where([slot="content"])
         grid-area: content
-    & > :where([ws-x~="slot[header]"], [slot="header"])
+    & > :where([slot="header"])
         grid-area: header
         font-size: var(--text-size-header)
-    & > :where([ws-x~="slot[footer]"], [slot="footer"])
+    & > :where([slot="footer"])
         grid-area: footer

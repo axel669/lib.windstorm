@@ -4,7 +4,7 @@
     # Modal
 
     Puts a modal on screen with visibility toggling through either a hidden
-    checkbox input next to the modal or using the $show wind function.
+    checkbox input next to the modal or using the @show wind function.
 
     Differnt types of modals are just positions applied to whatever container
     the modal content is put inside.
@@ -34,9 +34,10 @@ ws-modal
     right: 0px
     background-color: rgba(0, 0, 0, 0.55)
     z-index: 100
-    display: none
     color: var(--text-color-normal)
     cursor: default
+    visibility: hidden
+    transition: visibility var(--anim-time, 250ms) linear
 
     & > label:first-child
         position: absolute
@@ -44,33 +45,58 @@ ws-modal
         height: 100%
         cursor: pointer
 
-    &[ws-x~="$show"]
-        display: block
+    &[ws\:\@show]
+        visibility: visible !important
+
+        & > [ws\:\@menu]
+            transform: translateX(0%)
+        & > [ws\:\@action]
+            transform: translateX(0%)
+        & > [ws\:\@select]
+            transform: translateY(0%)
+        & > [ws\:\@dialog]
+            opacity: 1
 
     input[type="checkbox"]:not(:checked) + &
-        display: none
+        visibility: hidden
     input[type="checkbox"]:checked + &
-        display: block
+        visibility: visible
 
     & > :where(:not(label:first-child))
         position: absolute
         min-width: 15vw
 
-        &:where([ws-x~="@menu"])
+        &:where([ws\:\@menu])
             top: 0px
             left: 0px
             height: 100%
-        &:where([ws-x~="@action"])
+            transform: translateX(-100%)
+            transition: transform var(--anim-time, 250ms) linear
+            input[type="checkbox"]:checked + &
+                transform: translateX(0%)
+        &:where([ws\:\@action])
             top: 0px
             right: 0px
             height: 100%
-        &:where([ws-x~="@select"])
+            transform: translateX(100%)
+            transition: transform var(--anim-time, 250ms) linear
+            input[type="checkbox"]:checked + &
+                transform: translateX(0%)
+        &:where([ws\:\@select])
             top: 0px
             left: 50%
             transform: translateX(-50%)
             max-height: 75vh
             max-width: min(90vw, 720px)
-        &:where([ws-x~="@dialog"])
+            transform: translateY(-100%)
+            transition: transform var(--anim-time, 250ms) linear
+            input[type="checkbox"]:checked + &
+                transform: translateY(0%)
+        &:where([ws\:\@dialog])
             top: 50%
             left: 50%
             transform: translate(-50%, -50%)
+            opacity: 0
+            transition: opacity var(--anim-time, 250ms) linear
+            input[type="checkbox"]:checked + &
+                opacity: 1

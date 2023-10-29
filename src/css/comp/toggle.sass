@@ -21,7 +21,7 @@
     code:  toggle.html
     height: 400px
 
-label[ws-x~="@toggle"]
+label[ws\:\@toggle]
     --color: var(--default)
     --ripple-color: var(--default-ripple)
     --border-color: var(--default)
@@ -38,7 +38,7 @@ label[ws-x~="@toggle"]
     &:focus-within
         --border-color: var(--color)
 
-        &:where([ws-x~="@flat"])
+        &:where([ws\:\@flat])
             outline: 2px solid var(--ripple-color)
             outline-offset: -2px
 
@@ -95,7 +95,7 @@ label[ws-x~="@toggle"]
                 background-color: var(--disabled-background)
             &:checked::after
                 content: "\ea5e"
-            &[ws-x~="$switch"]
+            &[ws\:\$switch]
                 position: relative
                 border: 1px solid var(--color)
                 height: 24px

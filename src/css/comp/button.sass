@@ -17,8 +17,8 @@
     code:  button.html
     height: 400px
 
-button:where([ws-x~="@flat"], [ws-x~="@fill"], [ws-x~="@outline"]),
-:is(label, a):where([ws-x~="@button"])
+button:where([ws\:\@flat], [ws\:\@fill], [ws\:\@outline]),
+:is(label, a):where([ws\:\@button])
     --color: var(--text-color-normal)
     --ripple-color: var(--ripple-normal)
 

@@ -21,7 +21,7 @@
     code:  progress.html
     height: 400px
 
-label[ws-x~="@progress"]
+label[ws\:\@progress]
     --color: var(--text-color-normal)
     --border-size: 0px
 
@@ -32,11 +32,11 @@ label[ws-x~="@progress"]
     overflow: hidden
     user-select: none
 
-    &[ws-x~="$row"]
+    &[ws\:\$row]
         grid-template-columns: min-content auto
         grid-template-rows: 1fr
 
-    & > [ws-x~="$text"]
+    & > [ws\:\$text]
         padding: 4px
         display: flex
         border-bottom: var(--border-size, 1px) solid var(--color)

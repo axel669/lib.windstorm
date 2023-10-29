@@ -25,14 +25,14 @@ ws-titlebar
     grid-template-areas: "menu title action"
     user-select: none
 
-    &:where(:not([ws-x~="@fill"]))
+    &:where(:not([ws\:\@fill]))
         border-bottom: 1px solid var(--color, var(--text-color-normal))
 
-    & > :where([ws-x~="slot[title]"], [slot="title"])
+    & > :where([slot="title"])
         grid-area: title
-    & > :where([ws-x~="slot[menu]"], [slot="menu"])
+    & > :where([slot="menu"])
         grid-area: menu
         --text-color-normal: var(--text-color)
-    & > :where([ws-x~="slot[action]"], [slot="action"])
+    & > :where([slot="action"])
         grid-area: action
         --text-color-normal: var(--text-color)

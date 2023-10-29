@@ -33,7 +33,7 @@
     code:  control.html
     height: 400px
 
-label:where([ws-x~="@control"])
+label:where([ws\:\@control])
     --color: var(--default)
     --border-color: var(--default)
 
@@ -47,7 +47,7 @@ label:where([ws-x~="@control"])
     user-select: none
     overflow: hidden
 
-    &:where([ws-error])::after
+    &:where([ws\:error])::after
         content: attr(ws-error)
         grid-row: 3
         grid-column: span 3
@@ -120,7 +120,7 @@ label:where([ws-x~="@control"])
             border-right: 1px solid var(--border-color)
             text-decoration: underline
 
-    & > :where([ws-x~="$text"])
+    & > :where([ws\:\$text])
         grid-area: label
         padding: 4px
         display: flex
@@ -133,12 +133,12 @@ label:where([ws-x~="@control"])
         white-space: nowrap
         border-bottom-right-radius: 4px
 
-        &:where([ws-hint])::after
+        &:where([ws\:hint])::after
             font-size: var(--text-size-subtitle)
             content: attr(ws-hint)
             color: var(--text-color-secondary)
 
-    & > :where([ws-x~="slot[start]"], [slot="start"])
+    & > :where([slot="start"])
         grid-area: start
-    & > :where([ws-x~="slot[end]"], [slot="end"])
+    & > :where([slot="end"])
         grid-area: end
