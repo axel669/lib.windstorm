@@ -1,0 +1,90 @@
+bg: background-color
+b: border
+b.c: border-color
+b.s: border-style
+b.w: border-width
+b.b: border-bottom
+b.b.c: border-bottom-color
+b.b.s: border-bottom-style
+b.b.w: border-bottom-width
+b.t: border-top
+b.t.c: border-top-color
+b.t.s: border-top-style
+b.t.w: border-top-width
+b.l: border-left
+b.l.c: border-left-color
+b.l.s: border-left-style
+b.l.w: border-left-width
+b.r: border-right
+b.r.c: border-right-color
+b.r.s: border-right-style
+b.r.w: border-right-width
+c: color
+col: grid-column
+cur: cursor
+disp: disp
+fl.cross: align-items
+fl.dir: flex-direction
+fl.main: justify-content
+fl.wr: flex-wrap
+font: font-family
+gap: gap
+gr.col: grid-template-columns
+gr.col.a: grid-auto-columns
+gr.flow: grid-auto-flow
+gr.row: grid-template-rows
+gr.row.a: grid-auto-rows
+h: height
+h.min: min-height
+h.max: max-height
+inset: [top, left, bottom, right]
+inset.x: [left, right]
+inset.y: [top, bottom]
+m: margin
+m.b: margin-bottom
+m.l: margin-left
+m.r: margin-right
+m.t: margin-top
+over: overflow
+over.x: overflow-x
+over.y: overflow-y
+p: padding
+p.b: padding-bottom
+p.l: padding-left
+p.r: padding-right
+p.t: padding-top
+p.x: [padding-left, padding-right]
+p.y: [padding-top, padding-bottom]
+pos: position
+r: border-radius
+r.b: [border-bottom-left-radius, border-bottom-left-radius]
+r.bl: border-bottom-left-radius
+r.br: border-bottom-right-radius
+r.l: [border-top-left-radius, border-bottom-left-radius]
+r.r: [border-top-right-radius, border-bottom-right-radius]
+r.t: [border-top-left-radius, border-top-left-radius]
+r.tl: border-top-left-radius
+r.tr: border-top-right-radius
+row: grid-row
+sel: user-select
+sh.box: box-shadow
+sh.text: text-shadow
+t.a: text-align
+t.br: word-break
+t.dec: text-decoration
+t.lh: line-height
+t.over: text-overflow
+t.sz: text-size
+t.tf: text-transform
+t.ws: white-space
+t.wt: text-weight
+tf: transform
+tr: transition
+w: width
+w.min: min-width
+w.max: max-width
+x: left
+-x: right
+y: top
+-y: bottom
+z: z-index
