@@ -5,25 +5,26 @@
         <title>Windstorm</title>
         <meta name="viewport" content="initial-scale=1,maximum-scale=5,minimum-scale=1,width=device-width">
     </head>
-    <body ws:theme="tron">
+    <body ws-x="$theme[tron]">
         <script src="./browser.js"></script>
-        <!-- <script type="module">
-            import ws from "./module.mjs"
-        </script> -->
 
-        <div ws:&test="teal" ws:b="4px solid blue" ws:p="8px" ws:r.t="8px">
-            <div ws:bg="&test" ws:&value="no way">Stuff</div>
-            <div ws:b:hover="1px solid &test">Stuff 2</div>
+        <ws:test>
+            <ws-hexagon-spinner ws-x="&size[150px] $color[primary]"></ws-hexagon-spinner>
+        </ws:test>
+        <div ws-x="&test[teal] b[4px solid blue] p[8px] r.t[8px]">
+            <div ws-x="bg[&test]">Stuff</div>
+            <div ws-x="b:hover[1px solid &test]">Stuff 2</div>
         </div>
-        <label ws:@button ws:@fill ws:$color="primary" for="test">
+        <div ws-x="w[100px] h[100px] b[1px solid teal]"></div>
+        <label ws-x="$button $fill $color[primary]" for="test">
             Testing
         </label>
-        <input type="checkbox" ws:hide id="test" />
-        <ws-modal ws:&anim-time="100ms">
+        <input type="checkbox" ws-x="hide" id="test" />
+        <ws-modal ws-x="&anim-time[1000ms]">
             <label for="test"></label>
-            <ws-paper ws:@menu ws:@outline ws:r.l="0px">
+            <ws-paper ws-x="$menu $outline r.l[0px]">
                 <ws-titlebar slot="header">
-                    <span ws:$title slot="title">
+                    <span ws-x="$title" slot="title">
                         Some Title
                     </span>
                 </ws-titlebar>
