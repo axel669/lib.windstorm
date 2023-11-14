@@ -1,0 +1,25 @@
+table:where([ws-x])
+    --border-color: var(--color)
+
+    border-spacing: 0px
+    position: relative
+
+    & thead :is(td, th)
+        color: var(--color)
+        font-weight: 700
+    &:where([ws-x~="$header-fill"]) thead :is(td, th)
+        background-color: var(--color)
+        color: var(--text-color-fill)
+    & :is(td, th)
+        padding: 8px
+        white-space: nowrap
+        background-color: var(--background-layer)
+        border-bottom: 1px solid var(--color)
+    & :where(th:first-child)
+        position: sticky
+        left: 0px
+        z-index: 10
+    & :where(td:first-child, th:first-child)
+        border-left: 1px solid var(--color)
+    & :where(td:last-child, th:last-child)
+        border-right: 1px solid var(--color)

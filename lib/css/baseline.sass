@@ -5,7 +5,7 @@
     box-sizing: border-box
     -webkit-tap-highlight-color: transparent
 
-:where([ws\:\@outline], [ws\:\@flat], [ws\:\@fill])
+:where([ws-x])
     border-style: solid
     border-width: 0px
     border-color: var(--text-color-normal)
@@ -17,9 +17,9 @@ body, html
     height: 100%
     -webkit-tap-highlight-color: transparent
 
-body[ws\:theme]
+body[ws-x*="$theme["]
     background-color: var(--background)
-body[ws\:\@app]
+body[ws-x~="$app"]
     overflow: hidden
     position: fixed
     touch-action: pan-x pan-y

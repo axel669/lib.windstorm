@@ -1,0 +1,37 @@
+ws-toaster
+    position: fixed
+    z-index: 100
+    display: inline-flex
+    flex-direction: column
+    padding: 4px
+    gap: 4px
+    height: min-content!important
+
+    &[ws-x~="$tl"]
+        top: 0px
+        left: 0px
+    &[ws-x~="$tc"]
+        top: 0px
+        left: 50%
+        transform: translateX(-50%)
+    &[ws-x~="$tr"]
+        top: 0px
+        right: 0px
+    &[ws-x~="$ml"]
+        top: 50%
+        left: 0px
+        transform: translateY(-50%)
+    &[ws-x~="$mr"]
+        top: 50%
+        right: 0px
+        transform: translateY(-50%)
+    &[ws-x~="$bl"]
+        bottom: 0px
+        left: 0px
+    &[ws-x~="$bc"]
+        bottom: 0px
+        left: 50%
+        transform: translateX(-50%)
+    &[ws-x~="$br"]
+        bottom: 0px
+        right: 0px

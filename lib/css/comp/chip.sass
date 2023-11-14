@@ -1,0 +1,12 @@
+ws-chip
+    display: inline-flex
+    align-items: center
+    justify-content: center
+    border-radius: 100px
+    padding: 4px 12px
+    user-select: none
+    vertical-align: text-bottom
+
+    &:where([ws-x~="$click"])
+        cursor: pointer
+        @import "../$clickable"

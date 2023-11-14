@@ -1,0 +1,40 @@
+details:where([ws-x])
+    --color: var(--default)
+
+    border: 0px solid var(--color)
+    padding: 4px
+    padding-left: calc(1em + 4px)
+    border-radius: 4px
+
+    & > summary
+        color: var(--color)
+        position: relative
+        padding-left: 1em
+        margin-left: -1em
+        cursor: pointer
+        user-select: none
+
+        &::before
+            position: absolute
+            left: 0px
+            top: 50%
+            bottom: 0px
+            width: 1em
+            display: flex
+            align-items: center
+            justify-content: center
+            font-family: tabler-icons!important
+            speak: none
+            font-style: normal
+            font-weight: 400
+            font-variant: normal
+            text-transform: none
+            content: "\ea61"
+            transform: translateY(-50%)
+            transition: transform 100ms linear
+
+        &::marker, &::-webkit-details-marker
+            content: ""
+            display: none
+    &[open] > summary::before
+        transform: translateY(-50%) rotate(90deg)

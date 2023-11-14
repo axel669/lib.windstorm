@@ -1,0 +1,39 @@
+ws-tabs
+    --color: var(--primary)
+
+    display: flex
+    flex-direction: row
+    justify-content: stretch
+    align-items: stretch
+    user-select: none
+    cursor: pointer
+    gap: 2px
+    padding: 2px
+
+    &[ws-x~="$vert"]
+        flex-direction: column
+        justify-content: flex-start
+
+        & > ws-tab
+            border-bottom-width: 0px
+            border-right-width: 2px
+            flex-grow: 0
+
+    &[ws-x~="$solid"] > ws-tab:where([ws-x~="$tab-selected"])
+        color: var(--text-color-fill)
+        background-color: var(--color)
+
+    & > ws-tab
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-grow: 1
+        padding: 8px
+        border-width: 0px
+        border-color: var(--text-color-secondary)
+        border-bottom-width: 2px
+        border-style: solid
+
+        &:where([ws-x~="$tab-selected"])
+            color: var(--color)
+            border-color: var(--color)

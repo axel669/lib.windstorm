@@ -1,0 +1,109 @@
+label:where([ws-x~="$control"])
+    --color: var(--default)
+    --border-color: var(--default)
+
+    position: relative
+    display: inline-grid
+    grid-template-areas: "label label label" " start control end" "extra extra extra"
+    grid-template-rows: minmax(0px, min-content) auto minmax(0px, min-content)
+    grid-template-columns: minmax(0px, min-content) auto minmax(0px, min-content)
+    border: 1px solid var(--border-color)
+    border-radius: 4px
+    user-select: none
+    overflow: hidden
+
+    &:where([ws-error])::after
+        content: attr(ws-error)
+        grid-row: 3
+        grid-column: span 3
+        padding: 4px
+        font-size: var(--text-size-info)
+        background-color: var(--danger-ripple)
+
+    &:focus-within
+        --border-color: var(--color)
+
+        &:where([ws-x~="$flat"]) > :is(input, select)
+            outline: 2px solid var(--ripple-color)
+            outline-offset: -2px
+
+    & :is(input, select, textarea):disabled
+        background-color: var(--disabled-background)
+
+    & > :where(select)
+        --color: var(--text-color-normal)
+
+        border-width: 0px
+        padding: 8px
+        min-height: 36px
+        background-color: transparent
+        color: var(--color)
+        font: var(--font)
+        font-size: var(--text-size-normal)
+        cursor: pointer
+        background-color: var(--background-layer)
+        grid-area: control
+
+        &:focus
+            outline: none
+
+        option, optgroup
+            background-color: var(--background-layer)
+            border-color: var(--background-layer)
+            color: var(--text-color-normal)
+            font-size: var(--text-size-normal)
+            font-family: Arial
+
+    & > :where(input, textarea)
+        border-width: 0px
+        background: transparent
+        color: var(--text-normal-color)
+        font-family: var(--font)
+        min-width: 24px
+        min-height: 36px
+        width: 100%
+        height: 100%
+        grid-area: control
+        padding: 4px
+        background-color: var(--background-layer)
+
+        &:focus
+            outline: none
+
+    & > input[type="file"]
+        position: relative
+        padding: 0px
+        &::file-selector-button
+            font-family: var(--font)
+            height: 100%
+            margin: 0px
+            margin-right: 4px
+            padding: 4px
+            color: var(--text-normal-color)
+            background-color: var(--background-layer)
+            border-width: 0px
+            border-right: 1px solid var(--border-color)
+            text-decoration: underline
+
+    & > :where([ws-x~="$text"])
+        grid-area: label
+        padding: 4px
+        display: flex
+        flex-direction: column
+        align-items: start
+        border-bottom: var(--border-size, 1px) solid var(--border-color)
+        border-right: var(--border-size, 1px) solid var(--border-color)
+        color: var(--color)
+        width: min-content
+        white-space: nowrap
+        border-bottom-right-radius: 4px
+
+        &:where([ws-hint])::after
+            font-size: var(--text-size-subtitle)
+            content: attr(ws-hint)
+            color: var(--text-color-secondary)
+
+    & > :where([slot="start"])
+        grid-area: start
+    & > :where([slot="end"])
+        grid-area: end
