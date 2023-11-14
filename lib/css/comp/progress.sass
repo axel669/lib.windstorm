@@ -1,0 +1,37 @@
+label[ws-x~="$progress"]
+    --color: var(--text-color-normal)
+    --border-size: 0px
+
+    display: inline-grid
+    grid-template-columns: 1fr
+    grid-template-rows: min-content auto
+    border-radius: 4px
+    overflow: hidden
+    user-select: none
+
+    &[ws-x~="$row"]
+        grid-template-columns: min-content auto
+        grid-template-rows: 1fr
+
+    & > [ws-x~="$text"]
+        padding: 4px
+        display: flex
+        border-bottom: var(--border-size, 1px) solid var(--color)
+        color: var(--color)
+
+    & > progress
+        min-height: 20px
+        height: 100%
+        width: 100%
+        border: none
+        background-color: var(--background-layer)
+
+        &::-moz-progress-bar
+            background-color: var(--color)
+            border-radius: 0px
+        &::-webkit-progress-bar
+            background-color: var(--background-layer)
+            border-radius: 0px
+        &::-webkit-progress-value
+            background-color: var(--color)
+            border-radius: 0px

@@ -1,0 +1,18 @@
+ws-popover
+    display: grid
+    position: relative
+
+    &:not(:visibile) > :where([slot="content"])
+        display: none
+    & > :where([slot="content"])
+        position: absolute
+        z-index: 25
+        display: none
+    &[ws-x~="$show"] > :where([slot="content"])
+        display: block
+
+    & > input:where([type="checkbox"])
+        &:checked + :where([slot="content"])
+            display: block
+        &:not(:checked) + :where([slot="content"])
+            display: none

@@ -1,0 +1,26 @@
+button:where([ws-x~="$flat"], [ws-x~="$fill"], [ws-x~="$outline"]),
+:is(label, a):where([ws-x~="$button"])
+    --color: var(--text-color-normal)
+    --ripple-color: var(--ripple-normal)
+
+    position: relative
+
+    border: 0px solid var(--color)
+    color: var(--color)
+    font-family: var(--font)
+
+    background-color: transparent
+    border-radius: 4px
+    cursor: pointer
+    padding: 8px 16px
+    overflow: hidden
+    user-select: none
+    display: inline-flex
+    align-items: center
+    justify-content: center
+
+    @import "../$clickable"
+
+    &:where([disabled])
+        opacity: 0.6
+        background-color: rgba(200, 200, 200, 0.4)

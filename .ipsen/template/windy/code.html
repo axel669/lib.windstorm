@@ -1,0 +1,16 @@
+<code-area ws-x="pos[relative]">
+    <script>
+        function test{| $.id |}() {
+            navigator.clipboard.writeText(
+                {|* JSON.stringify($.code).replace(/<\//g, "<\\/") |}
+            )
+        }
+    </script>
+    <pre-header ws-x="pos[absolute] y[0px] -x[0px] z[+10]">
+        <button ws-x="@fill $color[primary] $compact p-y[2px]"
+        onclick="test{| $.id |}()">
+            Copy
+        </button>
+    </pre-header>
+    <pre class="language-{| $.lang |}"><code class="language-{| $.lang |}">{|* $.converted |}</code></pre>
+</code-area>

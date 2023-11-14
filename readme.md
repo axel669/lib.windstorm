@@ -1,11 +1,7 @@
-
-
 # Windstorm
 Windstorm is a library that allows element customization without needing to
 use css directly and without predefining hundreds or thousands of css classes
 with minor differences between a set of 20.
-
-[Docs Here](https://axel669.github.io/lib.windstorm/)
 
 ## Installation
 
@@ -16,22 +12,22 @@ with minor differences between a set of 20.
 
 ### CDN Link (global variable)
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.1.17/dist/browser.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.2.0/dist/browser.js"></script>
 ```
 
 ### CDN Link (module)
 ```js
 // Only scanning, no functions
-import "https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.1.17/dist/module.mjs"
+import "https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.2.0/dist/module.mjs"
 // Import functions + scanning
-import wind from "https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.1.17/dist/module.mjs"
+import ws from "https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.2.0/dist/module.mjs"
 
-wind.wsx({stuff})
+ws.x({...stuff})
 ```
 
 ### Node Modules
 ```bash
-pnpm add @axel669/windstorm
+npm add @axel669/windstorm
 ```
 
 ## Usage
@@ -55,7 +51,7 @@ can be empty).
 > theme to be present, so a theme should always be applied to the body.
 
 ```html
-<body ws-x="theme[tron]">
+<body ws-x="$theme[tron]">
     <script src="<windstorm>"></script>
     Static content here
 </body>
@@ -64,7 +60,34 @@ can be empty).
 > Any html elements that do not have the `ws-x` attribute are left alone,
 > allowing windstorm to play nice with any other css lib (that I tried).
 
-### @app and ws-screen
+### ws-x Attribute
+The `ws-x` attribute is what windstorm will scan to apply styles to elements.
+The attribute can have any number of rules defined, using the format
+`<name>(:<mods>)?([arg string])?`.
+
+The name is the name of a windstorm function, a list of provided functions and
+what they generate is in the [Built-in Functions](./lib/wind-funcs.md). The mods
+refers to css pseudo classes and pseudo elements. Any of the pseudo selectors
+can be used, and any number of them can be used in a single declaration. The use
+of the pseudo selctors is optional, and any declarations without will apply to
+elements as normal. The arg string is a string that is within `[]` and is passed
+to the function with some preprocessing handled: any `&<name>` will be converted
+to `var(--<name>)` before being passed to the function. The arg string can use
+any characters except `[]` (spaces don't need to be converted or anything
+funny).
+
+```html
+<div ws-x="&color[teal] w[100px]">
+    content
+    <!-- Regular border will use the --primary variable for color -->
+    <!-- border-color is changed on hover only to use the --color variable -->
+    <div ws-x="b[1px solid &primary] b-c:hover[&color]">
+        other content
+    </div>
+</div>
+```
+
+### $app and ws-screen
 The ws-screen component is designed to be a top level container for content that
 has consistent scrolling behavior for child elements across browsers and
 devices without the page resizing in weird ways from the various browser bars
@@ -74,17 +97,18 @@ As such, the use of ws-screen is entirely optional as all components will work
 without it being used, and if the regular browser scrolling behavior is not an
 issue, then ws-screen can be skipped entirely.
 
-If ws-screen is used, the body tag must have the `@app` wind function added to
+If ws-screen is used, the body tag must have the `$app` wind function added to
 the `ws-x` attribute. This will setup the css properties needed for ws-screen
 to control the scrolling behavior more effectively.
 
 ```html
-<body ws-x="theme[tron] @app">
+<!-- Using ws-screen -->
+<body ws-x="theme[tron] $app">
     <script src="<windstorm>"></script>
     <ws-screen>
-        <ws-paper ws-x="@outline">
+        <ws-paper ws-x="$outline">
             <ws-flex>
-                <button ws-x="@fill $color[primary] r[8px]">
+                <button ws-x="$fill $color[primary] r[8px]">
                     Click Me!
                 </button>
                 <div ws-x="w[100px] h[200px] bg-c[teal]"></div>
@@ -93,23 +117,113 @@ to control the scrolling behavior more effectively.
     </ws-screen>
 </body>
 ```
+```html
+<!-- Normal pages work fine -->
+<body ws-x="theme[tron] $app">
+    <script src="<windstorm>"></script>
+    <ws-paper ws-x="$outline">
+        <ws-flex>
+            <button ws-x="$fill $color[primary] r[8px]">
+                Click Me!
+            </button>
+            <div ws-x="w[100px] h[200px] bg-c[teal]"></div>
+        </ws-flex>
+    </ws-paper>
+</body>
+```
 
 ### Custom Functions
 Windstorm has different kinds of custom function:
-- normal functions that are just text and hyphens
-- component props that are prefixed with `$`
-- component styles that are prefixed with `@`
+- normal functions that are just text, hypens, and dots (`[\w\-\.]+`)
+- component customization functions are prefixed with `$`
 - css custom properties (varaibles) that are prefixed with `&`
 
-Internally, there is no difference in how these are detected and processed, the
-prefixes are for programmers to be able to easily see which functions are for
-what purpose in the html.
+Internally there are slight differences in how each of these are processed.
+- If no definition is found for a normal function, windstorm will log an error
+    into the console.
+- If no definition is found for component functions, no error is logged. Many
+    of the component customizations are toggles or state so no code is required
+    to process them; They exist only in css rules.
+- CSS variables do not attempt to find a wind function.
 
 #### Adding Custom Functions
-Windstorm supports adding custom functions with the `custom(name, generate)`
-function exported by windstorm (or on the object in the browser).
+Windstorm supports adding custom functions with the `custom` function documented
+further down.
 
-The name will be what is used in the ws-x property, and the generate function
-will be given the parsing info and a variadic list of the arguments supplied
-when used, and it should return an array of key-value pairs with the resulting
-css that should be applied.
+```html
+<script src="https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.2.0/dist/browser.js"></script>
+
+<script>
+ws.custom(
+    "cust",
+    (color) => ws.rules(
+        ws.prop("border", `1px solid ${color}`),
+        ws.prop("color", "&primary")
+    )
+)
+</script>
+
+<div ws-x="cust[teal]">Teal border, blue text</div>
+<div ws-x="cust[&secondary]">Green border, blue text</div>
+```
+
+### API
+
+Windstorm has a few utility functions for making dynamic ws-x declarations
+easier, and making custom functions simpler.
+
+#### x(object)
+The `x` function takes in an object where each `[key, value]` pair will be
+convertedm into a valid string for the `ws-x` attribute. The value can take one
+of a few forms, and which form it takes will affect the output:
+- A string that will be used as the arg string<br />
+    `[key, value] -> "key[value]"`
+- `true` (boolean) will output the function without an arg string<br />
+    `[key, value] -> "key"`
+- `null`, `false`, or `undefined` will output nothing, useful for making
+    something that is toggled or catching when something isn't defined.<br />
+    `[key, value] -> ""`
+
+```js
+// returns "$button r[4px] b[1px solid &main-color]"
+ws.x({
+    $button: true,
+    r: "4px",
+    hide: false,
+    b: "1px solid &main-color"
+})
+```
+
+#### custom, prop, rules
+
+`custom(name, generator)`
+
+The `custom` function allows the creation of custom wind functions to use on a
+page. The name will be what is used in the ws-x property, and the generate
+function will be given the processed arg string and should return a string of
+css rules to apply. The `rules` and `prop` functions are available to help these
+functions be easier to read and maintain.
+
+`prop(name, value)`
+
+The `prop` function is used with the `rules` function to help make custom wind
+functions simpler. It takes a name and value and returns a css property string.
+The value will replace `&<name>` with `var(--<name>)` like the other string
+inputs for windstorm.
+
+`rules(...string)`
+
+The `rules` function will take a list of css property strings and join them
+with a semicolon in between each of the rules. Internally it just treats the
+argument list as an array and uses `.join`, but it looks a bit nicer than the
+raw array with a join call.
+
+```js
+ws.custom(
+    "debug",
+    () => ws.rules(
+        ws.prop("border", "2px solid red"),
+        ws.prop("margin", "4px")
+    )
+)
+```

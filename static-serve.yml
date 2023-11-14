@@ -1,6 +1,9 @@
-port: 1339
+port: 45067
 sources:
-- dir: dist
-- dir: "test"
-- route: /docs
-  dir: site
+- route: /test
+  dir: dist
+- route: /test
+  dir: "test"
+- route: /test
+  dir: src
+- dir: site

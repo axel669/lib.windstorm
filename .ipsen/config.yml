@@ -1,0 +1,14 @@
+source: site.md
+dest: site
+parsers:
+  mjs: "@js"
+  js: "@js"
+  cjs: "@js"
+  py: "@py"
+  yaml: "@yaml"
+  yml: "@yaml"
+  json: "@json"
+  html: html
+template: "windy"
+options:
+  theme: dark

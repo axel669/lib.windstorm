@@ -1,0 +1,19 @@
+ws-notification
+    --background-color: var(--background-layer)
+    --color: var(--text-color-normal)
+
+    background-color: var(--background-color)
+    color: var(--color)
+    padding: 8px
+    display: inline-flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+    border-radius: 4px
+    cursor: pointer
+    user-select: none
+    border: 1px solid var(--text-color-secondary)
+
+    &[ws-x*="$color"]
+        background-color: var(--color)
+        color: var(--text-color-fill)

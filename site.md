@@ -1,0 +1,36 @@
+[Home](readme.md)
+
+- [Built-in Functions](lib/wind-funcs.md#built-in.html)
+- Themes
+    - [Overview](lib/css/themes.md)
+- Components
+    - Data Display
+        - [Avatar](lib/css/component/avatar.md)
+        - [Badge](lib/css/component/badge.md)
+        - [Chip](lib/css/component/chip.md)
+        - [Details](lib/css/component/details.md)
+        - [Popover](lib/css/component/popover.md)
+        - [Progress](lib/css/component/progress.md)
+        - [Table](lib/css/component/table.md)
+        - [Tooltip](lib/css/component/tooltip.md)
+    - Input / Controls
+        - [Button](lib/css/component/button.md)
+        - [Control](lib/css/component/control.md)
+        - [Link](lib/css/component/link.md)
+        - [Tabs](lib/css/component/tabs.md)
+        - [Toggle](lib/css/component/toggle.md)
+    - Informational
+        - [Icon](lib/css/component/icon.md)
+        - [Notification](lib/css/component/notification.md)
+        - [Titlebar](lib/css/component/titlebar.md)
+        - [Toaster](lib/css/component/toaster.md)
+    - Layout
+        - [Flex](lib/css/component/flex.md)
+        - [Grid](lib/css/component/grid.md)
+        - [Modal](lib/css/component/modal.md)
+        - [Paper](lib/css/component/paper.md)
+        - [Screen](lib/css/component/screen.md)
+    - Spinners
+        - [Circle Spinner](lib/css/component/circle-spinner.md)
+        - [Hexagon Spinner](lib/css/component/hexagon-spinner.md)
+

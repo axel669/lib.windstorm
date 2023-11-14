@@ -1,0 +1,75 @@
+ws-modal
+    --text-color: var(--text-color-normal)
+
+    position: fixed
+    top: 0px
+    left: 0px
+    bottom: 0px
+    right: 0px
+    background-color: rgba(0, 0, 0, 0.55)
+    z-index: 100
+    color: var(--text-color-normal)
+    cursor: default
+    visibility: hidden
+    transition: visibility var(--anim-time, 250ms) linear
+
+    & > label:first-child
+        position: absolute
+        width: 100%
+        height: 100%
+        cursor: pointer
+
+    &:where([ws-x*="$show"])
+        visibility: visible !important
+
+        & > :where([ws-x*="$menu"])
+            transform: translateX(0%)
+        & > :where([ws-x*="$action"])
+            transform: translateX(0%)
+        & > :where([ws-x*="$select"])
+            transform: translateX(-50%) translateY(0%)
+        & > :where([ws-x*="$dialog"])
+            opacity: 1
+
+    input[type="checkbox"]:not(:checked) + &
+        visibility: hidden
+    input[type="checkbox"]:checked + &
+        visibility: visible
+
+    & > :where(:not(label:first-child))
+        position: absolute
+        min-width: 15vw
+
+        &:where([ws-x*="$menu"])
+            top: 0px
+            left: 0px
+            height: 100%
+            transform: translateX(-100%)
+            transition: transform var(--anim-time, 250ms) linear
+            input[type="checkbox"]:checked + &
+                transform: translateX(0%)
+        &:where([ws-x*="$action"])
+            top: 0px
+            right: 0px
+            height: 100%
+            transform: translateX(100%)
+            transition: transform var(--anim-time, 250ms) linear
+            input[type="checkbox"]:checked + &
+                transform: translateX(0%)
+        &:where([ws-x*="$select"])
+            top: 0px
+            left: 50%
+            transform: translateX(-50%) translateY(-100%)
+            max-height: 75vh
+            max-width: min(90vw, 720px)
+            transition: transform var(--anim-time, 250ms) linear
+            input[type="checkbox"]:checked + &
+                transform: translateX(-50%) translateY(0%)
+        &:where([ws-x*="$dialog"])
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+            opacity: 0
+            transition: opacity var(--anim-time, 250ms) linear
+            input[type="checkbox"]:checked + &
+                opacity: 1
