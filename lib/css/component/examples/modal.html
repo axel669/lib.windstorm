@@ -1,23 +1,23 @@
 <ws-grid ws-x="gr-col[repeat(4,1fr)]">
-    <label ws-x="@button @outline $color[secondary]" for="menu">
+    <label ws-x="$button $outline $color[secondary]" for="menu">
         Menu
     </label>
-    <label ws-x="@button @outline $color[secondary]" for="action">
+    <label ws-x="$button $outline $color[secondary]" for="action">
         Action
     </label>
-    <label ws-x="@button @outline $color[secondary]" for="select">
+    <label ws-x="$button $outline $color[secondary]" for="select">
         Select
     </label>
-    <label ws-x="@button @outline $color[secondary]" for="dialog">
+    <label ws-x="$button $outline $color[secondary]" for="dialog">
         Dialog
     </label>
 </ws-grid>
 
 <input type="checkbox" ws-x="hide" id="menu" />
 <ws-modal>
-    <ws-paper ws-x="r[0px] @menu">
-        <ws-flex ws-x="$content">
-            <label ws-x="@button @outline $color[accent]" for="menu">
+    <ws-paper ws-x="r[0px] $menu">
+        <ws-flex slot="content">
+            <label ws-x="$button $outline $color[accent]" for="menu">
                 Close
             </label>
             <span>
@@ -29,9 +29,9 @@
 
 <input type="checkbox" ws-x="hide" id="action" />
 <ws-modal>
-    <ws-paper ws-x="r[0px] @action">
-        <ws-flex ws-x="$content">
-            <label ws-x="@button @outline $color[accent]" for="action">
+    <ws-paper ws-x="r[0px] $action">
+        <ws-flex slot="content">
+            <label ws-x="$button $outline $color[accent]" for="action">
                 Close
             </label>
             <span>
@@ -44,12 +44,12 @@
 <input type="checkbox" ws-x="hide" id="select" />
 <ws-modal>
     <label for="select"></label>
-    <div ws-x="@select r[8px] b[1px_solid_var(--primary)] c[teal] bg-c[black]">
+    <div ws-x="$select r[8px] b[1px solid &primary] c[teal] bg.c[black]">
         <ws-flex>
-            <label ws-x="@button @outline $color[accent]" for="select">
+            <label ws-x="$button $outline $color[accent]" for="select">
                 Close
             </label>
-            <span ws-x="$content">
+            <span slot="content">
                 This just uses a div for the content with a bit of styling
                 <br />
                 And you can close it by clicking the empty space around it
@@ -60,16 +60,16 @@
 
 <input type="checkbox" ws-x="hide" id="dialog" />
 <ws-modal>
-    <ws-paper ws-x="@dialog">
+    <ws-paper ws-x="$dialog">
         <ws-titlebar ws-x="$header">
             <span ws-x="$title">Dialog Example</span>
         </ws-titlebar>
-        <ws-flex ws-x="$content">
+        <ws-flex slot="content">
             <span>
                 Standard dialog stuff \o/
             </span>
         </ws-flex>
-        <label ws-x="@button @flat $color[accent] $footer" for="dialog">
+        <label ws-x="$button $flat $color[accent] $footer" for="dialog">
             Close
         </label>
     </ws-paper>

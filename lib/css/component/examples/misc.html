@@ -1,13 +1,13 @@
-<ws-paper ws-x="@outline $color[primary]">
-    <ws-titlebar slot="header" ws-x="@fill $color[secondary]">
+<ws-paper ws-x="$outline $color[primary]">
+    <ws-titlebar slot="header" ws-x="$fill $color[secondary]">
         <span ws-x="slot[title] $title">
             nth-child Selector
         </span>
 
-        <button ws-x="@flat">
+        <button ws-x="$flat">
             Blep
             <ws-modal ws-x="$show">
-                <ws-paper ws-x="r[0px] @menu">
+                <ws-paper ws-x="r[0px] $menu">
                     <ws-titlebar slot="header">
                         <span ws-x="slot[title] $title">
                             nth-child Selector
@@ -15,7 +15,7 @@
                     </ws-titlebar>
 
                     <ws-flex ws-x="slot[content]">
-                        <label ws-x="@button @outline $color[accent]" for="action">
+                        <label ws-x="$button $outline $color[accent]" for="action">
                             Close
                         </label>
                         <span>

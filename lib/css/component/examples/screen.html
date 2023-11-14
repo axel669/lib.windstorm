@@ -1,15 +1,15 @@
 <ws-badge ws-text="test" ws-x="$color[warning]">
-    <button ws-x="@outline $color[primary]">
+    <button ws-x="$outline $color[primary]">
         Clicky
     </button>
 </ws-badge>
 
-<ws-screen ws-x="@left theme[tron] &stack[2]">
+<ws-screen ws-x="$left theme[tron] &stack[2]">
     <ws-paper ws-x="r[0px]">
-        <ws-titlebar ws-x="slot[header] @fill $color[secondary]">
-            <span ws-x="slot[title] $title">Sub Screen</span>
+        <ws-titlebar ws-x="$fill $color[secondary]" slot="header">
+            <span ws-x="$title" slot="title">Sub Screen</span>
         </ws-titlebar>
-        <ws-flex ws-x="slot[content] over[auto]">
+        <ws-flex ws-x="over[auto]" slot="content">
             <div>this is content that scrolls</div>
             <div>this is content that scrolls</div>
             <div>this is content that scrolls</div>

@@ -1,17 +1,17 @@
 <ws-paper>
-    <ws-flex ws-x="slot[content]">
+    <ws-flex slot="content">
         Just some paper
     </ws-flex>
 </ws-paper>
 
 <ws-paper>
-    <ws-titlebar ws-x="slot[header]">
-        <span ws-x="slot[title]">This one has a header</span>
+    <ws-titlebar slot="header">
+        <span slot="title">This one has a header</span>
     </ws-titlebar>
-    <ws-flex ws-x="slot[content]">
+    <ws-flex slot="content">
         With some content \o/
     </ws-flex>
-    <ws-flex ws-x="slot[footer] h[64px] over[auto]">
+    <ws-flex ws-x="h[64px] over[auto]" slot="footer">
         <div>Scrolling Footer Content</div>
         <div>Scrolling Footer Content</div>
         <div>Scrolling Footer Content</div>
@@ -23,15 +23,15 @@
     </ws-flex>
 </ws-paper>
 
-<ws-paper ws-x="@outline $color[secondary]">
-    <ws-titlebar ws-x="slot[header]">
-        <span ws-x="slot[title]">Give them some color</span>
+<ws-paper ws-x="$outline $color[secondary]">
+    <ws-titlebar slot="header">
+        <span slot="title">Give them some color</span>
     </ws-titlebar>
-    <ws-flex ws-x="slot[content]">
+    <ws-flex slot="content">
         And a border + some controls in the footer
     </ws-flex>
     <ws-grid ws-x="gr-col[1fr_1fr]" slot="footer">
-        <button ws-x="@flat $color[danger]">Cancel</button>
-        <button ws-x="@flat $color[secondary]">Use Windstorm</button>
+        <button ws-x="$flat $color[danger]">Cancel</button>
+        <button ws-x="$flat $color[secondary]">Use Windstorm</button>
     </ws-grid>
 </ws-paper>
