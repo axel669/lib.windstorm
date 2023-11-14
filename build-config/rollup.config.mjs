@@ -20,7 +20,7 @@ const componentList = {
         }
 
         const files = fs.find(
-            "src",
+            "lib",
             { matching: ["**/*.sass", "!**/$*"] }
         )
         const styles = []
@@ -45,7 +45,7 @@ const simpleFuncs = {
             fs.read(id, "utf8")
         )
         const lines =
-            Object.entries(simple)
+            Object.entries(simple.funcs)
             .map(
                 ([name, prop]) => {
                     if (Array.isArray(prop) === true) {
@@ -68,10 +68,15 @@ const simpleFuncs = {
 }
 
 export default {
-    input: "src/main.mjs",
+    input: "lib/main.mjs",
     output: [
         {
             file: "dist/browser.js",
+            format: "iife",
+            name: "ws"
+        },
+        {
+            file: ".ipsen/static/windstorm.js",
             format: "iife",
             name: "ws"
         },
