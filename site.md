@@ -1,4 +1,4 @@
-[Home](readme.md)
+[Windstorm](readme.md)
 
 - [Built-in Functions](lib/wind-funcs.md#built-in.html)
 - [Themes](lib/css/themes.md)
