@@ -24,7 +24,7 @@ funcs:
   c: color
   col: grid-column
   cur: cursor
-  disp: disp
+  disp: display
   fl.cross: align-items
   fl.dir: flex-direction
   fl.main: justify-content
