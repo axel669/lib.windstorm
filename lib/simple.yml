@@ -77,10 +77,10 @@ funcs:
   t.dec: text-decoration
   t.lh: line-height
   t.over: text-overflow
-  t.sz: text-size
+  t.sz: font-size
   t.tf: text-transform
   t.ws: white-space
-  t.wt: text-weight
+  t.wt: font-weight
   tf: transform
   tr: transition
   vis: visibility
