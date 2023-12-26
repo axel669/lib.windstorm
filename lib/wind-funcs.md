@@ -9,7 +9,7 @@ The simple functions are just functions that map to specific css properties.
 These can be used to customize any regular elements, or add more style to any
 of the components that ship with windstorm.
 
-[funcs: simple.yml : funcs/simple.md]: ###
+[funcs/simple.md : simple.yml : funcs]: ###
 
 ## Flow/Layout Functions
 
