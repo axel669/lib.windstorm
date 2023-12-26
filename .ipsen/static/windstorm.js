@@ -159,7 +159,7 @@ var ws = (function () {
             );
             const apply = new Function(
                 `{ list, format, macro, varState = "", arg = ${JSON.stringify(def?.def)} }`,
-                applyLines.concat([`console.log("${ruleName}", arg)`]).join("\n")
+                applyLines.join("\n")
             );
             cssLineCache[ruleName] = cssLines;
             macro[ruleName] = apply;
@@ -215,9 +215,9 @@ path:nth-child(3){animation-duration:1s;}
         }
     );
 
-    console.time("initialize");
+    // console.time("initialize")
     const config = initialize();
-    console.timeEnd("initialize");
+    // console.timeEnd("initialize")
 
     const formatPart = (key, value) => {
         if (key === "@app" && value === true) {
@@ -265,8 +265,6 @@ path:nth-child(3){animation-duration:1s;}
     const processMacro = (attr, next) => {
         const { name, state, arg } = attr.groups;
         const key = `${name}${state ?? ""}`;
-
-        console.log(name, arg);
 
         if (name.startsWith("@") === true) {
             next.push([ `--${name.slice(1)}`, arg ]);

@@ -1,0 +1,76 @@
+<ws-grid ws-x="[gr.cols repeat(4, 1fr)]">
+    <label ws-x="@button [$outline] [$color secondary]" for="menu">
+        Menu
+    </label>
+    <label ws-x="@button [$outline] [$color secondary]" for="action">
+        Action
+    </label>
+    <label ws-x="@button [$outline] [$color secondary]" for="select">
+        Select
+    </label>
+    <label ws-x="@button [$outline] [$color secondary]" for="dialog">
+        Dialog
+    </label>
+</ws-grid>
+
+<input type="checkbox" ws-x="[hide]" id="menu" />
+<ws-modal>
+    <ws-paper ws-x="[r 0px] [$menu]">
+        <ws-flex slot="content">
+            <label ws-x="@button [$outline] [$color accent]" for="menu">
+                Close
+            </label>
+            <span>
+                This uses a paper for the content of the menu drawer
+            </span>
+        </ws-flex>
+    </ws-paper>
+</ws-modal>
+
+<input type="checkbox" ws-x="[hide]" id="action" />
+<ws-modal>
+    <ws-paper ws-x="[r 0px] [$action]">
+        <ws-flex slot="content">
+            <label ws-x="@button [$outline] [$color accent]" for="action">
+                Close
+            </label>
+            <span>
+                Actiond drawer + paper container
+            </span>
+        </ws-flex>
+    </ws-paper>
+</ws-modal>
+
+<input type="checkbox" ws-x="[hide]" id="select" />
+<ws-modal ws-x="[@anim-time 100ms]">
+    <label for="select"></label>
+    <div ws-x="[$select] [r 8px] [b 1px solid @primary] [c teal] [bg.c black]">
+        <ws-flex>
+            <label ws-x="@button [$outline] [$color accent]" for="select">
+                Close
+            </label>
+            <span>
+                This just uses a div for the content with a bit of styling
+                <br />
+                And you can close it by clicking the empty space around it
+            </span>
+        </ws-flex>
+    </div>
+</ws-modal>
+
+<input type="checkbox" ws-x="[hide]" id="dialog" />
+<ws-modal>
+    <ws-paper ws-x="[$dialog]">
+        <ws-titlebar ws-x="[$header]">
+            <span ws-x="[$title]">Dialog Example</span>
+        </ws-titlebar>
+        <ws-flex>
+            <span>
+                Standard dialog stuff \o/
+            </span>
+        </ws-flex>
+        <label ws-x="@button [$flat] [$color accent] [$footer]" for="dialog">
+            Close
+        </label>
+    </ws-paper>
+</ws-modal>
