@@ -1,6 +1,4 @@
 funcs:
-  bg: background
-  bg.c: background-color
   b: border
   b.c: border-color
   b.s: border-style
@@ -21,10 +19,14 @@ funcs:
   b.r.c: border-right-color
   b.r.s: border-right-style
   b.r.w: border-right-width
+  b.x: [border-left, border-right]
+  b.y: [border-top, border-bottom]
+  bg: background
+  bg.c: background-color
   c: color
   col: grid-column
   cur: cursor
-  disp: disp
+  disp: display
   fl.cross: align-items
   fl.dir: flex-direction
   fl.main: justify-content
@@ -77,10 +79,10 @@ funcs:
   t.dec: text-decoration
   t.lh: line-height
   t.over: text-overflow
-  t.sz: text-size
+  t.sz: font-size
   t.tf: text-transform
   t.ws: white-space
-  t.wt: text-weight
+  t.wt: font-weight
   tf: transform
   tr: transition
   vis: visibility

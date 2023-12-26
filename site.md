@@ -1,8 +1,7 @@
-[Home](readme.md)
+[Windstorm](readme.md)
 
 - [Built-in Functions](lib/wind-funcs.md#built-in.html)
-- Themes
-    - [Overview](lib/css/themes.md)
+- [Themes](lib/css/themes.md)
 - Components
     - Data Display
         - [Avatar](lib/css/component/avatar.md)

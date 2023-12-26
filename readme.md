@@ -3,6 +3,8 @@ Windstorm is a library that allows element customization without needing to
 use css directly and without predefining hundreds or thousands of css classes
 with minor differences between a set of 20.
 
+[Documentation Site](https://windstorm.axel669.net)
+
 ## Installation
 
 > Note: the version number is not necessary in the url, but is recommended.
@@ -12,15 +14,15 @@ with minor differences between a set of 20.
 
 ### CDN Link (global variable)
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.2.0/dist/browser.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.2.3/dist/browser.js"></script>
 ```
 
 ### CDN Link (module)
 ```js
 // Only scanning, no functions
-import "https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.2.0/dist/module.mjs"
+import "https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.2.3/dist/module.mjs"
 // Import functions + scanning
-import ws from "https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.2.0/dist/module.mjs"
+import ws from "https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.2.3/dist/module.mjs"
 
 ws.x({...stuff})
 ```

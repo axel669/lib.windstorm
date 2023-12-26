@@ -1,4 +1,4 @@
-label:where([ws-x~="$toggle"])
+label:where([ws-x~="[$toggle]"])
     --color: var(--default)
     --ripple-color: var(--default-ripple)
     --border-color: var(--default)
@@ -15,7 +15,7 @@ label:where([ws-x~="$toggle"])
     &:focus-within
         --border-color: var(--color)
 
-        &:where([ws-x~="$flat"])
+        &:where([ws-x~="[$flat]"])
             outline: 2px solid var(--ripple-color)
             outline-offset: -2px
 
@@ -72,7 +72,7 @@ label:where([ws-x~="$toggle"])
                 background-color: var(--disabled-background)
             &:checked::after
                 content: "\ea5e"
-            &:where([ws-x~="$switch"])
+            &:where([ws-x~="[$switch]"])
                 position: relative
                 border: 1px solid var(--color)
                 height: 24px
