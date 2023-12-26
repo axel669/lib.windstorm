@@ -10,7 +10,7 @@ ws-tabs
     gap: 2px
     padding: 2px
 
-    &[ws-x~="$vert"]
+    &[ws-x~="[$vert]"]
         flex-direction: column
         justify-content: flex-start
 
@@ -19,7 +19,7 @@ ws-tabs
             border-right-width: 2px
             flex-grow: 0
 
-    &[ws-x~="$solid"] > ws-tab:where([ws-x~="$tab-selected"])
+    &[ws-x~="[$solid]"] > ws-tab:where([ws-x~="$tab-selected"])
         color: var(--text-color-fill)
         background-color: var(--color)
 

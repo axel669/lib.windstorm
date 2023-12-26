@@ -9,13 +9,13 @@ import yaml from "js-yaml"
 
 const componentList = {
     resolveId(id) {
-        if (id !== "$$css") {
+        if (id !== "$$component-css") {
             return
         }
         return id
     },
     load(id) {
-        if (id !== "$$css") {
+        if (id !== "$$component-css") {
             return
         }
 
@@ -48,22 +48,15 @@ const simpleFuncs = {
             Object.entries(simple.funcs)
             .map(
                 ([name, prop]) => {
+                    const key = name.replace(/\./g, "\\\\.")
                     if (Array.isArray(prop) === true) {
-                        const args = prop.map(
-                            prop => `prop("${prop}", def)`
-                        )
-                        return `"${name}": (def) => rules(${args.join(",")})`
+                        const parts = prop.map(prop => `"${prop}: {$}"`)
+                        return `--${key}: ${parts.join(" ")};`
                     }
-                    return `"${name}": (def) => prop("${prop}", def)`
+                    return `--${key}: "${prop}: {$}";`
                 }
             )
-        return `
-            import { prop, rules } from "./css-gen.mjs"
-
-            export default {
-                ${lines.join(",\n")}
-            }
-        `
+        return `export default \`${lines.join("")}\``
     }
 }
 
@@ -89,6 +82,6 @@ export default {
         del({ targets: "dist/*" }),
         componentList,
         simpleFuncs,
-        terser(),
+        // terser(),
     ]
 }

@@ -1,6 +1,4 @@
 funcs:
-  bg: background
-  bg.c: background-color
   b: border
   b.c: border-color
   b.s: border-style
@@ -21,6 +19,10 @@ funcs:
   b.r.c: border-right-color
   b.r.s: border-right-style
   b.r.w: border-right-width
+  b.x: [border-left, border-right]
+  b.y: [border-top, border-bottom]
+  bg: background
+  bg.c: background-color
   c: color
   col: grid-column
   cur: cursor

@@ -1,4 +1,4 @@
-label:where([ws-x~="$control"])
+label:where([ws-x~="[$control]"])
     --color: var(--default)
     --border-color: var(--default)
 
@@ -23,7 +23,7 @@ label:where([ws-x~="$control"])
     &:focus-within
         --border-color: var(--color)
 
-        &:where([ws-x~="$flat"]) > :is(input, select)
+        &:where([ws-x~="[$flat]"]) > :is(input, select)
             outline: 2px solid var(--ripple-color)
             outline-offset: -2px
 
@@ -85,7 +85,7 @@ label:where([ws-x~="$control"])
             border-right: 1px solid var(--border-color)
             text-decoration: underline
 
-    & > :where([ws-x~="$text"])
+    & > :where([ws-x~="[$text]"])
         grid-area: label
         padding: 4px
         display: flex
