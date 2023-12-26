@@ -12,3 +12,10 @@ parsers:
 template: "windy"
 options:
   theme: dark
+  repo: https://github.com/axel669/lib.windstorm
+  favicon: https://axel669.net/images/megaman-rounded.png
+  opengraph:
+    title: Ipsen
+    description: Simple but powerful css macros.
+    image: https://axel669.net/images/megaman-rounded.png
+    themeColor: "#00EEEE"

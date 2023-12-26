@@ -11,7 +11,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@axel669/ipsen": "0.4.0-beta.3",
+    "@axel669/ipsen": "0.4.0-beta.7",
     "@rollup/plugin-terser": "^0.4.0",
     "csso": "^5.0.5",
     "fs-jetpack": "^5.1.0",
