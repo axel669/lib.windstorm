@@ -3,13 +3,16 @@ button:where([ws-x~="[$flat]"], [ws-x~="[$fill]"], [ws-x~="[$outline]"]),
     --color: var(--text-color-normal)
     --ripple-color: var(--ripple-normal)
 
+    --fill-color: transaprent
+    --text-color: var(--color)
+
     position: relative
 
-    border: 0px solid var(--color)
-    color: var(--color)
+    border: 0px solid var(--text-color)
+    color: var(--text-color)
     font-family: var(--font)
 
-    background-color: transparent
+    background-color: var(--fill-color)
     border-radius: 4px
     cursor: pointer
     padding: 8px 16px
@@ -18,9 +21,9 @@ button:where([ws-x~="[$flat]"], [ws-x~="[$fill]"], [ws-x~="[$outline]"]),
     display: inline-flex
     align-items: center
     justify-content: center
+    text-decoration: none
 
     @import "../$clickable"
 
     &:where([disabled])
-        opacity: 0.6
-        background-color: rgba(200, 200, 200, 0.4)
+        filter: saturate(10%) brightness(0.7)
