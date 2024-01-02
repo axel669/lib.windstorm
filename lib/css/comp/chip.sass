@@ -1,4 +1,9 @@
 ws-chip
+    --color: var(--text-color-normal)
+
+    --fill-color: transaprent
+    --text-color: var(--color)
+
     display: inline-flex
     align-items: center
     justify-content: center
@@ -6,7 +11,9 @@ ws-chip
     padding: 4px 12px
     user-select: none
     vertical-align: text-bottom
+    color: var(--text-color)
+    background: var(--fill-color)
 
-    &:where([ws-x~="[$click]"])
+    &:where([ws-x~="@click"])
         cursor: pointer
         @import "../$clickable"
