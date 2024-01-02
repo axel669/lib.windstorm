@@ -1,6 +1,6 @@
 [Windstorm](readme.md)
 
-- [Built-in Functions](lib/wind-funcs.md#built-in.html)
+- [Macros and Markers](lib/macros-markers.md#built-in.html)
 - [Themes](lib/css/themes.md)
 - Components
     - Data Display
@@ -32,4 +32,3 @@
     - Spinners
         - [Circle Spinner](lib/css/comp/docs/circle-spinner.md)
         - [Hexagon Spinner](lib/css/comp/docs/hexagon-spinner.md)
-

@@ -2,7 +2,7 @@
 
 The cirlce spinner is an element that shows an animated circular load spinner.
 
-## Wind Functions
+## Component Macros
 - $color<br />
     Sets the colors for each of the circular pieces
 
