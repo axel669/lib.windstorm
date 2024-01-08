@@ -23,6 +23,10 @@ funcs:
   b.y: [border-top, border-bottom]
   bg: background
   bg.c: background-color
+  bg.img: background-image
+  bg.rep: background-repeat
+  bg.pos: background-position
+  bg.sz: background-size
   c: color
   col: grid-column
   cur: cursor
@@ -49,6 +53,7 @@ funcs:
   m.l: margin-left
   m.r: margin-right
   m.t: margin-top
+  outln: outline
   over: overflow
   over.x: overflow-x
   over.y: overflow-y
