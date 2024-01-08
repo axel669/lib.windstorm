@@ -10,7 +10,7 @@ high contrast theme that only a handful of people will like (me).
 To create a custom theme, a single css rule needs to be defined with a number of
 variables that windstorm uses in the components and functions.
 
-The selector should be: `[ws-x~="$theme[<theme name>]"]`
+The selector should be: `[ws-x~="@theme:<theme name>"]`
 
 ### Theme Properties
 
@@ -105,7 +105,7 @@ only `button` or `a`'s with `$button` on them.
 
 ```css
 /* Replace custom with your theme name */
-[ws-x~="theme[custom]"] {
+[ws-x~="@theme:custom"] {
     /* Font Display */
     --font: ;
     --text-light: ;

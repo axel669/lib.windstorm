@@ -1,0 +1,87 @@
+pre-header {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 150ms linear;
+}
+
+code-area:hover>pre-header {
+    visibility: visible;
+    opacity: 1;
+}
+
+:is(h1, h2, h3, h4, h5, h6)>a {
+    color: var(--text-color-normal);
+    text-decoration: none;
+}
+
+:is(h1, h2, h3, h4, h5, h6)>a:hover {
+    text-decoration: underline;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    padding-bottom: 6px;
+}
+
+/* a series of global css defines for the markdown rendering */
+blockquote {
+    margin: 0px;
+    padding: 4px;
+    padding-left: 8px;
+}
+
+blockquote>p {
+    margin: 0px;
+    border-left: 4px solid var(--primary);
+    padding: 2px;
+    padding-left: 4px;
+}
+
+ul p {
+    margin: 2px;
+}
+
+ul {
+    padding-inline-start: 28px;
+    margin: 0px;
+}
+
+iframe {
+    width: 100%;
+    height: 250px;
+    border: 1px solid var(--primary);
+    border-radius: 4px;
+}
+
+pre {
+    overflow: auto;
+    max-height: 500px;
+}
+
+h1 {
+    border-bottom: 2px solid var(--primary);
+}
+
+h2 {
+    border-bottom: 1px solid var(--secondary);
+}
+
+h3 {
+    border-bottom: 1px solid var(--text-color-secondary);
+}
+
+td {
+    vertical-align: top;
+}
+
+/*  Add style for mermaid diagrams.
+    The background color for dark mode edges happens to be the same
+    as the dark mode background color for ws-paper.
+*/
+.mermaid {
+    background-color: var(--background);
+}

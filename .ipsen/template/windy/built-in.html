@@ -9,11 +9,14 @@
         <link href="/style.css" rel="stylesheet" />
     </head>
 
-    <body ws-x="theme[{| $.options.theme |}]">
-        <script src="https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.1.17/dist/browser.js"></script>
-        <ws-paper ws-x="r[0px] w[min(100%,800px)] m-l[auto] m-r[auto]">
-            {|@ "sidebar.html" |}
-            <ws-flex ws-x="over[auto] p-x[40px] p-y[0px]" id="wrapper">
+    <body ws-x="$theme[{| $.options.theme |}]">
+        <script src="https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.2.3/dist/browser.js"></script>
+        <ws-paper ws-x="r[0px] w[min(100%,800px)] m.l[auto] m.r[auto]">
+            {|@ "part/sidebar.html" |}
+            {|^ if $.options.repo !== undefined |}
+                {|@ "part/repo.html" |}
+            {||}
+            <ws-flex ws-x="over[auto] p.x[40px] p.y[0px]" id="wrapper">
                 <div>
                     {|* $.content |}
                 </div>

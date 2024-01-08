@@ -1,4 +1,4 @@
-label:where([ws-x~="[$control]"])
+label:where([ws-x~="@control"])
     --color: var(--default)
     --border-color: var(--default)
 
@@ -41,7 +41,6 @@ label:where([ws-x~="[$control]"])
         font: var(--font)
         font-size: var(--text-size-normal)
         cursor: pointer
-        background-color: var(--background-layer)
         grid-area: control
 
         &:focus
@@ -65,7 +64,6 @@ label:where([ws-x~="[$control]"])
         height: 100%
         grid-area: control
         padding: 4px
-        background-color: var(--background-layer)
 
         &:focus
             outline: none
@@ -85,7 +83,7 @@ label:where([ws-x~="[$control]"])
             border-right: 1px solid var(--border-color)
             text-decoration: underline
 
-    & > :where([ws-x~="[$text]"])
+    & > :where([slot="label-text"])
         grid-area: label
         padding: 4px
         display: flex

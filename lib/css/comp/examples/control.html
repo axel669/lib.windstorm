@@ -1,0 +1,89 @@
+<ws-grid ws-x="gr-[col 1fr_1fr]">
+    <label ws-x="@control [$color @primary]">
+        <span slot="label-text" ws-hint="wat">OOP Language</span>
+        <input />
+    </label>
+    <label ws-x="@control" ws-error="blep">
+        <span slot="label-text">Cheese Picture</span>
+        <input type="file" />
+    </label>
+    <label ws-x="@control [$flat] [$color @secondary]" ws-error="test">
+        <span slot="label-text">Coolness Factor</span>
+        <input />
+        <div ws-x="[$adorn start]">
+            $
+        </div>
+    </label>
+    <label ws-x="@control [$color @warning]">
+        <span slot="label-text">Mistakes in CS</span>
+        <select>
+            <option>TypeScript</option>
+            <option>Java</option>
+            <option>Not teaching debugging</option>
+            <optgroup label="Honorable Mentions">
+                <option>Calling Machine Learning AI</option>
+            </optgroup>
+        </select>
+    </label>
+    <label ws-x="@control [$color @accent] [$flat]">
+        <span slot="label-text">Mistakes in CS</span>
+        <select>
+            <option>TypeScript</option>
+            <option>Java</option>
+            <option>Not teaching debugging</option>
+            <optgroup label="Honorable Mentions">
+                <option>Calling Machine Learning AI</option>
+            </optgroup>
+        </select>
+    </label>
+
+    <label ws-x="@control [col span_2] [$color @danger]">
+        <div slot="label-text">TextArea</div>
+        <textarea ws-x="[h 100px]"></textarea>
+    </label>
+</ws-grid>
+
+<ws-grid ws-x="gr-[col 1fr_1fr]">
+    <label ws-x="@control [$color @primary]">
+        <span slot="label-text" ws-hint="wat">OOP Language</span>
+        <input disabled />
+    </label>
+    <label ws-x="@control" ws-error="blep">
+        <span slot="label-text">Cheese Picture</span>
+        <input type="file" disabled />
+    </label>
+    <label ws-x="@control [$flat] [$color @secondary]" ws-error="test">
+        <span slot="label-text">Coolness Factor</span>
+        <input disabled />
+        <div ws-x="[$adorn start]">
+            $
+        </div>
+    </label>
+    <label ws-x="@control [$color @warning]">
+        <span slot="label-text" ws-x=" [w 200px]">Mistakes in CS</span>
+        <select disabled>
+            <option>TypeScript</option>
+            <option>Java</option>
+            <option>Not teaching debugging</option>
+            <optgroup label="Honorable Mentions">
+                <option>Calling Machine Learning AI</option>
+            </optgroup>
+        </select>
+    </label>
+    <label ws-x="@control [$color @accent] [$flat]">
+        <span slot="label-text">Mistakes in CS</span>
+        <select disabled>
+            <option>TypeScript</option>
+            <option>Java</option>
+            <option>Not teaching debugging</option>
+            <optgroup label="Honorable Mentions">
+                <option>Calling Machine Learning AI</option>
+            </optgroup>
+        </select>
+    </label>
+
+    <label ws-x="@control [col span_2] [$color @danger]">
+        <div slot="label-text">TextArea</div>
+        <textarea disabled ws-x="[h 100px]"></textarea>
+    </label>
+</ws-grid>

@@ -1,6 +1,5 @@
-label[ws-x~="[$progress]"]
+label[ws-x~="@progress"]
     --color: var(--text-color-normal)
-    --border-size: 0px
 
     display: inline-grid
     grid-template-columns: 1fr
@@ -13,10 +12,9 @@ label[ws-x~="[$progress]"]
         grid-template-columns: min-content auto
         grid-template-rows: 1fr
 
-    & > [ws-x~="[$text]"]
+    & > [ws-x~="[$progress-label]"]
         padding: 4px
         display: flex
-        border-bottom: var(--border-size, 1px) solid var(--color)
         color: var(--color)
 
     & > progress

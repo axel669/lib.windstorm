@@ -28,7 +28,6 @@ const componentList = {
             styles.push({
                 name: path.basename(file, path.extname(file)),
                 style: minify(sassc.compile(file).css).css,
-                // style: sassc.compile(file).css,
             })
         }
 
@@ -82,6 +81,6 @@ export default {
         del({ targets: "dist/*" }),
         componentList,
         simpleFuncs,
-        // terser(),
+        terser(),
     ]
 }

@@ -1,7 +1,12 @@
 a:where([ws-x])
     --color: var(--text-color-normal)
 
-    color: var(--color)
+    --text-color: var(--color)
+
+    color: var(--text-color)
 
     &:visited, &:hover
-        color: var(--color)
+        color: var(--text-color)
+
+    &[disabled]
+        pointer-events: none

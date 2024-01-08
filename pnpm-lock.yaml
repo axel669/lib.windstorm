@@ -6,8 +6,8 @@ settings:
 
 devDependencies:
   '@axel669/ipsen':
-    specifier: 0.4.0-beta.3
-    version: 0.4.0-beta.3
+    specifier: 0.4.0-beta.7
+    version: 0.4.0-beta.7
   '@rollup/plugin-terser':
     specifier: ^0.4.0
     version: 0.4.0(rollup@3.19.0)
@@ -35,8 +35,8 @@ devDependencies:
 
 packages:
 
-  /@axel669/ipsen@0.4.0-beta.3:
-    resolution: {integrity: sha512-/XbGySp9mJBMAvLHl/iZV4oI8s0F2pJdKFX7mmJwFQRlweWzYVRbp9+Rmbz34Fw6h9I3TW0yzAHx3wXDJTSvfQ==}
+  /@axel669/ipsen@0.4.0-beta.7:
+    resolution: {integrity: sha512-f10Xp/XtOMgJhMfZyUYWSKS2FwnwZ+tEjLsP3Rjd2ABcFwTk5zSm3FUetRV4A6gjiubAw0drVo3VPvMSrPEH0w==}
     hasBin: true
     dependencies:
       fs-jetpack: 5.1.0

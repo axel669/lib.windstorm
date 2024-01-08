@@ -1,14 +1,22 @@
 ws-titlebar
-    --text-color: var(--text-color-normal)
+    --color: var(--text-color-normal)
+
+    --text-color: var(--color)
+    --fill-color: transparent
 
     display: grid
     height: 48px
     grid-template-columns: min-content auto min-content
     grid-template-areas: "menu title action"
     user-select: none
+    background-color: var(--fill-color)
+    color: var(--text-color)
 
     &:where(:not([ws-x~="[$fill]"]))
         border-bottom: 1px solid var(--color, var(--text-color-normal))
+
+    &:where([ws-x~="[$fill]"])
+        --ripple-normal: var(--ripple-dark) !important
 
     & > :where([slot="title"])
         grid-area: title
