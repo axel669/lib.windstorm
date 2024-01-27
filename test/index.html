@@ -4,39 +4,33 @@
         <meta charset="utf8" />
         <title>Windstorm</title>
         <meta name="viewport" content="initial-scale=1,maximum-scale=5,minimum-scale=1,width=device-width">
+        <style ws-root>
+            .ws-style {
+                --b2: "padding-top: {$}" "padding-bottom: {$}";
+                --thing: "color: {$}-ripple";
+                --griddy: "display: grid" "padding: {$}";
+                --t\.c: "color: {$}";
+                --b\.y: "border-top: {$}" "border-bottom: {$}";
+                --test: [@test 100px];
+            }
+        </style>
+        <link rel="stylesheet" href="test.css" ws-root />
     </head>
-    <body ws-x="$theme[tron]">
+    <body ws-x="@theme:tron">
         <script src="./browser.js"></script>
 
-        <ws:test>
-            <ws-hexagon-spinner ws-x="&size[150px] $color[primary]"></ws-hexagon-spinner>
-        </ws:test>
-        <div ws-x="&test[teal] b[4px solid blue] p[8px] r.t[8px]">
-            <div ws-x="bg[&test]">Stuff</div>
-            <div ws-x="b:hover[1px solid &test]">Stuff 2</div>
+        <div ws-x="[flex] [t.c white] [t.c:hover teal] [test] [@another test]">
+            <span ws-x="[b 1px solid @primary] [bg.c cyan]">
+                content
+            </span>
+            <span ws-x="[b2:hover 8px] [b 1px solid teal]">
+                test content
+            </span>
+
+            <button ws-x="[$flat] [$color @primary] [md|$color @accent] [sm|$color @warning]">
+                Testing
+            </button>
+            <button ws-x="[$outline]">Testing</button>
         </div>
-        <div ws-x="w[100px] h[100px] b[1px solid teal]"></div>
-        <label ws-x="$button $fill $color[primary]" for="test">
-            Testing
-        </label>
-        <input type="checkbox" ws-x="hide" id="test" />
-        <ws-modal ws-x="&anim-time[1000ms]">
-            <label for="test"></label>
-            <ws-paper ws-x="$menu $outline r.l[0px]">
-                <ws-titlebar slot="header">
-                    <span ws-x="$title" slot="title">
-                        Some Title
-                    </span>
-                </ws-titlebar>
-                <ws-flex>
-                    <div>Item</div>
-                    <div>Item</div>
-                    <div>Item</div>
-                    <div>Item</div>
-                    <div>Item</div>
-                    <div>Item</div>
-                </ws-flex>
-            </ws-paper>
-        </ws-modal>
     </body>
 </html>
