@@ -8,7 +8,14 @@
     </select>
 </label>
 <iframe ws-x="h[350px]"
-srcdoc="<html><head></head><body ws-x='@theme:dark'><script src='/windstorm.js'></script><ws-flex ws-x='[p 8px]'>{| $.info.replace(/\n/g,'') |}</ws-flex><script src='/preview.mjs'></script></body></html>">
+srcdoc="{| `<html><head></head><body ws-x="@theme:dark">
+    <script src="/windstorm.js"></script>
+    <ws-flex ws-x='[p 8px]'>
+    ${$.info}
+    </ws-flex>
+    <script src='/preview.mjs'></script>
+    </body></html>`.replace(/\r?\n/g, "") |}
+">
 </iframe>
 <script>
     const frame = document.querySelector("iframe")

@@ -82,12 +82,20 @@ of the components that ship with windstorm.
 Makes an element use flexbox for layout. The argument is optional and will
 specify the flex-direction. Will use column direction by default.
 
+### `[fl-center]`
+Makes a flex display element center the content horizontally and vertically.
+
 ### `[grid $]`
 Makes an element use css grid for layout. The argument is optional and will
 specify the grid-direction. Will use row layout by default.
 
 ### `[hide]`
-Hides an element and removes it from the layout calculations.
+Hides an element and removes it from the layout calculations (uses
+`display: none`).
+
+### `[invis]`
+Hides an element but does not remove it from the layout (uses
+`visibility: hidden`).
 
 ## Component Macros
 Windstorm uses macros prefixed with `"$"` to specify component

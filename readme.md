@@ -14,15 +14,15 @@ minor differences between a set of 20.
 
 ### CDN Link (global variable)
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.3.1/dist/browser.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.3.2/dist/browser.js"></script>
 ```
 
 ### CDN Link (module)
 ```js
 // Only scanning, no functions
-import "https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.3.1/dist/module.mjs"
+import "https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.3.2/dist/module.mjs"
 // Import functions + scanning
-import ws from "https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.3.1/dist/module.mjs"
+import ws from "https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.3.2/dist/module.mjs"
 
 ws.x({...stuff})
 ```
@@ -70,17 +70,29 @@ Information about how macros work and how to create them is on the
 The `ws-x` attribute is what windstorm will scan to apply styles to elements.
 The attribute can have any number of macros and markers defined.
 
-- Macro format: `[<name>(:<mods>)? (arg string)?]`
+- Macro format: `[(<size>|)?<name>(:<states>)? (arg string)?]`
 - Marker format: `@<marker>(:arg)?`
 
 Macros will apply specific styles and variables to whatever element they are
 defined on and are used to customize individual elements in specific ways.
-Custom macros can be defined, and are covered in the [Macros](./lib/macros.md)
-documentation.
+Custom macros can be defined, and are covered in the
+[Macros and Markers](./lib/macros-markers.md) documentation.
+
+The `states` for a macro are css states for controlling conditionally applied
+styles (ex: `:hover`). The `size` modifier for a macro will make it apply styles
+when certain screen size/orientation conditions are met.
+
+| Size | Screen State |
+| --- | --- |
+| sm | width <= 600px |
+| md | width <= 1024px |
+| lg | width >= 1025px |
+| lnd | orientation: landscape |
+| prt | orientation: portrait |
 
 Markers are bits of css that change how an element is presented in a large way
 (themes, making links appear as buttons, etc). Markers don't get processed by the
-macro system, so they can be made using standard css markers and syntax.
+macro system, so they can be made using standard css syntax.
 
 ```html
 <div ws-x="[@color teal] [w 100px]">
@@ -149,19 +161,19 @@ The `x` function takes in an object where each `[key, value]` pair will be
 converted into a valid string for the `ws-x` attribute, including formatting
 markers correctly. The value can take one of a few forms, and which form it takes
 will affect the output:
-- A string that will be used as the arg string<br /> `[key, value] -> "[key
-    value]"`, `[@key, value] -> "@key:value"`
-- `true` (boolean) will output the function without an arg string<br /> `[key,
-    true] -> "[key]"`, `[@key, true] -> "@key"`
+- A string that will be used as the arg string<br />
+    `[key, value] -> "[key value]"`, `[@key, value] -> "@key:value"`
+- `true` (boolean) will output the function without an arg string<br />
+    `[key, true] -> "[key]"`, `[@key, true] -> "@key"`
 - `null`, `false`, or `undefined` will output nothing, useful for making
     something that is toggled or catching when something isn't defined.<br />
     `[key, value] -> ""`
 
-
 ```js
-// returns "@button [r 4px] [b 1px solid @main-color]"
+// returns "@button [$outline] [r 4px] [b 1px solid @main-color]"
 ws.x({
     "@button": true,
+    $outline: true,
     r: "4px",
     hide: false,
     b: "1px solid @main-color"
