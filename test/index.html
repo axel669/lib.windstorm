@@ -17,7 +17,7 @@
         <link rel="stylesheet" href="test.css" ws-root />
     </head>
     <body ws-x="@theme:tron">
-        <script src="./browser.js"></script>
+        <script src="./browser.js" type="module"></script>
 
         <div ws-x="[flex] [t.c white] [t.c:hover teal] [test] [@another test]">
             <span ws-x="[b 1px solid @primary] [bg.c cyan]">
@@ -30,7 +30,7 @@
             <button ws-x="[$flat] [md|$fill] [sm|$color @warning] [md|$color @accent] [$color @primary]">
                 Testing
             </button>
-            <button ws-x="[$flat] [sm|$outline] [$color @accent]">Testing</button>
+            <button ws-x="[$flat] [hide:empty] [sm|$outline] [$color @accent]">Testing</button>
         </div>
     </body>
 </html>
