@@ -53,6 +53,7 @@ funcs:
   m.l: margin-left
   m.r: margin-right
   m.t: margin-top
+  o: opacity
   outln: outline
   over: overflow
   over.x: overflow-x
@@ -89,6 +90,8 @@ funcs:
   t.ws: white-space
   t.wt: font-weight
   tf: transform
+  tf.o: transform-origin
+  tf.p: perspective
   tr: transition
   vis: visibility
   w: width
