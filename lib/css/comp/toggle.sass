@@ -34,15 +34,13 @@ label:where([ws-x~="@toggle"])
             --color: var(--disabled-background)
 
         &:checked
-            color: var(--text-color-invert)
-            &::after
-                background-color: var(--color)
+            color: var(--color)
 
         &::after
             content: ""
             position: absolute
             font-size: 18px
-            font-family: tabler-icons!important
+            font-family: bootstrap-icons!important
             speak: none
             font-style: normal
             font-weight: 400
@@ -54,31 +52,34 @@ label:where([ws-x~="@toggle"])
             height: 20px
             transform: translate(-50%, -50%)
             display: flex
-            border: 1px solid var(--color)
-            border-radius: 4px
             align-items: center
             justify-content: center
             overflow: hidden
 
         &[type="radio"]
             &::after
-                border-radius: 50%
-            &:disabled::after
-                background-color: var(--disabled-background)
+                // circle
+                content: "\F28A"
             &:checked::after
-                content: "\f671"
+                // record-circle
+                content: "\F518"
         &[type="checkbox"]
-            &:disabled
-                background-color: var(--disabled-background)
+            &::after
+                // square
+                content: "\F584"
             &:checked::after
-                content: "\ea5e"
+                // check-square-fill
+                content: "\F26C"
             &:where([ws-x~="@switch"])
+                &:disabled
+                    background-color: var(--disabled-background)
                 position: relative
                 border: 1px solid var(--color)
                 height: 24px
                 width: 44px
                 border-radius: 12px
                 &::after
+                    color: var(--text-dark)
                     content: ""
                     background-color: var(--text-color-secondary)
                     position: absolute
@@ -92,4 +93,6 @@ label:where([ws-x~="@toggle"])
                     transition: left 100ms linear, color 100ms linear
                 &:checked::after
                     background-color: var(--color)
+                    // check
+                    content: "\F26E"
                     left: 22px
