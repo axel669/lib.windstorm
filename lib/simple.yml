@@ -22,6 +22,7 @@ funcs:
   b.x: [border-left, border-right]
   b.y: [border-top, border-bottom]
   bg: background
+  bg.att: background-attachment
   bg.c: background-color
   bg.img: background-image
   bg.rep: background-repeat
@@ -53,6 +54,8 @@ funcs:
   m.l: margin-left
   m.r: margin-right
   m.t: margin-top
+  m.x: [margin-left, margin-right]
+  m.y: [margin-bottom, margin-top]
   o: opacity
   outln: outline
   over: overflow
