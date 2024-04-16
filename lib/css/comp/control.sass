@@ -83,7 +83,7 @@ label:where([ws-x~="@control"])
             border-right: 1px solid var(--border-color)
             text-decoration: underline
 
-    & > :where([slot="label-text"])
+    & > :where([ws-x~="[$label]"])
         grid-area: label
         padding: 4px
         display: flex
@@ -101,7 +101,7 @@ label:where([ws-x~="@control"])
             content: attr(ws-hint)
             color: var(--text-color-secondary)
 
-    & > :where([slot="start"])
+    & > :where([ws-x~="[$start]"])
         grid-area: start
-    & > :where([slot="end"])
+    & > :where([ws-x~="[$end]"])
         grid-area: end

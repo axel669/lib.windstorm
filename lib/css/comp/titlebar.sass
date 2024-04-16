@@ -18,11 +18,11 @@ ws-titlebar
     &:where([ws-x~="[$fill]"])
         --ripple-normal: var(--ripple-dark) !important
 
-    & > :where([slot="title"])
+    & > :where([ws-x~="[$title]"])
         grid-area: title
-    & > :where([slot="menu"])
+    & > :where([ws-x~="[$menu]"])
         grid-area: menu
         --text-color-normal: var(--text-color)
-    & > :where([slot="action"])
+    & > :where([ws-x~="[$action]"])
         grid-area: action
         --text-color-normal: var(--text-color)

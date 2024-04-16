@@ -2,17 +2,17 @@ ws-popover
     display: grid
     position: relative
 
-    &:not(:visibile) > :where([slot="content"])
+    &:not(:visibile) > :where([ws-x~="[$content]"])
         display: none
-    & > :where([slot="content"])
+    & > :where([ws-x~="[$content]"])
         position: absolute
         z-index: 25
         display: none
-    &[ws-x~="[$show]"] > :where([slot="content"])
+    &[ws-x~="[$show]"] > :where([ws-x~="[$content]"])
         display: block
 
     & > input:where([type="checkbox"])
-        &:checked + :where([slot="content"])
+        &:checked + :where([ws-x~="[$content]"])
             display: block
-        &:not(:checked) + :where([slot="content"])
+        &:not(:checked) + :where([ws-x~="[$content]"])
             display: none
