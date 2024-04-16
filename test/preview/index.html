@@ -5,7 +5,7 @@
         <title>Windstorm</title>
         <meta name="viewport" content="initial-scale=1,maximum-scale=5,minimum-scale=1,width=device-width">
     </head>
-    <body ws-x="@theme:dark @app">
+    <body ws-x="@@theme:dark @app">
         <script src="./browser.js"></script>
         <script>
             document.addEventListener(
@@ -17,15 +17,15 @@
                     document.body.setAttribute(
                         "ws-x",
                         ws.x({
-                            "@app": true,
-                            "@theme": evt.target.value
+                            "@@app": true,
+                            "@@theme": evt.target.value
                         })
                     )
                 }
             )
         </script>
         <style>
-            input:checked + span {
+            [ws-controls] input:checked + span {
                 width: 100%;
                 text-align: center;
                 border-bottom: 3px solid var(--primary);
@@ -34,20 +34,20 @@
 
         <ws-screen>
             <ws-paper ws-x="[r 0px]">
-                <ws-grid ws-x="[$header] [p 0xp] [gr.cols 1fr 1fr 1fr]">
+                <ws-grid ws-x="[$header] [p 0xp] [gr.cols 1fr 1fr 1fr]" ws-controls>
                     <ws-titlebar ws-x="[$fill] [$color @primary] [col span 3]">
                         <span ws-x="[$title] [$title-text]">Component Preview</span>
                     </ws-titlebar>
 
-                    <label ws-x="@toggle [$flat] [fl-center]">
+                    <label ws-x="@@toggle [$flat] [fl-center]">
                         <input type="radio" name="theme_select" value="light" ws-x="[hide]" />
                         <span>Light Theme</span>
                     </label>
-                    <label ws-x="@toggle [$flat] [fl-center]">
+                    <label ws-x="@@toggle [$flat] [fl-center]">
                         <input type="radio" name="theme_select" value="dark" ws-x="[hide]" checked />
                         <span>Dark Theme</span>
                     </label>
-                    <label ws-x="@toggle [$flat] [fl-center]">
+                    <label ws-x="@@toggle [$flat] [fl-center]">
                         <input type="radio" name="theme_select" value="tron" ws-x="[hide]" />
                         <span>Tron Theme</span>
                     </label>
