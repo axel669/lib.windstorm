@@ -42,7 +42,7 @@
 </ws-modal>
 
 <input type="checkbox" ws-x="[hide]" id="select" />
-<ws-modal ws-x="[@anim-time 100ms]">
+<ws-modal>
     <label for="select"></label>
     <div ws-x="@select [r 8px] [b 1px solid @primary] [c teal] [bg.c black]">
         <ws-flex>
@@ -59,17 +59,17 @@
 </ws-modal>
 
 <input type="checkbox" ws-x="[hide]" id="dialog" />
-<ws-modal>
+<ws-modal ws-x="[@anim-time 100ms]">
     <ws-paper ws-x="@dialog">
-        <ws-titlebar ws-x="[$header]">
-            <span ws-x="[$title]">Dialog Example</span>
+        <ws-titlebar slot="header">
+            <span slot="title" ws-x="[$title]">Dialog Example</span>
         </ws-titlebar>
         <ws-flex>
             <span>
-                Standard dialog stuff \o/
+                This one isset to animate faster
             </span>
         </ws-flex>
-        <label ws-x="@button [$flat] [$color @accent] [$footer]" for="dialog">
+        <label slot="footer" ws-x="@button [$flat] [$color @accent]" for="dialog">
             Close
         </label>
     </ws-paper>

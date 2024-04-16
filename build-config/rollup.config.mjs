@@ -68,6 +68,11 @@ export default {
             name: "ws"
         },
         {
+            file: `test/preview/browser.js`,
+            format: "iife",
+            name: "ws"
+        },
+        {
             file: ".ipsen/static/windstorm.js",
             format: "iife",
             name: "ws"

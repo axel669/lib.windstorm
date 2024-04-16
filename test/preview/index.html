@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf8" />
+        <title>Windstorm</title>
+        <meta name="viewport" content="initial-scale=1,maximum-scale=5,minimum-scale=1,width=device-width">
+    </head>
+    <body ws-x="@theme:dark @app">
+        <script src="./browser.js"></script>
+        <script>
+            document.addEventListener(
+                "input",
+                (evt) => {
+                    if (evt.target.name !== "theme_select") {
+                        return
+                    }
+                    document.body.setAttribute(
+                        "ws-x",
+                        ws.x({
+                            "@app": true,
+                            "@theme": evt.target.value
+                        })
+                    )
+                }
+            )
+        </script>
+        <style>
+            input:checked + span {
+                width: 100%;
+                text-align: center;
+                border-bottom: 3px solid var(--primary);
+            }
+        </style>
+
+        <ws-screen>
+            <ws-paper ws-x="[r 0px]">
+                <ws-grid ws-x="[$header] [p 0xp] [gr.cols 1fr 1fr 1fr]">
+                    <ws-titlebar ws-x="[$fill] [$color @primary] [col span 3]">
+                        <span ws-x="[$title] [$title-text]">Component Preview</span>
+                    </ws-titlebar>
+
+                    <label ws-x="@toggle [$flat] [fl-center]">
+                        <input type="radio" name="theme_select" value="light" ws-x="[hide]" />
+                        <span>Light Theme</span>
+                    </label>
+                    <label ws-x="@toggle [$flat] [fl-center]">
+                        <input type="radio" name="theme_select" value="dark" ws-x="[hide]" checked />
+                        <span>Dark Theme</span>
+                    </label>
+                    <label ws-x="@toggle [$flat] [fl-center]">
+                        <input type="radio" name="theme_select" value="tron" ws-x="[hide]" />
+                        <span>Tron Theme</span>
+                    </label>
+                </ws-grid>
+
+                <ws-flex ws-x="[$content] [over.y auto]">
+                    <ht-include src="examples/avatar.html" title="Avatar"></ht-include>
+                    <ht-include src="examples/badge.html" title="Badge"></ht-include>
+                    <ht-include src="examples/button.html" title="Button"></ht-include>
+                    <ht-include src="examples/chip.html" title="Chip"></ht-include>
+                    <ht-include src="examples/details.html" title="Expandable Details"></ht-include>
+                    <ht-include src="examples/control.html" title="Input Elements"></ht-include>
+                    <ht-include src="examples/circle-spinner.html" title="Circle Spinner"></ht-include>
+                    <ht-include src="examples/hexagon-spinner.html" title="Hexagon Spinner"></ht-include>
+                    <ht-include src="examples/icon.html" title="Icon"></ht-include>
+                    <ht-include src="examples/link.html" title="Link"></ht-include>
+                    <ht-include src="examples/modal.html" title="Modal"></ht-include>
+                    <ht-include src="examples/paper.html" title="Paper"></ht-include>
+                    <ht-include src="examples/notification.html" title="Notification"></ht-include>
+                    <ht-include src="examples/popover.html" title="Popover"></ht-include>
+                    <ht-include src="examples/progress.html" title="Progress Bars"></ht-include>
+                    <ht-include src="examples/table.html" title="Table"></ht-include>
+                    <ht-include src="examples/tabs.html" title="Tabs"></ht-include>
+                    <ht-include src="examples/titlebar.html" title="Titlebar"></ht-include>
+                    <ht-include src="examples/toggle.html" title="Toggle"></ht-include>
+                    <ht-include src="examples/tooltip.html" title="Tolltip"></ht-include>
+                </ws-flex>
+            </ws-paper>
+        </ws-screen>
+
+        <script type="module">
+            const includes = [...document.querySelectorAll("ht-include")]
+            includes.map(
+                async (include) => {
+                    const replacer = document.createElement("details")
+                    replacer.setAttribute("ws-x", "")
+                    const res = await fetch(include.getAttribute("src"))
+                    replacer.innerHTML = `<summary>${include.getAttribute("title")}</summary>\n${await res.text()}`
+                    replacer.open = (include.getAttribute("open") !== null)
+                    include.parentNode.replaceChild(replacer, include)
+                }
+            )
+        </script>
+    </body>
+</html>

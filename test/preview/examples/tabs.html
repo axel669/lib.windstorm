@@ -1,14 +1,14 @@
 <ws-paper ws-x="[$outline]">
-    <ws-titlebar slot="header">
-        <span ws-x="[$title]" slot="title">Horizontal</span>
+    <ws-titlebar ws-x="[$header]">
+        <span ws-x="[$title] [$title-text]">Horizontal</span>
     </ws-titlebar>
-    <div slot="content">
+    <div ws-x="[$content]">
         <ws-tabs ws-x="[$color @secondary] [w 50%]">
             <ws-tab>Light</ws-tab>
             <ws-tab>Dark</ws-tab>
             <ws-tab ws-x="[$tab-selected]">Tron</ws-tab>
         </ws-tabs>
-        <ws-tabs ws-x="[$solid] [$color @secondary] [w 50%]">
+        <ws-tabs ws-x="[$fill] [$color @secondary] [w 50%]">
             <ws-tab>Light</ws-tab>
             <ws-tab>Dark</ws-tab>
             <ws-tab ws-x="[$tab-selected]">Tron</ws-tab>
@@ -16,16 +16,16 @@
     </div>
 </ws-paper>
 <ws-paper ws-x="[$outline]">
-    <ws-titlebar slot="header">
-        <span ws-x="[$title]" slot="title">Vertical</span>
+    <ws-titlebar ws-x="[$header]">
+        <span ws-x="[$title] [$title-text]">Vertical</span>
     </ws-titlebar>
-    <div slot="content">
+    <div ws-x="[$content]">
         <ws-tabs ws-x="[$vert] [w 30%] [p 8px]">
             <ws-tab>Light</ws-tab>
             <ws-tab ws-x="[$tab-selected]">Dark</ws-tab>
             <ws-tab>Tron</ws-tab>
         </ws-tabs>
-        <ws-tabs ws-x="[$solid] [$vert] [w 30%] [p 8px]">
+        <ws-tabs ws-x="[$fill] [$vert] [w 30%] [p 8px]">
             <ws-tab>Light</ws-tab>
             <ws-tab ws-x="[$tab-selected]">Dark</ws-tab>
             <ws-tab>Tron</ws-tab>
