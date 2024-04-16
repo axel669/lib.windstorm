@@ -8,7 +8,7 @@
     </select>
 </label>
 <iframe ws-x="h[350px]"
-srcdoc="{| `<html><head></head><body ws-x="@theme:dark">
+srcdoc="{| `<html><head></head><body ws-x="@@theme:dark">
     <script src="/windstorm.js"></script>
     <ws-flex ws-x='[p 8px]'>
     ${$.info}
