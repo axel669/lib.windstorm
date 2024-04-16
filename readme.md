@@ -20,9 +20,9 @@ minor differences between a set of 20.
 ### CDN Link (module)
 ```js
 // Only scanning, no functions
-import "https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.4.0/dist/module.mjs"
+import "https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.4.0/dist/module.js"
 // Import functions + scanning
-import ws from "https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.4.0/dist/module.mjs"
+import ws from "https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.4.0/dist/module.js"
 
 ws.x({...stuff})
 ```
@@ -53,7 +53,7 @@ can be empty).
 > theme to be present, so a theme should always be applied to the body.
 
 ```html
-<body ws-x="@theme:tron">
+<body ws-x="@@theme:tron">
     <script src="<windstorm>"></script>
     Static content here
 </body>
@@ -71,7 +71,7 @@ The `ws-x` attribute is what windstorm will scan to apply styles to elements.
 The attribute can have any number of macros and markers defined.
 
 - Macro format: `[(<size>|)?<name>(:<states>)? (arg string)?]`
-- Marker format: `@<marker>(:arg)?`
+- Marker format: `@@<marker>(:arg)?`
 
 Macros will apply specific styles and variables to whatever element they are
 defined on and are used to customize individual elements in specific ways.
@@ -121,7 +121,7 @@ the scrolling behavior more effectively.
 
 ```html
 <!-- Using ws-screen -->
-<body ws-x="@theme:tron @app">
+<body ws-x="@@theme:tron @@app">
     <script src="<windstorm>"></script>
     <ws-screen>
         <ws-paper ws-x="[$outline]">
@@ -138,7 +138,7 @@ the scrolling behavior more effectively.
 
 ```html
 <!-- Normal pages work fine -->
-<body ws-x="@theme:tron">
+<body ws-x="@@theme:tron">
     <script src="<windstorm>"></script>
     <ws-paper ws-x="[$outline]">
         <ws-flex>
@@ -162,20 +162,21 @@ converted into a valid string for the `ws-x` attribute, including formatting
 markers correctly. The value can take one of a few forms, and which form it takes
 will affect the output:
 - A string that will be used as the arg string<br />
-    `[key, value] -> "[key value]"`, `[@key, value] -> "@key:value"`
+    `[key, value] -> "[key value]"`, `[@@key, value] -> "@@key:value"`
 - `true` (boolean) will output the function without an arg string<br />
-    `[key, true] -> "[key]"`, `[@key, true] -> "@key"`
+    `[key, true] -> "[key]"`, `[@@key, true] -> "@@key"`
 - `null`, `false`, or `undefined` will output nothing, useful for making
     something that is toggled or catching when something isn't defined.<br />
     `[key, value] -> ""`
 
 ```js
-// returns "@button [$outline] [r 4px] [b 1px solid @main-color]"
+// returns "@@button [$outline] [r 4px] [b 1px solid @main-color] [@var 10px]"
 ws.x({
-    "@button": true,
+    "@@button": true,
     $outline: true,
     r: "4px",
     hide: false,
-    b: "1px solid @main-color"
+    b: "1px solid @main-color",
+    "@var": "10px",
 })
 ```

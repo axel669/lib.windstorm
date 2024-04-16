@@ -78,7 +78,11 @@ export default {
             name: "ws"
         },
         {
-            file: "dist/module.mjs",
+            file: "dist/module.js",
+            format: "esm",
+        },
+        {
+            file: "test/preview/module.js",
             format: "esm",
         },
     ],
