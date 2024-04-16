@@ -11,4 +11,4 @@ The cirlce spinner is an element that shows an animated circular load spinner.
     The width and height of the spinner. The animated pieces fit into the size
     given.
 
-[component.md : ../examples/circle-spinner.html :]: #
+[component.md : ../../../../test/preview/examples/circle-spinner.html :]: #

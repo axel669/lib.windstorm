@@ -6,4 +6,4 @@ animation on good systems that support it).
 - $outline
 - $color
 
-[component.md : ../examples/details.html :]: #
+[component.md : ../../../../test/preview/examples/details.html :]: #

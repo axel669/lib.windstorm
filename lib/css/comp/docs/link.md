@@ -12,4 +12,4 @@ Makes the anchor look and feel like a button.
 - $outline or $fill (with @button only)
 - $color
 
-[component.md : ../examples/link.html :]: #
+[component.md : ../../../../test/preview/examples/link.html :]: #

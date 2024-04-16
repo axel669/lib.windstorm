@@ -6,10 +6,10 @@ Use the `$tab-selected` macro to show which tab is active.
 
 ## Component Macros
 - $color
-- $solid<br />
+- $fill<br />
     Changes the selected tab to be filled with color instead of just the border.
 - $tab-selected<br />
     Does not apply a style of its own, but denotes which tab is selected in a
     group of tabs.
 
-[component.md : ../examples/tabs.html :]: #
+[component.md : ../../../../test/preview/examples/tabs.html :]: #

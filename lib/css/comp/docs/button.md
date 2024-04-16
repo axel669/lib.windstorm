@@ -12,4 +12,4 @@ There are two ways to display buttons:
 - one of $flat/$outline/$fill
 - $color
 
-[component.md : ../examples/button.html :]: #
+[component.md : ../../../../test/preview/examples/button.html :]: #

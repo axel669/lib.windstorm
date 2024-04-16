@@ -23,4 +23,4 @@ Actions drawer that sits on the right side of the screen.
 The `--anim-time` variable can be set on a modal (or its child) to control how
 fast it animates in/out. Default value is 250ms.
 
-[component.md : ../examples/modal.html :]: #
+[component.md : ../../../../test/preview/examples/modal.html :]: #

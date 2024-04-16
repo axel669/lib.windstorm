@@ -5,4 +5,4 @@ Reads the text from the `ws-text` attribute.
 ## Component Macros
 - $color
 
-[component.md : ../examples/badge.html :]: #
+[component.md : ../../../../test/preview/examples/badge.html :]: #

@@ -16,4 +16,4 @@ To mark a label as a labeled toggle, add the `@toggle` marker.
 ### @switch
 Used to change an `<input type="checkbox">` to look like a switch visually.
 
-[component.md : ../examples/toggle.html :]: #
+[component.md : ../../../../test/preview/examples/toggle.html :]: #

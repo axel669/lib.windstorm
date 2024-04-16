@@ -22,4 +22,4 @@ Increasing the stack number increases the space surrounding a screen,
 creating a stacking effect when multiple screens are overlayed with
 incrementing stack values.
 
-[component.md : ../examples/screen.html :]: #
+[component.md : ../../../../test/preview/examples/screen.html :]: #

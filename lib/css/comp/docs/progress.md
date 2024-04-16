@@ -14,4 +14,4 @@ To mark a label as a Progress Bar, add the `@progress` marker.
 - $progress-label<br />
     Sets some styles to make text next to the progress bar appear nicer.
 
-[component.md : ../examples/progress.html :]: #
+[component.md : ../../../../test/preview/examples/progress.html :]: #
