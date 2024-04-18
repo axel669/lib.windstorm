@@ -27,8 +27,10 @@ label:where([ws-x~="@@control"])
             outline: 2px solid var(--ripple-color)
             outline-offset: -2px
 
-    & :is(input, select, textarea):disabled
-        background-color: var(--disabled-background)
+    & :is(input, select, textarea)
+        min-width: 16px
+        &:disabled
+            background-color: var(--disabled-background)
 
     & > :where(select)
         --color: var(--text-color-normal)
@@ -58,7 +60,6 @@ label:where([ws-x~="@@control"])
         background: transparent
         color: var(--text-normal-color)
         font-family: var(--font)
-        min-width: 24px
         min-height: 36px
         width: 100%
         height: 100%
