@@ -2,17 +2,20 @@ details:where([ws-x])
     --color: var(--default)
 
     border: 0px solid var(--color)
-    padding: 4px
-    padding-left: calc(1em + 4px)
+    padding-left: calc(1em)
     border-radius: 4px
+    overflow: hidden
 
     & > summary
         color: var(--color)
         position: relative
+        padding: 4px
         padding-left: 1.1em
         margin-left: -1em
         cursor: pointer
         user-select: none
+
+        @import "../$clickable"
 
         &::before
             position: absolute
