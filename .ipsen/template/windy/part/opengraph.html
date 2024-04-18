@@ -1,0 +1,8 @@
+{|^ for ["title", "description", "image"] -> key |}
+    {|^ if $.options.opengraph[key] !== undefined |}
+    <meta property="og:{| key |}" content="{| $.options.opengraph[key] |}" />
+    {||}
+{||}
+{|^ if $.options.opengraph.themeColor !== undefined |}
+<meta name="theme-color" content="{| $.options.opengraph.themeColor |}" />
+{||}

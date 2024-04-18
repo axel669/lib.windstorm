@@ -1,13 +1,13 @@
 ## Preview
-<label ws-x="$control $color[primary] w[100%]">
-    <span ws-x="$text">Preview Theme</span>
+<label ws-x="@@control [$color @primary] [w 100%]">
+    <span ws-x="[$label]">Preview Theme</span>
     <select>
         <option value="dark">Dark</option>
         <option value="tron">Tron</option>
         <option value="light">Light</option>
     </select>
 </label>
-<iframe ws-x="h[350px]"
+<iframe ws-x="[h 350px]"
 srcdoc="{| `<html><head></head><body ws-x="@@theme:dark">
     <script src="/windstorm.js"></script>
     <ws-flex ws-x='[p 8px]'>

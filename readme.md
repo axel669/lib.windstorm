@@ -14,15 +14,15 @@ minor differences between a set of 20.
 
 ### CDN Link (global variable)
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.4.0/dist/browser.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.4.1/dist/browser.js"></script>
 ```
 
 ### CDN Link (module)
 ```js
 // Only scanning, no functions
-import "https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.4.0/dist/module.js"
+import "https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.4.1/dist/module.js"
 // Import functions + scanning
-import ws from "https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.4.0/dist/module.js"
+import ws from "https://cdn.jsdelivr.net/npm/@axel669/windstorm@0.4.1/dist/module.js"
 
 ws.x({...stuff})
 ```
@@ -99,7 +99,7 @@ macro system, so they can be made using standard css syntax.
     content
     <!-- Regular border will use the --primary variable for color -->
     <!-- border-color is changed on hover only to use the --color variable -->
-    <div ws-x="[b 1px solid @primary] [b-c:hover @color]">
+    <div ws-x="[b 1px solid @primary] [b.c:hover @color]">
         other content
     </div>
 </div>
