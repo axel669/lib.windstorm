@@ -3,7 +3,7 @@ The labeled control is a label that contains a text-style input (input that
 isn't checkbox or radio, textarea) or a select element and the text that
 make up the label.
 
-To mark a label as a labeled control, add the `@control` marker.
+To mark a label as a labeled control, add the `@@control` marker.
 
 ## Component Macros
 - $flat

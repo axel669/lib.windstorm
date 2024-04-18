@@ -80,16 +80,24 @@
 
         <script type="module">
             const includes = [...document.querySelectorAll("ht-include")]
-            includes.map(
-                async (include) => {
-                    const replacer = document.createElement("details")
-                    replacer.setAttribute("ws-x", "")
-                    const res = await fetch(include.getAttribute("src"))
-                    replacer.innerHTML = `<summary>${include.getAttribute("title")}</summary>\n${await res.text()}`
-                    replacer.open = (include.getAttribute("open") !== null)
-                    include.parentNode.replaceChild(replacer, include)
-                }
+            await Promise.all(
+                includes.map(
+                    async (include) => {
+                        const replacer = document.createElement("details")
+                        replacer.setAttribute("ws-x", "")
+                        const res = await fetch(include.getAttribute("src"))
+                        replacer.innerHTML = `<summary>${include.getAttribute("title")}</summary>\n${await res.text()}`
+                        replacer.open = (include.getAttribute("open") !== null)
+                        include.parentNode.replaceChild(replacer, include)
+                    }
+                )
             )
+            document.querySelector("details").before(
+                ...document.querySelectorAll("details[open]")
+            )
+            // for (const open of document.querySelectorAll("details[open]")) {
+            //     target.before(open)
+            // }
         </script>
     </body>
 </html>

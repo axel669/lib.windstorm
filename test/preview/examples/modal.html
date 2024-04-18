@@ -15,13 +15,13 @@
 
 <input type="checkbox" ws-x="[hide]" id="menu" />
 <ws-modal>
-    <ws-paper ws-x="[r 0px] @@menu">
+    <ws-paper ws-x="[r 0px] @@menu [w 200px]">
         <ws-flex slot="content">
             <label ws-x="@@button [$outline] [$color @accent]" for="menu">
                 Close
             </label>
             <span>
-                This uses a paper for the content of the menu drawer
+                This uses a paper for the content of the menu drawer and a set width
             </span>
         </ws-flex>
     </ws-paper>
@@ -35,7 +35,7 @@
                 Close
             </label>
             <span>
-                Actiond drawer + paper container
+                Action drawer + paper container, expands with content
             </span>
         </ws-flex>
     </ws-paper>

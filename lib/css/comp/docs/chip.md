@@ -4,7 +4,7 @@ info and optionally allows interaction.
 
 ## Markers
 
-### @click
+### @@click
 Gives the chip the clickable styles like a button (cursor change on desktop,
 ripple effect when clicked).
 
