@@ -8,10 +8,9 @@ ws-modal
     right: 0px
     background-color: rgba(0, 0, 0, 0.55)
     z-index: 100
-    color: var(--text-color-normal)
     cursor: default
     visibility: hidden
-    transition: visibility var(--anim-time, 250ms) linear
+    transition: visibility var(--anim-time, 200ms) linear
 
     & > label:first-child
         position: absolute
@@ -38,7 +37,6 @@ ws-modal
 
     & > :where(:not(label:first-child))
         position: absolute
-        min-width: 15vw
 
         &:where([ws-x~="@@menu"])
             top: 0px
@@ -46,6 +44,7 @@ ws-modal
             height: 100%
             transform: translateX(-100%)
             transition: transform var(--anim-time, 250ms) linear
+            max-width: 100%
             input[type="checkbox"]:checked + &
                 transform: translateX(0%)
         &:where([ws-x~="@@action"])
@@ -54,6 +53,7 @@ ws-modal
             height: 100%
             transform: translateX(100%)
             transition: transform var(--anim-time, 250ms) linear
+            max-width: 100%
             input[type="checkbox"]:checked + &
                 transform: translateX(0%)
         &:where([ws-x~="@@select"])
