@@ -7,7 +7,8 @@
   "scripts": {
     "build": "rollup -c build-config/rollup.config.mjs",
     "mkdocs": "ipsen",
-    "host": "wrangler pages dev test/preview --port 45067"
+    "host": "wrangler pages dev test/preview --port 45067",
+    "host/docs": "wrangler pages dev site --port 45067"
   },
   "keywords": [],
   "author": "",
