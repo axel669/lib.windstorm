@@ -10,9 +10,9 @@ when it's open.
 ## Component Macros
 - $show
 
-## Slots
+## Areas
 
-### content
+### $content
 The content of the popover itself.
 
-[component.md : ../examples/popover.html :]: #
+[component.md : ../../../../test/preview/examples/popover.html :]: #

@@ -4,7 +4,7 @@ info and optionally allows interaction.
 
 ## Markers
 
-### @click
+### @@click
 Gives the chip the clickable styles like a button (cursor change on desktop,
 ripple effect when clicked).
 
@@ -12,4 +12,4 @@ ripple effect when clicked).
 - one of $outline/$fill
 - $color
 
-[component.md : ../examples/chip.html :]: #
+[component.md : ../../../../test/preview/examples/chip.html :]: #

@@ -8,4 +8,4 @@ More styling options probably to come.
 - $header-fill<br />
     Fills the header with the current color.
 
-[component.md : ../examples/table.html :]: #
+[component.md : ../../../../test/preview/examples/table.html :]: #

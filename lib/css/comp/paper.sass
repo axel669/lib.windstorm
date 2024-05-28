@@ -18,10 +18,9 @@ ws-paper
         grid-area: footer
         pointer-events: none
 
-    & > :where([slot="content"])
+    & > :where([ws-x~="[$content]"])
         grid-area: content
-    & > :where([slot="header"])
+    & > :where([ws-x~="[$header]"])
         grid-area: header
-        font-size: var(--text-size-header)
-    & > :where([slot="footer"])
+    & > :where([ws-x~="[$footer]"])
         grid-area: footer

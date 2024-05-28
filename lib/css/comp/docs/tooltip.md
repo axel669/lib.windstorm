@@ -6,4 +6,4 @@ Uses the `ws-text` attribute to determine what text to show.
 - $bottom<br />
     Makes the tooltip appear below the content instead of over it.
 
-[component.md : ../examples/tooltip.html :]: #
+[component.md : ../../../../test/preview/examples/tooltip.html :]: #

@@ -15,4 +15,4 @@ to show the locations).
 - $bc - Bottom Center
 - $br - Bottom Right
 
-[component.md : ../examples/toaster.html :]: #
+[component.md : ../../../../test/preview/examples/toaster.html :]: #

@@ -1,0 +1,52 @@
+<div>
+    Buttons with a couple of different variants and colors
+</div>
+<ws-grid ws-x="[$content] [gr.cols repeat(3, 1fr)]">
+    <div ws-x="[col span 3]">Default Color + Disabled</div>
+    <button ws-x="[$color @default] [$flat]">Flat</button>
+    <button ws-x="[$color @default] [$outline]">Outline</button>
+    <button ws-x="[$color @default] [$fill]">Fill</button>
+    <button disabled ws-x="[$color @default] [$flat]">Flat</button>
+    <button disabled ws-x="[$color @default] [$outline]">Outline</button>
+    <button disabled ws-x="[$color @default] [$fill]">Fill</button>
+
+    <div ws-x="[col span 3]">Primary Color + Disabled</div>
+    <button ws-x="[$color @primary] [$flat]">Flat</button>
+    <button ws-x="[$color @primary] [$outline]">Outline</button>
+    <button ws-x="[$color @primary] [$fill]">Fill</button>
+    <button disabled ws-x="[$color @primary] [$flat]">Flat</button>
+    <button disabled ws-x="[$color @primary] [$outline]">Outline</button>
+    <button disabled ws-x="[$color @primary] [$fill]">Fill</button>
+
+    <div ws-x="[col span 3]">Secondary Color + Disabled</div>
+    <button ws-x="[$color @secondary] [$flat]">Flat</button>
+    <button ws-x="[$color @secondary] [$outline]">Outline</button>
+    <button ws-x="[$color @secondary] [$fill]">Fill</button>
+    <button disabled ws-x="[$color @secondary] [$flat]">Flat</button>
+    <button disabled ws-x="[$color @secondary] [$outline]">Outline</button>
+    <button disabled ws-x="[$color @secondary] [$fill]" disabled>Fill</button>
+
+    <div ws-x="[col span 3]">Danger Color + Disabled</div>
+    <button ws-x="[$color @danger] [$flat]">Flat</button>
+    <button ws-x="[$color @danger] [$outline]">Outline</button>
+    <button ws-x="[$color @danger] [$fill]">Fill</button>
+    <button disabled ws-x="[$color @danger] [$flat]">Flat</button>
+    <button disabled ws-x="[$color @danger] [$outline]">Outline</button>
+    <button disabled ws-x="[$color @danger] [$fill]">Fill</button>
+
+    <div ws-x="[col span 3]">Warning Color + Disabled</div>
+    <button ws-x="[$color @warning] [$flat]">Flat</button>
+    <button ws-x="[$color @warning] [$outline]">Outline</button>
+    <button ws-x="[$color @warning] [$fill]">Fill</button>
+    <button disabled ws-x="[$color @warning] [$flat]">Flat</button>
+    <button disabled ws-x="[$color @warning] [$outline]">Outline</button>
+    <button disabled ws-x="[$color @warning] [$fill]">Fill</button>
+
+    <div ws-x="[col span 3]">Accent Color + Disabled</div>
+    <button ws-x="[$color @accent] [$flat]">Flat</button>
+    <button ws-x="[$color @accent] [$outline]">Outline</button>
+    <button ws-x="[$fill] [$color @accent]">Fill</button>
+    <button disabled ws-x="[$color @accent] [$flat]">Flat</button>
+    <button disabled ws-x="[$color @accent] [$outline]">Outline</button>
+    <button disabled ws-x="[$fill] [$color @accent]">Fill</button>
+</ws-grid>

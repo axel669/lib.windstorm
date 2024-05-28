@@ -3,7 +3,7 @@ The screen acts as a wrapper for a paper (or other container) to sit in
 and only provides the sizing/centering with the stacking visual effect.
 The top level of a page will likely be a screen but it doesnt have to be.
 
-When using Screen elements, the `@app` marker needs to be set on the body. The
+When using Screen elements, the `@@app` marker needs to be set on the body. The
 marker sets some styles that the ws-screen interacts with to make things work
 correctly.
 
@@ -22,4 +22,4 @@ Increasing the stack number increases the space surrounding a screen,
 creating a stacking effect when multiple screens are overlayed with
 incrementing stack values.
 
-[component.md : ../examples/screen.html :]: #
+[component.md : ../../../../test/preview/examples/screen.html :]: #

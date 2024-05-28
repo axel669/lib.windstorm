@@ -1,0 +1,87 @@
+<ws-grid ws-x="[gr.cols 1fr 1fr]">
+    <div ws-x="[col span 2]">Outline Inputs</div>
+    <label ws-x="@@control">
+        <span ws-x="[$label]">Regular Input</span>
+        <input />
+    </label>
+    <label ws-x="@@control [$color @primary]">
+        <span ws-x="[$label]">With Color</span>
+        <input />
+    </label>
+
+    <label ws-x="@@control">
+        <span ws-x="[$label]" ws-hint="With a hint">Another Text Box</span>
+        <input />
+    </label>
+    <label ws-x="@@control [$color @secondary]" ws-error="With an error">
+        <span ws-x="[$label]">Password Input</span>
+        <input type="password" />
+    </label>
+
+    <label ws-x="@@control">
+        <span ws-x="[$label]">Email with Adornment</span>
+        <input />
+        <div ws-x="[$adorn] [$start]">
+            <ws-icon class="bi-envelope"></ws-icon>
+        </div>
+    </label>
+    <label ws-x="@@control">
+        <span ws-x="[$label]" ws-hint="Mistakes in CS">Select</span>
+        <select>
+            <option>TypeScript</option>
+            <option>Java</option>
+            <option>Not teaching debugging</option>
+            <optgroup label="Honorable Mentions">
+                <option>Calling Machine Learning AI</option>
+            </optgroup>
+        </select>
+    </label>
+
+    <label ws-x="@@control [col span 2] [$color @accent]">
+        <div ws-x="[$label]">TextArea</div>
+        <textarea ws-x="[h 100px]"></textarea>
+    </label>
+
+    <div ws-x="[col span 2]">Flat Inputs</div>
+    <label ws-x="@@control [$flat]">
+        <span ws-x="[$label]">Regular Input</span>
+        <input />
+    </label>
+    <label ws-x="@@control [$flat] [$color @primary]">
+        <span ws-x="[$label]">With Color</span>
+        <input />
+    </label>
+
+    <label ws-x="@@control [$flat]">
+        <span ws-x="[$label]" ws-hint="With a hint">Another Text Box</span>
+        <input />
+    </label>
+    <label ws-x="@@control [$flat] [$color @secondary]" ws-error="With an error">
+        <span ws-x="[$label]">Password Input</span>
+        <input type="password" />
+    </label>
+
+    <label ws-x="@@control [$flat]">
+        <span ws-x="[$label]">Email with Adornment</span>
+        <input />
+        <div ws-x="[$adorn] [$start]">
+            <ws-icon class="bi-envelope"></ws-icon>
+        </div>
+    </label>
+    <label ws-x="@@control [$flat]">
+        <span ws-x="[$label]" ws-hint="Mistakes in CS">Select</span>
+        <select>
+            <option>TypeScript</option>
+            <option>Java</option>
+            <option>Not teaching debugging</option>
+            <optgroup label="Honorable Mentions">
+                <option>Calling Machine Learning AI</option>
+            </optgroup>
+        </select>
+    </label>
+
+    <label ws-x="@@control [$flat] [col span 2] [$color @accent]">
+        <div ws-x="[$label]">TextArea</div>
+        <textarea ws-x="[h 100px]"></textarea>
+    </label>
+</ws-grid>

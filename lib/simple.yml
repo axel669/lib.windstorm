@@ -20,8 +20,15 @@ funcs:
   b.r.s: border-right-style
   b.r.w: border-right-width
   b.x: [border-left, border-right]
+  b.x.c: [border-left-color, border-right-color]
+  b.x.s: [border-left-style, border-right-style]
+  b.x.w: [border-left-width, border-right-width]
   b.y: [border-top, border-bottom]
+  b.y.c: [border-top-color, border-bottom-color]
+  b.y.s: [border-top-style, border-bottom-style]
+  b.y.w: [border-top-width, border-bottom-width]
   bg: background
+  bg.att: background-attachment
   bg.c: background-color
   bg.img: background-image
   bg.rep: background-repeat
@@ -53,6 +60,9 @@ funcs:
   m.l: margin-left
   m.r: margin-right
   m.t: margin-top
+  m.x: [margin-left, margin-right]
+  m.y: [margin-bottom, margin-top]
+  o: opacity
   outln: outline
   over: overflow
   over.x: overflow-x
@@ -89,6 +99,8 @@ funcs:
   t.ws: white-space
   t.wt: font-weight
   tf: transform
+  tf.o: transform-origin
+  tf.p: perspective
   tr: transition
   vis: visibility
   w: width
