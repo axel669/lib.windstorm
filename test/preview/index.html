@@ -33,10 +33,12 @@
         </style>
 
         <ws-screen>
-            <ws-paper ws-x="[r 0px]">
+            <ws-paper ws-x="[r 0px] [$outline] [$color @primary]">
                 <ws-grid ws-x="[$header] [p 0xp] [gr.cols 1fr 1fr 1fr]" ws-controls>
-                    <ws-titlebar ws-x="[$fill] [$color @primary] [col span 3]">
-                        <span ws-x="[$title] [$title-text]">Component Preview</span>
+                    <ws-titlebar ws-x="[col span 3]">
+                        <span ws-x="[$title] [$title-text] [$fill] [$color @primary]">
+                            Component Preview
+                        </span>
                     </ws-titlebar>
 
                     <label ws-x="@@toggle [$flat] [fl-center]">
@@ -59,7 +61,7 @@
                     <ht-include src="examples/button.html" title="Button"></ht-include>
                     <ht-include src="examples/chip.html" title="Chip"></ht-include>
                     <ht-include src="examples/details.html" title="Expandable Details"></ht-include>
-                    <ht-include src="examples/control.html" title="Input Elements"></ht-include>
+                    <ht-include open src="examples/control.html" title="Input Elements"></ht-include>
                     <ht-include src="examples/circle-spinner.html" title="Circle Spinner"></ht-include>
                     <ht-include src="examples/hexagon-spinner.html" title="Hexagon Spinner"></ht-include>
                     <ht-include src="examples/icon.html" title="Icon"></ht-include>
@@ -73,7 +75,7 @@
                     <ht-include src="examples/tabs.html" title="Tabs"></ht-include>
                     <ht-include src="examples/titlebar.html" title="Titlebar"></ht-include>
                     <ht-include src="examples/toggle.html" title="Toggle"></ht-include>
-                    <ht-include src="examples/tooltip.html" title="Tolltip"></ht-include>
+                    <ht-include src="examples/tooltip.html" title="Tooltip"></ht-include>
                 </ws-flex>
             </ws-paper>
         </ws-screen>
