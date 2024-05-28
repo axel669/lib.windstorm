@@ -1,87 +1,205 @@
-<ws-grid ws-x="[gr.cols 1fr 1fr]">
-    <div ws-x="[col span 2]">Outline Inputs</div>
+<ws-grid ws-x="[gr.cols 1fr 1fr] [gap 8px]">
+    <ws-titlebar ws-x="[col span 2]">
+        <span ws-x="[$title] [$title-text]">Outline Inputs</span>
+    </ws-titlebar>
     <label ws-x="@@control">
-        <span ws-x="[$label]">Regular Input</span>
-        <input />
+        <span ws-x="[$label]">Text</span>
+        <input type="text" />
     </label>
+    <label ws-x="@@control">
+        <span ws-x="[$label]">Password</span>
+        <input type="password" />
+    </label>
+    <label ws-x="@@control">
+        <span ws-x="[$label]">Number</span>
+        <input type="number" />
+    </label>
+    <label ws-x="@@control">
+        <span ws-x="[$label]">Email</span>
+        <input type="Email" />
+    </label>
+    <label ws-x="@@control">
+        <span ws-x="[$label]">Search</span>
+        <input type="search" />
+    </label>
+    <label ws-x="@@control">
+        <span ws-x="[$label]">Telephone Number</span>
+        <input type="tel" />
+    </label>
+    <label ws-x="@@control">
+        <span ws-x="[$label]">File</span>
+        <input type="file" />
+    </label>
+    <label ws-x="@@control">
+        <span ws-x="[$label]">Color</span>
+        <input type="color" />
+    </label>
+    <label ws-x="@@control">
+        <span ws-x="[$label]">Date</span>
+        <input type="date" />
+    </label>
+    <label ws-x="@@control">
+        <span ws-x="[$label]">Time</span>
+        <input type="time" />
+    </label>
+    <label ws-x="@@control">
+        <span ws-x="[$label]">DateTime</span>
+        <input type="datetime-local" />
+    </label>
+    <label ws-x="@@control">
+        <span ws-x="[$label]">Month</span>
+        <input type="month" />
+    </label>
+    <label ws-x="@@control">
+        <span ws-x="[$label]">Week</span>
+        <input type="week" />
+    </label>
+    <label ws-x="@@control">
+        <span ws-x="[$label]" ws-hint="Mistakes in CS">Select</span>
+        <select>
+            <option>TypeScript</option>
+            <option>Java</option>
+            <option>Not teaching debugging</option>
+            <optgroup label="Honorable Mentions">
+                <option>Calling Machine Learning AI</option>
+            </optgroup>
+        </select>
+    </label>
+    <label ws-x="@@control [col span 2]">
+        <div ws-x="[$label]">TextArea</div>
+        <textarea ws-x="[h 100px]"></textarea>
+    </label>
+
+    <ws-titlebar ws-x="[col span 2]">
+        <span ws-x="[$title] [$title-text]">Flat Variant</span>
+    </ws-titlebar>
+    <label ws-x="@@control [$flat]">
+        <span ws-x="[$label]">Flat Text</span>
+        <input type="text" />
+    </label>
+    <label ws-x="@@control [$flat]">
+        <span ws-x="[$label]">Flat Select</span>
+        <select>
+            <option>TypeScript</option>
+            <option>Java</option>
+            <option>Not teaching debugging</option>
+            <optgroup label="Honorable Mentions">
+                <option>Calling Machine Learning AI</option>
+            </optgroup>
+        </select>
+    </label>
+    <label ws-x="@@control [$flat] [col span 2]">
+        <div ws-x="[$label]">Flat TextArea</div>
+        <textarea ws-x="[h 100px]"></textarea>
+    </label>
+
+    <ws-titlebar ws-x="[col span 2]">
+        <span ws-x="[$title] [$title-text]">Colorized</span>
+    </ws-titlebar>
     <label ws-x="@@control [$color @primary]">
-        <span ws-x="[$label]">With Color</span>
+        <span ws-x="[$label]">Primary</span>
+        <input />
+    </label>
+    <label ws-x="@@control [$color @primary] [$flat]">
+        <span ws-x="[$label]">Primary Flat</span>
+        <input />
+    </label>
+    <label ws-x="@@control [$color @secondary]">
+        <span ws-x="[$label]">Secondary</span>
+        <input />
+    </label>
+    <label ws-x="@@control [$color @secondary] [$flat]">
+        <span ws-x="[$label]">Secondary Flat</span>
+        <input />
+    </label>
+    <label ws-x="@@control [$color @accent]">
+        <span ws-x="[$label]">Accent</span>
+        <input />
+    </label>
+    <label ws-x="@@control [$color @accent] [$flat]">
+        <span ws-x="[$label]">Accent Flat</span>
+        <input />
+    </label>
+    <label ws-x="@@control [$color @warning]">
+        <span ws-x="[$label]">Warning</span>
+        <input />
+    </label>
+    <label ws-x="@@control [$color @warning] [$flat]">
+        <span ws-x="[$label]">Warning Flat</span>
+        <input />
+    </label>
+    <label ws-x="@@control [$color @danger]">
+        <span ws-x="[$label]">Danger</span>
+        <input />
+    </label>
+    <label ws-x="@@control [$color @danger] [$flat]">
+        <span ws-x="[$label]">Danger Flat</span>
         <input />
     </label>
 
+    <ws-titlebar ws-x="[col span 2]">
+        <span ws-x="[$title] [$title-text]">Adornments</span>
+    </ws-titlebar>
     <label ws-x="@@control">
-        <span ws-x="[$label]" ws-hint="With a hint">Another Text Box</span>
-        <input />
-    </label>
-    <label ws-x="@@control [$color @secondary]" ws-error="With an error">
-        <span ws-x="[$label]">Password Input</span>
-        <input type="password" />
-    </label>
-
-    <label ws-x="@@control">
-        <span ws-x="[$label]">Email with Adornment</span>
-        <input />
+        <span ws-x="[$label]">Start Icon</span>
+        <input type="text" />
         <div ws-x="[$adorn] [$start]">
-            <ws-icon class="bi-envelope"></ws-icon>
+            <ws-icon class="bi-hexagon"></ws-icon>
         </div>
     </label>
     <label ws-x="@@control">
-        <span ws-x="[$label]" ws-hint="Mistakes in CS">Select</span>
-        <select>
-            <option>TypeScript</option>
-            <option>Java</option>
-            <option>Not teaching debugging</option>
-            <optgroup label="Honorable Mentions">
-                <option>Calling Machine Learning AI</option>
-            </optgroup>
-        </select>
-    </label>
-
-    <label ws-x="@@control [col span 2] [$color @accent]">
-        <div ws-x="[$label]">TextArea</div>
-        <textarea ws-x="[h 100px]"></textarea>
-    </label>
-
-    <div ws-x="[col span 2]">Flat Inputs</div>
-    <label ws-x="@@control [$flat]">
-        <span ws-x="[$label]">Regular Input</span>
-        <input />
-    </label>
-    <label ws-x="@@control [$flat] [$color @primary]">
-        <span ws-x="[$label]">With Color</span>
-        <input />
-    </label>
-
-    <label ws-x="@@control [$flat]">
-        <span ws-x="[$label]" ws-hint="With a hint">Another Text Box</span>
-        <input />
-    </label>
-    <label ws-x="@@control [$flat] [$color @secondary]" ws-error="With an error">
-        <span ws-x="[$label]">Password Input</span>
-        <input type="password" />
-    </label>
-
-    <label ws-x="@@control [$flat]">
-        <span ws-x="[$label]">Email with Adornment</span>
-        <input />
-        <div ws-x="[$adorn] [$start]">
-            <ws-icon class="bi-envelope"></ws-icon>
+        <span ws-x="[$label]">End Icon</span>
+        <input type="text" />
+        <div ws-x="[$adorn] [$end]">
+            <ws-icon class="bi-hexagon"></ws-icon>
         </div>
     </label>
-    <label ws-x="@@control [$flat]">
-        <span ws-x="[$label]" ws-hint="Mistakes in CS">Select</span>
-        <select>
-            <option>TypeScript</option>
-            <option>Java</option>
-            <option>Not teaching debugging</option>
-            <optgroup label="Honorable Mentions">
-                <option>Calling Machine Learning AI</option>
-            </optgroup>
-        </select>
+    <label ws-x="@@control">
+        <span ws-x="[$label]">Start Button</span>
+        <input type="text" />
+        <button ws-x="[$flat] [$start]">
+            Click
+        </button>
     </label>
-
-    <label ws-x="@@control [$flat] [col span 2] [$color @accent]">
-        <div ws-x="[$label]">TextArea</div>
-        <textarea ws-x="[h 100px]"></textarea>
+    <label ws-x="@@control">
+        <span ws-x="[$label]">End Button</span>
+        <input type="text" />
+        <button ws-x="[$flat] [$end]">
+            Click
+        </button>
+    </label>
+    <label ws-x="@@control">
+        <span ws-x="[$label]">Start Text</span>
+        <input type="text" />
+        <div ws-x="[$adorn] [$start]">
+            $
+        </div>
+    </label>
+    <label ws-x="@@control">
+        <span ws-x="[$label]">End Text</span>
+        <input type="text" />
+        <div ws-x="[$adorn] [$end]">
+            .00
+        </div>
+    </label>
+    <label ws-x="@@control">
+        <span ws-x="[$label]">Extra Text</span>
+        <input type="text" />
+        <div ws-x="[$extra]">
+            Some info here
+        </div>
+    </label>
+    <label ws-x="@@control">
+        <span ws-x="[$label]">Combinations</span>
+        <input type="text" />
+        <div ws-x="[$adorn] [$start]">
+            <ws-icon class="bi-hexagon"></ws-icon>
+        </div>
+        <button ws-x="[$flat] [$end]">
+            Click
+        </button>
+        <div ws-x="[$extra]">
+            Even more info
+        </div>
     </label>
 </ws-grid>

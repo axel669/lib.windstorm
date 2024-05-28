@@ -9,23 +9,18 @@ To mark a label as a labeled control, add the `@@control` marker.
 - $flat
 - $color
 
-## Attributes
-
-### ws-error
-Adding the ws-error attribute to the lable will make error text display
-below the component.
-
 ## Areas
 
 ### $label
 Sets the element with the text for the label
-- attr: ws-hint
-    The ws-hint attribute can be applied to the element marked as the
-    label and will have the content of the attribute added as a hint
-    underneath the label for the element.
 
 ### $start / $end
 Adds an adornment to the input area, probably only looks good with
 input elements that are typed text.
+
+### $extra
+Adds text below the control element (but still inside the border). Has a default
+padding set so that simple text can be used without anything additional, but
+the padding can be overriden as normal.
 
 [component.md : ../../../../test/preview/examples/control.html :]: #
