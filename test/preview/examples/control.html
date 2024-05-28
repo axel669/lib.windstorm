@@ -202,4 +202,31 @@
             Even more info
         </div>
     </label>
+
+    <ws-titlebar ws-x="[col span 2]">
+        <span ws-x="[$title] [$title-text]">Disabled</span>
+    </ws-titlebar>
+    <label ws-x="@@control">
+        <span ws-x="[$label]">Text</span>
+        <input type="text" disabled />
+    </label>
+    <label ws-x="@@control [$color @primary]">
+        <span ws-x="[$label]">Primary</span>
+        <input disabled />
+    </label>
+    <label ws-x="@@control [$flat] [$color @danger]">
+        <span ws-x="[$label]">Flat Select</span>
+        <select disabled>
+            <option>TypeScript</option>
+            <option>Java</option>
+            <option>Not teaching debugging</option>
+            <optgroup label="Honorable Mentions">
+                <option>Calling Machine Learning AI</option>
+            </optgroup>
+        </select>
+    </label>
+    <label ws-x="@@control [$flat] [col span 2]">
+        <div ws-x="[$label]">Flat TextArea</div>
+        <textarea ws-x="[h 100px]" disabled></textarea>
+    </label>
 </ws-grid>
