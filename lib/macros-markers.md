@@ -89,6 +89,11 @@ Makes a flex display element center the content horizontally and vertically.
 Makes an element use css grid for layout. The argument is optional and will
 specify the grid-direction. Will use row layout by default.
 
+### `[gr.cols-fit $]` and `[gr.cols-fill $]`
+Convenience macros that use the auto-fit and auto-fill properties of repeating
+grid columns combined with minmax. The argument to the macro is inserted into
+the css `repeat(<fit>, minmax($))`.
+
 ### `[hide]`
 Hides an element and removes it from the layout calculations (uses
 `display: none`).
