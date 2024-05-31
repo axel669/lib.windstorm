@@ -1,19 +1,42 @@
 ws-notification
-    --background-color: var(--background-layer)
-    --color: var(--text-color-normal)
+    --color: var(--layer-border-color)
 
-    background-color: var(--background-color)
-    color: var(--color)
-    padding: 8px
-    display: inline-flex
-    flex-direction: row
-    justify-content: space-between
-    align-items: center
+    position: relative
+    display: inline-grid
+    grid-template-columns: min-content 1fr min-content
+    grid-template-areas: "start text end"
     border-radius: 4px
     cursor: pointer
     user-select: none
-    border: 1px solid var(--text-color-secondary)
+    border: 2px solid var(--color)
+    min-height: 48px
+    z-index: +0
 
-    &[ws-x~="[$color"]
+    &::before, &::after
+        content: ""
+        position: relative
+        display: block
+        min-width: 20px
         background-color: var(--color)
-        color: var(--text-color-fill)
+        z-index: -1
+    &::before
+        grid-area: start
+    &::after
+        grid-area: end
+
+    & > :where([ws-x~="[$notif-text]"])
+        display: flex
+        flex-direction: row
+        align-items: center
+        padding: 4px
+        background-color: var(--background-element)
+
+    & > :where([ws-x~="[$start]"])
+        grid-area: start
+    & > :where([ws-x~="[$end]"])
+        grid-area: end
+
+    & > :where([ws-x~="[$start]"]), & > :where([ws-x~="[$end]"])
+        --ripple-color: var(--ripple-invert)
+        --color: var(--text-color-invert)
+        color: var(--text-color-invert)
