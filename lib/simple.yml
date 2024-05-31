@@ -38,9 +38,14 @@ funcs:
   col: grid-column
   cur: cursor
   disp: display
+  fl.basis: flex-basis
   fl.cross: align-items
   fl.dir: flex-direction
+  fl.flow: flex-flow
+  fl.grow: flex-grow
   fl.main: justify-content
+  fl.shrink: flex-shrink
+  fl.size: flex
   fl.wr: flex-wrap
   font: font-family
   gap: gap

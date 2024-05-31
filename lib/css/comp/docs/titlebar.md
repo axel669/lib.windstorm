@@ -3,14 +3,15 @@ Displays a titlebar inside a paper (or anywhere really, but it looks pretty cool
 with those). Allows customization of the text and side controls.
 
 ## Component Macros
-- $fill
+- $fill / $flat
 - $color
 
 ## Areas
 
-### $title
+### $title `required`
 The main content of the titlebar, will always sit in between the menu and action
-slot elements (if any).
+slot elements (if any). If no  element with the $title macro is used, the
+titlebar will not appear correctly.
 
 ### $menu
 Content that sits on the left side of the titlebar, where menu-opening controls

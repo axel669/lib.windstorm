@@ -1,17 +1,39 @@
-<ws-notification>
-    <ws-icon class="ti-info-hexagon">Pretend has useful info</ws-icon>
-</ws-notification>
-<ws-notification ws-x="[$color @primary]">
-    <ws-icon class="ti-info-hexagon">This info has color</ws-icon>
-</ws-notification>
-<ws-notification ws-x="[$color @warning]">
-    <ws-icon class="ti-help-hexagon">You can add controls</ws-icon>
-    <button ws-x="[$fill] [$color @warning]">Click!</button>
-</ws-notification>
-<ws-notification ws-x="[$color @danger]">
-    <button ws-x="[$fill] [$color @danger]">Click!</button>
-    <div>
-        And reverse the order
-        <ws-icon class="ti-alert-hexagon"></ws-icon>
-    </div>
-</ws-notification>
+<ws-grid ws-x="[gr.cols 1fr 1fr]">
+    <ws-notification>
+        <span ws-x="[$notif-text]">
+            <ws-icon class="bi-hexagon">Pretend this has useful info</ws-icon>
+        </span>
+    </ws-notification>
+    <ws-notification ws-x="[$color @primary]">
+        <span ws-x="[$notif-text]">
+            <ws-icon class="bi-hexagon">This info has color</ws-icon>
+        </span>
+    </ws-notification>
+
+    <ws-notification>
+        <ws-icon class="bi-hexagon" ws-x="[$start] [$adorn]"></ws-icon>
+        <span ws-x="[$notif-text]">
+            Add icons in the border
+            <div ws-x="[$subtitle-text]">(probably with color)</div>
+        </span>
+    </ws-notification>
+    <ws-notification ws-x="[$color @secondary]">
+        <ws-icon class="bi-hexagon" ws-x="[$end] [$adorn]"></ws-icon>
+        <span ws-x="[$notif-text]">
+            Icons on either side
+        </span>
+    </ws-notification>
+
+    <ws-notification ws-x="[$color @warning]">
+        <button ws-x="[$flat] [$start]">Click!</button>
+        <span ws-x="[$notif-text]">
+            <ws-icon class="ti-help-hexagon">You can add controls</ws-icon>
+        </span>
+    </ws-notification>
+    <ws-notification ws-x="[$color @accent]">
+        <button ws-x="[$flat] [$end]">Click!</button>
+        <span ws-x="[$notif-text]">
+            <ws-icon class="ti-help-hexagon">Controls on either side</ws-icon>
+        </span>
+    </ws-notification>
+</ws-grid>

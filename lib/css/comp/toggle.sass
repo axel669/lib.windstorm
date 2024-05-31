@@ -1,23 +1,22 @@
 label:where([ws-x~="@@toggle"])
     --color: var(--default)
     --ripple-color: var(--default-ripple)
-    --border-color: var(--default)
+    --border-color: var(--layer-border-color)
+    --border-size: 1px
 
     cursor: pointer
     display: inline-flex
     align-items: center
     justify-content: space-between
     padding: 4px
+    border: var(--border-size) solid var(--border-color)
+    border-bottom: 1px solid var(--border-color)
+    background-color: var(--background-element)
     border-radius: 4px
-    border: 1px solid var(--border-color)
     @import "../$clickable"
 
     &:focus-within
         --border-color: var(--color)
-
-        &:where([ws-x~="[$flat]"])
-            outline: 2px solid var(--ripple-color)
-            outline-offset: -2px
 
     & > input
         position: relative
@@ -26,15 +25,13 @@ label:where([ws-x~="@@toggle"])
         -webkit-appearance: none
         appearance: none
         margin: 0px
+        color: var(--color)
 
         &:focus
             outline: none
 
         &:disabled
             --color: var(--disabled-background)
-
-        &:checked
-            color: var(--color)
 
         &::after
             content: ""

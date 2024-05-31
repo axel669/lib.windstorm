@@ -55,6 +55,8 @@ states, as well as the page itself.
     Background color of the page
 - `--background-layer`<br />
     Background color of layered containers, like paper
+- `--background-element`<br />
+    Background color of elements that take input, like labeled input tags
 - `--layer-border-width`<br />
     Border width for layered containers
 - `--layer-border-color`<br />
@@ -123,6 +125,7 @@ only `button` or `a`'s with `$button` on them.
     /* Page/Component Styles */
     --background: ;
     --background-layer: ;
+    --background-element: ;
     --layer-border-width: ;
     --layer-border-color: ;
     --ripple-normal: ;

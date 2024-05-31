@@ -1,5 +1,6 @@
 &
-    --ripple-color: var(--ripple-normal)
+    --ripple-color: unset
+    --ripple-base-color: var(--ripple-normal)
 
     overflow: hidden
     position: relative
@@ -15,4 +16,4 @@
         pointer-events: none
     &:where(:not([disabled])):active::after
         transition: none
-        background-color: var(--ripple-color)
+        background-color: var(--ripple-color, var(--ripple-base-color))
