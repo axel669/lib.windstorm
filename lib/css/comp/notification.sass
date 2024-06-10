@@ -3,7 +3,7 @@ ws-notification
 
     position: relative
     display: inline-grid
-    grid-template-columns: min-content 1fr min-content
+    grid-template-columns: auto 1fr auto
     grid-template-areas: "start text end"
     border-radius: 4px
     cursor: pointer
@@ -36,7 +36,8 @@ ws-notification
     & > :where([ws-x~="[$end]"])
         grid-area: end
 
-    & > :where([ws-x~="[$start]"]), & > :where([ws-x~="[$end]"])
+    & > :where([ws-x~="[$start]"], [ws-x~="[$end]"]),
+    & > :where([ws-x~="[$start]"], [ws-x~="[$end]"]) button
         --ripple-color: var(--ripple-invert)
         --color: var(--text-color-invert)
         color: var(--text-color-invert)
