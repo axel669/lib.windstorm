@@ -1,4 +1,4 @@
-<ws-grid ws-x="[gr.cols 1fr 1fr] [gap 8px]">
+<ws-grid ws-x="[gr.cols 1fr 1fr]">
     <ws-titlebar ws-x="[col span 2]">
         <span ws-x="[$title] [$title-text]">Outline Inputs</span>
     </ws-titlebar>
@@ -71,6 +71,52 @@
     </label>
 
     <ws-titlebar ws-x="[col span 2]">
+        <span ws-x="[$title] [$title-text]">Lined Variant</span>
+    </ws-titlebar>
+    <label ws-x="@@control [$lined]">
+        <span ws-x="[$label]">Lined Text</span>
+        <input type="text" />
+    </label>
+    <label ws-x="@@control [$lined]">
+        <span ws-x="[$label]">Lined Select</span>
+        <select>
+            <option>TypeScript</option>
+            <option>Java</option>
+            <option>Not teaching debugging</option>
+            <optgroup label="Honorable Mentions">
+                <option>Calling Machine Learning AI</option>
+            </optgroup>
+        </select>
+    </label>
+    <label ws-x="@@control [$lined] [col span 2]">
+        <div ws-x="[$label]">Lined TextArea</div>
+        <textarea ws-x="[h 100px]"></textarea>
+    </label>
+
+    <ws-titlebar ws-x="[col span 2]">
+        <span ws-x="[$title] [$title-text]">Lined-fill Variant</span>
+    </ws-titlebar>
+    <label ws-x="@@control [$lined-fill]">
+        <span ws-x="[$label]">Lined-fill Text</span>
+        <input type="text" />
+    </label>
+    <label ws-x="@@control [$lined-fill]">
+        <span ws-x="[$label]">Lined-fill Select</span>
+        <select>
+            <option>TypeScript</option>
+            <option>Java</option>
+            <option>Not teaching debugging</option>
+            <optgroup label="Honorable Mentions">
+                <option>Calling Machine Learning AI</option>
+            </optgroup>
+        </select>
+    </label>
+    <label ws-x="@@control [$lined-fill] [col span 2]">
+        <div ws-x="[$label]">Lined-fill TextArea</div>
+        <textarea ws-x="[h 100px]"></textarea>
+    </label>
+
+    <ws-titlebar ws-x="[col span 2]">
         <span ws-x="[$title] [$title-text]">Flat Variant</span>
     </ws-titlebar>
     <label ws-x="@@control [$flat]">
@@ -96,46 +142,74 @@
     <ws-titlebar ws-x="[col span 2]">
         <span ws-x="[$title] [$title-text]">Colorized</span>
     </ws-titlebar>
-    <label ws-x="@@control [$color @primary]">
-        <span ws-x="[$label]">Primary</span>
-        <input />
-    </label>
-    <label ws-x="@@control [$color @primary] [$flat]">
-        <span ws-x="[$label]">Primary Flat</span>
-        <input />
-    </label>
-    <label ws-x="@@control [$color @secondary]">
-        <span ws-x="[$label]">Secondary</span>
-        <input />
-    </label>
-    <label ws-x="@@control [$color @secondary] [$flat]">
-        <span ws-x="[$label]">Secondary Flat</span>
-        <input />
-    </label>
-    <label ws-x="@@control [$color @accent]">
-        <span ws-x="[$label]">Accent</span>
-        <input />
-    </label>
-    <label ws-x="@@control [$color @accent] [$flat]">
-        <span ws-x="[$label]">Accent Flat</span>
-        <input />
-    </label>
-    <label ws-x="@@control [$color @warning]">
-        <span ws-x="[$label]">Warning</span>
-        <input />
-    </label>
-    <label ws-x="@@control [$color @warning] [$flat]">
-        <span ws-x="[$label]">Warning Flat</span>
-        <input />
-    </label>
-    <label ws-x="@@control [$color @danger]">
-        <span ws-x="[$label]">Danger</span>
-        <input />
-    </label>
-    <label ws-x="@@control [$color @danger] [$flat]">
-        <span ws-x="[$label]">Danger Flat</span>
-        <input />
-    </label>
+    <ws-grid ws-x="[p 0x] [gr.cols 1fr 1fr 1fr] [col span 2]">
+        <div ws-x="[t.c @primary] [col span 3]">Primary</div>
+        <label ws-x="@@control [$color @primary]">
+            <span ws-x="[$label]">Outline</span>
+            <input />
+        </label>
+        <label ws-x="@@control [$color @primary] [$lined]">
+            <span ws-x="[$label]">Lined</span>
+            <input />
+        </label>
+        <label ws-x="@@control [$color @primary] [$flat]">
+            <span ws-x="[$label]">Flat</span>
+            <input />
+        </label>
+
+        <div ws-x="[t.c @secondary] [col span 3]">Secondary</div>
+        <label ws-x="@@control [$color @secondary]">
+            <span ws-x="[$label]">Outline</span>
+            <input />
+        </label>
+        <label ws-x="@@control [$color @secondary] [$lined]">
+            <span ws-x="[$label]">Lined</span>
+            <input />
+        </label>
+        <label ws-x="@@control [$color @secondary] [$flat]">
+            <span ws-x="[$label]">Flat</span>
+            <input />
+        </label>
+        <div ws-x="[t.c @warning] [col span 3]">Warning</div>
+        <label ws-x="@@control [$color @warning]">
+            <span ws-x="[$label]">Outline</span>
+            <input />
+        </label>
+        <label ws-x="@@control [$color @warning] [$lined]">
+            <span ws-x="[$label]">Lined</span>
+            <input />
+        </label>
+        <label ws-x="@@control [$color @warning] [$flat]">
+            <span ws-x="[$label]">Flat</span>
+            <input />
+        </label>
+        <div ws-x="[t.c @accent] [col span 3]">Accent</div>
+        <label ws-x="@@control [$color @accent]">
+            <span ws-x="[$label]">Outline</span>
+            <input />
+        </label>
+        <label ws-x="@@control [$color @accent] [$lined]">
+            <span ws-x="[$label]">Lined</span>
+            <input />
+        </label>
+        <label ws-x="@@control [$color @accent] [$flat]">
+            <span ws-x="[$label]">Flat</span>
+            <input />
+        </label>
+        <div ws-x="[t.c @danger] [col span 3]">Danger</div>
+        <label ws-x="@@control [$color @danger]">
+            <span ws-x="[$label]">Outline</span>
+            <input />
+        </label>
+        <label ws-x="@@control [$color @danger] [$lined]">
+            <span ws-x="[$label]">Lined</span>
+            <input />
+        </label>
+        <label ws-x="@@control [$color @danger] [$flat]">
+            <span ws-x="[$label]">Flat</span>
+            <input />
+        </label>
+    </ws-grid>
 
     <ws-titlebar ws-x="[col span 2]">
         <span ws-x="[$title] [$title-text]">Adornments</span>
