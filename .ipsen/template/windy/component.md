@@ -9,7 +9,7 @@
 </label>
 <iframe ws-x="[h 350px]"
 srcdoc="{| `<html><head></head><body ws-x="@@theme:dark">
-    <script src="/windstorm.js"></script>
+    <script src="/windstorm.js?t=${Date.now()}"></script>
     <ws-flex ws-x='[p 8px]'>
     ${$.info}
     </ws-flex>
