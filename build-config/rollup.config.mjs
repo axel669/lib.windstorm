@@ -4,7 +4,6 @@ import { minify } from "csso"
 import fs from "fs-jetpack"
 import del from "rollup-plugin-delete"
 import sassc from "sass"
-import terser from "@rollup/plugin-terser"
 import yaml from "js-yaml"
 
 const componentList = {
@@ -89,7 +88,6 @@ export default {
     plugins: [
         del({ targets: "dist/*" }),
         componentList,
-        simpleFuncs,
-        terser(),
+        simpleFuncs
     ]
 }

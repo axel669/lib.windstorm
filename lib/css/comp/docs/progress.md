@@ -1,17 +1,12 @@
 # Progress Bar
-The progress bar is a modified label element that changes how the label and
-`progress` html element look.
+A custom element (`ws-progress`) that is a simpler progress bar that is easier
+to customize consistently between browsers.
 
-To mark a label as a Progress Bar, add the `@@progress` marker.
-
-## Component Macros
-- $outline
-- $color
-- $row<br />
-    Puts the progress text and progress bar on the same line.
-
-## Children Component Macros
-- $progress-label<br />
-    Sets some styles to make text next to the progress bar appear nicer.
+## Attributes
+The `ws-progress` element uses attrs similar to the regular progress element in
+html. `min`, `max`, and `value` all work as standard, with `buffer` working like
+the `value` attribute, but for the buffer bar. Instead of using aria-*
+attributes with additional elements, setting the `busy` attribute will make the
+ws-progress show as indeterminate.
 
 [component.md : ../../../../test/preview/examples/progress.html :]: #
