@@ -6,6 +6,11 @@
         <meta name="viewport" content="initial-scale=1,maximum-scale=5,minimum-scale=1,width=device-width">
     </head>
     <body ws-x="@@theme:dark @app">
+        <script>
+            window.windstormConfig = {
+                // origin: "http://localhost:1337",
+            }
+        </script>
         <script src="./browser.js"></script>
         <script>
             document.addEventListener(
@@ -56,6 +61,9 @@
                 </ws-grid>
 
                 <ws-flex ws-x="[$content] [over.y auto]">
+                    <div ws-x="[bg @primary] [t.c @text-color-invert] [sticky]">
+                        Sticky element
+                    </div>
                     <ht-include src="examples/avatar.html" title="Avatar"></ht-include>
                     <ht-include src="examples/badge.html" title="Badge"></ht-include>
                     <ht-include src="examples/button.html" title="Button"></ht-include>
@@ -66,16 +74,17 @@
                     <ht-include src="examples/hexagon-spinner.html" title="Hexagon Spinner"></ht-include>
                     <ht-include src="examples/flex.html" title="Flex Layout"></ht-include>
                     <ht-include src="examples/grid.html" title="Grid Layout"></ht-include>
-                    <ht-include src="examples/icon.html" title="Icon"></ht-include>
+                    <ht-include open src="examples/icon.html" title="Icon"></ht-include>
                     <ht-include src="examples/link.html" title="Link"></ht-include>
+                    <ht-include open src="examples/mini-toast.html" title="Mini Toast"></ht-include>
                     <ht-include src="examples/modal.html" title="Modal"></ht-include>
                     <ht-include src="examples/paper.html" title="Paper"></ht-include>
-                    <ht-include src="examples/notification.html" title="Notification"></ht-include>
                     <ht-include src="examples/popover.html" title="Popover"></ht-include>
-                    <ht-include open src="examples/progress.html" title="Progress Bars"></ht-include>
+                    <ht-include src="examples/progress.html" title="Progress Bars"></ht-include>
                     <ht-include src="examples/table.html" title="Table"></ht-include>
                     <ht-include src="examples/tabs.html" title="Tabs"></ht-include>
                     <ht-include src="examples/titlebar.html" title="Titlebar"></ht-include>
+                    <ht-include open src="examples/toast.html" title="Toast"></ht-include>
                     <ht-include src="examples/toggle.html" title="Toggle"></ht-include>
                     <ht-include src="examples/tooltip.html" title="Tooltip"></ht-include>
                 </ws-flex>
