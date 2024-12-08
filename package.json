@@ -16,6 +16,7 @@
   "license": "MIT",
   "devDependencies": {
     "@axel669/ipsen": "0.4.1",
+    "@rollup/plugin-terser": "^0.4.4",
     "csso": "^5.0.5",
     "fs-jetpack": "^5.1.0",
     "js-yaml": "^4.1.0",
