@@ -6,3 +6,4 @@ vaults:
     keys:
       cf.personal.api_key: CLOUDFLARE_API_TOKEN
       cf.personal.account: CLOUDFLARE_ACCOUNT_ID
+      npm.axel669: NPM_AUTH_TOKEN
