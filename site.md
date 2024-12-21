@@ -20,8 +20,8 @@
         - [Toggle](lib/css/comp/docs/toggle.md)
     - Informational
         - [Icon](lib/css/comp/docs/icon.md)
-        - [Notification](lib/css/comp/docs/notification.md)
         - [Titlebar](lib/css/comp/docs/titlebar.md)
+        - [Toast](lib/css/comp/docs/toast.md)
         - [Toaster](lib/css/comp/docs/toaster.md)
     - Layout
         - [Flex](lib/css/comp/docs/flex.md)
