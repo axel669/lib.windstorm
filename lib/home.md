@@ -14,7 +14,7 @@ minor differences between a set of 20.
 
 ### CDN Link (global variable)
 ```html
-<script src="https://esm.sh/@axel669/windstorm@$VERSION/dist/browser.js"></script>
+<script src="https://esm.sh/@axel669/windstorm@$VERSION/dist/browser.js?raw"></script>
 ```
 
 ### CDN Link (module)
@@ -54,7 +54,7 @@ can be empty).
 
 ```html
 <body ws-x="@@theme:tron">
-    <script src="<windstorm>"></script>
+    <script src="https://esm.sh/@axel669/windstorm@$VERSION/dist/browser.js?raw"></script>
     Static content here
 </body>
 ```
