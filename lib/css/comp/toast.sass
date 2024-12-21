@@ -1,0 +1,43 @@
+ws-toast
+    --color: var(--layer-border-color)
+
+    position: relative
+    display: inline-grid
+    grid-template-columns: auto 1fr auto
+    grid-template-areas: "start text end"
+    border-radius: 4px
+    cursor: pointer
+    user-select: none
+    border: 2px solid var(--color)
+    min-height: 48px
+    z-index: +0
+
+    &::before, &::after
+        content: ""
+        position: relative
+        display: block
+        min-width: 20px
+        background-color: var(--color)
+        z-index: -1
+    &::before
+        grid-area: start
+    &::after
+        grid-area: end
+
+    & > :where([ws-x~="[$notif-text]"])
+        display: flex
+        flex-direction: row
+        align-items: center
+        padding: 4px
+        background-color: var(--background-element)
+
+    & > :where([ws-x~="[$start]"])
+        grid-area: start
+    & > :where([ws-x~="[$end]"])
+        grid-area: end
+
+    & > :where([ws-x~="[$start]"], [ws-x~="[$end]"]),
+    & > :where([ws-x~="[$start]"], [ws-x~="[$end]"]) button
+        --ripple-color: var(--ripple-invert)
+        --color: var(--text-color-invert)
+        color: var(--text-color-invert)

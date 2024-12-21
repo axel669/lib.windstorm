@@ -5,7 +5,14 @@ import fs from "fs-jetpack"
 import del from "rollup-plugin-delete"
 import sassc from "sass"
 import yaml from "js-yaml"
+import terser from "@rollup/plugin-terser"
 
+const packageInfo = fs.read("package.json", "json")
+
+fs.write(
+    "readme.md",
+    fs.read("lib/home.md").replaceAll("$VERSION", packageInfo.version)
+)
 const componentList = {
     resolveId(id) {
         if (id !== "$$component-css") {
@@ -57,6 +64,24 @@ const simpleFuncs = {
         return `export default \`${lines.join("")}\``
     }
 }
+const libVersion = {
+    resolveId(id) {
+        if (id !== "$package") {
+            return
+        }
+        return id
+    },
+    load(id) {
+        if (id !== "$package") {
+            return
+        }
+        const libInfo = {
+            version: packageInfo.version,
+            ...packageInfo.windSettings,
+        }
+        return `export default ${JSON.stringify(libInfo)}`
+    }
+}
 
 export default {
     input: "lib/main.mjs",
@@ -88,6 +113,8 @@ export default {
     plugins: [
         del({ targets: "dist/*" }),
         componentList,
-        simpleFuncs
+        simpleFuncs,
+        libVersion,
+        terser(),
     ]
 }

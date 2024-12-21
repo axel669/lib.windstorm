@@ -36,7 +36,7 @@ label:where([ws-x~="@@toggle"])
             content: ""
             position: absolute
             font-size: 18px
-            font-family: bootstrap-icons!important
+            font-family: TablerIconsBase
             speak: none
             font-style: normal
             font-weight: 400
@@ -55,17 +55,17 @@ label:where([ws-x~="@@toggle"])
         &[type="radio"]
             &::after
                 // circle
-                content: "\F28A"
+                content: "circle"
             &:checked::after
                 // record-circle
-                content: "\F518"
+                content: "circle-check"
         &[type="checkbox"]
             &::after
                 // square
-                content: "\F584"
+                content: "square"
             &:checked::after
                 // check-square-fill
-                content: "\F26C"
+                content: "square-check-filled"
             &:where([ws-x~="@@switch"])
                 &:disabled
                     background-color: var(--disabled-background)
@@ -90,5 +90,5 @@ label:where([ws-x~="@@toggle"])
                 &:checked::after
                     background-color: var(--color)
                     // check
-                    content: "\F26E"
+                    content: "check"
                     left: 22px

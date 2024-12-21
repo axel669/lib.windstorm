@@ -11,12 +11,16 @@
     <label ws-x="@@button [$outline] [$color @secondary]" for="dialog">
         Dialog
     </label>
+
+    <button ws-x="[$outline] [$color @primary]">
+        Scripted
+    </button>
 </ws-grid>
 
 <input type="checkbox" ws-x="[hide]" id="menu" />
 <ws-modal>
     <ws-paper ws-x="[r 0px] @@menu [w 200px]">
-        <ws-flex slot="content">
+        <ws-flex ws-x="[$content]">
             <label ws-x="@@button [$outline] [$color @accent]" for="menu">
                 Close
             </label>
@@ -30,7 +34,7 @@
 <input type="checkbox" ws-x="[hide]" id="action" />
 <ws-modal>
     <ws-paper ws-x="[r 0px] @@action">
-        <ws-flex slot="content">
+        <ws-flex ws-x="[$content]">
             <label ws-x="@@button [$outline] [$color @accent]" for="action">
                 Close
             </label>
@@ -61,16 +65,42 @@
 <input type="checkbox" ws-x="[hide]" id="dialog" />
 <ws-modal ws-x="[@anim-time 100ms]">
     <ws-paper ws-x="@@dialog">
-        <ws-titlebar slot="header">
-            <span slot="title" ws-x="[$title]">Dialog Example</span>
+        <ws-titlebar ws-x="[$header]">
+            <span ws-x="[$title] [$title-text]">Dialog Example</span>
         </ws-titlebar>
-        <ws-flex>
+        <ws-flex ws-x="[$content]">
             <span>
-                This one isset to animate faster
+                This one is set to animate faster
             </span>
         </ws-flex>
-        <label slot="footer" ws-x="@@button [$flat] [$color @accent]" for="dialog">
+        <label ws-x="@@button [$footer] [$flat] [$color @accent]" for="dialog">
             Close
         </label>
     </ws-paper>
 </ws-modal>
+
+<ws-modal data-code>
+    <ws-paper ws-x="[r 0px] @@menu [w 200px]">
+        <ws-flex ws-x="[$content]">
+            <button ws-x="[$outline] [$color @accent]">
+                Close
+            </button>
+            <span>
+                This one uses a bit of js (more like how a framework might do it)
+            </span>
+        </ws-flex>
+    </ws-paper>
+</ws-modal>
+<script>
+    const root = currentScript.parentNode
+    const modal = root.querySelector("ws-modal[data-code]")
+    const props = {
+        $show: false
+    }
+    const toggle = () => {
+        props.$show = props.$show === false
+        modal.setAttribute("ws-x", ws.x(props))
+    }
+    root.querySelector("button").addEventListener("click", toggle)
+    modal.querySelector("button").addEventListener("click", toggle)
+</script>

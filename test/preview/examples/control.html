@@ -142,74 +142,92 @@
     <ws-titlebar ws-x="[col span 2]">
         <span ws-x="[$title] [$title-text]">Colorized</span>
     </ws-titlebar>
-    <ws-grid ws-x="[p 0x] [gr.cols 1fr 1fr 1fr] [col span 2]">
-        <div ws-x="[t.c @primary] [col span 3]">Primary</div>
-        <label ws-x="@@control [$color @primary]">
-            <span ws-x="[$label]">Outline</span>
-            <input />
-        </label>
-        <label ws-x="@@control [$color @primary] [$lined]">
-            <span ws-x="[$label]">Lined</span>
-            <input />
-        </label>
-        <label ws-x="@@control [$color @primary] [$flat]">
-            <span ws-x="[$label]">Flat</span>
-            <input />
-        </label>
+    <div ws-x="[t.c @primary] [col span 2]">Primary</div>
+    <label ws-x="@@control [$color @primary]">
+        <span ws-x="[$label]">Outline</span>
+        <input />
+    </label>
+    <label ws-x="@@control [$color @primary] [$lined-fill]">
+        <span ws-x="[$label]">Lined Fill</span>
+        <input />
+    </label>
+    <label ws-x="@@control [$color @primary] [$lined]">
+        <span ws-x="[$label]">Lined</span>
+        <input />
+    </label>
+    <label ws-x="@@control [$color @primary] [$flat]">
+        <span ws-x="[$label]">Flat</span>
+        <input />
+    </label>
 
-        <div ws-x="[t.c @secondary] [col span 3]">Secondary</div>
-        <label ws-x="@@control [$color @secondary]">
-            <span ws-x="[$label]">Outline</span>
-            <input />
-        </label>
-        <label ws-x="@@control [$color @secondary] [$lined]">
-            <span ws-x="[$label]">Lined</span>
-            <input />
-        </label>
-        <label ws-x="@@control [$color @secondary] [$flat]">
-            <span ws-x="[$label]">Flat</span>
-            <input />
-        </label>
-        <div ws-x="[t.c @warning] [col span 3]">Warning</div>
-        <label ws-x="@@control [$color @warning]">
-            <span ws-x="[$label]">Outline</span>
-            <input />
-        </label>
-        <label ws-x="@@control [$color @warning] [$lined]">
-            <span ws-x="[$label]">Lined</span>
-            <input />
-        </label>
-        <label ws-x="@@control [$color @warning] [$flat]">
-            <span ws-x="[$label]">Flat</span>
-            <input />
-        </label>
-        <div ws-x="[t.c @accent] [col span 3]">Accent</div>
-        <label ws-x="@@control [$color @accent]">
-            <span ws-x="[$label]">Outline</span>
-            <input />
-        </label>
-        <label ws-x="@@control [$color @accent] [$lined]">
-            <span ws-x="[$label]">Lined</span>
-            <input />
-        </label>
-        <label ws-x="@@control [$color @accent] [$flat]">
-            <span ws-x="[$label]">Flat</span>
-            <input />
-        </label>
-        <div ws-x="[t.c @danger] [col span 3]">Danger</div>
-        <label ws-x="@@control [$color @danger]">
-            <span ws-x="[$label]">Outline</span>
-            <input />
-        </label>
-        <label ws-x="@@control [$color @danger] [$lined]">
-            <span ws-x="[$label]">Lined</span>
-            <input />
-        </label>
-        <label ws-x="@@control [$color @danger] [$flat]">
-            <span ws-x="[$label]">Flat</span>
-            <input />
-        </label>
-    </ws-grid>
+    <div ws-x="[t.c @secondary] [col span 2]">Secondary</div>
+    <label ws-x="@@control [$color @secondary]">
+        <span ws-x="[$label]">Outline</span>
+        <input />
+    </label>
+    <label ws-x="@@control [$color @secondary] [$lined-fill]">
+        <span ws-x="[$label]">Lined Fill</span>
+        <input />
+    </label>
+    <label ws-x="@@control [$color @secondary] [$lined]">
+        <span ws-x="[$label]">Lined</span>
+        <input />
+    </label>
+    <label ws-x="@@control [$color @secondary] [$flat]">
+        <span ws-x="[$label]">Flat</span>
+        <input />
+    </label>
+    <div ws-x="[t.c @warning] [col span 2]">Warning</div>
+    <label ws-x="@@control [$color @warning]">
+        <span ws-x="[$label]">Outline</span>
+        <input />
+    </label>
+    <label ws-x="@@control [$color @warning] [$lined-fill]">
+        <span ws-x="[$label]">Lined Fill</span>
+        <input />
+    </label>
+    <label ws-x="@@control [$color @warning] [$lined]">
+        <span ws-x="[$label]">Lined</span>
+        <input />
+    </label>
+    <label ws-x="@@control [$color @warning] [$flat]">
+        <span ws-x="[$label]">Flat</span>
+        <input />
+    </label>
+    <div ws-x="[t.c @accent] [col span 2]">Accent</div>
+    <label ws-x="@@control [$color @accent]">
+        <span ws-x="[$label]">Outline</span>
+        <input />
+    </label>
+    <label ws-x="@@control [$color @accent] [$lined-fill]">
+        <span ws-x="[$label]">Lined Fill</span>
+        <input />
+    </label>
+    <label ws-x="@@control [$color @accent] [$lined]">
+        <span ws-x="[$label]">Lined</span>
+        <input />
+    </label>
+    <label ws-x="@@control [$color @accent] [$flat]">
+        <span ws-x="[$label]">Flat</span>
+        <input />
+    </label>
+    <div ws-x="[t.c @danger] [col span 2]">Danger</div>
+    <label ws-x="@@control [$color @danger]">
+        <span ws-x="[$label]">Outline</span>
+        <input />
+    </label>
+    <label ws-x="@@control [$color @danger] [$lined-fill]">
+        <span ws-x="[$label]">Lined Fill</span>
+        <input />
+    </label>
+    <label ws-x="@@control [$color @danger] [$lined]">
+        <span ws-x="[$label]">Lined</span>
+        <input />
+    </label>
+    <label ws-x="@@control [$color @danger] [$flat]">
+        <span ws-x="[$label]">Flat</span>
+        <input />
+    </label>
 
     <ws-titlebar ws-x="[col span 2]">
         <span ws-x="[$title] [$title-text]">Adornments</span>

@@ -1,2 +1,8 @@
 ws-icon
     display: inline-block
+    --icon-font: ""
+    &::before
+        font-family: var(--icon-font)
+        -webkit-font-smoothing: antialiased
+        -moz-osx-font-smoothing: grayscale
+        content: attr(data-icon)

@@ -1,5 +1,6 @@
-ws-notification
+ws-mini-toast
     --color: var(--layer-border-color)
+    --ripple-base-color: var(--background-element)
 
     position: relative
     display: inline-grid
@@ -8,16 +9,18 @@ ws-notification
     border-radius: 4px
     cursor: pointer
     user-select: none
-    border: 2px solid var(--color)
-    min-height: 48px
+    border: 1px solid var(--color)
+    border-left-width: 8px
+    border-right-width: 8px
+    min-height: 32px
     z-index: +0
+    background-color: var(--background-element)
 
     &::before, &::after
         content: ""
         position: relative
         display: block
-        min-width: 20px
-        background-color: var(--color)
+        min-width: 4px
         z-index: -1
     &::before
         grid-area: start
@@ -29,15 +32,8 @@ ws-notification
         flex-direction: row
         align-items: center
         padding: 4px
-        background-color: var(--background-element)
 
     & > :where([ws-x~="[$start]"])
         grid-area: start
     & > :where([ws-x~="[$end]"])
         grid-area: end
-
-    & > :where([ws-x~="[$start]"], [ws-x~="[$end]"]),
-    & > :where([ws-x~="[$start]"], [ws-x~="[$end]"]) button
-        --ripple-color: var(--ripple-invert)
-        --color: var(--text-color-invert)
-        color: var(--text-color-invert)
