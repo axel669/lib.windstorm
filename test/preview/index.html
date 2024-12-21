@@ -69,14 +69,14 @@
                     <ht-include src="examples/button.html" title="Button"></ht-include>
                     <ht-include src="examples/chip.html" title="Chip"></ht-include>
                     <ht-include src="examples/details.html" title="Expandable Details"></ht-include>
-                    <ht-include src="examples/control.html" title="Input Elements"></ht-include>
+                    <ht-include open src="examples/control.html" title="Input Elements"></ht-include>
                     <ht-include src="examples/circle-spinner.html" title="Circle Spinner"></ht-include>
                     <ht-include src="examples/hexagon-spinner.html" title="Hexagon Spinner"></ht-include>
                     <ht-include src="examples/flex.html" title="Flex Layout"></ht-include>
                     <ht-include src="examples/grid.html" title="Grid Layout"></ht-include>
-                    <ht-include open src="examples/icon.html" title="Icon"></ht-include>
+                    <ht-include src="examples/icon.html" title="Icon"></ht-include>
                     <ht-include src="examples/link.html" title="Link"></ht-include>
-                    <ht-include open src="examples/mini-toast.html" title="Mini Toast"></ht-include>
+                    <ht-include src="examples/mini-toast.html" title="Mini Toast"></ht-include>
                     <ht-include src="examples/modal.html" title="Modal"></ht-include>
                     <ht-include src="examples/paper.html" title="Paper"></ht-include>
                     <ht-include src="examples/popover.html" title="Popover"></ht-include>
@@ -84,7 +84,7 @@
                     <ht-include src="examples/table.html" title="Table"></ht-include>
                     <ht-include src="examples/tabs.html" title="Tabs"></ht-include>
                     <ht-include src="examples/titlebar.html" title="Titlebar"></ht-include>
-                    <ht-include open src="examples/toast.html" title="Toast"></ht-include>
+                    <ht-include src="examples/toast.html" title="Toast"></ht-include>
                     <ht-include src="examples/toggle.html" title="Toggle"></ht-include>
                     <ht-include src="examples/tooltip.html" title="Tooltip"></ht-include>
                 </ws-flex>
@@ -108,9 +108,12 @@
             document.querySelector("details").before(
                 ...document.querySelectorAll("details[open]")
             )
-            // for (const open of document.querySelectorAll("details[open]")) {
-            //     target.before(open)
-            // }
+            document.querySelectorAll("details > script").forEach(
+                (tag) => {
+                    const func = new Function("currentScript", tag.innerText)
+                    func(tag)
+                }
+            )
         </script>
     </body>
 </html>
