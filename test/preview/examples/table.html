@@ -1,23 +1,9 @@
 <div ws-x="[over auto]">
-    <table ws-x="[$color @secondary]">
+    <table ws-x="[$color @primary]">
         <thead>
             <tr>
                 <th></th>
-                <th>Column 1</th>
-                <th>Column 2</th>
-                <th>Column 3</th>
-                <th>Column 1</th>
-                <th>Column 2</th>
-                <th>Column 3</th>
-                <th>Column 1</th>
-                <th>Column 2</th>
-                <th>Column 3</th>
-                <th>Column 1</th>
-                <th>Column 2</th>
-                <th>Column 3</th>
-                <th>Column 1</th>
-                <th>Column 2</th>
-                <th>Column 3</th>
+                <th>Column 1</th><th>Column 2</th><th>Column 3</th><th>Column 1</th><th>Column 2</th><th>Column 3</th><th>Column 1</th><th>Column 2</th><th>Column 3</th><th>Column 1</th><th>Column 2</th><th>Column 3</th><th>Column 1</th><th>Column 2</th><th>Column 3</th>
             </tr>
         </thead>
 
@@ -33,26 +19,77 @@
         </tbody>
     </table>
     <br />
-    <br />
-    <table ws-x="[$color @secondary] [$header-fill]">
+    <table ws-x="[$color @secondary] [$sticky-header]">
         <thead>
             <tr>
                 <th></th>
-                <th>Column 1</th>
-                <th>Column 2</th>
-                <th>Column 3</th>
-                <th>Column 1</th>
-                <th>Column 2</th>
-                <th>Column 3</th>
-                <th>Column 1</th>
-                <th>Column 2</th>
-                <th>Column 3</th>
-                <th>Column 1</th>
-                <th>Column 2</th>
-                <th>Column 3</th>
-                <th>Column 1</th>
-                <th>Column 2</th>
-                <th>Column 3</th>
+                <th>Column 1</th><th>Column 2</th><th>Column 3</th><th>Column 1</th><th>Column 2</th><th>Column 3</th><th>Column 1</th><th>Column 2</th><th>Column 3</th><th>Column 1</th><th>Column 2</th><th>Column 3</th><th>Column 1</th><th>Column 2</th><th>Column 3</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <th>Row 1</th>
+                <td>0</td><td>1</td><td>2</td><td>0</td><td>1</td><td>2</td><td>0</td><td>1</td><td>2</td><td>0</td><td>1</td><td>2</td><td>0</td><td>1</td><td>2</td>
+            </tr>
+            <tr ws-x="[$borderless]">
+                <th rowspan="2">Row 2</th>
+                <td>0</td><td>1</td><td>2</td><td>0</td><td>1</td><td>2</td><td>0</td><td>1</td><td>2</td><td>0</td><td>1</td><td>2</td><td>0</td><td>1</td><td>2</td>
+            </tr>
+            <tr>
+                <td>0</td><td>1</td><td>2</td><td>0</td><td>1</td><td>2</td><td>0</td><td>1</td><td>2</td><td>0</td><td>1</td><td>2</td><td>0</td><td>1</td><td>2</td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+    <table ws-x="[$fill-header] [$sticky-header]">
+        <thead>
+            <tr>
+                <th>Column 1</th><th>Column 2</th><th>Column 3</th><th>Column 1</th><th>Column 2</th><th>Column 3</th><th>Column 1</th><th>Column 2</th><th>Column 3</th><th>Column 1</th><th>Column 2</th><th>Column 3</th><th>Column 1</th><th>Column 2</th><th>Column 3</th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>0</td><td>1</td><td>2</td><td>0</td><td>1</td><td>2</td><td>0</td><td>1</td><td>2</td><td>0</td><td>1</td><td>2</td><td>0</td><td>1</td><td>2</td>
+                <th>Row 1</th>
+            </tr>
+            <tr>
+                <td>0</td><td>1</td><td>2</td><td>0</td><td>1</td><td>2</td><td>0</td><td>1</td><td>2</td><td>0</td><td>1</td><td>2</td><td>0</td><td>1</td><td>2</td>
+                <th>Row 2</th>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+    <table ws-x="[$color @accent] [$fill-header] [$sticky-header]">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Column 1</th><th>Column 2</th><th>Column 3</th><th>Column 1</th><th>Column 2</th><th>Column 3</th><th>Column 1</th><th>Column 2</th><th>Column 3</th><th>Column 1</th><th>Column 2</th><th>Column 3</th><th>Column 1</th><th>Column 2</th><th>Column 3</th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <th>Row 1</th>
+                <td>0</td><td>1</td><td>2</td><td>0</td><td>1</td><td>2</td><td>0</td><td>1</td><td>2</td><td>0</td><td>1</td><td>2</td><td>0</td><td>1</td><td>2</td>
+                <th>Row 1</th>
+            </tr>
+            <tr>
+                <th>Row 2</th>
+                <td>0</td><td>1</td><td>2</td><td>0</td><td>1</td><td>2</td><td>0</td><td>1</td><td>2</td><td>0</td><td>1</td><td>2</td><td>0</td><td>1</td><td>2</td>
+                <th>Row 2</th>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+    <table ws-x="[$color @danger] [$fill-header] [$sticky-header]">
+        <thead>
+            <tr>
+                <th> </th>
+                <th ws-x="[$sticky-col]">Column 1</th><th>Column 2</th><th>Column 3</th><th>Column 1</th><th>Column 2</th><th>Column 3</th><th>Column 1</th><th>Column 2</th><th>Column 3</th><th>Column 1</th><th>Column 2</th><th>Column 3</th><th>Column 1</th><th>Column 2</th><th>Column 3</th>
             </tr>
         </thead>
 
