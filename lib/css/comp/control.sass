@@ -2,6 +2,7 @@ label:where([ws-x~="@@control"])
     --color: var(--default)
     --border-color: var(--layer-border-color)
     --border-size: 1px
+    --ripple-base-color: var(--ripple-normal)
 
     position: relative
     display: inline-grid
@@ -27,8 +28,6 @@ label:where([ws-x~="@@control"])
             opacity: 1
 
     & > :where(select)
-        --color: var(--text-color-normal)
-
         border-width: 0px
         padding: 8px
         min-height: 36px
@@ -40,12 +39,24 @@ label:where([ws-x~="@@control"])
         &:focus
             outline: none
 
-        option, optgroup
+        & :where(option, optgroup)
             background-color: var(--background-layer)
             border-color: var(--background-layer)
             color: var(--text-color-normal)
             font-size: var(--text-size-normal)
             font-family: Arial
+            &:checked
+                background-color: var(--color) !important
+                color: var(--text-color-invert)
+
+        &:where([size])
+            padding: 0px
+            & option
+                &:not(:checked)
+                    background-color: transparent
+                padding: 4px
+                &:hover
+                    box-shadow: inset 0px 0px 2px 2px var(--ripple-base-color, var(--ripple-color-normal))
 
     & > :where(input, textarea)
         border-width: 0px
