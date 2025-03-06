@@ -15,6 +15,8 @@ table:where([ws-x])
     & :where(th)
         white-space: nowrap
         color: var(--color)
+    & :where(thead th)
+        box-shadow: inset 0px -2px 0px 0px var(--elem-border-color)
     & :where(tr[ws-x~="[$borderless]"]) :is(th, td)
         border-bottom-style: hidden
     &:where([ws-x~="[$fill-header]"]) :is(th)
@@ -25,9 +27,10 @@ table:where([ws-x])
             position: sticky
             top: 0px
             z-index: +1
+        & :where(thead th)
+            z-index: +2
         & :where(tbody) :is(th:first-child, th:last-child),
         & :where(thead) :is(th:first-child:empty, th:last-child:empty),
         & th:where([ws-x~="[$sticky-col]"])
             left: 0px
             right: 0px
-            z-index: +2

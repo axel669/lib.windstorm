@@ -1,6 +1,6 @@
 {
   "name": "@axel669/windstorm",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "description": "",
   "main": "dist/module.js",
   "type": "module",
