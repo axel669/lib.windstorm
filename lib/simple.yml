@@ -50,6 +50,8 @@ funcs:
   fl.wr: flex-wrap
   font: font-family
   gap: gap
+  gap.row: row-gap
+  gap.col: column-gap
   gr.area: grid-template-areas
   gr.cols: grid-template-columns
   gr.cols.a: grid-auto-columns
