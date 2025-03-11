@@ -1,4 +1,4 @@
-<table ws-x="[$color @primary]">
+<table ws-x="[$color @primary] [gr.cols 1fr 1fr]">
     <thead>
         <th>Macro</th>
         <th>CSS Properties</th>
