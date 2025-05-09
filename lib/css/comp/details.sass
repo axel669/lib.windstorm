@@ -1,17 +1,22 @@
 details:where([ws-x])
     --color: var(--default)
+    --padding: 8px
 
     border: 0px solid var(--color)
-    padding-left: calc(1em)
+    padding: 0px var(--padding)
     border-radius: 4px
     overflow: hidden
+
+    &:open
+        padding-bottom: var(--padding)
 
     & > summary
         color: var(--color)
         position: relative
         padding: 4px
         padding-left: 1.1em
-        margin-left: -1em
+        margin-left: calc(-1 * var(--padding))
+        margin-right: calc(-1 * var(--padding))
         cursor: pointer
         user-select: none
 
