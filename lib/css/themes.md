@@ -82,6 +82,11 @@ only `button` or `a`'s with `$button` on them.
     Color used when a color is not specified
 - `--default-ripple`<br />
     Color used for the ripple effect when a color is not specified
+- `--plain`<br />
+    Color used that is more neutral than the default in high contrast themes
+- `--plain-ripple`<br />
+    Color used for the ripple effect that is more neutral than the default in
+    high contrast themes
 - `--primary`<br />
     Primary color
 - `--primary-ripple`<br />

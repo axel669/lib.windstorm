@@ -43,7 +43,7 @@ with macros only being built from any `.ws-style` declarations.
     custom css properties and doesn't throw them away. The "--" is removed
     automatically to buld the macros and check their names.
     */
-    .ws-root {
+    .ws-style {
         /* creates a macro named "cool-text" */
         --cool-text:
             /* use strings for standard css properties */
