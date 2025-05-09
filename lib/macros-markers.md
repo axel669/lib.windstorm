@@ -114,6 +114,10 @@ Sets the color scheme for a component. Expects a color variable like `@primary`.
 ### `[$compact]`
 Reduces the padding on buttons. Useful for putting them into adornment areas.
 
+### `[$elevate]`
+Elevates an element by adding a shadow, mainly used for paper and button-like
+element, but should work for any element.
+
 ### `[$flat]`, `[$fill]`, `[$outline]`
 Changes how the border and fill of a component look. Flat components have no
 background or borders, fill have no borders but a filled background, and outline
