@@ -4,7 +4,7 @@ import { minify } from "csso"
 import fs from "fs-jetpack"
 import del from "rollup-plugin-delete"
 import sassc from "sass"
-import yaml from "js-yaml"
+// import yaml from "js-yaml"
 import terser from "@rollup/plugin-terser"
 
 const packageInfo = fs.read("package.json", "json")
@@ -40,30 +40,30 @@ const componentList = {
         return `export default ${JSON.stringify(styles)}`
     },
 }
-const simpleFuncs = {
-    load(id) {
-        if (id.endsWith(".yml") === false) {
-            return
-        }
+// const simpleFuncs = {
+//     load(id) {
+//         if (id.endsWith(".yml") === false) {
+//             return
+//         }
 
-        const simple = yaml.load(
-            fs.read(id, "utf8")
-        )
-        const lines =
-            Object.entries(simple.funcs)
-            .map(
-                ([name, prop]) => {
-                    const key = name.replace(/\./g, "\\\\.")
-                    if (Array.isArray(prop) === true) {
-                        const parts = prop.map(prop => `"${prop}: {$}"`)
-                        return `--${key}: ${parts.join(" ")};`
-                    }
-                    return `--${key}: "${prop}: {$}";`
-                }
-            )
-        return `export default \`${lines.join("")}\``
-    }
-}
+//         const simple = yaml.load(
+//             fs.read(id, "utf8")
+//         )
+//         const lines =
+//             Object.entries(simple.funcs)
+//             .map(
+//                 ([name, prop]) => {
+//                     const key = name.replace(/\./g, "\\\\.")
+//                     if (Array.isArray(prop) === true) {
+//                         const parts = prop.map(prop => `"${prop}: {$}"`)
+//                         return `--${key}: ${parts.join(" ")};`
+//                     }
+//                     return `--${key}: "${prop}: {$}";`
+//                 }
+//             )
+//         return `export default \`${lines.join("")}\``
+//     }
+// }
 const libVersion = {
     resolveId(id) {
         if (id !== "$package") {
@@ -109,11 +109,16 @@ export default {
             file: "test/preview/module.js",
             format: "esm",
         },
+        {
+            file: "test/debug/ws.js",
+            format: "esm",
+            sourcemap: true
+        },
     ],
     plugins: [
         del({ targets: "dist/*" }),
         componentList,
-        simpleFuncs,
+        // simpleFuncs,
         libVersion,
         terser(),
     ]

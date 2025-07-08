@@ -1,6 +1,5 @@
 &
     --ripple-color: unset
-    --ripple-base-color: var(--ripple-normal)
 
     overflow: hidden
     position: relative
@@ -14,6 +13,7 @@
         right: 0px
         transition: background-color 150ms linear
         pointer-events: none
+        opacity: 0.4
     &:where(:not([disabled])):active::after
         transition: none
-        background-color: var(--ripple-color, var(--ripple-base-color))
+        background-color: var(--ripple-color, var(--text-color))
