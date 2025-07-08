@@ -1,4 +1,5 @@
 funcs:
+  area: grid-area
   b: border
   b.c: border-color
   b.s: border-style
@@ -49,6 +50,9 @@ funcs:
   fl.wr: flex-wrap
   font: font-family
   gap: gap
+  gap.row: row-gap
+  gap.col: column-gap
+  gr.area: grid-template-areas
   gr.cols: grid-template-columns
   gr.cols.a: grid-auto-columns
   gr.flow: grid-auto-flow
@@ -91,6 +95,8 @@ funcs:
   r.tr: border-top-right-radius
   row: grid-row
   sel: user-select
+  self.cross: align-self
+  self.main: justify-self
   sh.box: box-shadow
   sh.text: text-shadow
   t.a: text-align

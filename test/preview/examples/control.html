@@ -65,7 +65,17 @@
             </optgroup>
         </select>
     </label>
-    <label ws-x="@@control [col span 2]">
+    <label ws-x="@@control">
+        <span ws-x="[$label]" ws-hint="Herbas">MultiSelect</span>
+        <select size="4">
+            <option>Bitter Herba</option>
+            <option>Salty Herba</option>
+            <option>Sweet Herba</option>
+            <option>Spicy Herba</option>
+            <option>Sour Herba</option>
+        </select>
+    </label>
+    <label ws-x="@@control">
         <div ws-x="[$label]">TextArea</div>
         <textarea ws-x="[h 100px]"></textarea>
     </label>
@@ -158,6 +168,26 @@
     <label ws-x="@@control [$color @primary] [$flat]">
         <span ws-x="[$label]">Flat</span>
         <input />
+    </label>
+    <label ws-x="@@control [$color @primary]">
+        <span ws-x="[$label]" ws-hint="Herbas">MultiSelect</span>
+        <select size="4">
+            <option>Bitter Herba</option>
+            <option>Salty Herba</option>
+            <option>Sweet Herba</option>
+            <option>Spicy Herba</option>
+            <option>Sour Herba</option>
+        </select>
+    </label>
+    <label ws-x="@@control [$color @primary] [$flat]">
+        <span ws-x="[$label]" ws-hint="Herbas">MultiSelect</span>
+        <select size="4">
+            <option>Bitter Herba</option>
+            <option>Salty Herba</option>
+            <option>Sweet Herba</option>
+            <option>Spicy Herba</option>
+            <option>Sour Herba</option>
+        </select>
     </label>
 
     <div ws-x="[t.c @secondary] [col span 2]">Secondary</div>

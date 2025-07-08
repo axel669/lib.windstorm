@@ -43,7 +43,7 @@ with macros only being built from any `.ws-style` declarations.
     custom css properties and doesn't throw them away. The "--" is removed
     automatically to buld the macros and check their names.
     */
-    .ws-root {
+    .ws-style {
         /* creates a macro named "cool-text" */
         --cool-text:
             /* use strings for standard css properties */
@@ -113,6 +113,10 @@ Sets the color scheme for a component. Expects a color variable like `@primary`.
 
 ### `[$compact]`
 Reduces the padding on buttons. Useful for putting them into adornment areas.
+
+### `[$elevate]`
+Elevates an element by adding a shadow, mainly used for paper and button-like
+element, but should work for any element.
 
 ### `[$flat]`, `[$fill]`, `[$outline]`
 Changes how the border and fill of a component look. Flat components have no
