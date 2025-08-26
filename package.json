@@ -9,7 +9,8 @@
     "mkdocs": "ipsen",
     "host": "wrangler pages dev test/preview --port 45067",
     "host/docs": "wrangler pages dev site --port 45068",
-    "host/cdn": "wrangler pages dev cdn/artifacts --port 1337"
+    "host/cdn": "wrangler pages dev cdn/artifacts --port 1337",
+    "host.debug": "wrangler pages dev test/debug --port=1338"
   },
   "keywords": [],
   "author": "",
@@ -29,6 +30,7 @@
     "dist"
   ],
   "windSettings": {
-    "fontVersion": "1"
+    "fontVersion": "2",
+    "iconVersion": "3.34.0"
   }
 }
