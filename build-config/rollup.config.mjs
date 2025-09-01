@@ -10,7 +10,7 @@ const packageInfo = fs.read("package.json", "json")
 
 fs.write(
     "readme.md",
-    fs.read("lib/home.md").replaceAll("$VERSION", packageInfo.version)
+    fs.read("docs/index.md").replaceAll("$VERSION", packageInfo.version)
 )
 const componentList = {
     resolveId(id) {
@@ -62,39 +62,16 @@ export default {
     input: "lib/main.mjs",
     output: [
         {
-            file: "dist/windstorm.js",
+            file: "dist/ws-esm.js",
             format: "esm",
         },
         {
-            file: "dist/ws.js",
+            file: "dist/ws-standalone.js",
             format: "iife",
             name: "ws",
         },
-        // {
-        //     file: "dist/browser.js",
-        //     format: "iife",
-        //     name: "ws"
-        // },
-        // {
-        //     file: `test/preview/browser.js`,
-        //     format: "iife",
-        //     name: "ws"
-        // },
-        // {
-        //     file: ".ipsen/static/windstorm.js",
-        //     format: "iife",
-        //     name: "ws"
-        // },
-        // {
-        //     file: "dist/module.js",
-        //     format: "esm",
-        // },
-        // {
-        //     file: "test/preview/module.js",
-        //     format: "esm",
-        // },
         {
-            file: "test/debug/ws.js",
+            file: "docs/windstorm.js",
             format: "iife",
             name: "ws",
             sourcemap: true,
