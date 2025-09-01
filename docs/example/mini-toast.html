@@ -1,0 +1,41 @@
+<ws-grid ws-x="[gr.cols 1fr 1fr]">
+    <ws-mini-toast>
+        <span ws-x="[$notif-text]">
+            <ws-icon data-icon="hexagon">Pretend this has useful info</ws-icon>
+        </span>
+    </ws-mini-toast>
+    <ws-mini-toast ws-x="[$color @primary]">
+        <span ws-x="[$notif-text]">
+            <ws-icon data-icon="hexagon">This info has color</ws-icon>
+        </span>
+    </ws-mini-toast>
+
+    <ws-mini-toast>
+        <ws-icon data-icon="hexagon" ws-x="[$start] [$adorn]"></ws-icon>
+        <span ws-x="[$notif-text]">
+            Add icons in the border
+            <div ws-x="[$subtitle-text]">(probably with color)</div>
+        </span>
+    </ws-mini-toast>
+    <ws-mini-toast ws-x="[$color @secondary]">
+        <ws-icon data-icon="hexagon" ws-x="[$end] [$adorn]"></ws-icon>
+        <span ws-x="[$notif-text]">
+            Icons on either side
+        </span>
+    </ws-mini-toast>
+
+    <ws-mini-toast ws-x="[$color @warning]">
+        <button ws-x="[$flat] [$start] [$ground]">Click!</button>
+        <span ws-x="[$notif-text]">
+            <ws-icon data-icon="help-hexagon">You can add controls</ws-icon>
+        </span>
+    </ws-mini-toast>
+    <ws-mini-toast ws-x="[$color @accent]">
+        <div ws-x="[$end] [grid] [gr.cols 1fr]">
+            <button ws-x="[$flat] [$ground]">Click!</button>
+        </div>
+        <span ws-x="[$notif-text]">
+            <ws-icon data-icon="help-hexagon">Controls on either side</ws-icon>
+        </span>
+    </ws-mini-toast>
+</ws-grid>

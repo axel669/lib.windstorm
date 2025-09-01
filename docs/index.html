@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="icon" type="image/png" href="https://axel669.net/images/megaman-rounded.png" />
+        <meta name="viewport" content="initial-scale=1,maximum-scale=3,minimum-scale=1,width=device-width">
+        <meta charset="UTF-8" />
+
+        <link rel="stylesheet" href="./style.css" />
+
+        <title></title>
+    </head>
+    <body>
+        <script type="module">
+            import "./byblos.js"
+
+            const [code, frame] = byblos.html`
+                <div></div>
+                <div></div>
+            `
+
+            byblos.init({
+                repo: "axel669/byblos",
+                branch: "dev",
+                sidebar: true,
+                "page.title": "Windstorm Docs",
+                "docs.title": "Windstorm Docs",
+                plugins: [
+                    {
+                        preRender(contents) {
+                            contents.page.content =
+                                contents.page.content
+                                .replaceAll("$VERSION", ws.version)
+                        }
+                    },
+                    {
+                        init(nodes) {
+                            nodes.contentArea.append(frame, code)
+                            document.addEventListener(
+                                "byblos:route-change",
+                                () => {
+                                    frame.innerHTML = ""
+                                    code.innerHTML = ""
+                                }
+                            )
+                        },
+                        resolve(targets) {
+                            const url = targets.page.url
+                            if (url.startsWith("/component/") === false) {
+                                return
+                            }
+                            const exampleURL =
+                                url
+                                .replace("/component/", "/example/")
+                                .replace(".md", ".html")
+                            targets.example = {
+                                type: "example",
+                                url: exampleURL
+                            }
+                        },
+                        display(content) {
+                            if (content.example === undefined) {
+                                return
+                            }
+
+                            const iframe = document.createElement("iframe")
+                            iframe.srcdoc = `<html><body ws-x="[!theme.tron]"><script src="/windstorm.js"><\/script>${content.example}</body></html>`
+                            frame.append(iframe)
+                            code.innerHTML =
+                                byblos.marked.parse(`\`\`\`html\n${content.example}\n\`\`\``)
+                        }
+                    }
+                ]
+            })
+        </script>
+    </body>
+</html>
