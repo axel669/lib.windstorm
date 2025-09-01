@@ -1,17 +1,17 @@
 button:where([ws-x]),
 :is(label, a):where([ws-x~="@@button"])
-    --color: var(--text-color-normal)
+    --color: var(--primary)
 
-    --fill-color: transaprent
-    --text-color: var(--color)
+    --fill: var(--fill-color, transparent)
+    --text: var(--text-color, var(--color))
 
     position: relative
 
-    border: 0px solid var(--text-color)
-    color: var(--text-color)
+    border: 0px solid var(--text)
+    color: var(--text)
     font-family: var(--font)
 
-    background-color: var(--fill-color)
+    background-color: var(--fill)
     border-radius: var(--base-radius)
     cursor: pointer
     padding: 8px 16px
