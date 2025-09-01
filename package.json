@@ -1,8 +1,7 @@
 {
   "name": "@axel669/windstorm",
-  "version": "0.5.5",
+  "version": "0.6.0",
   "description": "",
-  "main": "dist/module.js",
   "type": "module",
   "scripts": {
     "build": "rollup -c build-config/rollup.config.mjs",
@@ -32,5 +31,9 @@
   "windSettings": {
     "fontVersion": "2",
     "iconVersion": "3.34.0"
+  },
+  "exports": {
+    ".": "./dist/ws-esm.js",
+    "./standalone": "./dist/ws-standalone.js"
   }
 }
