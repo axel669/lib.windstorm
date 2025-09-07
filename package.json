@@ -23,7 +23,8 @@
     "rollup": "^3.19.0",
     "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-sass": "^1.12.19",
-    "sass": "^1.59.3"
+    "sass": "^1.59.3",
+    "wrangler": "^4.33.2"
   },
   "files": [
     "dist"
@@ -34,6 +35,8 @@
   },
   "exports": {
     ".": "./dist/ws-esm.js",
-    "./standalone": "./dist/ws-standalone.js"
+    "./es5": "./dist/ws-es5.js",
+    "./nc": "./dist/ws-nc-esm.js",
+    "./nc-es5": "./dist/ws-nc-es5.js"
   }
 }
