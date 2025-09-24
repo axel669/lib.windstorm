@@ -17,13 +17,10 @@
   "devDependencies": {
     "@axel669/ipsen": "0.4.1",
     "@rollup/plugin-terser": "^0.4.4",
-    "csso": "^5.0.5",
     "fs-jetpack": "^5.1.0",
     "js-yaml": "^4.1.0",
     "rollup": "^3.19.0",
     "rollup-plugin-delete": "^2.0.0",
-    "rollup-plugin-sass": "^1.12.19",
-    "sass": "^1.59.3",
     "wrangler": "^4.33.2"
   },
   "files": [
@@ -38,5 +35,12 @@
     "./es5": "./dist/ws-es5.js",
     "./nc": "./dist/ws-nc-esm.js",
     "./nc-es5": "./dist/ws-nc-es5.js"
+  },
+  "imports": {
+    "#lib/*": "./lib/*.js",
+    "#com/*": "./lib/components/*.js"
+  },
+  "dependencies": {
+    "@rollup/plugin-node-resolve": "^16.0.1"
   }
 }
