@@ -29,7 +29,7 @@ SubRule
     }
 
 Macro
-	= name:$([a-zA-Z0-9\.\-_#^]+) value:(":" _ $([^;]+))? ";" {
+	= name:$([a-zA-Z0-9\.\-_#^\$\/]+) value:(":" _ $([^;]+))? ";" {
     	return { type: "macro", name, value: prep(value?.[2]) }
     }
 
