@@ -76,11 +76,13 @@ export default [
                 file: "docs/ws-es5.js",
                 format: "iife",
                 name: "ws",
+                sourcemap: true
             },
         ],
         plugins: [
             resolve(),
             libVersion,
+            terser()
         ]
     },
 ]
