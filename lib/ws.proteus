@@ -1,0 +1,42 @@
+---
+const prep = (value) => value?.replace(
+    /@([a-zA-Z0-9\-_]+)/g,
+    (_, name) => `var(--${name})`
+)
+---
+
+$ = #rules
+@rules = #(_ rule)* _
+    ---(rules)
+    return rules.map(rule => rule[1])
+    ---
+
+@rule
+    = #variable
+    = #css
+    = #subrule
+    = #macro
+
+@variable = "@" #cssName ":" _ #{ [^;]+ } ";"
+    ---(name, value)
+    return { type: "var", name, value: prep(value) }
+    ---
+
+@css = "*" #cssName ":" _ #{ [^;]+ } ";"
+    ---(name, value)
+    return { type: "css", name, value: prep(value) }
+    ---
+
+@cssName = #{ [a-z0-9_\-]i+ }
+
+@subrule = "!" _ #{ [^{]+ } "{" #rules "}"
+    ---(selector, rules)
+    return { type: "alt", selector: selector.trim(), rules }
+    ---
+
+@macro = #{ [a-zA-Z0-9\.\-_#\^\$\/]+ } #(":" _ { [^;]+ })? ";"
+    ---(name, value)
+    return { type: "macro", name, value: prep(value?.[2]) }
+    ---
+
+@_ = [\s]m*
