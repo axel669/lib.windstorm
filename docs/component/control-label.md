@@ -1,26 +1,27 @@
 # Labled Control
+- _colorized_
+- _variants: outline, lined_
+
 The labeled control is a label that contains a text-style input (input that
 isn't checkbox or radio, textarea) or a select element and the text that
 make up the label.
 
-To mark a label as a labeled control, add the `@@control` marker.
+> Add the `control` and `data-ws` attributes to a `label` element to have
+> windstorm styling for this component apply.
 
-## Component Macros
-- $flat
-- $color
+## Children
 
-## Areas
+### \[label-text\]
+Any text element with the `label-text` attribute set will be placed and styled
+as the label for the control automagically.
 
-### $label
-Sets the element with the text for the label
+## Grid Areas
 
-### $start / $end
+### start / end
 Adds an adornment to the input area, probably only looks good with
 input elements that are typed text.
 
-### $extra
+### extra
 Adds text below the control element (but still inside the border). Has a default
 padding set so that simple text can be used without anything additional, but
 the padding can be overriden as normal.
-
-[component.md : ../../../../test/preview/examples/control.html :]: #
