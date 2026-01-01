@@ -1,15 +1,11 @@
 # Button
+- _colorized_
+- _variants: outline, fill_
+
 Basic clickable component for handling user interaction.
 
-There are two ways to display buttons:
-- using the `ws-x` attribute on a `button` element
-- adding the `@@button` marker to a `label` element
-
-> &lt;a> tags can also be displayed with a button style, but they will still act
-> as anchors.
-
-## Component Macros
-- one of $flat/$outline/$fill
-- $color
-
-[component.md : ../../../../test/preview/examples/button.html :]: #
+By default only buttons with the `data-ws` attribute are styled by windstorm.
+`label` and `a` tags can also be made to look like buttons if they have the
+`data-ws` and `button` attributes (`button` doesnt need to have a specific
+value, only be present on the element). `a` tags presented as buttons will still
+have all the normal interactivity; the normal link flows are not modified.

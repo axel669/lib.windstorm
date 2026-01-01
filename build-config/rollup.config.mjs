@@ -58,6 +58,10 @@ export default [
                 format: "esm",
             },
             {
+                file: "docs/ws-esm.js",
+                format: "esm",
+            },
+            {
                 file: "dist/ws-es5.js",
                 format: "iife",
                 name: "ws",

@@ -1,14 +1,10 @@
 # Circle Spiner
+- _colorized_
 
 The cirlce spinner is an element that shows an animated circular load spinner.
 
-## Component Macros
-- $color<br />
-    Sets the colors for each of the circular pieces
-
 ## Variables
-- size<br />
-    The width and height of the spinner. The animated pieces fit into the size
-    given.
 
-[component.md : ../../../../test/preview/examples/circle-spinner.html :]: #
+### `@size` _CSS Size_
+The width and height of the spinner. The animated pieces fit into the size
+given.

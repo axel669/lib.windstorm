@@ -1,77 +1,29 @@
-<ws-badge ws-text="test" ws-x="[$color @warning]">
-    <button ws-x="[$outline] [$color @primary]">
-        Clicky
-    </button>
-</ws-badge>
+<div data-ws="h: 240px; pos.rel; b: 1px solid hsl(@mono, @layer-border);">
+    <ws-screen data-ws="@screen-width: 240px;">
+        <ws-paper data-ws="@color: @primary; variant.outline;">
+            <ws-text>
+                Standard spacing
+            </ws-text>
+        </ws-paper>
+    </ws-screen>
+</div>
 
-<ws-screen ws-x="[$left] [theme tron] [@stack 2]">
-    <ws-paper ws-x="[r 0px]">
-        <ws-titlebar ws-x="[$fill] [$color @secondary]" slot="header">
-            <span ws-x="[$title]" slot="title">Sub Screen</span>
-        </ws-titlebar>
-        <ws-flex ws-x="[over auto]" slot="content">
-            <div>this is content that scrolls</div>
-            <div>this is content that scrolls</div>
-            <div>this is content that scrolls</div>
-            <div>this is content that scrolls</div>
-            <div>this is content that scrolls</div>
-            <div>this is content that scrolls</div>
-            <div>this is content that scrolls</div>
-            <div>this is content that scrolls</div>
-            <div>this is content that scrolls</div>
-            <div>this is content that scrolls</div>
-            <div>this is content that scrolls</div>
-            <div>this is content that scrolls</div>
-            <div>this is content that scrolls</div>
-            <div>this is content that scrolls</div>
-            <div>this is content that scrolls</div>
-            <div>this is content that scrolls</div>
-            <div>this is content that scrolls</div>
-            <div>this is content that scrolls</div>
-            <div>this is content that scrolls</div>
-            <div>this is content that scrolls</div>
-            <div>this is content that scrolls</div>
-            <div>this is content that scrolls</div>
-            <div>this is content that scrolls</div>
-            <div>this is content that scrolls</div>
-            <div>this is content that scrolls</div>
-            <div>this is content that scrolls</div>
-            <div>this is content that scrolls</div>
-            <div>this is content that scrolls</div>
-            <div>this is content that scrolls</div>
-            <div>this is content that scrolls</div>
-            <div>this is content that scrolls</div>
-            <div>this is content that scrolls</div>
-            <div>this is content that scrolls</div>
-            <div>this is content that scrolls</div>
-            <div>this is content that scrolls</div>
-            <div>this is content that scrolls</div>
-            <div>this is content that scrolls</div>
-            <div>this is content that scrolls</div>
-            <div>this is content that scrolls</div>
-            <div>this is content that scrolls</div>
-            <div>this is content that scrolls</div>
-            <div>this is content that scrolls</div>
-            <div>this is content that scrolls</div>
-            <div>this is content that scrolls</div>
-            <div>this is content that scrolls</div>
-            <div>this is content that scrolls</div>
-            <div>this is content that scrolls</div>
-            <div>this is content that scrolls</div>
-            <div>this is content that scrolls</div>
-            <div>this is content that scrolls</div>
-        </ws-flex>
-    </ws-paper>
+<div data-ws="h: 240px; pos.rel; b: 1px solid hsl(@mono, @layer-border);">
+    <ws-screen data-ws="@screen-width: 240px; @pad-left: 0px;">
+        <ws-paper data-ws="@color: @primary; variant.outline;">
+            <ws-text>
+                Left Aligned (no pad left)
+            </ws-text>
+        </ws-paper>
+    </ws-screen>
+</div>
 
-    <ws-toaster ws-x="[$tc]">
-        <ws-notification ws-x="[$color @accent]">
-            <ws-icon class="ti-hexagon">Something cool</ws-icon>
-        </ws-notification>
-    </ws-toaster>
-</ws-screen>
-
-<ws-toaster ws-x="[$bl]">
-    <ws-notification ws-x="[$color @danger]">
-        <ws-icon class="ti-hexagon">Something cool</ws-icon>
-    </ws-notification>
-</ws-toaster>
+<div data-ws="h: 240px; pos.rel; b: 1px solid hsl(@mono, @layer-border);">
+    <ws-screen data-ws="@screen-width: 240px; @pad-y: 24px;">
+        <ws-paper data-ws="@color: @primary; variant.outline;">
+            <ws-text>
+                Pad top and bottom
+            </ws-text>
+        </ws-paper>
+    </ws-screen>
+</div>

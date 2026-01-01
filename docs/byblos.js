@@ -1,6 +1,8 @@
 import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js"
 import http from "https://cdn.jsdelivr.net/npm/@axel669/http@0.3.1"
 
+import * as ws from "./ws-esm.js"
+
 const html = (parts, ...values) => {
     const html = String.raw(parts, ...values)
     const template = document.createElement("template")
@@ -28,9 +30,12 @@ export const $ = (doc = document) =>
         doc.querySelector(
             String.raw(parts, ...values)
         )
-const addScript = (src) => {
+const addScript = (src, attr = {}) => {
     const script = document.createElement("script")
     script.src = src
+    for (const [key, value] of Object.entries(attr)) {
+        script.setAttribute(key, value)
+    }
     document.head.append(script)
 }
 const loadURL = async (url) => {
@@ -46,11 +51,26 @@ const loadURL = async (url) => {
     return await response.res.text()
 }
 const [ loader ] = html`
-    <div ws-x="[t.a center] [p 8px]">
-        <ws-hexagon-spinner ws-x="[@size 100px] [$color @accent]">
+    <div data-ws="t.a: center; p: 8px;">
+        <ws-hexagon-spinner data-ws="@size: 100px; @color: @accent;">
         </ws-hexagon-spinner>
     </div>
 `
+const [ copyButton ] = html`
+    <code-wrapper>
+        <button data-ws="@color: @accent; variant.fill;">
+            <ws-icon data-icon="copy"></ws-icon>
+        </button>
+    </code-wrapper>
+`
+const addCodeCopy = (block) => {
+    const copy = copyButton.cloneNode(true)
+    block.parentNode.insertBefore(copy, block)
+    copy.addEventListener(
+        "click",
+        () => navigator.clipboard.writeText(block.innerText)
+    )
+}
 const loadPage = async (targets) => {
     if (targets.page.url === null) {
         return
@@ -98,70 +118,108 @@ const loadPage = async (targets) => {
         await plugin.postRender?.(rendered)
     }
     console.log(rendered)
-    nodes.content.innerHTML = rendered.page
+    nodes.content.innerHTML = rendered.page.replace(
+        /:([a-zA-Z0-9_\-]+):/g,
+        (_, name) => `<ws-icon data-icon="${name}"></ws-icon>`
+    )
 
     for (const plugin of options.plugins) {
         await plugin.display?.(rendered)
     }
 
+    const codeNodes =
+        nodes.content.querySelectorAll("code[class*='language-']")
+    for (const node of codeNodes) {
+        const code = node.innerText
+        const lang = node.className.slice(9)
+        // const html = Prism.highlight(node, Prism.languages[lang], lang)
+        // console.log(html)
+    }
     window.Prism.highlightAll()
+    const codeBlocks = nodes.content.querySelectorAll("pre[class*='language-']")
+    for (const block of codeBlocks) {
+        addCodeCopy(block)
+    }
 }
 const defaultOptions = {
     "prism.theme": "https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-holi-theme.min.css",
     "page.title": "Byblos Docgen",
     "docs.title": "Byblos Docgen",
     "hook.loadTargets": (i) => i,
+    theme: localStorage.theme ?? "dark",
     plugins: [],
 }
 
-const [ sidebarButton ] = html`
-    <label ws-x="@@button [.menu] [t.sz 20px]" for="byblos-sidebar-toggle">
-        <ws-icon data-icon="menu-2"></ws-icon>
-    </label>
-`
-const sidebar = html`
-    <input type="checkbox" ws-x="[hide]" id="byblos-sidebar-toggle" />
+const [ sidebar ] = html`
     <ws-modal id="byblos-sidebar-modal">
-        <label for="byblos-sidebar-toggle"></label>
-        <ws-paper ws-x="@@menu [r 0px] [w min(320px, 70%)]">
-            <ws-flex ws-x="[.content]" id="byblos-sidebar-content">
-            </ws-flex>
-        </ws-paper>
+        <ws-drawer data-ws="w: min(320px, 70%);">
+            <ws-paper data-ws="pos: relative; r: 0px;">
+                <button data-ws="pos: absolute; y: 0px; -x: 0px; @color: @accent; w: 36px; h: 36px; r: 0px;">
+                    <ws-icon data-icon="x"></ws-icon>
+                </button>
+                <ws-flex data-ws="area: content; over: auto;" id="byblos-sidebar-content">
+                </ws-flex>
+            </ws-paper>
+            <style>
+                #byblos-sidebar-modal ul {
+                    list-style-type: none;
+                }
+            </style>
+        </ws-drawer>
     </ws-modal>
 `
+const [ sidebarButton ] = html`
+    <button data-ws="area: menu; t.sz: 20px;">
+        <ws-icon data-icon="menu-2"></ws-icon>
+    </button>
+`
 const setupSidebar = async (enabled, repo, nodes) => {
-    if (enabled !== true) {
+    if (enabled === null || enabled === undefined) {
         return {}
     }
     const side = await contentFetch("/_sidebar.md", repo)
     const sidebarHTML = marked.parse(await side.res.text())
     nodes.titlebar.append(sidebarButton)
-    nodes.screen.append(...sidebar)
+    nodes.screen.append(sidebar)
 
-    const frag = $(sidebar[1])
-    frag`ws-flex`.innerHTML = sidebarHTML
+    sidebarButton.addEventListener(
+        "click",
+        () => sidebar.show()
+    )
+
+    const frag = $(sidebar)
+    frag`button`.addEventListener(
+        "click",
+        () => sidebar.hide()
+    )
+    frag`ws-flex`.innerHTML = sidebarHTML.replace(
+        /:([a-zA-Z0-9_\-]+):/g,
+        (_, name) => `<ws-icon data-icon="${name}"></ws-icon>`
+    )
 
     nodes.sidebar = {
         button: sidebarButton,
-        layout: sidebar[1],
-        toggle: sidebar[0],
+        modal: sidebar,
     }
 
     document.addEventListener(
         "byblos:route-change",
-        () => nodes.sidebar.toggle.checked = false
+        () => sidebar.hide()
     )
 }
 const [ layout ] = html`
     <ws-screen>
         <ws-paper>
-            <ws-titlebar ws-x="[.header] [$fill]">
-                <span ws-x="[.title] [$title-text]">
-                </span>
-            </ws-titlebar>
+            <ws-grid data-ws="gr.cols: 1fr; p: 0px; area: header;">
+                <ws-titlebar data-ws="variant.fill; @color: @primary;">
+                    <ws-text title>
+                    </ws-text>
+                </ws-titlebar>
+            </ws-grid>
 
-            <ws-flex ws-x="[.content] [over auto]">
-                <div></div>
+            <ws-flex data-ws="area: content; over: auto;" id="byblos-content">
+                <div>
+                </div>
             </ws-flex>
         </ws-paper>
     </ws-screen>
@@ -179,22 +237,29 @@ const hashPath = (hash) => {
 const init = async (userOptions) => {
     options = {
         ...defaultOptions,
+        localMode: location.origin.startsWith("http://localhost"),
         ...userOptions,
-        localMode: location.origin.startsWith("http://localhost")
     }
     console.log(options)
 
-    addScript("./windstorm.js")
-    addScript("https://cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-core.min.js")
-    addScript("https://cdn.jsdelivr.net/npm/prismjs@1.30.0/plugins/autoloader/prism-autoloader.min.js")
+    localStorage.theme = localStorage.theme ?? options.theme
 
-    document.body.setAttribute("ws-x", "[!theme.tron] @@app")
+    addScript(
+        "https://cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-core.min.js",
+        { "data-manual": "" }
+    )
+    addScript(
+        "https://cdn.jsdelivr.net/npm/prismjs@1.30.0/plugins/autoloader/prism-autoloader.min.js"
+    )
+
+    document.body.setAttribute("data-ws", `#theme.${localStorage.theme};`)
     document.body.append(layout)
 
     const doc = $(layout)
     nodes.screen = layout
     nodes.titlebar = doc`ws-titlebar`
-    nodes.title = doc`span`
+    nodes.title = doc`ws-text`
+    nodes.titleGrid = doc`ws-grid`
     nodes.layout = doc`ws-paper`
     nodes.contentArea = doc`ws-flex`
     nodes.content = doc`div`
@@ -245,9 +310,33 @@ const init = async (userOptions) => {
     )
 }
 
+ws.component("#byblos-content")`
+    !& table {
+        *border-collapse: collapse;
+        !& td, th {
+            b: 1px solid hsl(@primary, @layer-element);
+            p: 4px;
+        }
+        !& th {
+            bg.c: hsl(@primary, @layer-element);
+            t.c: hsl(@mono, @layer-fill);
+        }
+        !& tr:nth-child(2n) {
+            bg.c: hsl(@mono, @layer-bg);
+        }
+    }
+`
+
 window.byblos = {
     init,
     marked,
     $,
     html,
+    addCodeCopy,
+    get theme() { return localStorage.theme },
+    set theme(next) {
+        localStorage.theme = next
+        document.body.setAttribute("data-ws", `#theme.${next};`)
+    },
+    ws,
 }

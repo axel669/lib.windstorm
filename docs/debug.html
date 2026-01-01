@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <link rel="icon" type="image/png" href="https://axel669.net/images/megaman-rounded.png" />
+        <meta name="viewport" content="initial-scale=1,maximum-scale=3,minimum-scale=1,width=device-width">
+        <meta charset="UTF-8" />
+
+        <title>WS:Debug</title>
+    </head>
+    <body data-ws="#theme.light;">
+        <script src="ws-es5.js"></script>
+        <ws-screen>
+            <ws-paper data-ws="variant.outline; elevate;">
+                <ws-titlebar data-ws="area: header; variant.fill; @color: @primary;">
+                    <ws-text title>
+                        Windstorm Docs?
+                        <ws-text subtitle>Subtitle</ws-text>
+                    </ws-text>
+
+                    <button data-ws="area: menu; t.sz: 20px;">
+                        <ws-icon data-icon="menu-2"></ws-icon>
+                    </button>
+
+                    <ws-select data-ws="area: action; b.w: 0px; !&:focus{ outln: none; }" id="theme">
+                        <span slot="selected">
+                            <ws-selected>None</ws-selected>
+                        </span>
+                        <ws-option value="light">
+                            <ws-icon data-icon="sun-filled"></ws-icon>
+                        </ws-option>
+                        <ws-option value="dark">
+                            <ws-icon data-icon="moon-filled"></ws-icon>
+                        </ws-option>
+                        <ws-option value="tron">
+                            <ws-icon data-icon="device-desktop"></ws-icon>
+                        </ws-option>
+                    </ws-select>
+                </ws-titlebar>
+                <ws-flex data-ws="over: auto;">
+                    <!-- <ws-modal id="test" data-ws="@anim-time: 500ms;">
+                        <ws-dialog>
+                            <div data-ws="w: 100%; h: 100%; bg.c: teal;">
+                                Some Content
+                            </div>
+                        </ws-dialog>
+                    </ws-modal>
+                    <button data-ws onclick="test.show()">Open Dialog</button> -->
+
+                    <div data-ws="! &::before { *content: 'testing'; t.c: @mono12; }"></div>
+                    <div>
+                        this is some text
+                    </div>
+
+                    <script>
+                        ws.macro("#colorize")`
+                            @base: hsl(@color 5%);
+                            @base-end: hsl(@color 95%);
+                        `
+                    </script>
+                    <ws-grid id="griddy"
+                    data-ws="
+                    p: 0px;
+                    gr.rows: repeat(12, 25px);
+                    gr.cols: repeat(7, 1fr);
+                    gr.flow: column;
+                    @prime: 184 80%;
+                    @color: @prime;
+                    ">
+                        <div data-ws="#colorize; bg.c: color-mix(in hsl, @base, @base-end 0%);"></div>
+                        <div data-ws="#colorize; bg.c: color-mix(in hsl, @base, @base-end 9%);"></div>
+                        <div data-ws="#colorize; bg.c: color-mix(in hsl, @base, @base-end 18%);"></div>
+                        <div data-ws="#colorize; bg.c: color-mix(in hsl, @base, @base-end 27%);"></div>
+                        <div data-ws="#colorize; bg.c: color-mix(in hsl, @base, @base-end 36%);"></div>
+                        <div data-ws="#colorize; bg.c: color-mix(in hsl, @base, @base-end 45%);"></div>
+                        <div data-ws="#colorize; bg.c: color-mix(in hsl, @base, @base-end 54%);"></div>
+                        <div data-ws="#colorize; bg.c: color-mix(in hsl, @base, @base-end 63%);"></div>
+                        <div data-ws="#colorize; bg.c: color-mix(in hsl, @base, @base-end 72%);"></div>
+                        <div data-ws="#colorize; bg.c: color-mix(in hsl, @base, @base-end 81%);"></div>
+                        <div data-ws="#colorize; bg.c: color-mix(in hsl, @base, @base-end 90%);"></div>
+                        <div data-ws="#colorize; bg.c: color-mix(in hsl, @base, @base-end 100%);"></div>
+                    </ws-grid>
+
+                    <ws-grid data-ws="gr.cols: repeat(7, 1fr);">
+                        <button data-ws="">mono</button>
+                        <button data-ws="@color: @primary; elevate;">primary</button>
+                        <button data-ws="@color: @success;">success</button>
+                        <button data-ws="@color: @error;">error</button>
+                        <button data-ws="@color: @warning;">warning</button>
+                        <button data-ws="@color: @accent;">accent</button>
+                        <button data-ws="@color: @info;">info</button>
+
+                        <button data-ws="variant.fill; ">mono</button>
+                        <button data-ws="variant.fill; @color: @primary;">primary</button>
+                        <button data-ws="variant.fill; @color: @success;">success</button>
+                        <button data-ws="variant.fill; @color: @error; elevate;">error</button>
+                        <button data-ws="variant.fill; @color: @warning;">warning</button>
+                        <button data-ws="variant.fill; @color: @accent;">accent</button>
+                        <button data-ws="variant.fill; @color: @info;">info</button>
+                    </ws-grid>
+
+                    <div>
+                        <ws-circle-spinner></ws-circle-spinner>
+                        <ws-circle-spinner data-ws="@color: @success;"></ws-circle-spinner>
+                        <ws-circle-spinner data-ws="@color: @accent;"></ws-circle-spinner>
+                    </div>
+                    <div>
+                        <ws-hexagon-spinner></ws-hexagon-spinner>
+                        <ws-hexagon-spinner data-ws="@color: @success;"></ws-hexagon-spinner>
+                        <ws-hexagon-spinner data-ws="@color: @accent;"></ws-hexagon-spinner>
+                    </div>
+
+                    <div data-ws="#colorize; bg.c: color-mix(in hsl, @base, @base-end @border-percent); @color: 184 80%; h: 25px;"></div>
+
+                    <script>
+                        const color = (name, s, l, i) =>
+                            // `<div data-ws="bg.c: hsl(@${name} ${s}% ${l}%);"></div>`
+                            `<div data-ws="bg.c: @${name}${i};"></div>`
+                        const steps = 12
+                        const min = 5
+                        const max = 93
+                        const step = (max - min) / (steps - 1)
+                        const colors = [
+                            // ["mono", 0],
+                            ["primary", 80],
+                            ["success", 80],
+                            ["warning", 80],
+                            ["error", 80],
+                            ["accent", 80],
+                            ["info", 80],
+                        ]
+                        const html = colors.map(
+                            ([name, s]) => Array.from(
+                                { length: steps },
+                                (_, i) => color(name, s, min + (i * step), i + 1)
+                            ).join("\n")
+                        ).join("\n\n")
+                        griddy.innerHTML += html
+                    </script>
+
+                    <div onchange="console.log(event)">
+                        <ws-select>
+                            <ws-option preview="first">1</ws-option>
+                            <ws-option>2</ws-option>
+                            <ws-optgroup label="pls">
+                                <ws-option>3</ws-option>
+                                <ws-option>4</ws-option>
+                            </ws-optgroup>
+                            <ws-option>option</ws-option>
+                            <ws-option>option</ws-option>
+                            <ws-option>option</ws-option>
+                            <ws-option>option</ws-option>
+                            <ws-option>option</ws-option>
+                            <ws-option>option</ws-option>
+                            <ws-option>option</ws-option>
+                            <ws-option>option</ws-option>
+                            <ws-option>option</ws-option>
+                        </ws-select>
+                    </div>
+
+                    <!-- <ws-progress
+                    min="1" max="10" value="5" buffer="8"
+                    data-ws="h: 20px; @color: @primary;"
+                    >
+                    </ws-progress>
+                    <ws-progress data-ws="h: 20px;" busy></ws-progress>
+
+                    <ws-circle-spinner></ws-circle-spinner>
+                    <ws-hexagon-spinner></ws-hexagon-spinner>
+
+                    <label control>
+                        <span data-label>Control Label</span>
+                        <input type="text" />
+
+                        <button data-ws="pad.compact; area: start; m: 2px; variant.outline;">
+                            test
+                        </button>
+                    </label>
+
+                    <label control>
+                        <span data-label>Control Label</span>
+                        <ws-select>
+                            <ws-option preview="first">1</ws-option>
+                            <ws-option>2</ws-option>
+                            <ws-optgroup label="pls">
+                                <ws-option>3</ws-option>
+                                <ws-option>4</ws-option>
+                            </ws-optgroup>
+                        </ws-select>
+
+                        <button data-ws="pad.compact; area: start; m: 2px; variant.outline;">
+                            test
+                        </button>
+                    </label>
+
+                    <ws-select data-ws="@color: @info;" onchange="console.log(event)">
+                        <ws-option preview="first">1</ws-option>
+                        <ws-option>2</ws-option>
+                        <ws-optgroup label="pls">
+                            <ws-option>3</ws-option>
+                            <ws-option>4</ws-option>
+                        </ws-optgroup>
+                    </ws-select> -->
+                    <!-- <button data-ws="@color: @success;">
+                        Button Example
+                    </button>
+                    <ws-tabs>
+                        <label tab>
+                            <input type="radio" name="radia" />
+                            <span>First</span>
+                        </label>
+                        <label tab>
+                            <input type="radio" name="radia" />
+                            <span>Second</span>
+                        </label>
+                    </ws-tabs>
+                    <ws-tabs data-ws="fill; @color: @accent;">
+                        <label tab>
+                            <input type="radio" name="radia2" />
+                            <span>First</span>
+                        </label>
+                        <label tab>
+                            <input type="radio" name="radia2" />
+                            <span>Second</span>
+                        </label>
+                    </ws-tabs>
+                    <ws-select direction="up">
+                        <span slot="selected">
+                            Theme: <ws-selected></ws-selected>
+                        </span>
+                        <ws-options slot="options" data-ws="p: 8px;">
+                            <ws-option>1</ws-option>
+                            <ws-option>
+                                <ws-icon data-icon="hexagon"></ws-icon>2
+                            </ws-option>
+                            <ws-optgroup label="pls">
+                                <ws-option data-ws="@text-color-normal: @success; @color: @success;">
+                                    <ws-icon data-icon="hexagon"></ws-icon>3
+                                </ws-option>
+                                <ws-option>4</ws-option>
+                            </ws-optgroup>
+                        </ws-options>
+                    </ws-select>
+                    <label for="test">Pls Work?</label>
+                    <ws-select data-ws="@color: @success; p: 8px; !&:host div { b: 4px solid white; }" id="test"
+                    onchange="console.log(event.target.value)">
+                        <span slot="selected">
+                            Selected: <ws-selected></ws-selected>
+                        </span>
+                        <ws-option value="wat" selected preview="testing">Wat</ws-option>
+                        <ws-option value="wat2" preview="<span data-ws='t.c: green;'>test</span>">Wat 2</ws-option>
+                        <ws-optgroup label="pls">
+                            <ws-option>
+                                <ws-icon data-icon="hexagon"></ws-icon>3
+                            </ws-option>
+                            <ws-option>
+                                <img src="https://cdn.frankerfacez.com/avatar/twitch/64263610" height="20" />
+                                4
+                            </ws-option>
+                        </ws-optgroup>
+                    </ws-select>
+                    <select data-ws="!&:focus{ outln: none; }" onchange="console.log(event)">
+                        <option>1</option>
+                        <option>2</option>
+                        <optgroup label="pls">
+                            <option>3</option>
+                            <option>4</option>
+                        </optgroup>
+                    </select>
+
+                    <div>force scroll</div>
+                    <div>force scroll</div>
+                    <div>force scroll</div>
+                    <div>force scroll</div>
+                    <div>force scroll</div>
+                    <div>force scroll</div>
+                    <div>force scroll</div>
+                    <div>force scroll</div>
+                    <div>force scroll</div>
+                    <div>force scroll</div>
+                    <div>force scroll</div>
+                    <div>force scroll</div>
+                    <div>force scroll</div>
+                    <div>force scroll</div>
+                    <div>force scroll</div>
+                    <div>force scroll</div>
+                    <div>force scroll</div>
+                    <div>force scroll</div>
+                    <div>force scroll</div>
+                    <div>force scroll</div>
+                    <div>force scroll</div>
+                    <div>force scroll</div>
+                    <div>force scroll</div>
+                    <div>force scroll</div>
+                    <div>force scroll</div>
+                    <div>force scroll</div>
+                    <div>force scroll</div>
+                    <div>force scroll</div>
+                    <div>force scroll</div>
+                    <div>force scroll</div>
+                    <div>force scroll</div>
+                    <div>force scroll</div>
+                    <div>force scroll</div>
+                    <div>force scroll</div>
+                    <div>force scroll</div>
+                    <div>force scroll</div> -->
+                </ws-flex>
+            </ws-paper>
+        </ws-screen>
+        <script>
+            // const sel = document.querySelector("#test")
+            // sel.append(
+            //     ...Array.from(
+            //         { length: 20 },
+            //         (_, i) => {
+            //             const el = document.createElement("ws-option")
+            //             el.innerHTML = `Option #${i}`
+            //             el.value = i
+            //             el.setAttribute("selected", "")
+            //             return el
+            //         }
+            //     )
+            // )
+            const themesel = document.querySelector("#theme")
+            let theme = localStorage.theme ?? "tron"
+            document.body.dataset.ws = `#theme.${theme};`
+            themesel.value = theme
+            themesel.addEventListener(
+                "change",
+                (e) => {
+                    const theme = e.target.value
+                    document.body.dataset.ws = `#theme.${theme};`
+                    localStorage.theme = theme
+                }
+            )
+        </script>
+        <!-- <script type="module">
+            console.log(ws)
+
+            console.log(
+                ws.x({
+                    test: true,
+                    "@color": false,
+                    "t.c": "white",
+                    "!&:hover": {
+                        "*color": "green",
+                    },
+                    "!|orientation: landscape|": {
+                        b: "1px solid black",
+                    }
+                })
+            )
+        </script>
+        <button data-ws>Testing</button>
+        <button data-ws="@color: @accent;">Testing</button>
+        <div data-ws="t.c: @accent; b: 1px solid white; p: 12px; !&:hover{ t.c: white; }">testing</div>
+        <span>
+            <div data-ws="*color: cyan;">testing</div>
+        </span> -->
+        <!-- <div data-ws="[t.c white] [elevate] [t.c:hover green]">testing</div> -->
+    </body>
+</html>

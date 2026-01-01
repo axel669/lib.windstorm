@@ -1,18 +1,18 @@
 <ws-flex>
     <ws-paper>
-        <ws-flex ws-x="[$content]">
+        <ws-flex>
             Just some paper
         </ws-flex>
     </ws-paper>
 
-    <ws-paper ws-x="[$elevate]">
-        <ws-titlebar ws-x="[$header]">
-            <span ws-x="[$title]">This one has a header</span>
+    <ws-paper data-ws="elevate;">
+        <ws-titlebar data-ws="area: header;">
+            <ws-text title>This one has a header</ws-text>
         </ws-titlebar>
-        <ws-flex ws-x="[$content]">
+        <ws-flex data-ws="b: 1px solid hsl(@mono, @layer-border);">
             With some content \o/
         </ws-flex>
-        <ws-flex ws-x="[$footer] [h 64px] [over auto]">
+        <ws-flex data-ws="area: footer; h: 64px; over: auto;">
             <div>Scrolling Footer Content</div>
             <div>Scrolling Footer Content</div>
             <div>Scrolling Footer Content</div>
@@ -24,16 +24,16 @@
         </ws-flex>
     </ws-paper>
 
-    <ws-paper ws-x="[$outline] [$color @secondary]">
-        <ws-titlebar ws-x="[$header]">
-            <span ws-x="[$title]">Give them some color</span>
+    <ws-paper data-ws="variant.outline; @color: @success;">
+        <ws-titlebar data-ws="area: header;">
+            <ws-text title>Give them some color</ws-text>
         </ws-titlebar>
-        <ws-flex ws-x="[$content]">
+        <ws-flex>
             And a border + some controls in the footer
         </ws-flex>
-        <ws-grid ws-x="[$footer] [gr.cols 1fr 1fr]">
-            <button ws-x="[$flat] [$color @danger]">Cancel</button>
-            <button ws-x="[$flat] [$color @secondary]">Use Windstorm</button>
+        <ws-grid data-ws="area: footer; gr.cols: 1fr 1fr;">
+            <button data-ws="@color: @error;">Cancel</button>
+            <button data-ws="@color: @success;">Use Windstorm</button>
         </ws-grid>
     </ws-paper>
 </ws-flex>

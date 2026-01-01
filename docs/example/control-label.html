@@ -1,0 +1,361 @@
+<ws-grid data-ws="gr.cols: 1fr 1fr;">
+    <ws-titlebar data-ws="col: span 2;">
+        <ws-text title>Outline Inputs</ws-text>
+    </ws-titlebar>
+    <label control data-ws="">
+        <span label-text>Text</span>
+        <input type="text" />
+    </label>
+    <label control data-ws="">
+        <span label-text>Password</span>
+        <input type="password" />
+    </label>
+    <label control data-ws="">
+        <span label-text>Number</span>
+        <input type="number" />
+    </label>
+    <label control data-ws="">
+        <span label-text>Email</span>
+        <input type="Email" />
+    </label>
+    <label control data-ws="">
+        <span label-text>Search</span>
+        <input type="search" />
+    </label>
+    <label control data-ws="">
+        <span label-text>Telephone Number</span>
+        <input type="tel" />
+    </label>
+    <label control data-ws="">
+        <span label-text>File</span>
+        <input type="file" />
+    </label>
+    <label control data-ws="">
+        <span label-text>Color</span>
+        <input type="color" />
+    </label>
+    <label control data-ws="">
+        <span label-text>Date</span>
+        <input type="date" />
+    </label>
+    <label control data-ws="">
+        <span label-text>Time</span>
+        <input type="time" />
+    </label>
+    <label control data-ws="">
+        <span label-text>DateTime</span>
+        <input type="datetime-local" />
+    </label>
+    <label control data-ws="">
+        <span label-text>Month</span>
+        <input type="month" />
+    </label>
+    <label control data-ws="">
+        <span label-text>Week</span>
+        <input type="week" />
+    </label>
+    <label control data-ws="">
+        <span label-text>
+            Select
+            <ws-text info>
+                Mistakes in CS
+            </ws-text>
+        </span>
+        <select>
+            <option>TypeScript</option>
+            <option>Java</option>
+            <option>Not teaching debugging</option>
+            <optgroup label="Honorable Mentions">
+                <option>Calling Machine Learning AI</option>
+            </optgroup>
+        </select>
+    </label>
+    <label control data-ws="">
+        <span label-text>
+            MultiSelect
+            <ws-text info>
+                Mistakes in CS
+            </ws-text>
+        </span>
+        <select size="4">
+            <option>Bitter Herba</option>
+            <option>Salty Herba</option>
+            <option>Sweet Herba</option>
+            <option>Spicy Herba</option>
+            <option>Sour Herba</option>
+        </select>
+    </label>
+    <label control data-ws="">
+        <div label-text>TextArea</div>
+        <textarea data-ws="h: 100px;"></textarea>
+    </label>
+    <label control data-ws="">
+        <span label-text>
+            WS-Select
+            <ws-text info>
+                Mistakes in CS
+            </ws-text>
+        </span>
+        <ws-select>
+            <ws-option>TypeScript</ws-option>
+            <ws-option>Java</ws-option>
+            <ws-option>Not teaching debugging</ws-option>
+            <ws-optgroup label="Honorable Mentions">
+                <ws-option>Calling Machine Learning AI</ws-option>
+            </ws-optgroup>
+        </ws-select>
+    </label>
+
+    <ws-titlebar data-ws="col: span 2;">
+        <ws-text title>Colorized</ws-text>
+    </ws-titlebar>
+    <ws-text header data-ws="t.c: hsl(@primary, @layer-element); col: span 2;">Primary</ws-text>
+    <label control data-ws=" @color: @primary;">
+        <span label-text>Flat</span>
+        <input />
+    </label>
+    <label control data-ws=" @color: @primary; variant.outline;">
+        <span label-text>Outline</span>
+        <input />
+    </label>
+    <label control data-ws=" @color: @primary; variant.lined;">
+        <span label-text>Lined</span>
+        <input />
+    </label>
+    <label control data-ws=" @color: @primary; variant.lined;">
+        <span label-text>
+            WS Select
+            <ws-text subtitle>
+                Is this cool?
+            </ws-text>
+        </span>
+        <ws-select>
+            <ws-option>Yes</ws-option>
+            <ws-option>Yes</ws-option>
+        </ws-select>
+    </label>
+
+    <ws-text header data-ws="t.c: hsl(@success, @layer-element); col: span 2;">Success</ws-text>
+    <label control data-ws=" @color: @success;">
+        <span label-text>Flat</span>
+        <input />
+    </label>
+    <label control data-ws=" @color: @success; variant.outline;">
+        <span label-text>Outline</span>
+        <input />
+    </label>
+    <label control data-ws=" @color: @success; variant.lined;">
+        <span label-text>Lined</span>
+        <input />
+    </label>
+    <label control data-ws=" @color: @success; variant.lined;">
+        <span label-text>
+            WS Select
+            <ws-text subtitle>
+                Is this cool?
+            </ws-text>
+        </span>
+        <ws-select>
+            <ws-option>Yes</ws-option>
+            <ws-option>Yes</ws-option>
+        </ws-select>
+    </label>
+
+    <ws-text header data-ws="t.c: hsl(@warning, @layer-element); col: span 2;">Warning</ws-text>
+    <label control data-ws=" @color: @warning;">
+        <span label-text>Flat</span>
+        <input />
+    </label>
+    <label control data-ws=" @color: @warning; variant.outline;">
+        <span label-text>Outline</span>
+        <input />
+    </label>
+    <label control data-ws=" @color: @warning; variant.lined;">
+        <span label-text>Lined</span>
+        <input />
+    </label>
+    <label control data-ws=" @color: @warning; variant.lined;">
+        <span label-text>
+            WS Select
+            <ws-text subtitle>
+                Is this cool?
+            </ws-text>
+        </span>
+        <ws-select>
+            <ws-option>Yes</ws-option>
+            <ws-option>Yes</ws-option>
+        </ws-select>
+    </label>
+
+    <ws-text header data-ws="t.c: hsl(@accent, @layer-element); col: span 2;">Accent</ws-text>
+    <label control data-ws=" @color: @accent;">
+        <span label-text>Flat</span>
+        <input />
+    </label>
+    <label control data-ws=" @color: @accent; variant.outline;">
+        <span label-text>Outline</span>
+        <input />
+    </label>
+    <label control data-ws=" @color: @accent; variant.lined;">
+        <span label-text>Lined</span>
+        <input />
+    </label>
+    <label control data-ws=" @color: @accent; variant.lined;">
+        <span label-text>
+            WS Select
+            <ws-text subtitle>
+                Is this cool?
+            </ws-text>
+        </span>
+        <ws-select>
+            <ws-option>Yes</ws-option>
+            <ws-option>Yes</ws-option>
+        </ws-select>
+    </label>
+
+    <ws-text header data-ws="t.c: hsl(@info, @layer-element); col: span 2;">Info</ws-text>
+    <label control data-ws=" @color: @info;">
+        <span label-text>Flat</span>
+        <input />
+    </label>
+    <label control data-ws=" @color: @info; variant.outline;">
+        <span label-text>Outline</span>
+        <input />
+    </label>
+    <label control data-ws=" @color: @info; variant.lined;">
+        <span label-text>Lined</span>
+        <input />
+    </label>
+    <label control data-ws=" @color: @info; variant.lined;">
+        <span label-text>
+            WS Select
+            <ws-text subtitle>
+                Is this cool?
+            </ws-text>
+        </span>
+        <ws-select>
+            <ws-option>Yes</ws-option>
+            <ws-option>Yes</ws-option>
+        </ws-select>
+    </label>
+
+    <ws-text header data-ws="t.c: hsl(@error, @layer-element); col: span 2;">Error</ws-text>
+    <label control data-ws=" @color: @error;">
+        <span label-text>Flat</span>
+        <input />
+    </label>
+    <label control data-ws=" @color: @error; variant.outline;">
+        <span label-text>Outline</span>
+        <input />
+    </label>
+    <label control data-ws=" @color: @error; variant.lined;">
+        <span label-text>Lined</span>
+        <input />
+    </label>
+    <label control data-ws=" @color: @error; variant.lined;">
+        <span label-text>
+            WS Select
+            <ws-text subtitle>
+                Is this cool?
+            </ws-text>
+        </span>
+        <ws-select>
+            <ws-option>Yes</ws-option>
+            <ws-option>Yes</ws-option>
+        </ws-select>
+    </label>
+
+    <ws-titlebar data-ws="col: span 2;">
+        <ws-text title>Adornments</ws-text>
+    </ws-titlebar>
+    <label control data-ws="">
+        <span label-text>Start Icon</span>
+        <input type="text" />
+        <div data-ws="adorn; area: start;">
+            <ws-icon data-icon="hexagon"></ws-icon>
+        </div>
+    </label>
+    <label control data-ws="">
+        <span label-text>End Icon</span>
+        <input type="text" />
+        <div data-ws="adorn; area: end;">
+            <ws-icon data-icon="hexagon"></ws-icon>
+        </div>
+    </label>
+    <label control data-ws="">
+        <span label-text>Start Button</span>
+        <input type="text" />
+        <button data-ws="area: start;">
+            Click
+        </button>
+    </label>
+    <label control data-ws="">
+        <span label-text>End Button</span>
+        <input type="text" />
+        <button data-ws="area: end;">
+            Click
+        </button>
+    </label>
+    <label control data-ws="">
+        <span label-text>Start Text</span>
+        <input type="text" />
+        <div data-ws="adorn; area: start;">
+            $
+        </div>
+    </label>
+    <label control data-ws="">
+        <span label-text>End Text</span>
+        <input type="text" />
+        <div data-ws="adorn; area: end;">
+            .00
+        </div>
+    </label>
+    <label control data-ws="">
+        <span label-text>Extra Text</span>
+        <input type="text" />
+        <ws-text info data-ws="area: extra;">
+            Some info here
+        </div>
+    </label>
+    <label control data-ws="">
+        <span label-text>Combinations</span>
+        <input type="text" />
+        <div data-ws="adorn; area: start;">
+            <ws-icon data-icon="hexagon"></ws-icon>
+        </div>
+        <button data-ws="area: end;">
+            Click
+        </button>
+        <ws-text info data-ws="area: extra;">
+            Even more info
+        </ws-text>
+    </label>
+
+    <ws-titlebar data-ws="col: span 2;">
+        <ws-text title>Disabled</ws-text>
+    </ws-titlebar>
+    <label control data-ws="@color: @primary;">
+        <span label-text>Primary</span>
+        <input type="text" disabled />
+    </label>
+    <label control data-ws="@color: @success;">
+        <span label-text>Success</span>
+        <input type="text" disabled />
+    </label>
+    <label control data-ws="@color: @accent;">
+        <span label-text>Accent</span>
+        <input type="text" disabled />
+    </label>
+    <label control data-ws="@color: @info;">
+        <span label-text>Info</span>
+        <input type="text" disabled />
+    </label>
+    <label control data-ws="@color: @warning;">
+        <span label-text>Warning</span>
+        <input type="text" disabled />
+    </label>
+    <label control data-ws="@color: @error;">
+        <span label-text>Error</span>
+        <input type="text" disabled />
+    </label>
+</ws-grid>

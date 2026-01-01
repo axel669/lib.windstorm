@@ -1,15 +1,8 @@
 # Screen
 The screen acts as a wrapper for a paper (or other container) to sit in
-and only provides the sizing/centering with the stacking visual effect.
-The top level of a page will likely be a screen but it doesnt have to be.
-
-When using Screen elements, the `@@app` marker needs to be set on the body. The
-marker sets some styles that the ws-screen interacts with to make things work
-correctly.
-
-## Component Macros
-- $left<br />
-    Left aligns the container in the screen
+and only provides the sizing/centering with simple controls. Most use will be
+at the top level of an app/page, or within modals for stacking contexts, but
+could be nested inside content areas if it makes sense.
 
 ## Variables
 
@@ -17,9 +10,10 @@ correctly.
 Defines how wide the screen's contents will be.<br />
 default: `min(720px, 100%)`
 
-### stack
-Increasing the stack number increases the space surrounding a screen,
-creating a stacking effect when multiple screens are overlayed with
-incrementing stack values.
+### pad-x/y
+Sets the padding on the horizontal or vertical blank space around the screen.
+Default is `auto`.
 
-[component.md : ../../../../test/preview/examples/screen.html :]: #
+### pad-top/left/bottom/right
+Sets the padding on one side of the blank space around the screen. Defaults to
+the `pad-x/y` that overrides it.

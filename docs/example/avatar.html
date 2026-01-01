@@ -4,14 +4,17 @@
         <object data="https://cdn.frankerfacez.com/avatar/twitch/64263610" type="image/png"></object>
     </ws-avatar>
     <div>Size can be controlled</div>
-    <ws-avatar ws-x="[@size 50px]">
+    <ws-avatar data-ws="@size: 50px;">
         <img src="https://cdn.frankerfacez.com/avatar/twitch/267212376" />
     </ws-avatar>
-    <ws-avatar ws-x="[@size 60px]">
+    <ws-avatar data-ws="@size: 60px;">
         <img src="https://cdn.frankerfacez.com/avatar/twitch/186685294" />
     </ws-avatar>
     <div>Can also put text/colors in instead of images</div>
-    <ws-avatar ws-x="[$color @primary]">
+    <ws-avatar data-ws="@color: @primary;">
         69
+    </ws-avatar>
+    <ws-avatar data-ws="@color: @success; variant.fill;">
+        42
     </ws-avatar>
 </ws-flex>

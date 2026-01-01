@@ -21,15 +21,19 @@
             byblos.init({
                 repo: "axel669/byblos",
                 branch: "dev",
-                sidebar: true,
+                sidebar: {
+                    title: "Windstorm",
+                },
                 "page.title": "Windstorm Docs",
                 "docs.title": "Windstorm Docs",
+                localMode: true,
+                theme: "dark",
                 plugins: [
                     {
                         preRender(contents) {
                             contents.page.content =
                                 contents.page.content
-                                .replaceAll("$VERSION", ws.version)
+                                .replaceAll("$VERSION", byblos.ws.version)
                         }
                     },
                     {
@@ -62,11 +66,61 @@
                                 return
                             }
 
-                            const iframe = document.createElement("iframe")
-                            iframe.srcdoc = `<html><body ws-x="[!theme.tron]"><script src="/windstorm.js"><\/script>${content.example}</body></html>`
-                            frame.append(iframe)
-                            code.innerHTML =
-                                byblos.marked.parse(`\`\`\`html\n${content.example}\n\`\`\``)
+                            const [ frameDetails ] = byblos.html`
+                                <details data-ws="@color: @accent;" open>
+                                    <summary>Demo</summary>
+                                </details>
+                            `
+                            frameDetails.innerHTML += content.example
+                            frame.append(frameDetails)
+                            code.innerHTML = `
+                                <details data-ws="@color: @accent;">
+                                    <summary>Code Example</summary>
+                                    ${byblos.marked.parse(`\`\`\`html\n${content.example}\n\`\`\``)}
+                                </details>
+                            `
+                            byblos.addCodeCopy(
+                                code.querySelector("pre")
+                            )
+
+                            const scripts = frameDetails.querySelectorAll("script")
+                            for (const script of scripts) {
+                                const f = new Function("frame", script.innerText)
+                                f(frameDetails)
+                            }
+                        }
+                    },
+                    {
+                        init(nodes) {
+                            window.addEventListener(
+                                "storage",
+                                () => console.log(localStorage)
+                            )
+                            const [ themeSelector ] = byblos.html`
+                                <ws-tabs>
+                                    <label tab>
+                                        <input type="radio" name="theme" value="light" />
+                                        <ws-tab>Light Theme</ws-tab>
+                                    </label>
+                                    <label tab>
+                                        <input type="radio" name="theme" value="dark" />
+                                        <ws-tab>Dark Theme</ws-tab>
+                                    </label>
+                                    <label tab>
+                                        <input type="radio" name="theme" value="tron" />
+                                        <ws-tab>Tron Theme</ws-tab>
+                                    </label>
+                                </ws-tabs>
+                            `
+                            nodes.titleGrid.append(themeSelector)
+
+                            themeSelector.querySelector(`input[value=${byblos.theme}]`).checked = true
+                            themeSelector.addEventListener(
+                                "input",
+                                (evt) => {
+                                    byblos.theme = evt.target.value
+                                }
+                            )
                         }
                     }
                 ]

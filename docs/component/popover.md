@@ -1,18 +1,29 @@
 # Popover
-It's a popup thing that isn't a modal and is tied to some content for
-positioning. Position relative to the element is done using the normal
-position values (x, y, -x, -y, inset-x, inset-y).
+Display content in a modal fashion but tie the location to a specific element
+(itself) on the page, rather than displaying completely separate from content.
+When the popover opens, it sets four variables on itself: `--x, --y, --w, --h`
+that are the x, y position and width/height of the bounding client rect for the
+popover element. The popover element displays its children in a standard inline
+display wrapper, and uses the `popver` slot to show popover content.
 
-The child elements not marked with the slot will be the content that is
-displayed normally, with the slot defining what content appears in the popover
-when it's open.
+## Attributes
 
-## Component Macros
-- $show
+### open
+Determines if the popover is shown or not via an attribute. Any value will make
+the modal show.
 
-## Areas
+### persistent
+If set, the popover will not close when the user clicks outside the popover
+slot content.
 
-### $content
-The content of the popover itself.
+## Slots
 
-[component.md : ../../../../test/preview/examples/popover.html :]: #
+### popover
+The content to show when the popover is shown.
+
+## Variables
+
+### anim-time
+The popover overrides the theme `--anim-time` variable with a value of `0ms` so
+that simple content that doesn't need to animate in and out can be shown without
+weirdly slow reaction time. Setting this will allow animations again.

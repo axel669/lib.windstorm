@@ -1,80 +1,68 @@
-<ws-grid ws-x="[gr.cols 1fr 1fr] [gap 8px]">
+<ws-grid data-ws="gr.cols-fit: 240px, 1fr; gap: 8px;">
     <ws-titlebar>
-        <span ws-x="[$title]">
-            <div ws-x="[$title-text]">Basic Titlebar</div>
-        </span>
+        <ws-text title>
+            Basic Titlebar
+        </ws-text>
     </ws-titlebar>
     <ws-titlebar>
-        <span ws-x="[$title]">
-            <div ws-x="[$title-text]">Basic Titlebar</div>
-            <div ws-x="[$subtitle-text]">With Subtitle</div>
-        </span>
-    </ws-titlebar>
-
-    <ws-titlebar>
-        <span ws-x="[$title] [$flat]">
-            <div ws-x="[$title-text]">Flat Titlebar</div>
-        </span>
-    </ws-titlebar>
-    <ws-titlebar>
-        <span ws-x="[$title] [$flat]">
-            <div ws-x="[$title-text]">Flat Titlebar</div>
-            <div ws-x="[$subtitle-text]">With Subtitle</div>
-        </span>
+        <ws-text title>
+            Basic Titlebar
+            <ws-text subtitle>With Subtitle</ws-text>
+        </ws-text>
     </ws-titlebar>
 
-    <ws-titlebar>
-        <span ws-x="[$title] [$color @primary] [$title-text]">
-            Color Titlebar
-        </span>
+    <ws-titlebar data-ws="@color: @success;">
+        <ws-text title>
+            Colorized Titlebar
+        </ws-text>
     </ws-titlebar>
 
-    <ws-titlebar>
-        <span ws-x="[$title] [$color @danger] [$title-text]">
-            Titlebar + controls
-        </span>
+    <ws-titlebar data-ws="@color: @error;">
+        <ws-text title>
+            Colorized Titlebar
+            <ws-text subtitle>+ Controls</ws-text>
+        </ws-text>
 
-        <button ws-x="[$flat]">
-            <ws-icon class="bi-list" ws-x="[t.sz 20px]"></ws-icon>
+        <button data-ws="area: menu; @color: @error;">
+            <ws-icon data-icon="menu-2"></ws-icon>
         </button>
     </ws-titlebar>
 
-    <ws-titlebar>
-        <span ws-x="[$title] [$fill] [$color @accent] [$title-text]">
-            Filled Color Titlebar
-        </span>
+    <ws-titlebar data-ws="variant.fill; @color: @accent;">
+        <ws-text title>
+            Filled Titlebar
+        </ws-text>
     </ws-titlebar>
 
-    <ws-titlebar>
-        <span ws-x="[$title] [$fill] [$color @secondary] [$title-text]">
-            Filled Titlebar + controls
-        </span>
+    <ws-titlebar data-ws="variant.fill; @color: @info;">
+        <ws-text title>
+            Filled Titlebar
+            <ws-text subtitle>+ Controls</ws-text>
+        </ws-text>
 
-        <div ws-x="[grid] [$action]">
-            <label ws-x="@@button [$compact]">
-                Done
-            </label>
-        </div>
+        <label button data-ws="area: action; pad.compact;">
+            Done
+        </label>
     </ws-titlebar>
 
-    <ws-paper>
-        <ws-titlebar ws-x="[$header]">
-            <span ws-x="[$title] [$flat]">
-                <div ws-x="[$title-text]">Flat Titlebar</div>
-                <div ws-x="[$subtitle-text]">in Paper</div>
-            </span>
+    <ws-paper data-ws="elevate;">
+        <ws-titlebar data-ws="area: header;">
+            <ws-text title>
+                Flat Titlebar
+                <ws-text subtitle>in Paper</ws-text>
+            </ws-text>
         </ws-titlebar>
         <ws-flex>
             <div>Paper Content</div>
         </ws-flex>
     </ws-paper>
 
-    <ws-paper ws-x="[$outline]">
-        <ws-titlebar ws-x="[$header]">
-            <span ws-x="[$title]">
-                <div ws-x="[$title-text]">Basic Titlebar</div>
-                <div ws-x="[$subtitle-text]">in Paper</div>
-            </span>
+    <ws-paper data-ws="variant.outline;">
+        <ws-titlebar data-ws="area: header; variant.fill;">
+            <ws-text title>
+                Filled Titlebar
+                <ws-text subtitle>in Paper</ws-text>
+            </ws-text>
         </ws-titlebar>
         <ws-flex>
             <div>Paper Content</div>

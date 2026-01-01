@@ -1,59 +1,59 @@
-<ws-grid ws-x="[gr.cols 1fr 1fr 1fr]">
-    <div ws-x="[col span 3]">Regular Links (with colors)</div>
-    <a href="#" ws-x>Default</a>
-    <a href="#" ws-x="[$color @primary]">Primary</a>
-    <a href="#" ws-x="[$color @secondary]">Secondary</a>
-    <a href="#" ws-x="[$color @danger]">Danger</a>
-    <a href="#" ws-x="[$color @warning]">Warning</a>
-    <a href="#" ws-x="[$color @accent]">Accent</a>
+<ws-grid data-ws="gr.cols: 1fr 1fr 1fr;">
+    <div data-ws="col: span 3;">Regular Links (with colors)</div>
+    <a href="#" data-ws="@color: @primary;">Primary</a>
+    <a href="#" data-ws="@color: @accent;">Accent</a>
+    <a href="#" data-ws="@color: @info;">Info</a>
+    <a href="#" data-ws="@color: @success;">Success</a>
+    <a href="#" data-ws="@color: @error;">Error</a>
+    <a href="#" data-ws="@color: @warning;">Warning</a>
 
-    <div ws-x="[col span 3]">Button Links (with colors)</div>
-    <a href="#" ws-x="@@button">Default</a>
-    <a href="#" ws-x="@@button [$outline]">Default</a>
-    <a href="#" ws-x="@@button [$fill]">Default</a>
-    <a href="#" disabled ws-x="@@button">Default</a>
-    <a href="#" disabled ws-x="@@button [$outline]">Default</a>
-    <a href="#" disabled ws-x="@@button [$fill]">Default</a>
+    <div data-ws="col: span 3;">Button Links (with colors)</div>
+    <a href="#" button data-ws="">Default</a>
+    <a href="#" button data-ws="variant.outline;">Default</a>
+    <a href="#" button data-ws="variant.fill;">Default</a>
+    <a href="#" disabled button data-ws="">Default</a>
+    <a href="#" disabled button data-ws="variant.outline;">Default</a>
+    <a href="#" disabled button data-ws="variant.fill;">Default</a>
 
-    <a href="#" ws-x="@@button [$elevate]">Elevated</a>
-    <a href="#" ws-x="@@button [$elevate] [$outline]">Elevated</a>
-    <a href="#" ws-x="@@button [$elevate] [$fill]">Elevated</a>
-    <a href="#" disabled ws-x="@@button [$elevate]">Elevated</a>
-    <a href="#" disabled ws-x="@@button [$elevate] [$outline]">Elevated</a>
-    <a href="#" disabled ws-x="@@button [$elevate] [$fill]">Elevated</a>
+    <a href="#" button data-ws="elevate;">Elevated</a>
+    <a href="#" button data-ws="elevate; variant.outline;">Elevated</a>
+    <a href="#" button data-ws="elevate; variant.fill;">Elevated</a>
+    <a href="#" disabled button data-ws="elevate;">Elevated</a>
+    <a href="#" disabled button data-ws="elevate; variant.outline;">Elevated</a>
+    <a href="#" disabled button data-ws="elevate; variant.fill;">Elevated</a>
 
-    <a href="#" ws-x="@@button [$color @primary]">Primary</a>
-    <a href="#" ws-x="@@button [$color @primary] [$outline]">Primary</a>
-    <a href="#" ws-x="@@button [$color @primary] [$fill]">Primary</a>
-    <a href="#" disabled ws-x="@@button [$color @primary]">Primary</a>
-    <a href="#" disabled ws-x="@@button [$color @primary] [$outline]">Primary</a>
-    <a href="#" disabled ws-x="@@button [$color @primary] [$fill]">Primary</a>
+    <a href="#" button data-ws="@color: @info;">Info</a>
+    <a href="#" button data-ws="@color: @info; variant.outline;">Info</a>
+    <a href="#" button data-ws="@color: @info; variant.fill;">Info</a>
+    <a href="#" disabled button data-ws="@color: @info;">Info</a>
+    <a href="#" disabled button data-ws="@color: @info; variant.outline;">Info</a>
+    <a href="#" disabled button data-ws="@color: @info; variant.fill;">Info</a>
 
-    <a href="#" ws-x="@@button [$color @secondary]">Secondary</a>
-    <a href="#" ws-x="@@button [$color @secondary] [$outline]">Secondary</a>
-    <a href="#" ws-x="@@button [$color @secondary] [$fill]">Secondary</a>
-    <a href="#" disabled ws-x="@@button [$color @secondary]">Secondary</a>
-    <a href="#" disabled ws-x="@@button [$color @secondary] [$outline]">Secondary</a>
-    <a href="#" disabled ws-x="@@button [$color @secondary] [$fill]">Secondary</a>
+    <a href="#" button data-ws="@color: @accent;">Accent</a>
+    <a href="#" button data-ws="@color: @accent; variant.outline;">Accent</a>
+    <a href="#" button data-ws="@color: @accent; variant.fill;">Accent</a>
+    <a href="#" disabled button data-ws="@color: @accent;">Accent</a>
+    <a href="#" disabled button data-ws="@color: @accent; variant.outline;">Accent</a>
+    <a href="#" disabled button data-ws="@color: @accent; variant.fill;">Accent</a>
 
-    <a href="#" ws-x="@@button [$color @danger]">Danger</a>
-    <a href="#" ws-x="@@button [$color @danger] [$outline]">Danger</a>
-    <a href="#" ws-x="@@button [$color @danger] [$fill]">Danger</a>
-    <a href="#" disabled ws-x="@@button [$color @danger]">Danger</a>
-    <a href="#" disabled ws-x="@@button [$color @danger] [$outline]">Danger</a>
-    <a href="#" disabled ws-x="@@button [$color @danger] [$fill]">Danger</a>
+    <a href="#" button data-ws="@color: @success;">Success</a>
+    <a href="#" button data-ws="@color: @success; variant.outline;">Success</a>
+    <a href="#" button data-ws="@color: @success; variant.fill;">Success</a>
+    <a href="#" disabled button data-ws="@color: @success;">Success</a>
+    <a href="#" disabled button data-ws="@color: @success; variant.outline;">Success</a>
+    <a href="#" disabled button data-ws="@color: @success; variant.fill;">Success</a>
 
-    <a href="#" ws-x="@@button [$color @warning]">Warning</a>
-    <a href="#" ws-x="@@button [$color @warning] [$outline]">Warning</a>
-    <a href="#" ws-x="@@button [$color @warning] [$fill]">Warning</a>
-    <a href="#" disabled ws-x="@@button [$color @warning]">Warning</a>
-    <a href="#" disabled ws-x="@@button [$color @warning] [$outline]">Warning</a>
-    <a href="#" disabled ws-x="@@button [$color @warning] [$fill]">Warning</a>
+    <a href="#" button data-ws="@color: @error;">Error</a>
+    <a href="#" button data-ws="@color: @error; variant.outline;">Error</a>
+    <a href="#" button data-ws="@color: @error; variant.fill;">Error</a>
+    <a href="#" disabled button data-ws="@color: @error;">Error</a>
+    <a href="#" disabled button data-ws="@color: @error; variant.outline;">Error</a>
+    <a href="#" disabled button data-ws="@color: @error; variant.fill;">Error</a>
 
-    <a href="#" ws-x="@@button [$color @accent]">Accent</a>
-    <a href="#" ws-x="@@button [$color @accent] [$outline]">Accent</a>
-    <a href="#" ws-x="@@button [$color @accent] [$fill]">Accent</a>
-    <a href="#" disabled ws-x="@@button [$color @accent]">Accent</a>
-    <a href="#" disabled ws-x="@@button [$color @accent] [$outline]">Accent</a>
-    <a href="#" disabled ws-x="@@button [$color @accent] [$fill]">Accent</a>
+    <a href="#" button data-ws="@color: @warning;">Warning</a>
+    <a href="#" button data-ws="@color: @warning; variant.outline;">Warning</a>
+    <a href="#" button data-ws="@color: @warning; variant.fill;">Warning</a>
+    <a href="#" disabled button data-ws="@color: @warning;">Warning</a>
+    <a href="#" disabled button data-ws="@color: @warning; variant.outline;">Warning</a>
+    <a href="#" disabled button data-ws="@color: @warning; variant.fill;">Warning</a>
 </ws-grid>

@@ -1,21 +1,21 @@
-<ws-paper ws-x="[$outline] [$color @primary]">
-    <ws-titlebar slot="header" ws-x="[$fill] [$color @secondary]">
-        <span ws-x="[slot title] [$title]">
+<ws-paper data-ws="variant.outline; @color: @primary;">
+    <ws-titlebar slot="header" data-ws="variant.fill; @color: @secondary;">
+        <span data-ws="slot: title; $title;">
             nth-child Selector
         </span>
 
-        <button ws-x="[$flat]">
+        <button data-ws="$flat;">
             Blep
-            <ws-modal ws-x="[$show]">
-                <ws-paper ws-x="[r 0px] @menu">
+            <ws-modal data-ws="$show;">
+                <ws-paper data-ws="r: 0px; @menu">
                     <ws-titlebar slot="header">
-                        <span ws-x="[slot title] [$title]">
+                        <span data-ws="slot: title; $title;">
                             nth-child Selector
                         </span>
                     </ws-titlebar>
 
-                    <ws-flex ws-x="[slot content]">
-                        <label ws-x="[$button] [$outline] [$color @accent]" for="action">
+                    <ws-flex data-ws="slot: content;">
+                        <label data-ws="$button; variant.outline; @color: @accent;" for="action">
                             Close
                         </label>
                         <span>
@@ -28,17 +28,17 @@
     </ws-titlebar>
 
     <ws-flex slot="content">
-        <div ws-x="nth-child(2n+1):[bg teal]">
+        <div data-ws="nth-child(2n+1):bg: teal;">
             <div>1</div>
             <div>2</div>
             <div>3</div>
         </div>
-        <div ws-x="nth-child(2n+1):[bg teal]">
+        <div data-ws="nth-child(2n+1):bg: teal;">
             <div>1</div>
             <div>2</div>
             <div>3</div>
         </div>
-        <div ws-x="nth-child(2n+1):[bg teal]">
+        <div data-ws="nth-child(2n+1):bg: teal;">
             <div>1</div>
             <div>2</div>
             <div>3</div>
@@ -46,7 +46,7 @@
     </ws-flex>
 </ws-paper>
 
-<div ws-x="[blep black]">
+<div data-ws="blep: black;">
     <div>1</div>
     <div>2</div>
     <div>3</div>

@@ -1,14 +1,14 @@
-<div ws-x="[p.y 30px]">
-    <ws-tooltip ws-x="[b.w 1px] [r 4px] [p 8px]" ws-text="Tooltip!">
+<div data-ws="p.y: 30px;">
+    <ws-tooltip data-ws="b.w: 1px; r: 4px; p: 8px;" ws-text="Tooltip!">
         Tooltip over
     </ws-tooltip>
 
-    <ws-tooltip ws-x="[$bottom] [b.w 1px] [r 4px] [p 8px]" ws-text="Tooltip!">
+    <ws-tooltip data-ws="$bottom; b.w: 1px; r: 4px; p: 8px;" ws-text="Tooltip!">
         Tooltip underneath
     </ws-tooltip>
 
     <ws-tooltip ws-text="Submit the form">
-        <button ws-x="[$color @secondary] [$fill] [w 200px]">
+        <button data-ws="@color: @secondary; variant.fill; w: 200px;">
             Submit
         </button>
     </ws-tooltip>

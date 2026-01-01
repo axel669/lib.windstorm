@@ -14,15 +14,18 @@ minor differences between a set of 20.
 
 ### CDN Link (global variable)
 ```html
-<script src="https://esm.sh/@axel669/windstorm@0.5.5/dist/browser.js?raw"></script>
+<!-- lib + components -->
+<script src="https://esm.sh/@axel669/windstorm@0.6.0/es5"></script>
+<!-- lib, no components -->
+<script src="https://esm.sh/@axel669/windstorm@0.6.0/nc-es5"></script>
 ```
 
 ### CDN Link (module)
 ```js
 // Only scanning, no functions
-import "https://esm.sh/@axel669/windstorm@0.5.5"
+import "https://esm.sh/@axel669/windstorm@0.6.0"
 // Import functions + scanning
-import ws from "https://esm.sh/@axel669/windstorm@0.5.5"
+import ws from "https://esm.sh/@axel669/windstorm@0.6.0"
 
 ws.x({...stuff})
 ```
@@ -43,140 +46,74 @@ windstorm in the build bundle will allow it to run before the framework adds DOM
 elements to the page.
 
 Once added to the page, windstorm will scan all current elements, and any
-elements added later for the `ws-x` attribute, and generate the necessary css
+elements added later for the `data-ws` attribute, and generate the necessary css
 immediately. Component css is automatically added to the head as well, so no
 extra work is needed to use any of the components. Components that transform
-standard tags will only work if the tag has the `ws-x` on it (although the value
+standard tags will only work if the tag has the `data-ws` on it (although the value
 can be empty).
 
 > Many of the windstorm components expect some css variables defined by the
 > theme to be present, so a theme should always be applied to the body.
 
 ```html
-<body ws-x="@@theme:tron">
-    <script src="https://esm.sh/@axel669/windstorm@0.5.5/dist/browser.js?raw"></script>
+<body data-ws="#theme.tron;">
+    <script src="https://esm.sh/@axel669/windstorm@0.6.0/standalone"></script>
     Static content here
 </body>
 ```
 
-> Any html elements that do not have the `ws-x` attribute are left alone,
+> Any html elements that do not have the `data-ws` attribute are left alone,
 > allowing windstorm to play nice with any other css lib (that I tried).
 
-### Macros and Markers
-Information about how macros work and how to create them is on the
-[Macros and Markers](./lib/macros-markers.md) page.
+### data-ws Attribute
+The `data-ws` attribute is what windstorm will scan to apply styles to elements.
+The attribute is formatted similar to regular css but with some important
+diffrences.
 
-### ws-x Attribute
-The `ws-x` attribute is what windstorm will scan to apply styles to elements.
-The attribute can have any number of macros and markers defined.
+Instead of css properties and their values, macros are used and applied in the
+order they are defined (and custom macros can be made). CSS can also be directly
+applied in the case where a built-in macro doesn't exist or work the way you
+need it to for the element. Macros can also contain macros inside them.
+Media queries and nested-selectors can be used even while in the element
+attribute. There is also a css variable shortcut that will either set the
+variable value when used in the macro name position, or will expand to the
+var syntax (without a default) when used in the value. Normal variable syntax
+also works without any edits.
 
-- Macro format: `[(<size>|)?<name>(:<states>)? (arg string)?]`
-- Marker format: `@@<marker>(:arg)?`
+[Macros](./lib/macros.md)
 
-Macros will apply specific styles and variables to whatever element they are
-defined on and are used to customize individual elements in specific ways.
-Custom macros can be defined, and are covered in the
-[Macros and Markers](./lib/macros-markers.md) documentation.
-
-The `states` for a macro are css states for controlling conditionally applied
-styles (ex: `:hover`). The `size` modifier for a macro will make it apply styles
-when certain screen size/orientation conditions are met.
-
-| Size | Screen State |
+| Macro Type | Syntax |
 | --- | --- |
-| sm | width <= 600px |
-| md | width <= 1024px |
-| lg | width >= 1025px |
-| lnd | orientation: landscape |
-| prt | orientation: portrait |
+| Normal Macro | `<macro name>` |
+| CSS | `*<css prop>` |
+| CSS variable | `@<var name>` |
 
-Markers are bits of css that change how an element is presented in a large way
-(themes, making links appear as buttons, etc). Markers don't get processed by the
-macro system, so they can be made using standard css syntax.
+Macros can also have a single argument, or multiple arguments. Macros that use
+a single argument will use that arg trimmed, and multi arg macros will have each
+argument trimmed. More details on using the arguments is found in the Macros
+page.
+
+```
+<macro>: <value>;
+
+! <nested-selector> {
+    <macro>: <value>;
+    ...
+}
+! | <media query> | {
+    <macro>: <value>;
+    ...
+}
+```
 
 ```html
-<div ws-x="[@color teal] [w 100px]">
+<!-- Sets the --color variable and width -->
+<div data-ws="@color: teal; w: 100px;">
     content
     <!-- Regular border will use the --primary variable for color -->
     <!-- border-color is changed on hover only to use the --color variable -->
-    <div ws-x="[b 1px solid @primary] [b.c:hover @color]">
+    <div data-ws="b: 1px solid @primary; ! &:hover { b.c: @color; }">
         other content
     </div>
 </div>
-```
-
-### @app and ws-screen
-The ws-screen component is designed to be a top level container for content that
-has consistent scrolling behavior for child elements across browsers and devices
-without the page resizing in weird ways from the various browser bars hiding and
-unhiding themselves from scrolling on mobile.
-
-As such, the use of ws-screen is entirely optional as all components will work
-without it being used, and if the regular browser scrolling behavior is not an
-issue, then ws-screen can be skipped entirely.
-
-If ws-screen is used, the body tag must have the `@app` marker added to the `ws-x`
-attribute. This will setup the css properties needed for ws-screen to control
-the scrolling behavior more effectively.
-
-```html
-<!-- Using ws-screen -->
-<body ws-x="@@theme:tron @@app">
-    <script src="<windstorm>"></script>
-    <ws-screen>
-        <ws-paper ws-x="[$outline]">
-            <ws-flex>
-                <button ws-x="[$fill] [$color primary] [r 8px]">
-                    Click Me!
-                </button>
-                <div ws-x="[w 100px] [h 200px] [bg.c teal]"></div>
-            </ws-flex>
-        </ws-paper>
-    </ws-screen>
-</body>
-```
-
-```html
-<!-- Normal pages work fine -->
-<body ws-x="@@theme:tron">
-    <script src="<windstorm>"></script>
-    <ws-paper ws-x="[$outline]">
-        <ws-flex>
-            <button ws-x="[$fill] [$color primary] [r 8px]">
-                Click Me!
-            </button>
-            <div ws-x="[w 100px] [h 200px] [bg.c teal]"></div>
-        </ws-flex>
-    </ws-paper>
-</body>
-```
-
-### API
-
-Windstorm has a few utility functions for making dynamic ws-x declarations
-easier, and making custom functions simpler.
-
-#### x(object)
-The `x` function takes in an object where each `[key, value]` pair will be
-converted into a valid string for the `ws-x` attribute, including formatting
-markers correctly. The value can take one of a few forms, and which form it takes
-will affect the output:
-- A string that will be used as the arg string<br />
-    `[key, value] -> "[key value]"`, `[@@key, value] -> "@@key:value"`
-- `true` (boolean) will output the function without an arg string<br />
-    `[key, true] -> "[key]"`, `[@@key, true] -> "@@key"`
-- `null`, `false`, or `undefined` will output nothing, useful for making
-    something that is toggled or catching when something isn't defined.<br />
-    `[key, value] -> ""`
-
-```js
-// returns "@@button [$outline] [r 4px] [b 1px solid @main-color] [@var 10px]"
-ws.x({
-    "@@button": true,
-    $outline: true,
-    r: "4px",
-    hide: false,
-    b: "1px solid @main-color",
-    "@var": "10px",
-})
 ```

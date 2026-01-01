@@ -1,15 +1,11 @@
 # Link
-Styling for the `a` tag. Tags without the `ws-x` attribute won't be styled,
-while the attribute with no functions will still style it. Links can be
-presented as link buttons by adding the `@@button` wind function.
+- _colorized_
+- _variants: see below_
 
-## Markers
+Styling for anchor (`a`) tags to keep them consistent with other windstorm
+styling.
 
-### @button
-Makes the anchor look and feel like a button.
-
-## Component Macros
-- $outline or $fill (with `@@button` only)
-- $color
-
-[component.md : ../../../../test/preview/examples/link.html :]: #
+`a` tags will only be styled by windstorm if they have the `data-ws` attribute
+on them, it doesn't need to have any specific value, only be present. The tags
+can also be made to look like buttons by adding the `button` attribute. See
+the [Button](#/component/button.md) page for details on the button styling.

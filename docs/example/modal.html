@@ -1,106 +1,51 @@
-<ws-grid ws-x="[gr.cols repeat(4, 1fr)]">
-    <label ws-x="@@button [$outline] [$color @secondary]" for="menu">
-        Menu
-    </label>
-    <label ws-x="@@button [$outline] [$color @secondary]" for="action">
-        Action
-    </label>
-    <label ws-x="@@button [$outline] [$color @secondary]" for="select">
-        Select
-    </label>
-    <label ws-x="@@button [$outline] [$color @secondary] [$elevate]" for="dialog">
-        Dialog
-    </label>
-
-    <button ws-x="[$outline] [$color @primary]">
-        Scripted
-    </button>
-</ws-grid>
-
-<input type="checkbox" ws-x="[hide]" id="menu" />
-<ws-modal>
-    <ws-paper ws-x="[r 0px] @@menu [w 200px]">
-        <ws-flex ws-x="[$content]">
-            <label ws-x="@@button [$outline] [$color @accent]" for="menu">
-                Close
-            </label>
-            <span>
-                This uses a paper for the content of the menu drawer and a set width
-            </span>
-        </ws-flex>
-    </ws-paper>
+<ws-modal id="ws_example_modal_simple">
+    <ws-dialog>
+        <ws-paper data-ws="elevate; w: 240px; h: 180px; @color: @info;">
+            <ws-titlebar data-ws="area: header;">
+                <ws-text header>Regular Modal</ws-text>
+            </ws-titlebar>
+            <ws-text>
+                Modal Content
+            </ws-text>
+        </ws-paper>
+    </ws-dialog>
 </ws-modal>
 
-<input type="checkbox" ws-x="[hide]" id="action" />
-<ws-modal>
-    <ws-paper ws-x="[r 0px] @@action">
-        <ws-flex ws-x="[$content]">
-            <label ws-x="@@button [$outline] [$color @accent]" for="action">
-                Close
-            </label>
-            <span>
-                Action drawer + paper container, expands with content
-            </span>
-        </ws-flex>
-    </ws-paper>
-</ws-modal>
-
-<input type="checkbox" ws-x="[hide]" id="select" />
-<ws-modal>
-    <label for="select"></label>
-    <div ws-x="@@select [r 8px] [b 1px solid @primary] [c teal] [bg.c black]">
-        <ws-flex>
-            <label ws-x="@@button [$outline] [$color @accent]" for="select">
-                Close
-            </label>
-            <span>
-                This just uses a div for the content with a bit of styling
-                <br />
-                And you can close it by clicking the empty space around it
-            </span>
-        </ws-flex>
-    </div>
-</ws-modal>
-
-<input type="checkbox" ws-x="[hide]" id="dialog" />
-<ws-modal ws-x="[@anim-time 100ms]">
-    <ws-paper ws-x="@@dialog">
-        <ws-titlebar ws-x="[$header]">
-            <span ws-x="[$title] [$title-text]">Dialog Example</span>
-        </ws-titlebar>
-        <ws-flex ws-x="[$content]">
-            <span>
-                This one is set to animate faster
-            </span>
-        </ws-flex>
-        <label ws-x="@@button [$footer] [$flat] [$color @accent]" for="dialog">
-            Close
-        </label>
-    </ws-paper>
-</ws-modal>
-
-<ws-modal data-code>
-    <ws-paper ws-x="[r 0px] @@menu [w 200px]">
-        <ws-flex ws-x="[$content]">
-            <button ws-x="[$outline] [$color @accent]">
+<ws-modal id="ws_example_modal_persistent" persistent>
+    <ws-dialog>
+        <ws-paper data-ws="elevate; w: 240px; h: 180px; @color: @info;">
+            <ws-titlebar data-ws="area: header;">
+                <ws-text header>Persistent Modal</ws-text>
+            </ws-titlebar>
+            <ws-text>
+                Modal Content
+            </ws-text>
+            <button data-ws="@color: @success; area: footer;" id="ws_modal_close">
                 Close
             </button>
-            <span>
-                This one uses a bit of js (more like how a framework might do it)
-            </span>
-        </ws-flex>
-    </ws-paper>
+        </ws-paper>
+    </ws-dialog>
 </ws-modal>
+
+<button data-ws="variant.fill; @color: @primary;" id="ws_modal_button_simple">
+    Open Standard Modal
+</button>
+
+<button data-ws="variant.fill; @color: @accent;" id="ws_modal_button_persistent">
+    Open Persistent Modal
+</button>
+
 <script>
-    const root = currentScript.parentNode
-    const modal = root.querySelector("ws-modal[data-code]")
-    const props = {
-        $show: false
-    }
-    const toggle = () => {
-        props.$show = props.$show === false
-        modal.setAttribute("ws-x", ws.x(props))
-    }
-    root.querySelector("button").addEventListener("click", toggle)
-    modal.querySelector("button").addEventListener("click", toggle)
+    ws_modal_button_simple.addEventListener(
+        "click",
+        () => ws_example_modal_simple.show()
+    )
+    ws_modal_button_persistent.addEventListener(
+        "click",
+        () => ws_example_modal_persistent.show()
+    )
+    ws_modal_close.addEventListener(
+        "click",
+        () => ws_example_modal_persistent.hide()
+    )
 </script>

@@ -1,60 +1,60 @@
 <ws-flex>
     <ws-titlebar>
-        <span ws-x="[$title] [$title-text]">
+        <ws-text title>
             Column Direction (default)
-        </span>
+        </ws-text>
     </ws-titlebar>
     <ws-flex>
-        <ws-chip ws-x="[$outline] [$color @primary]">
+        <ws-chip data-ws="variant.outline; @color: @primary;">
             Item 1
         </ws-chip>
-        <ws-chip ws-x="[$outline] [$color @primary]">
+        <ws-chip data-ws="variant.outline; @color: @primary;">
             Item 2
         </ws-chip>
-        <ws-chip ws-x="[$outline] [$color @primary]">
+        <ws-chip data-ws="variant.outline; @color: @primary;">
             Item 3
         </ws-chip>
-        <ws-chip ws-x="[$outline] [$color @primary]">
+        <ws-chip data-ws="variant.outline; @color: @primary;">
             Item 4
         </ws-chip>
     </ws-flex>
 
     <ws-titlebar>
-        <span ws-x="[$title] [$title-text]">
+        <ws-text title>
             Row Direction
-        </span>
+        </ws-text>
     </ws-titlebar>
-    <ws-flex ws-x="[fl.dir row]">
-        <ws-chip ws-x="[$outline] [$color @primary]">
+    <ws-flex data-ws="fl.dir: row;">
+        <ws-chip data-ws="variant.outline; @color: @primary;">
             Item 1
         </ws-chip>
-        <ws-chip ws-x="[$outline] [$color @primary]">
+        <ws-chip data-ws="variant.outline; @color: @primary;">
             Item 2
         </ws-chip>
-        <ws-chip ws-x="[$outline] [$color @primary]">
+        <ws-chip data-ws="variant.outline; @color: @primary;">
             Item 3
         </ws-chip>
-        <ws-chip ws-x="[$outline] [$color @primary]">
+        <ws-chip data-ws="variant.outline; @color: @primary;">
             Item 4
         </ws-chip>
     </ws-flex>
 
     <ws-titlebar>
-        <span ws-x="[$title] [$title-text]">
+        <ws-text title>
             Flex Item Properties
-        </span>
+        </ws-text>
     </ws-titlebar>
-    <ws-flex ws-x="[fl.dir row] [fl.wr wrap]">
-        <ws-chip ws-x="[$outline] [$color @primary] [fl.grow 1]">
+    <ws-flex data-ws="fl.dir: row; fl.wr: wrap;">
+        <ws-chip data-ws="variant.outline; @color: @primary; fl.grow: 1;">
             Item 1
         </ws-chip>
-        <ws-chip ws-x="[$outline] [$color @primary] [fl.grow 3]">
+        <ws-chip data-ws="variant.outline; @color: @primary; fl.grow: 3;">
             Item 2
         </ws-chip>
-        <ws-chip ws-x="[$outline] [$color @primary] [fl.grow 1]">
+        <ws-chip data-ws="variant.outline; @color: @primary; fl.grow: 1;">
             Item 3
         </ws-chip>
-        <ws-chip ws-x="[$outline] [$color @primary] [fl.grow 2] [fl.basis 150px]">
+        <ws-chip data-ws="variant.outline; @color: @primary; fl.grow: 2; fl.basis: 150px;">
             Item 4
         </ws-chip>
     </ws-flex>
