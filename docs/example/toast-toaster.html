@@ -1,0 +1,115 @@
+<ws-grid data-ws="gr.cols: 1fr 1fr;">
+    <ws-toast>
+        <ws-text notif-text data-ws="">
+            <ws-icon data-icon="hexagon">Pretend this has useful info</ws-icon>
+        </ws-text>
+    </ws-toast>
+
+    <ws-toast>
+        <ws-icon data-icon="hexagon" data-ws="area: start; adorn;"></ws-icon>
+        <ws-text notif-text data-ws="">
+            Add icons in the border
+            <div data-ws="$subtitle-text;">(probably with color)</div>
+        </ws-text>
+    </ws-toast>
+    <ws-toast data-ws="@color: @success;">
+        <ws-icon data-icon="hexagon" data-ws="area: end; adorn;"></ws-icon>
+        <ws-text notif-text data-ws="">
+            Icons on either side
+        </ws-text>
+    </ws-toast>
+
+    <ws-toast data-ws="@color: @warning;">
+        <button data-ws="area: start;">Click!</button>
+        <ws-text notif-text data-ws="">
+            <ws-icon data-icon="help-hexagon">You can add controls</ws-icon>
+        </ws-text>
+    </ws-toast>
+    <ws-toast data-ws="@color: @accent;">
+        <div data-ws="area: end; grid; gr.cols: 1fr;">
+            <button data-ws="">Click!</button>
+        </div>
+        <ws-text notif-text data-ws="">
+            <ws-icon data-icon="help-hexagon">Controls on either side</ws-icon>
+        </ws-text>
+    </ws-toast>
+</ws-grid>
+
+<ws-flex data-ws="gap: 0px;">
+    <label data-ws="*user-select: none; !&:has(:not(:checked)) + div { disp: none; }">
+        Show Left Toaster Locations
+        <input type="checkbox" data-ws="" />
+    </label>
+    <div>
+        <ws-toaster pos="top-left">
+            <ws-toast data-ws="@color: @success;">
+                <ws-text notif-text data-ws="">
+                    <ws-icon data-icon="hexagon">Example Notification</ws-icon>
+                </ws-text>
+            </ws-toast>
+        </ws-toaster>
+        <ws-toaster pos="center-left">
+            <ws-toast data-ws="@color: @success;">
+                <ws-text notif-text data-ws="">
+                    <ws-icon data-icon="hexagon">Example Notification</ws-icon>
+                </ws-text>
+            </ws-toast>
+        </ws-toaster>
+        <ws-toaster pos="bottom-left">
+            <ws-toast data-ws="@color: @success;">
+                <ws-text notif-text data-ws="">
+                    <ws-icon data-icon="hexagon">Example Notification</ws-icon>
+                </ws-text>
+            </ws-toast>
+        </ws-toaster>
+    </div>
+
+    <label data-ws="*user-select: none; !&:has(:not(:checked)) + div { disp: none; }">
+        Show Center Toaster Locations
+        <input type="checkbox" data-ws="" />
+    </label>
+    <div>
+        <ws-toaster pos="top-center">
+            <ws-toast data-ws="@color: @success;">
+                <ws-text notif-text data-ws="">
+                    <ws-icon data-icon="hexagon">Example Notification</ws-icon>
+                </ws-text>
+            </ws-toast>
+        </ws-toaster>
+        <ws-toaster pos="bottom-center">
+            <ws-toast data-ws="@color: @success;">
+                <ws-text notif-text data-ws="">
+                    <ws-icon data-icon="hexagon">Example Notification</ws-icon>
+                </ws-text>
+            </ws-toast>
+        </ws-toaster>
+    </div>
+
+    <label data-ws="*user-select: none; !&:has(:not(:checked)) + div { disp: none; }">
+        Show Right Toaster Locations
+        <input type="checkbox" data-ws="" />
+    </label>
+    <div>
+        <ws-toaster pos="top-right">
+            <ws-toast data-ws="@color: @success;">
+                <ws-text notif-text data-ws="">
+                    <ws-icon data-icon="hexagon">Example Notification</ws-icon>
+                </ws-text>
+            </ws-toast>
+        </ws-toaster>
+        <ws-toaster pos="center-right">
+            <ws-toast data-ws="@color: @success;">
+                <ws-text notif-text data-ws="">
+                    <ws-icon data-icon="hexagon">Example Notification</ws-icon>
+                </ws-text>
+            </ws-toast>
+        </ws-toaster>
+        <ws-toaster pos="bottom-right">
+            <ws-toast data-ws="@color: @success;">
+                <ws-text notif-text data-ws="">
+                    <ws-icon data-icon="hexagon">Example Notification</ws-icon>
+                </ws-text>
+            </ws-toast>
+        </ws-toaster>
+    </div>
+</ws-flex>
