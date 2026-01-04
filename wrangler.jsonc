@@ -10,5 +10,23 @@
     },
     "dev": {
         "port": 1338
+    },
+    "env": {
+        "dev": {
+            "routes": [
+                {
+                    "pattern": "ws-beta.axel669.net",
+                    "custom_domain": true,
+                }
+            ]
+        },
+        "prod": {
+            "routes": [
+                {
+                    "pattern": "windstorm.axel669.net",
+                    "custom_domain": true,
+                }
+            ]
+        }
     }
 }
