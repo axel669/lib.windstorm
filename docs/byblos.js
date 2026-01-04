@@ -266,9 +266,9 @@ const init = async (userOptions) => {
 
     repo.name = options.repo
     repo.branch = options.branch
-    const repoLoad = await github.get`/repos/${repo.name}/git/trees/${repo.branch}`().promise
-    const repoInfo = await repoLoad.res.json()
-    repo.hash = repoInfo.sha
+    // const repoLoad = await github.get`/repos/${repo.name}/git/trees/${repo.branch}`().promise
+    // const repoInfo = await repoLoad.res.json()
+    // repo.hash = repoInfo.sha
 
     const themeCSS = document.createElement("link")
     themeCSS.href = options["prism.theme"]
@@ -311,9 +311,9 @@ const init = async (userOptions) => {
 }
 
 ws.component("#byblos-content")`
-    !& table {
+    !& table:not([data-ws]) {
         *border-collapse: collapse;
-        !& td, th {
+        !& :is(td, th) {
             b: 1px solid hsl(@primary, @layer-element);
             p: 4px;
         }

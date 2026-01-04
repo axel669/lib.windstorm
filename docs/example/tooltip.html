@@ -1,15 +1,21 @@
 <div data-ws="p.y: 30px;">
-    <ws-tooltip data-ws="b.w: 1px; r: 4px; p: 8px;" ws-text="Tooltip!">
-        Tooltip over
+    <ws-tooltip data-ws="b.w: 1px; r: 4px; p: 8px;" text="Tooltip!" pos="top">
+        Tooltip Top
     </ws-tooltip>
 
-    <ws-tooltip data-ws="$bottom; b.w: 1px; r: 4px; p: 8px;" ws-text="Tooltip!">
-        Tooltip underneath
+    <ws-tooltip pos="bottom" data-ws="b.w: 1px; r: 4px; p: 8px; @color: @error;" text="Tooltip!">
+        Tooltip Bottom
+    </ws-tooltip>
+    <ws-tooltip pos="right" data-ws="b.w: 1px; r: 4px; p: 8px; @color: @warning;" text="Tooltip!">
+        Tooltip Right
+    </ws-tooltip>
+    <ws-tooltip pos="left" data-ws="b.w: 1px; r: 4px; p: 8px; @color: @accent;" text="Tooltip!">
+        Tooltip Left
     </ws-tooltip>
 
-    <ws-tooltip ws-text="Submit the form">
-        <button data-ws="@color: @secondary; variant.fill; w: 200px;">
-            Submit
+    <ws-tooltip text="Do Something" data-ws="@color: @primary;" pos="top">
+        <button data-ws="@color: @success; variant.fill; w: 200px;">
+            For Controls
         </button>
     </ws-tooltip>
 </div>

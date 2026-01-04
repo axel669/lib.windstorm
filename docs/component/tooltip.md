@@ -1,9 +1,13 @@
 # Tooltip
+- _colorized_
+
 Used to show a tooltip above or below some content when it's hovered over.
-Uses the `ws-text` attribute to determine what text to show.
 
-## Component Macros
-- $bottom<br />
-    Makes the tooltip appear below the content instead of over it.
+## Attributes
 
-[component.md : ../../../../test/preview/examples/tooltip.html :]: #
+### text
+The text of the tooltip.
+
+### pos
+Position of the tooltip relative to the content. Valid values are
+`top, bottom, left, right`

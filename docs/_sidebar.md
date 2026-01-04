@@ -22,6 +22,7 @@
     - :folder: Spinners
         - [:file: Circle Spinner](#/component/circle-spinner.md)
         - [:file: Hexagon Spinner](#/component/hexagon-spinner.md)
+    - [:file: Table](#/component/table.md)
     - [:file: Tabs](#/component/tabs.md)
     - [:file: Text](#/component/text.md)
     - [:file: Titlebar](#/component/titlebar.md)
