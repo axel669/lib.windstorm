@@ -1,0 +1,28 @@
+<ws-flex>
+    <ws-titlebar>
+        <ws-text title>Basic Progress Bar</ws-text>
+    </ws-titlebar>
+    <ws-progress value="0.3"></ws-progress>
+    <ws-progress value="0.7"></ws-progress>
+
+    <ws-titlebar>
+        <ws-text title>Colorized Progress Bar</ws-text>
+    </ws-titlebar>
+    <ws-progress value="0.3" data-ws="@color: @primary;"></ws-progress>
+    <ws-progress value="0.7" data-ws="@color: @success;"></ws-progress>
+
+    <ws-titlebar>
+        <ws-text title>
+            Interdemindate (busy) Progress Bar
+        </ws-text>
+    </ws-titlebar>
+    <ws-progress busy></ws-progress>
+    <ws-progress busy data-ws="@color: @primary;"></ws-progress>
+    <ws-progress busy data-ws="@color: @accent;"></ws-progress>
+
+    <ws-titlebar>
+        <ws-text title>Buffered Progress Bar</ws-text>
+    </ws-titlebar>
+    <ws-progress value="0.3" buffer="0.5"></ws-progress>
+    <ws-progress value="0.7" buffer="0.9" data-ws="@color: @error; r: 0px;"></ws-progress>
+</ws-flex>

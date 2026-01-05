@@ -1,0 +1,71 @@
+<ws-paper data-ws="variant.outline;">
+    <ws-titlebar data-ws="area: header;">
+        <ws-text title>Horizontal</ws-text>
+    </ws-titlebar>
+    <ws-flex>
+        <ws-tabs data-ws="@color: @primary; w: 50%;">
+            <label tab>
+                <input type="radio" name="tab" value="light" />
+                <ws-text>Light</ws-text>
+            </label>
+            <label tab>
+                <input type="radio" name="tab" value="dark"/>
+                <ws-text>Dark</ws-text>
+            </label>
+            <label tab>
+                <input type="radio" name="tab" value="tron" checked />
+                <ws-text>Tron</ws-text>
+            </label>
+        </ws-tabs>
+        <ws-tabs data-ws="variant.fill; @color: @success; w: 50%;">
+            <label tab>
+                <input type="radio" name="tab2" value="light" />
+                <ws-text>Light</ws-text>
+            </label>
+            <label tab>
+                <input type="radio" name="tab2" value="dark" checked />
+                <ws-text>Dark</ws-text>
+            </label>
+            <label tab>
+                <input type="radio" name="tab2" value="tron" />
+                <ws-text>Tron</ws-text>
+            </label>
+        </ws-tabs>
+    </ws-flex>
+</ws-paper>
+<br />
+<ws-paper data-ws="variant.outline;">
+    <ws-titlebar data-ws="area: header;">
+        <ws-text title>Vertical</ws-text>
+    </ws-titlebar>
+    <ws-flex>
+        <ws-tabs data-ws="gr.flow: row; w: 30%; p: 8px;">
+            <label tab>
+                <input type="radio" name="tab3" value="light" />
+                <ws-text>Light</ws-text>
+            </label>
+            <label tab>
+                <input type="radio" name="tab3" value="dark" />
+                <ws-text>Dark</ws-text>
+            </label>
+            <label tab>
+                <input type="radio" name="tab3" value="tron" checked />
+                <ws-text>Tron</ws-text>
+            </label>
+        </ws-tabs>
+        <ws-tabs data-ws="variant.fill; gr.flow: row; w: 40%; p: 8px;">
+            <label tab>
+                <input type="radio" name="tab4" value="light" checked />
+                <ws-text>Light</ws-text>
+            </label>
+            <label tab>
+                <input type="radio" name="tab4" value="dark" />
+                <ws-text>Dark</ws-text>
+            </label>
+            <label tab>
+                <input type="radio" name="tab4" value="tron" />
+                <ws-text>Tron</ws-text>
+            </label>
+        </ws-tabs>
+    </ws-flex>
+</ws-paper>

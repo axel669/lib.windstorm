@@ -1,0 +1,30 @@
+Normal
+<ws-flex data-ws="fl.dir: row;">
+    <ws-chip data-ws>
+        Filter 1
+    </ws-chip>
+    <ws-chip data-ws="variant.fill; @color: @success;">
+        Filter 2
+    </ws-chip>
+    <ws-chip data-ws="@color: @warning;">
+        Filter 3
+    </ws-chip>
+</ws-flex>
+Clickable
+<ws-flex data-ws="fl.dir: row;">
+    <ws-chip data-ws clickable>
+        <ws-icon data-icon="x">
+            Remove 1
+        </ws-icon>
+    </ws-chip>
+    <ws-chip data-ws="@color: @success;" clickable>
+        <ws-icon data-icon="x">
+            Remove 2
+        </ws-icon>
+    </ws-chip>
+    <ws-chip data-ws="@color: @warning; variant.fill;" clickable>
+        <ws-icon data-icon="x">
+            Remove 3
+        </ws-icon>
+    </ws-chip>
+</ws-flex>

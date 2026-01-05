@@ -1,15 +1,15 @@
 {
   "name": "@axel669/windstorm",
-  "version": "0.5.5",
+  "version": "0.6.0",
   "description": "",
-  "main": "dist/module.js",
   "type": "module",
   "scripts": {
     "build": "rollup -c build-config/rollup.config.mjs",
     "mkdocs": "ipsen",
     "host": "wrangler pages dev test/preview --port 45067",
     "host/docs": "wrangler pages dev site --port 45068",
-    "host/cdn": "wrangler pages dev cdn/artifacts --port 1337"
+    "host/cdn": "wrangler pages dev cdn/artifacts --port 1337",
+    "host.debug": "wrangler pages dev test/debug --port=1338"
   },
   "keywords": [],
   "author": "",
@@ -17,18 +17,30 @@
   "devDependencies": {
     "@axel669/ipsen": "0.4.1",
     "@rollup/plugin-terser": "^0.4.4",
-    "csso": "^5.0.5",
     "fs-jetpack": "^5.1.0",
     "js-yaml": "^4.1.0",
     "rollup": "^3.19.0",
     "rollup-plugin-delete": "^2.0.0",
-    "rollup-plugin-sass": "^1.12.19",
-    "sass": "^1.59.3"
+    "wrangler": "^4.33.2"
   },
   "files": [
     "dist"
   ],
   "windSettings": {
-    "fontVersion": "1"
+    "fontVersion": "2",
+    "iconVersion": "3.34.0"
+  },
+  "exports": {
+    ".": "./dist/ws-esm.js",
+    "./es5": "./dist/ws-es5.js",
+    "./nc": "./dist/ws-nc-esm.js",
+    "./nc-es5": "./dist/ws-nc-es5.js"
+  },
+  "imports": {
+    "#lib/*": "./lib/*.js",
+    "#com/*": "./lib/components/*.js"
+  },
+  "dependencies": {
+    "@rollup/plugin-node-resolve": "^16.0.1"
   }
 }

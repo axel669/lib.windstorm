@@ -1,0 +1,39 @@
+<ws-flex>
+    <ws-paper>
+        <ws-flex>
+            Just some paper
+        </ws-flex>
+    </ws-paper>
+
+    <ws-paper data-ws="elevate;">
+        <ws-titlebar data-ws="area: header;">
+            <ws-text title>This one has a header</ws-text>
+        </ws-titlebar>
+        <ws-flex data-ws="b: 1px solid hsl(@mono, @layer-border);">
+            With some content \o/
+        </ws-flex>
+        <ws-flex data-ws="area: footer; h: 64px; over: auto;">
+            <div>Scrolling Footer Content</div>
+            <div>Scrolling Footer Content</div>
+            <div>Scrolling Footer Content</div>
+            <div>Scrolling Footer Content</div>
+            <div>Scrolling Footer Content</div>
+            <div>Scrolling Footer Content</div>
+            <div>Scrolling Footer Content</div>
+            <div>Scrolling Footer Content</div>
+        </ws-flex>
+    </ws-paper>
+
+    <ws-paper data-ws="variant.outline; @color: @success;">
+        <ws-titlebar data-ws="area: header;">
+            <ws-text title>Give them some color</ws-text>
+        </ws-titlebar>
+        <ws-flex>
+            And a border + some controls in the footer
+        </ws-flex>
+        <ws-grid data-ws="area: footer; gr.cols: 1fr 1fr;">
+            <button data-ws="@color: @error;">Cancel</button>
+            <button data-ws="@color: @success;">Use Windstorm</button>
+        </ws-grid>
+    </ws-paper>
+</ws-flex>

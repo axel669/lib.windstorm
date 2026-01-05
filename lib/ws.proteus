@@ -1,0 +1,51 @@
+$ = #rules
+@rules = #(_ rule)* _
+    ---(rules)
+    return rules.map(rule => rule[1])
+    ---
+
+@rule
+    = #variable
+    = #css
+    = #subrule
+    = #macro
+
+@variable = "@" #cssName ":" _ #{ [^;]+ } ";"
+    ---(name, value)
+    return { type: "var", name, value }
+    ---
+
+@css = "*" #cssName ":" _ #{ [^;]+ } ";"
+    ---(name, value)
+    return { type: "css", name, value }
+    ---
+
+@cssName = #{ [a-z0-9_\-]i+ }
+
+@subrule = "!" _ #{ [^{]+ } "{" #rules "}"
+    ---(selector, rules)
+    return { type: "alt", selector: selector.trim(), rules }
+    ---
+
+@macro = #{ [a-zA-Z0-9\.\-_#\^\$\/]+ } #(":" _ macroValue)? ";"
+    ---(name, value)
+    return { type: "macro", name, value: value?.[2] }
+    ---
+@macroValue
+    = #("#" { [^;#]+ })+
+    ---(args)
+    const val = args.map(
+        arg => arg[1].trim()
+    )
+    val.arg = val.join(" ")
+    return val
+    ---
+
+    = #{ [^;]+ }
+    ---(value)
+    const val = [value.trim()]
+    val.arg = value
+    return val
+    ---
+
+@_ = [\s]m*

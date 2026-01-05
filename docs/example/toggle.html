@@ -1,0 +1,141 @@
+<ws-grid data-ws="gr.cols: 1fr 1fr; gap: 8px;">
+    <ws-titlebar data-ws="col: span 2;">
+        <ws-text header>Checkbox</ws-text>
+    </ws-titlebar>
+    <label toggle data-ws="">
+        <span>Outline Checkbox</span>
+        <input data-ws type="checkbox" />
+    </label>
+    <label toggle data-ws="">
+        <span>Flat Checkbox</span>
+        <input data-ws type="checkbox" />
+    </label>
+    <label toggle data-ws="">
+        <input data-ws type="checkbox" />
+        <span>Outline Checkbox (reverse)</span>
+    </label>
+    <label toggle data-ws="">
+        <input data-ws type="checkbox" />
+        <span>Flat Checkbox (reverse)</span>
+    </label>
+    <label toggle data-ws="variant.lined;">
+        <span>Lined Checkbox</span>
+        <input data-ws type="checkbox" />
+    </label>
+    <label toggle data-ws="variant.lined;">
+        <input data-ws type="checkbox" />
+        <span>Lined Checkbox (reverse)</span>
+    </label>
+
+    <ws-titlebar data-ws="col: span 2;">
+        <ws-text header>Switch</ws-text>
+    </ws-titlebar>
+    <label toggle data-ws="">
+        <span>Outline Switch</span>
+        <input data-ws type="checkbox" data-ws="" switch />
+    </label>
+    <label toggle data-ws="">
+        <span>Flat Switch</span>
+        <input data-ws type="checkbox" data-ws="" switch />
+    </label>
+    <label toggle data-ws="">
+        <input data-ws type="checkbox" data-ws="" switch />
+        <span>Outline Switch (reverse)</span>
+    </label>
+    <label toggle data-ws="">
+        <input data-ws type="checkbox" data-ws="" switch />
+        <span>Flat Switch (reverse)</span>
+    </label>
+    <label toggle data-ws="variant.lined;">
+        <span>Lined Switch</span>
+        <input data-ws type="checkbox" data-ws="" switch />
+    </label>
+    <label toggle data-ws="variant.lined;">
+        <input data-ws type="checkbox" data-ws="" switch />
+        <span>Lined Switch (reverse)</span>
+    </label>
+
+    <ws-titlebar data-ws="col: span 2;">
+        <ws-text header>Radio</ws-text>
+    </ws-titlebar>
+    <label toggle data-ws="">
+        <span>Outline Radio</span>
+        <input data-ws type="radio" name="radia" />
+    </label>
+    <label toggle data-ws="">
+        <span>Flat Radio</span>
+        <input data-ws type="radio" name="radia" />
+    </label>
+    <label toggle data-ws="">
+        <input data-ws type="radio" name="radia" />
+        <span>Outline Radio (reverse)</span>
+    </label>
+    <label toggle data-ws="">
+        <input data-ws type="radio" name="radia" />
+        <span>Flat Radio (reverse)</span>
+    </label>
+    <label toggle data-ws="variant.lined;">
+        <span>Lined Checkbox</span>
+        <input data-ws type="radio" name="radia" />
+    </label>
+    <label toggle data-ws="variant.lined;">
+        <input data-ws type="radio" name="radia" />
+        <span>Lined Checkbox (reverse)</span>
+    </label>
+
+    <ws-titlebar data-ws="col: span 2;">
+        <ws-text header>Colorized</ws-text>
+    </ws-titlebar>
+    <label toggle data-ws="@color: @primary;">
+        <span>Primary</span>
+        <input data-ws type="checkbox" />
+    </label>
+    <label toggle data-ws="@color: @success;">
+        <span>Secondary</span>
+        <input data-ws type="checkbox" data-ws="" switch />
+    </label>
+    <label toggle data-ws="@color: @accent;">
+        <span>Accent</span>
+        <input data-ws type="radio" name="radia" />
+    </label>
+    <label toggle data-ws="@color: @warning; ">
+        <span>Warning</span>
+        <input data-ws type="checkbox" />
+    </label>
+    <label toggle data-ws="@color: @error; ">
+        <span>Danger</span>
+        <input data-ws type="checkbox" data-ws="" switch />
+    </label>
+    <label toggle data-ws="@color: @warning; variant.lined;">
+        <span>Lined Warning</span>
+        <input data-ws type="checkbox" />
+    </label>
+    <label toggle data-ws="@color: @error; variant.lined;">
+        <span>Lined Danger</span>
+        <input data-ws type="checkbox" data-ws="" switch />
+    </label>
+
+    <ws-titlebar data-ws="col: span 2;">
+        <ws-text header>Disabled</ws-text>
+    </ws-titlebar>
+    <label toggle data-ws="@color: @primary;">
+        <span>Primary</span>
+        <input data-ws type="checkbox" disabled />
+    </label>
+    <label toggle data-ws="@color: @success;">
+        <span>Secondary</span>
+        <input data-ws type="checkbox" data-ws="" switch disabled />
+    </label>
+    <label toggle data-ws="@color: @accent;">
+        <span>Accent</span>
+        <input data-ws type="radio" name="radia" disabled />
+    </label>
+    <label toggle data-ws="@color: @warning; ">
+        <span>Warning</span>
+        <input data-ws type="checkbox" disabled />
+    </label>
+    <label toggle data-ws="@color: @error; ">
+        <span>Danger</span>
+        <input data-ws type="checkbox" data-ws="" switch disabled />
+    </label>
+</ws-grid>

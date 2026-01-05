@@ -1,0 +1,68 @@
+<ws-flex>
+    <ws-titlebar>
+        <ws-text title>
+            Row Direction (default)
+        </ws-text>
+    </ws-titlebar>
+    <ws-grid data-ws="gr.cols: 1fr 1fr 1fr;">
+        <ws-chip data-ws="variant.outline;">
+            Item 1
+        </ws-chip>
+        <ws-chip data-ws="variant.outline;">
+            Item 2
+        </ws-chip>
+        <ws-chip data-ws="variant.outline;">
+            Item 3
+        </ws-chip>
+        <ws-chip data-ws="variant.outline;">
+            Item 4
+        </ws-chip>
+    </ws-grid>
+
+    <ws-titlebar>
+        <ws-text title>
+            Column Direction
+        </ws-text>
+    </ws-titlebar>
+    <ws-grid data-ws="gr.flow: column; gr.rows: 1fr 1fr; gr.cols: 1fr 1fr;">
+        <ws-chip data-ws="variant.outline;">
+            Item 1
+        </ws-chip>
+        <ws-chip data-ws="variant.outline;">
+            Item 2
+        </ws-chip>
+        <ws-chip data-ws="variant.outline;">
+            Item 3
+        </ws-chip>
+        <ws-chip data-ws="variant.outline;">
+            Item 4
+        </ws-chip>
+    </ws-grid>
+
+    <ws-titlebar>
+        <div data-ws="$title;">
+            <ws-text title>
+                Auto-fit and Auto-fill macros
+                <ws-text subtitle>
+                    Resize the window to see effects
+                </ws-text>
+            </ws-text>
+        </div>
+    </ws-titlebar>
+    <ws-grid data-ws="gr.cols-fit: 80px, 1fr;">
+        <div data-ws="flex; fl-center;">auto-fit</div>
+        <button data-ws="variant.outline;">Button</button>
+        <button data-ws="variant.outline;">Button</button>
+        <button data-ws="variant.outline;">Button</button>
+        <button data-ws="variant.outline;">Button</button>
+        <button data-ws="variant.outline;">Button</button>
+    </ws-grid>
+    <ws-grid data-ws="gr.cols-fill: 80px, 1fr;">
+        <div data-ws="flex; fl-center;">auto-fill</div>
+        <button data-ws="variant.outline;">Button</button>
+        <button data-ws="variant.outline;">Button</button>
+        <button data-ws="variant.outline;">Button</button>
+        <button data-ws="variant.outline;">Button</button>
+        <button data-ws="variant.outline;">Button</button>
+    </ws-grid>
+</ws-flex>

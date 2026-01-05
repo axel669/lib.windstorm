@@ -1,0 +1,54 @@
+<ws-paper data-ws="variant.outline; @color: @primary;">
+    <ws-titlebar slot="header" data-ws="variant.fill; @color: @secondary;">
+        <span data-ws="slot: title; $title;">
+            nth-child Selector
+        </span>
+
+        <button data-ws="$flat;">
+            Blep
+            <ws-modal data-ws="$show;">
+                <ws-paper data-ws="r: 0px; @menu">
+                    <ws-titlebar slot="header">
+                        <span data-ws="slot: title; $title;">
+                            nth-child Selector
+                        </span>
+                    </ws-titlebar>
+
+                    <ws-flex data-ws="slot: content;">
+                        <label data-ws="$button; variant.outline; @color: @accent;" for="action">
+                            Close
+                        </label>
+                        <span>
+                            Actiond drawer + paper container
+                        </span>
+                    </ws-flex>
+                </ws-paper>
+            </ws-modal>
+        </button>
+    </ws-titlebar>
+
+    <ws-flex slot="content">
+        <div data-ws="nth-child(2n+1):bg: teal;">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div data-ws="nth-child(2n+1):bg: teal;">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div data-ws="nth-child(2n+1):bg: teal;">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+    </ws-flex>
+</ws-paper>
+
+<div data-ws="blep: black;">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+</div>
