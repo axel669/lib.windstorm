@@ -1,21 +1,17 @@
 {
   "name": "@axel669/windstorm",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "",
   "type": "module",
   "scripts": {
-    "build": "rollup -c build-config/rollup.config.mjs",
-    "mkdocs": "ipsen",
-    "host": "wrangler pages dev test/preview --port 45067",
-    "host/docs": "wrangler pages dev site --port 45068",
-    "host/cdn": "wrangler pages dev cdn/artifacts --port 1337",
-    "host.debug": "wrangler pages dev test/debug --port=1338"
+    "build": "rollup -c build-config/rollup.config.mjs"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "devDependencies": {
     "@axel669/ipsen": "0.4.1",
+    "@rollup/plugin-node-resolve": "^16.0.1",
     "@rollup/plugin-terser": "^0.4.4",
     "fs-jetpack": "^5.1.0",
     "js-yaml": "^4.1.0",
@@ -39,8 +35,5 @@
   "imports": {
     "#lib/*": "./lib/*.js",
     "#com/*": "./lib/components/*.js"
-  },
-  "dependencies": {
-    "@rollup/plugin-node-resolve": "^16.0.1"
   }
 }

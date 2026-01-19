@@ -4,10 +4,6 @@
 
 ## Attributes
 
-### direction
-Set the direction the select opens (it's not determined with magic code _yet_).
-Default direction is down, can be set to `"up"`.
-
 ### open
 Can be used to determine if the select is open. Any value will open the select,
 only removing the attribute closes it.
