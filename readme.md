@@ -15,17 +15,17 @@ minor differences between a set of 20.
 ### CDN Link (global variable)
 ```html
 <!-- lib + components -->
-<script src="https://esm.sh/@axel669/windstorm@0.6.1/es5"></script>
+<script src="https://esm.sh/@axel669/windstorm@1.0.0-beta.0/es5"></script>
 <!-- lib, no components -->
-<script src="https://esm.sh/@axel669/windstorm@0.6.1/nc-es5"></script>
+<script src="https://esm.sh/@axel669/windstorm@1.0.0-beta.0/nc-es5"></script>
 ```
 
 ### CDN Link (module)
 ```js
 // Only scanning, no functions
-import "https://esm.sh/@axel669/windstorm@0.6.1"
+import "https://esm.sh/@axel669/windstorm@1.0.0-beta.0"
 // Import functions + scanning
-import ws from "https://esm.sh/@axel669/windstorm@0.6.1"
+import ws from "https://esm.sh/@axel669/windstorm@1.0.0-beta.0"
 
 ws.x({...stuff})
 ```
@@ -55,9 +55,13 @@ can be empty).
 > Many of the windstorm components expect some css variables defined by the
 > theme to be present, so a theme should always be applied to the body.
 
+> _Windstorm does not animate the modal components by default so that animation_
+> _can be handled by the programmer and without messing with frameworks._
+> _Add the #animate macro to setup some base animations that look good._
+
 ```html
-<body data-ws="#theme.tron;">
-    <script src="https://esm.sh/@axel669/windstorm@0.6.1/standalone"></script>
+<body data-ws="#theme.tron; #animate;">
+    <script src="https://esm.sh/@axel669/windstorm@1.0.0-beta.0/es5?raw"></script>
     Static content here
 </body>
 ```

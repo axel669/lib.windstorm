@@ -252,7 +252,7 @@ const init = async (userOptions) => {
         "https://cdn.jsdelivr.net/npm/prismjs@1.30.0/plugins/autoloader/prism-autoloader.min.js"
     )
 
-    document.body.setAttribute("data-ws", `#theme.${localStorage.theme};`)
+    document.body.setAttribute("data-ws", `#theme.${localStorage.theme}; #animate;`)
     document.body.append(layout)
 
     const doc = $(layout)
@@ -336,7 +336,7 @@ window.byblos = {
     get theme() { return localStorage.theme },
     set theme(next) {
         localStorage.theme = next
-        document.body.setAttribute("data-ws", `#theme.${next};`)
+        document.body.setAttribute("data-ws", `#theme.${next}; #animate;`)
     },
     ws,
 }

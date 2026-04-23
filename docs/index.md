@@ -55,9 +55,13 @@ can be empty).
 > Many of the windstorm components expect some css variables defined by the
 > theme to be present, so a theme should always be applied to the body.
 
+> _Windstorm does not animate the modal components by default so that animation_
+> _can be handled by the programmer and without messing with frameworks._
+> _Add the #animate macro to setup some base animations that look good._
+
 ```html
-<body data-ws="#theme.tron;">
-    <script src="https://esm.sh/@axel669/windstorm@$VERSION/standalone"></script>
+<body data-ws="#theme.tron; #animate;">
+    <script src="https://esm.sh/@axel669/windstorm@$VERSION/es5?raw"></script>
     Static content here
 </body>
 ```
