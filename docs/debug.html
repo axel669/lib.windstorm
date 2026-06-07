@@ -21,7 +21,7 @@
                         <ws-icon data-icon="menu-2"></ws-icon>
                     </button>
 
-                    <ws-select data-ws="area: action; b.w: 0px; !&:focus{ outln: none; }" id="theme">
+                    <ws-select data-ws="area: action; @color: @accent; b.w: 0px; !&:focus{ outln: none; }" id="theme">
                         <span slot="selected">
                             <ws-selected>None</ws-selected>
                         </span>
@@ -47,7 +47,7 @@
                     <button data-ws onclick="test.show()">Open Dialog</button> -->
 
                     <div data-ws="! &::before { *content: 'testing'; t.c: @mono12; }"></div>
-                    <div>
+                    <div id="preact">
                         this is some text
                     </div>
 
@@ -138,6 +138,24 @@
                     </script>
 
                     <div onchange="console.log(event)">
+                        <ws-select>
+                            <ws-option preview="first">1</ws-option>
+                            <ws-option>2</ws-option>
+                            <ws-optgroup label="pls">
+                                <ws-option>3</ws-option>
+                                <ws-option>4</ws-option>
+                            </ws-optgroup>
+                            <ws-option>option</ws-option>
+                            <ws-option>option</ws-option>
+                            <ws-option>option</ws-option>
+                            <ws-option>option</ws-option>
+                            <ws-option>option</ws-option>
+                            <ws-option>option</ws-option>
+                            <ws-option>option</ws-option>
+                            <ws-option>option</ws-option>
+                            <ws-option>option</ws-option>
+                        </ws-select>
+                        <div data-ws="h: 300px;"></div>
                         <ws-select>
                             <ws-option preview="first">1</ws-option>
                             <ws-option>2</ws-option>
@@ -333,29 +351,33 @@
                 }
             )
         </script>
-        <!-- <script type="module">
-            console.log(ws)
+        <script type="module">
+            import { render, html, signal } from "./byblos/comp.js"
 
-            console.log(
-                ws.x({
-                    test: true,
-                    "@color": false,
-                    "t.c": "white",
-                    "!&:hover": {
-                        "*color": "green",
-                    },
-                    "!|orientation: landscape|": {
-                        b: "1px solid black",
-                    }
-                })
+            const num = signal(0)
+
+            const Test = () => {
+                const inc = () => num.value += 1
+                return html`
+                    <div>
+                        <button data-ws="@color: @primary;" onClick=${inc}>
+                            Inc
+                        <//>
+                        <ws-select value=${num.value.toString()}>
+                            <ws-option value="1">1<//>
+                            <ws-option value="2">2<//>
+                            <ws-option value="3">3<//>
+                            <ws-option value="4">4<//>
+                            <ws-option value="5">5<//>
+                        <//>
+                    <//>
+                `
+            }
+
+            render(
+                html`<${Test} />`,
+                document.querySelector("#preact")
             )
         </script>
-        <button data-ws>Testing</button>
-        <button data-ws="@color: @accent;">Testing</button>
-        <div data-ws="t.c: @accent; b: 1px solid white; p: 12px; !&:hover{ t.c: white; }">testing</div>
-        <span>
-            <div data-ws="*color: cyan;">testing</div>
-        </span> -->
-        <!-- <div data-ws="[t.c white] [elevate] [t.c:hover green]">testing</div> -->
     </body>
 </html>
