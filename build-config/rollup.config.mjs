@@ -37,7 +37,7 @@ const libVersion = {
         }
         const modified = code.replace(
             /`(.|\n)+?`/g,
-            (match) => match.replace(/\n */g, "").replace(/: +/g, ":")
+            (match) => match.replace(/\n */g, " ").replace(/: +/g, ":")
         )
         // console.log(modified)
         return modified
