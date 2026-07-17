@@ -2,6 +2,7 @@ import fs from "fs-jetpack"
 import del from "rollup-plugin-delete"
 import terser from "@rollup/plugin-terser"
 import resolve from "@rollup/plugin-node-resolve"
+import * as path from "node:path"
 
 const packageInfo = fs.read("package.json", "json")
 
@@ -26,7 +27,21 @@ const libVersion = {
             ...packageInfo.windSettings,
         }
         return `export default ${JSON.stringify(libInfo)}`
-    }
+    },
+    transform(code, id) {
+        const dir = path.basename(
+            path.dirname(id)
+        )
+        if (dir !== "components") {
+            return code
+        }
+        const modified = code.replace(
+            /`(.|\n)+?`/g,
+            (match) => match.replace(/\n */g, "").replace(/: +/g, ":")
+        )
+        // console.log(modified)
+        return modified
+    },
 }
 
 export default [
