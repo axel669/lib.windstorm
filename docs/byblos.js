@@ -209,7 +209,7 @@ const setupSidebar = async (enabled, repo, nodes) => {
 }
 const [ layout ] = html`
     <ws-screen>
-        <ws-paper>
+        <ws-paper data-ws="elevate; r: 0px;">
             <ws-grid data-ws="gr.cols: 1fr; p: 0px; area: header;">
                 <ws-titlebar data-ws="variant.fill; @color: @primary;">
                     <ws-text title>

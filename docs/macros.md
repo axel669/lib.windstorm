@@ -196,6 +196,8 @@ components easier.
 
 | Name | Def |
 | :-- | :-- |
+|  `elevate` | sh.box: 0px 2px 2px @shadow-color; |
+|  `elevated` | sh.box: 0px 2px calc(%arg * 2px) @shadow-color; |
 |  `fl.cn` | fl.cross: center;<br /> fl.main: center; |
 |  `fl.cn.cross` | fl.cross: center; |
 |  `fl.cn.main` | fl.main: center; |
@@ -214,4 +216,3 @@ components easier.
 |  `gr.cols-fill` | *grid-template-columns: repeat(auto-fill, minmax(%arg)); |
 |  `text.subtitle` | t.sz: @text-size-subtitle;<br /> flex;<br /> fl.main: center;<br /> p: 0px 8px; |
 |  `text.title` | t.sz: @text-size-title;<br /> flex;<br /> fl.main: center;<br /> p: 4px 8px; |
-|  `elevate` | sh.box: 0px 2px 3px @shadow-color; |

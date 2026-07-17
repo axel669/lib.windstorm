@@ -7,14 +7,16 @@ settings:
 importers:
 
   .:
-    dependencies:
-      '@rollup/plugin-node-resolve':
-        specifier: ^16.0.1
-        version: 16.0.1(rollup@3.19.0)
     devDependencies:
       '@axel669/ipsen':
         specifier: 0.4.1
         version: 0.4.1
+      '@axel669/proteus':
+        specifier: ^0.1.8
+        version: 0.1.8
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.1
+        version: 16.0.1(rollup@3.19.0)
       '@rollup/plugin-terser':
         specifier: ^0.4.4
         version: 0.4.4(rollup@3.19.0)
@@ -39,6 +41,9 @@ packages:
   '@axel669/ipsen@0.4.1':
     resolution: {integrity: sha512-hpJDLA7ev13aHnWfBd7gJRYr1u12xlT2R0zATVvdX/y7e8NZT0t9/aSnSBv5Xu0dUCBs2TRVD4vPaWEafwcvvw==}
     hasBin: true
+
+  '@axel669/proteus@0.1.8':
+    resolution: {integrity: sha512-2BVOTbBSLzRz0cPMvXaQNNr2nN5vr0P/Un5JTCetnA73tJ0imdH5qUO9Ek+x/kAZvuVzCfq+vynS1L/dH8g3WA==}
 
   '@cloudflare/kv-asset-handler@0.4.0':
     resolution: {integrity: sha512-+tv3z+SPp+gqTIcImN9o0hqE9xyfQjI1XD9pL6NuKjua9B1y7mNYv0S9cP+QEbA4ppVgGZEmKOvHX5G5Ei1CVA==}
@@ -880,6 +885,8 @@ snapshots:
       prismjs: 1.29.0
       xml-beautifier: 0.5.0
       yaml-front-matter: 4.1.1
+
+  '@axel669/proteus@0.1.8': {}
 
   '@cloudflare/kv-asset-handler@0.4.0':
     dependencies:
