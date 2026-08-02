@@ -15,17 +15,17 @@ minor differences between a set of 20.
 ### CDN Link (global variable)
 ```html
 <!-- lib + components -->
-<script src="https://esm.sh/@axel669/windstorm@1.0.0-beta.2/es5"></script>
+<script src="https://esm.sh/@axel669/windstorm@1.0.0-beta.4/es5"></script>
 <!-- lib, no components -->
-<script src="https://esm.sh/@axel669/windstorm@1.0.0-beta.2/nc-es5"></script>
+<script src="https://esm.sh/@axel669/windstorm@1.0.0-beta.4/nc-es5"></script>
 ```
 
 ### CDN Link (module)
 ```js
 // Only scanning, no functions
-import "https://esm.sh/@axel669/windstorm@1.0.0-beta.2"
+import "https://esm.sh/@axel669/windstorm@1.0.0-beta.4"
 // Import functions + scanning
-import ws from "https://esm.sh/@axel669/windstorm@1.0.0-beta.2"
+import ws from "https://esm.sh/@axel669/windstorm@1.0.0-beta.4"
 
 ws.x({...stuff})
 ```
@@ -61,7 +61,7 @@ can be empty).
 
 ```html
 <body data-ws="#theme.tron; #animate;">
-    <script src="https://esm.sh/@axel669/windstorm@1.0.0-beta.2/es5?raw"></script>
+    <script src="https://esm.sh/@axel669/windstorm@1.0.0-beta.4/es5?raw"></script>
     Static content here
 </body>
 ```
