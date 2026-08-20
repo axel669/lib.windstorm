@@ -32,7 +32,9 @@ const libVersion = {
         const dir = path.basename(
             path.dirname(id)
         )
-        if (dir !== "components") {
+        const file = path.basename(id)
+        // console.log(dir !== "components" && file !== "built-in-macro.js", id)
+        if (dir !== "components" && file !== "built-in-macro.js") {
             return code
         }
         const modified = code.replace(
