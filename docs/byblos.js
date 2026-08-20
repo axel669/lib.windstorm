@@ -58,7 +58,7 @@ const [ loader ] = html`
 `
 const [ copyButton ] = html`
     <code-wrapper>
-        <button data-ws="@color: @accent; variant.fill;">
+        <button data-ws="@color: @accent; var.fill;">
             <ws-icon data-icon="copy"></ws-icon>
         </button>
     </code-wrapper>
@@ -151,15 +151,18 @@ const defaultOptions = {
 }
 
 const [ sidebar ] = html`
-    <ws-modal id="byblos-sidebar-modal">
-        <ws-drawer data-ws="w: min(320px, 70%);">
-            <ws-paper data-ws="pos: relative; r: 0px;">
-                <button data-ws="pos: absolute; y: 0px; -x: 0px; @color: @accent; w: 36px; h: 36px; r: 0px;">
-                    <ws-icon data-icon="x"></ws-icon>
-                </button>
+    <ws-modal id="byblos-sidebar-modal" inline-desktop>
+        <ws-drawer data-ws="! |hover: none| { w: min(240px, 70%); }">
+            <ws-surface data-ws="pos: relative; r: 0px; raised; layout.3row-controls;">
+                <ws-titlebar data-ws="@color: @accent; area: header;">
+                    <button data-ws="area: action; @color: @accent; r: 0px;">
+                        <ws-icon data-icon="x"></ws-icon>
+                    </button>
+                    <ws-text title></ws-title>
+                </ws-titlebar>
                 <ws-flex data-ws="area: content; over: auto;" id="byblos-sidebar-content">
                 </ws-flex>
-            </ws-paper>
+            </ws-surface>
             <style>
                 #byblos-sidebar-modal ul {
                     list-style-type: none;
@@ -173,14 +176,14 @@ const [ sidebarButton ] = html`
         <ws-icon data-icon="menu-2"></ws-icon>
     </button>
 `
-const setupSidebar = async (enabled, repo, nodes) => {
-    if (enabled === null || enabled === undefined) {
+const setupSidebar = async (sidebarOptions, repo, nodes) => {
+    if (sidebarOptions === null || sidebarOptions === undefined) {
         return {}
     }
     const side = await contentFetch("/_sidebar.md", repo)
     const sidebarHTML = marked.parse(await side.res.text())
     nodes.titlebar.append(sidebarButton)
-    nodes.screen.append(sidebar)
+    nodes.sidebar.append(sidebar)
 
     sidebarButton.addEventListener(
         "click",
@@ -188,6 +191,7 @@ const setupSidebar = async (enabled, repo, nodes) => {
     )
 
     const frag = $(sidebar)
+    frag`ws-text`.innerHTML = sidebarOptions.title
     frag`button`.addEventListener(
         "click",
         () => sidebar.hide()
@@ -204,25 +208,32 @@ const setupSidebar = async (enabled, repo, nodes) => {
 
     document.addEventListener(
         "byblos:route-change",
-        () => sidebar.hide()
+        () => {
+            if (ws.pageis.mobile.matches === false) {
+                return
+            }
+            sidebar.hide()
+        }
     )
 }
-const [ layout ] = html`
-    <ws-screen>
-        <ws-paper data-ws="elevate; r: 0px;">
-            <ws-grid data-ws="gr.cols: 1fr; p: 0px; area: header;">
-                <ws-titlebar data-ws="variant.fill; @color: @primary;">
-                    <ws-text title>
-                    </ws-text>
-                </ws-titlebar>
-            </ws-grid>
-
-            <ws-flex data-ws="area: content; over: auto;" id="byblos-content">
+const [ toplevel ] = html`
+    <ws-surface data-ws="layout.3row-controls; r: 0px;">
+    </ws-surface>
+`
+const [ titlebar, content ] = html`
+    <ws-titlebar data-ws="var.fill; area: header;">
+        <ws-text title>
+        </ws-text>
+    </ws-titlebar>
+    <div data-ws="layout.2col-sidebar; @col-a: 0px; ! |hover: hover| { @col-a: 240px; }">
+        <sidebar-area data-ws="area: sidebar; grid;"></sidebar-area>
+        <content-area data-ws="disp: block; scrollable;">
+            <ws-flex data-ws="w.max: 720px;" id="byblos-content">
                 <div>
                 </div>
             </ws-flex>
-        </ws-paper>
-    </ws-screen>
+        </content-area>
+    </div>
 `
 const nodes = {}
 const hashPath = (hash) => {
@@ -252,15 +263,25 @@ const init = async (userOptions) => {
         "https://cdn.jsdelivr.net/npm/prismjs@1.30.0/plugins/autoloader/prism-autoloader.min.js"
     )
 
-    document.body.setAttribute("data-ws", `#theme.${localStorage.theme}; #animate;`)
-    document.body.append(layout)
+    document.body.setAttribute(
+        "data-ws",
+        `#theme.${localStorage.theme}; #animate; #app;`
+    )
+    document.body.append(toplevel)
+    toplevel.append(titlebar)
+    toplevel.append(content)
 
-    const doc = $(layout)
-    nodes.screen = layout
-    nodes.titlebar = doc`ws-titlebar`
-    nodes.title = doc`ws-text`
-    nodes.titleGrid = doc`ws-grid`
+    const header = $(titlebar)
+    const doc = $(content)
+    nodes.screen = titlebar
+    // nodes.titlebar = header`ws-titlebar`
+    nodes.titlebar = titlebar
+    nodes.title = header`ws-text`
+    nodes.sidebar = doc`sidebar-area`
+    // nodes.titleGrid = header`ws-grid`
+    nodes.titleGrid = titlebar
     nodes.layout = doc`ws-paper`
+    // nodes.layout = content
     nodes.contentArea = doc`ws-flex`
     nodes.content = doc`div`
 
@@ -336,7 +357,7 @@ window.byblos = {
     get theme() { return localStorage.theme },
     set theme(next) {
         localStorage.theme = next
-        document.body.setAttribute("data-ws", `#theme.${next}; #animate;`)
+        document.body.setAttribute("data-ws", `#theme.${next}; #animate; #app;`)
     },
     ws,
 }

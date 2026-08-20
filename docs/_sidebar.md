@@ -1,7 +1,7 @@
-# Windstorm
 - [:file: Home](#/)
 - [:file: Macros](#/macros.md)
 - [:file: Colors](#/colors.md)
+- [:file: Layouts](#/layouts.md)
 - [:file::folder: Components](#/components.md)
     - [:file: Avatar](#/component/avatar.md)
     - [:file: Badge](#/component/badge.md)
@@ -14,10 +14,9 @@
     - [:file: Icon](#/component/icon.md)
     - [:file: Link](#/component/link.md)
     - [:file: Modal](#/component/modal.md)
-    - [:file: Paper](#/component/paper.md)
+    - [:file: Surface](#/component/surface.md)
     - [:file: Popover](#/component/popover.md)
     - [:file: Progress](#/component/progress.md)
-    - [:file: Screen](#/component/screen.md)
     - [:file: Select](#/component/select.md)
     - :folder: Spinners
         - [:file: Circle Spinner](#/component/circle-spinner.md)
