@@ -15,7 +15,7 @@ The content area is where the main content should go. Element with the
 
 ### start/end
 Areas within the border where additional controls and content can be placed.
-Elements placed in this area have the `variant.fill` macro applied automatically
+Elements placed in this area have the `var.fill` macro applied automatically
 since they are on the border background.
 
 ## Attributes

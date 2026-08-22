@@ -1,13 +1,13 @@
 <ws-popover id="ws_popover" data-ws="@bg-color: hsl(@primary, @layer-surface);">
     <div data-ws="b.w: 1px; p: 6px;">
         This is some stuff
-        <button data-ws="variant.outline;" onclick="ws_popover.show()">
+        <button data-ws="var.outln;" onclick="ws_popover.show()">
             Show Popover
         </button>
     </div>
     <div data-ws="pos.abs; x: @x; y: @y; w: @w; bg.c: @bg-color; h: calc(@h * 1.5);" slot="popover">
         Popover that covers the content
-        <button data-ws="variant.outline;" onclick="ws_popover.hide()">
+        <button data-ws="var.outln;" onclick="ws_popover.hide()">
             Close
         </button>
     </div>
@@ -16,13 +16,13 @@
 <ws-popover id="ws_popover2" data-ws="@bg-color: hsl(@success, @layer-surface);">
     <div data-ws="b.w: 1px; p: 6px;">
         This is also some stuff
-        <button data-ws="variant.outline;" onclick="ws_popover2.show()">
+        <button data-ws="var.outln;" onclick="ws_popover2.show()">
             Show Popover
         </button>
     </div>
     <div data-ws="pos.abs; x: @x; y: calc(@y - @h); w: @w; bg.c: @bg-color; h: @h;" slot="popover">
         Popover that sits above the content
-        <button data-ws="variant.outline;" onclick="ws_popover2.hide()">
+        <button data-ws="var.outln;" onclick="ws_popover2.hide()">
             Close
         </button>
     </div>
@@ -31,13 +31,13 @@
 <ws-popover id="ws_popover_p" data-ws="@bg-color: hsl(@info, @layer-surface);" persistent>
     <div data-ws="b.w: 1px; p: 6px;">
         This is also some stuff
-        <button data-ws="variant.outline;" onclick="ws_popover_p.show()">
+        <button data-ws="var.outln;" onclick="ws_popover_p.show()">
             Show Popover
         </button>
     </div>
     <div data-ws="pos.abs; x: @x; y: calc(@y - @h); w: @w; bg.c: @bg-color; h: @h;" slot="popover">
         Popover that sits above the content and is persistent (from the modal)
-        <button data-ws="variant.outline;" onclick="ws_popover_p.hide()">
+        <button data-ws="var.outln;" onclick="ws_popover_p.hide()">
             Close
         </button>
     </div>

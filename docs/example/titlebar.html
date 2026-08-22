@@ -28,13 +28,13 @@
         </button>
     </ws-titlebar>
 
-    <ws-titlebar data-ws="variant.fill; @color: @accent;">
+    <ws-titlebar data-ws="var.fill; @color: @accent;">
         <ws-text title>
             Filled Titlebar
         </ws-text>
     </ws-titlebar>
 
-    <ws-titlebar data-ws="variant.fill; @color: @info;">
+    <ws-titlebar data-ws="var.fill; @color: @info;">
         <ws-text title>
             Filled Titlebar
             <ws-text subtitle>+ Controls</ws-text>
@@ -45,7 +45,7 @@
         </label>
     </ws-titlebar>
 
-    <ws-paper data-ws="elevate;">
+    <ws-surface data-ws="elevate;">
         <ws-titlebar data-ws="area: header;">
             <ws-text title>
                 Flat Titlebar
@@ -55,10 +55,10 @@
         <ws-flex>
             <div>Paper Content</div>
         </ws-flex>
-    </ws-paper>
+    </ws-surface>
 
-    <ws-paper data-ws="variant.outline;">
-        <ws-titlebar data-ws="area: header; variant.fill;">
+    <ws-surface data-ws="var.outln;">
+        <ws-titlebar data-ws="area: header; var.fill;">
             <ws-text title>
                 Filled Titlebar
                 <ws-text subtitle>in Paper</ws-text>
@@ -67,5 +67,5 @@
         <ws-flex>
             <div>Paper Content</div>
         </ws-flex>
-    </ws-paper>
+    </ws-surface>
 </ws-grid>

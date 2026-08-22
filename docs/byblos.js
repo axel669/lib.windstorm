@@ -185,9 +185,17 @@ const setupSidebar = async (sidebarOptions, repo, nodes) => {
     nodes.titlebar.append(sidebarButton)
     nodes.sidebar.append(sidebar)
 
+    sidebar.open = (
+        ws.pageis.mobile.matches === false
+        && localStorage.open === "1"
+    )
+
     sidebarButton.addEventListener(
         "click",
-        () => sidebar.show()
+        () => {
+            sidebar.show()
+            localStorage.open = "1"
+        }
     )
 
     const frag = $(sidebar)
@@ -213,6 +221,7 @@ const setupSidebar = async (sidebarOptions, repo, nodes) => {
                 return
             }
             sidebar.hide()
+            localStorage.open = "0"
         }
     )
 }
@@ -280,7 +289,7 @@ const init = async (userOptions) => {
     nodes.sidebar = doc`sidebar-area`
     // nodes.titleGrid = header`ws-grid`
     nodes.titleGrid = titlebar
-    nodes.layout = doc`ws-paper`
+    nodes.layout = doc`ws-surface`
     // nodes.layout = content
     nodes.contentArea = doc`ws-flex`
     nodes.content = doc`div`

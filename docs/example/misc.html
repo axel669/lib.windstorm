@@ -1,5 +1,5 @@
-<ws-paper data-ws="variant.outline; @color: @primary;">
-    <ws-titlebar slot="header" data-ws="variant.fill; @color: @secondary;">
+<ws-surface data-ws="var.outln; @color: @primary;">
+    <ws-titlebar slot="header" data-ws="var.fill; @color: @secondary;">
         <span data-ws="slot: title; $title;">
             nth-child Selector
         </span>
@@ -7,7 +7,7 @@
         <button data-ws="$flat;">
             Blep
             <ws-modal data-ws="$show;">
-                <ws-paper data-ws="r: 0px; @menu">
+                <ws-surface data-ws="r: 0px; @menu">
                     <ws-titlebar slot="header">
                         <span data-ws="slot: title; $title;">
                             nth-child Selector
@@ -15,14 +15,14 @@
                     </ws-titlebar>
 
                     <ws-flex data-ws="slot: content;">
-                        <label data-ws="$button; variant.outline; @color: @accent;" for="action">
+                        <label data-ws="$button; var.outln; @color: @accent;" for="action">
                             Close
                         </label>
                         <span>
                             Actiond drawer + paper container
                         </span>
                     </ws-flex>
-                </ws-paper>
+                </ws-surface>
             </ws-modal>
         </button>
     </ws-titlebar>
@@ -44,7 +44,7 @@
             <div>3</div>
         </div>
     </ws-flex>
-</ws-paper>
+</ws-surface>
 
 <div data-ws="blep: black;">
     <div>1</div>

@@ -46,7 +46,7 @@ ul p {
 }
 
 ul {
-    padding-inline-start: 28px;
+    padding-inline-start: 16px;
     margin: 0px;
 }
 
@@ -94,7 +94,7 @@ td {
 
 /*  Add style for mermaid diagrams.
     The background color for dark mode edges happens to be the same
-    as the dark mode background color for ws-paper.
+    as the dark mode background color for ws-surface.
 */
 .mermaid {
     background-color: var(--background);

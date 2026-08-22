@@ -208,10 +208,10 @@ components easier.
 |  `sticky` | pos: sticky;<br /> y: 0px;<br /> z: +1; |
 |  `adorn` | disp: flex;<br /> fl.cn;<br /> p: 4px; |
 |  `pad.compact` | p: 0px 4px; |
-|  `variant.outline` | b.w: 1px; |
-|  `variant.fill` | @text-color: @alt-color;<br /> @fill-color: @core-color;<br /> @active: @alt-color; |
-|  `variant.lined` | b.w: 0px;<br /> b.b.w: @border-size;<br /> bg.c: transparent;<br /> r: 0px; |
-|  `variant.lined-fill` | b.w: 0px;<br /> b.b.w: @border-size;<br /> r.b: 0px; |
+|  `var.outln` | b.w: 1px; |
+|  `var.fill` | @text-color: @alt-color;<br /> @fill-color: @core-color;<br /> @active: @alt-color; |
+|  `var.lined` | b.w: 0px;<br /> b.b.w: @border-size;<br /> bg.c: transparent;<br /> r: 0px; |
+|  `var.lined-fill` | b.w: 0px;<br /> b.b.w: @border-size;<br /> r.b: 0px; |
 |  `gr.cols-fit` | *grid-template-columns: repeat(auto-fit, minmax(%arg)); |
 |  `gr.cols-fill` | *grid-template-columns: repeat(auto-fill, minmax(%arg)); |
 |  `text.subtitle` | t.sz: @text-size-subtitle;<br /> flex;<br /> fl.main: center;<br /> p: 0px 8px; |

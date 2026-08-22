@@ -22,10 +22,10 @@
                 repo: "axel669/byblos",
                 branch: "dev",
                 sidebar: {
-                    title: "Windstorm",
+                    title: "Navigation",
                 },
                 "page.title": "Windstorm Docs",
-                "docs.title": "Windstorm Docs",
+                "docs.title": "Windstorm",
                 localMode: true,
                 theme: "dark",
                 plugins: [
@@ -97,29 +97,23 @@
                                 () => console.log(localStorage)
                             )
                             const [ themeSelector ] = byblos.html`
-                                <ws-tabs>
-                                    <label tab>
-                                        <input type="radio" name="theme" value="light" />
-                                        <ws-tab>Light Theme</ws-tab>
-                                    </label>
-                                    <label tab>
-                                        <input type="radio" name="theme" value="dark" />
-                                        <ws-tab>Dark Theme</ws-tab>
-                                    </label>
-                                    <label tab>
-                                        <input type="radio" name="theme" value="tron" />
-                                        <ws-tab>Tron Theme</ws-tab>
-                                    </label>
-                                </ws-tabs>
+                                <ws-select data-ws="area: action; outln: none; w: 110px; @color: @info; fill.reset;">
+                                    <ws-option value="light">
+                                        <ws-icon data-icon="sun"></ws-icon> Light
+                                    </ws-option>
+                                    <ws-option value="dark">
+                                        <ws-icon data-icon="moon"></ws-icon> Dark
+                                    </ws-option>
+                                    <ws-option value="tron">
+                                        <ws-icon data-icon="disc"></ws-icon> Tron
+                                    </ws-option>
+                                </ws-select>
                             `
-                            nodes.titleGrid.append(themeSelector)
-
-                            themeSelector.querySelector(`input[value=${byblos.theme}]`).checked = true
+                            nodes.titlebar.append(themeSelector)
+                            themeSelector.value = byblos.theme
                             themeSelector.addEventListener(
-                                "input",
-                                (evt) => {
-                                    byblos.theme = evt.target.value
-                                }
+                                "change",
+                                (e) => byblos.theme = e.target.value
                             )
                         }
                     }

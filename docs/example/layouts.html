@@ -1,0 +1,47 @@
+<script>
+    byblos.ws.macro("layout-area")`
+        h: 240px;
+        ! & > div {
+            b: 4px solid hsl(@c, @layer-border);
+            flex;
+            fl.cn;
+        }
+    `
+</script>
+
+<ws-flex>
+
+    <ws-titlebar>
+        <ws-text header>layout.3x3-center</ws-text>
+    </ws-titlebar>
+    <ws-grid data-ws="gr.cols-fill: 240px, 1fr;">
+        <div data-ws="layout-area; layout.3x3-center; @height: 50px;">
+            <div data-ws="@c: @info; p: 12px;">Content</div>
+            <div data-ws="@c: @accent; area: top;">Top</div>
+            <div data-ws="@c: @accent; area: bottom;">Bottom</div>
+        </div>
+        <div data-ws="layout-area; layout.3x3-center; @width: 2fr; @height: 2fr;">
+            <div data-ws="@c: @info;">Content</div>
+            <div data-ws="@c: @accent; area: left;">Left</div>
+            <div data-ws="@c: @accent; area: right;">Right</div>
+        </div>
+    </ws-grid>
+
+    <ws-titlebar>
+        <ws-text header>layout.3row-center</ws-text>
+    </ws-titlebar>
+    <div data-ws="layout-area; layout.3row-center; @height: 1.5fr;">
+        <div data-ws="@c: @info;">Content</div>
+        <div data-ws="@c: @accent; area: top;">Top</div>
+        <div data-ws="@c: @accent; area: bottom;">Bottom</div>
+    </div>
+
+    <ws-titlebar>
+        <ws-text header>layout.3col-center</ws-text>
+    </ws-titlebar>
+    <div data-ws="layout-area; layout.3col-center; @width: 100px;">
+        <div data-ws="@c: @info;">Content</div>
+        <div data-ws="@c: @accent; area: left;">Left</div>
+        <div data-ws="@c: @accent; area: right;">Right</div>
+    </div>
+</ws-flex>
