@@ -196,8 +196,8 @@ components easier.
 
 | Name | Def |
 | :-- | :-- |
-|  `elevate` | sh.box: 0px 2px 2px @shadow-color; |
-|  `elevated` | sh.box: 0px 2px calc(%arg * 2px) @shadow-color; |
+|  `raise` | sh.box: 0px calc(%arg * 2px) calc(%arg * 1px + 2px) calc(%arg * 1px + 1px) @shadow-color; <br /> z: +%arg; |
+|  `raised` | raise: 1; |
 |  `fl.cn` | fl.cross: center;<br /> fl.main: center; |
 |  `fl.cn.cross` | fl.cross: center; |
 |  `fl.cn.main` | fl.main: center; |
