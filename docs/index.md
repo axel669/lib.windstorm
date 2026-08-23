@@ -15,9 +15,9 @@ minor differences between a set of 20.
 ### CDN Link (global variable)
 ```html
 <!-- lib + components -->
-<script src="https://esm.sh/@axel669/windstorm@$VERSION/es5"></script>
+<script src="https://esm.sh/@axel669/windstorm@$VERSION/es5?raw"></script>
 <!-- lib, no components -->
-<script src="https://esm.sh/@axel669/windstorm@$VERSION/nc-es5"></script>
+<script src="https://esm.sh/@axel669/windstorm@$VERSION/nc-es5?raw"></script>
 ```
 
 ### CDN Link (module)
