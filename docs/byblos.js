@@ -274,7 +274,7 @@ const init = async (userOptions) => {
 
     document.body.setAttribute(
         "data-ws",
-        `#theme.${localStorage.theme}; #animate; #app;`
+        `#theme.${localStorage.theme}; #animate;`
     )
     document.body.append(toplevel)
     toplevel.append(titlebar)
@@ -366,7 +366,7 @@ window.byblos = {
     get theme() { return localStorage.theme },
     set theme(next) {
         localStorage.theme = next
-        document.body.setAttribute("data-ws", `#theme.${next}; #animate; #app;`)
+        document.body.setAttribute("data-ws", `#theme.${next}; #animate;`)
     },
     ws,
 }
